@@ -42,13 +42,13 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 md:h-22 lg:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0 -my-2" onClick={handleLinkClick}>
+          <Link href="/" className="flex items-center flex-shrink-0" onClick={handleLinkClick}>
             <Image
-              src="/images/saitoti-logo-circle.png"
+              src="/images/saitoti-logo-new.png"
               alt="Saitoti Tours & Safaris"
-              width={80}
-              height={80}
-              className="w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20"
+              width={72}
+              height={72}
+              className="w-14 h-14 md:w-16 md:h-16 lg:w-[72px] lg:h-[72px]"
               priority
             />
           </Link>
