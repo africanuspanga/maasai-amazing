@@ -8,21 +8,22 @@ import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Calendar, DollarSign, Users, CheckCircle, X } from "lucide-react"
 
 export const metadata = {
-  title: "9 Days Grand Southern Adventure | Saitoti Tours",
+  title: "6 Days Wonderful Southern Expedition | Saitoti Tours",
   description:
-    "A comprehensive journey through the heart of Southern Tanzania, featuring three major national parks and a deep dive into local culture.",
+    "This comprehensive safari takes you through the diverse ecosystems of Nyerere (Selous), Mikumi, and the Udzungwa Mountains with boat safaris, trekking, and cultural experiences.",
 }
 
-export default function GrandSouthernAdventurePage() {
+export default function WonderfulSouthernExpeditionPage() {
   return (
     <div className="min-h-screen">
       <Navigation />
+
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/giraffe-baobab.jpg"
-            alt="Grand Southern Adventure"
+            src="/images/boat-sunset.jpg"
+            alt="Wonderful Southern Expedition"
             fill
             className="object-cover"
             priority
@@ -33,17 +34,17 @@ export default function GrandSouthernAdventurePage() {
         </div>
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black mb-4 leading-tight">
-            9 Days Grand Southern Adventure
+            6 Days Wonderful Southern Expedition
           </h1>
-          <p className="text-lg md:text-xl mb-6">Nyerere - Mikumi - Udzungwa - Ruaha</p>
+          <p className="text-lg md:text-xl mb-6">Nyerere - Mikumi - Udzungwa Mountains</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
-              <span>9 Days</span>
+              <span>6 Days</span>
             </div>
             <div className="flex items-center gap-2">
               <DollarSign className="w-5 h-5" />
-              <span>From $1,850 per person</span>
+              <span>$1,198 - $1,420 per person</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="w-5 h-5" />
@@ -60,10 +61,10 @@ export default function GrandSouthernAdventurePage() {
             <div className="lg:col-span-2">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#55331e] mb-6">Tour Overview</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                A comprehensive journey through the heart of Southern Tanzania, featuring four major national parks and a deep dive into local culture. This mid-range adventure combines wildlife viewing, mountain trekking, and authentic Maasai cultural experiences.
+                This comprehensive safari takes you through the diverse ecosystems of Nyerere National Park (formerly Selous), Mikumi National Park, and the stunning Udzungwa Mountains. Experience boat safaris on the mighty Rufiji River, trek to spectacular waterfalls, and immerse yourself in authentic Maasai culture.
               </p>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                From boat and walking safaris in Nyerere to trekking the stunning Sanje Waterfalls in Udzungwa Mountains, and from extensive game drives in Mikumi to exploring the vast wilderness of Ruaha - this itinerary offers the complete Southern Tanzania experience.
+                From close encounters with hippos and crocodiles on the water, to tracking wildlife on foot in walking safaris, to climbing through rainforests to see the magnificent four-stage Sanje Waterfalls - this expedition offers the perfect introduction to Tanzania's spectacular Southern Circuit.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -72,11 +73,12 @@ export default function GrandSouthernAdventurePage() {
                     <h3 className="font-semibold text-[#55331e] mb-3">Tour Highlights</h3>
                     <ul className="space-y-2">
                       {[
-                        "Extended game drives in Ruaha",
-                        "Visit to a Maasai Boma",
-                        "Trekking the Udzungwa Mountains",
-                        "Boat and walking safaris in Nyerere",
-                        "Diverse wildlife viewing",
+                        "Boat safari on Rufiji River",
+                        "Trekking to Sanje Waterfalls",
+                        "Maasai village cultural visit",
+                        "Walking safari experience",
+                        "Big Five game viewing",
+                        "Mkata Floodplain exploration",
                       ].map((highlight, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-[#f88f2f] flex-shrink-0 mt-0.5" />
@@ -92,11 +94,12 @@ export default function GrandSouthernAdventurePage() {
                     <h3 className="font-semibold text-[#55331e] mb-3">What's Included</h3>
                     <ul className="space-y-2">
                       {[
-                        "All park fees & activities",
+                        "All park fees",
                         "Professional guide",
-                        "Transportation",
+                        "4x4 safari car",
+                        "Airport transfers",
                         "Full board meals",
-                        "Mid-range accommodations",
+                        "All accommodation",
                       ].map((item, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -114,8 +117,8 @@ export default function GrandSouthernAdventurePage() {
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <p className="text-sm text-gray-600 mb-2">Price per person</p>
-                    <p className="text-4xl font-bold text-[#f88f2f]">From $1,850</p>
-                    <p className="text-sm text-gray-500 mt-1">Mid-range accommodations</p>
+                    <p className="text-4xl font-bold text-[#f88f2f]">$1,198 - $1,420</p>
+                    <p className="text-sm text-gray-500 mt-1">Depending on group size</p>
                   </div>
 
                   <div className="space-y-4 mb-6">
@@ -138,7 +141,7 @@ export default function GrandSouthernAdventurePage() {
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-600">Duration:</span>
-                        <span className="font-semibold">9 Days</span>
+                        <span className="font-semibold">6 Days</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600">Group Size:</span>
@@ -146,7 +149,7 @@ export default function GrandSouthernAdventurePage() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600">Style:</span>
-                        <span className="font-semibold">Mid-Range</span>
+                        <span className="font-semibold">Mid-Range Safari</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600">Start/End:</span>
@@ -171,46 +174,40 @@ export default function GrandSouthernAdventurePage() {
           <div className="space-y-6">
             {[
               {
-                day: "1-2",
-                title: "Nyerere National Park",
+                day: 1,
+                title: "Dar es Salaam to Nyerere NP",
                 description:
-                  "Travel to Nyerere National Park for boat and walking safaris. Experience wildlife from both water and land perspectives. Cruise the Rufiji River spotting hippos, crocodiles, and elephants along the banks.",
+                  "Drive to Nyerere National Park for an evening boat safari to see hippos and crocodiles. Watch the sun set over the Rufiji River as you spot wildlife along the banks - elephants, giraffes, and countless bird species.",
               },
               {
-                day: "3-4",
-                title: "Transfer to Mikumi",
+                day: 2,
+                title: "Nyerere Full-Day Game Drive",
                 description:
-                  "Morning half-game drive at Nyerere for final wildlife sightings, then transfer to Mikumi National Park. Check into comfortable Mikumi Bandas with views across the savanna. Evening game drive to catch predators on the hunt.",
+                  "A full day exploring the vast grasslands and riverbanks for lions, elephants, and giraffes. Nyerere is one of the largest protected areas in Africa, offering incredible wildlife diversity and fewer tourists than the northern parks.",
+              },
+              {
+                day: 3,
+                title: "Walking Safari & Transfer to Mikumi",
+                description:
+                  "Early morning walking safari to track animals on foot - an exhilarating experience that brings you face to face with nature. After lunch, transfer to Mikumi National Park for an evening game drive.",
+              },
+              {
+                day: 4,
+                title: "Udzungwa Mountains Trekking",
+                description:
+                  "Climb the Sanje route to see the magnificent four-stage waterfalls cascading 170 meters through the rainforest. Spot endemic primates including the rare Sanje Mangabey and Iringa Red Colobus monkeys.",
               },
               {
                 day: 5,
-                title: "Udzungwa Mountains Trekking",
+                title: "Mikumi Full-Day Game View",
                 description:
-                  "Day trip to the Udzungwa Mountains for trekking the Sanje route. Hike through lush rainforest to witness the magnificent 170m Sanje Waterfalls and spot endemic primates before returning to Mikumi.",
+                  "Sunrise game drive and a full day exploring the Mkata Floodplain. This open savanna is excellent for spotting the Big Five - lions, elephants, buffalo, leopards, and with luck, the elusive rhino.",
               },
               {
                 day: 6,
-                title: "Full Day Mikumi",
+                title: "Maasai Culture & Return",
                 description:
-                  "Full-day game drive in Mikumi National Park exploring the Mkata Floodplain. This open savanna offers excellent Big Five viewing opportunities with lions, elephants, buffalo, and more.",
-              },
-              {
-                day: 7,
-                title: "Journey to Ruaha",
-                description:
-                  "Journey from Mikumi to Ruaha National Park with a scenic picnic lunch en route. Travel through the Southern Highlands and arrive at Tanzania's largest national park for an evening game drive.",
-              },
-              {
-                day: 8,
-                title: "Ruaha Exploration",
-                description:
-                  "Full-day exploration of Ruaha National Park. Track large lion prides, massive elephant herds, and elusive leopards across the rocky landscapes and along the Great Ruaha River. Stay at comfortable Ruaha Cottages.",
-              },
-              {
-                day: 9,
-                title: "Return Journey",
-                description:
-                  "Enjoy a final breakfast in the wilderness before beginning the return journey to Dar es Salaam. Arrive with incredible memories of four spectacular national parks and authentic Tanzanian experiences.",
+                  "Visit a Maasai village to learn about their traditions and join in their traditional dances. Experience authentic cultural exchange before returning to Dar es Salaam with unforgettable memories.",
               },
             ].map((item) => (
               <Card key={item.day} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -218,7 +215,7 @@ export default function GrandSouthernAdventurePage() {
                   <div className="flex flex-col md:flex-row md:items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center">
-                        <span className="text-xl font-bold text-white">Day {item.day}</span>
+                        <span className="text-2xl font-bold text-white">Day {item.day}</span>
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -249,15 +246,17 @@ export default function GrandSouthernAdventurePage() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    "All park fees and activities",
+                    "All park entrance fees",
                     "Professional English-speaking guide",
-                    "4x4 safari vehicle transportation",
-                    "Full board meals throughout",
-                    "Mid-range accommodation",
+                    "4x4 safari vehicle with pop-up roof",
+                    "Full board accommodation",
+                    "All meals as per itinerary",
                     "Boat safari on Rufiji River",
                     "Walking safari in Nyerere",
                     "Udzungwa Mountains trekking",
+                    "Maasai village visit",
                     "Airport transfers",
+                    "Drinking water throughout",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -282,7 +281,7 @@ export default function GrandSouthernAdventurePage() {
                     "Tips and gratuities",
                     "Alcoholic beverages",
                     "Personal items and souvenirs",
-                    "Drinks during meals",
+                    "Optional activities not mentioned",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -299,9 +298,9 @@ export default function GrandSouthernAdventurePage() {
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-[#55331e] text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">Ready to Explore Southern Tanzania?</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">Ready for Adventure?</h2>
           <p className="text-lg md:text-xl mb-8 opacity-90">
-            Join us for this comprehensive adventure through Tanzania's most spectacular southern parks
+            Experience the wonders of Southern Tanzania on this incredible expedition
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg px-8 py-3">
