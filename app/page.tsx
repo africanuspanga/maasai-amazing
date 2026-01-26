@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { Testimonials } from "@/components/testimonials"
+import { Partners } from "@/components/partners"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Star, Shield, Users, Award, Clock } from "lucide-react"
@@ -251,6 +252,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Partners / Recommended By */}
+      <Partners />
 
       {/* Testimonials */}
       <Testimonials />

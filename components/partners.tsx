@@ -1,0 +1,131 @@
+"use client"
+
+import Image from "next/image"
+
+const partners = [
+  {
+    name: "TripAdvisor",
+    logo: "/images/partners/tripadvisor-logo.webp",
+    width: 180,
+    height: 60,
+  },
+  {
+    name: "Trustpilot",
+    logo: "/images/partners/trustpilot-logo.png",
+    width: 160,
+    height: 60,
+  },
+  {
+    name: "Google Reviews",
+    logo: "/images/partners/google-reviews-logo.png",
+    width: 180,
+    height: 60,
+  },
+  {
+    name: "Safariogo",
+    logo: "/images/partners/safariogo-logo.png",
+    width: 160,
+    height: 60,
+  },
+  {
+    name: "Tanzania Tourist Board",
+    logo: "/images/partners/tanzania-tourist-board.jpg",
+    width: 140,
+    height: 60,
+  },
+  {
+    name: "APTA",
+    logo: "/images/partners/apta-logo.jpg",
+    width: 140,
+    height: 60,
+  },
+  {
+    name: "Get Your Guide",
+    logo: "/images/partners/getyourguide-logo.png",
+    width: 140,
+    height: 60,
+  },
+]
+
+export function Partners() {
+  return (
+    <section className="py-12 md:py-16 bg-white border-y border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-[#55331e] mb-3">
+            Recommended By
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Trusted by travelers worldwide and recognized by leading tourism platforms
+          </p>
+        </div>
+
+        {/* Scrolling logos container */}
+        <div className="relative overflow-hidden">
+          {/* Gradient overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+
+          {/* Scrolling animation */}
+          <div className="flex animate-scroll">
+            {/* First set */}
+            <div className="flex items-center gap-12 md:gap-16 lg:gap-20 px-6 md:px-10">
+              {partners.map((partner, index) => (
+                <div
+                  key={`first-${index}`}
+                  className="flex-shrink-0 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                >
+                  <Image
+                    src={partner.logo || "/placeholder.svg"}
+                    alt={partner.name}
+                    width={partner.width}
+                    height={partner.height}
+                    className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Second set (duplicate for seamless loop) */}
+            <div className="flex items-center gap-12 md:gap-16 lg:gap-20 px-6 md:px-10">
+              {partners.map((partner, index) => (
+                <div
+                  key={`second-${index}`}
+                  className="flex-shrink-0 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                >
+                  <Image
+                    src={partner.logo || "/placeholder.svg"}
+                    alt={partner.name}
+                    width={partner.width}
+                    height={partner.height}
+                    className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Trust badges */}
+        <div className="mt-10 md:mt-12 flex flex-wrap justify-center gap-6 md:gap-8">
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">500+</div>
+            <div className="text-sm text-gray-600">5-Star Reviews</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">98%</div>
+            <div className="text-sm text-gray-600">Satisfaction Rate</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">3+</div>
+            <div className="text-sm text-gray-600">Years Experience</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">15+</div>
+            <div className="text-sm text-gray-600">Top Destinations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

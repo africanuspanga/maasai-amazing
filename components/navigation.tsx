@@ -40,15 +40,15 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
+        <div className="flex justify-between items-center h-24 md:h-28 lg:h-32">
           {/* Logo */}
           <Link href="/" className="flex items-center py-2 flex-shrink-0" onClick={handleLinkClick}>
             <Image
               src="/images/saitoti-new-logo.png"
               alt="Saitoti Tours & Safaris"
-              width={120}
-              height={120}
-              className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
+              width={140}
+              height={140}
+              className="w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36"
               priority
             />
           </Link>
