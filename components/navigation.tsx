@@ -40,15 +40,15 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
+        <div className="flex justify-between items-center h-20 md:h-22 lg:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center py-2 flex-shrink-0" onClick={handleLinkClick}>
+          <Link href="/" className="flex items-center flex-shrink-0" onClick={handleLinkClick}>
             <Image
-              src="/images/saitoti-logo.png"
+              src="/images/saitoti-logo-new.png"
               alt="Saitoti Tours & Safaris"
               width={80}
               height={80}
-              className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
+              className="w-16 h-16 md:w-[72px] md:h-[72px] lg:w-20 lg:h-20"
               priority
             />
           </Link>
@@ -108,6 +108,13 @@ export function Navigation() {
               className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
             >
               ZANZIBAR
+            </Link>
+
+            <Link
+              href="/itineraries"
+              className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
+            >
+              ITINERARIES
             </Link>
 
             {/* Trekking Dropdown */}
@@ -224,6 +231,14 @@ export function Navigation() {
                 onClick={handleLinkClick}
               >
                 ZANZIBAR
+              </Link>
+
+              <Link
+                href="/itineraries"
+                className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
+                onClick={handleLinkClick}
+              >
+                ITINERARIES
               </Link>
 
               {/* Mobile Trekking Section */}

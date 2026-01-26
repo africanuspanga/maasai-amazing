@@ -10,13 +10,15 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <Image
-                src="/images/saitoti-logo-footer.png"
-                alt="Saitoti Tours & Safaris"
-                width={80}
-                height={80}
-                className="w-20 h-20"
-              />
+              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center p-2">
+                <Image
+                  src="/images/saitoti-new-logo.png"
+                  alt="Saitoti Tours & Safaris"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
             <p className="text-sm text-gray-300">
               Your gateway to Tanzania's wonders. Authentic safaris, epic treks, and cultural adventures.
@@ -88,20 +90,28 @@ export function Footer() {
                   <p>P.O. Box 23119, Tanzania</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#f88f2f]" />
-                <p className="text-gray-300">+255 784 258 765</p>
+              <div className="flex items-start space-x-2">
+                <Phone className="w-4 h-4 mt-0.5 text-[#f88f2f]" />
+                <div className="text-gray-300">
+                  <p>WhatsApp: +255 784 258 765</p>
+                  <p>WeChat: +86 155 2930 9784</p>
+                </div>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-[#f88f2f]" />
-                <p className="text-gray-300">Saitotiosujaki@gmail.com</p>
+                <p className="text-gray-300">Osujakisaitoti982@gmail.com</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2024 Saitoti Tours & Safaris. All rights reserved. | Established 2021</p>
+          <p>
+            <Link href="http://driftmark.co.tz/" target="_blank" className="hover:text-gray-300 transition-colors">
+              &copy; 2026 Saitoti Tours & Safaris. All rights reserved.
+            </Link>{" "}
+            | Established 2021
+          </p>
         </div>
       </div>
     </footer>

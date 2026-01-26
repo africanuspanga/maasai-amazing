@@ -64,9 +64,13 @@ export default function ContactPage() {
                     <div className="flex items-start space-x-3 md:space-x-4">
                       <Phone className="w-5 h-5 md:w-6 md:h-6 text-primary mt-1 flex-shrink-0" />
                       <div className="min-w-0">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Phone & WhatsApp</h3>
+                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">
+                          Phone, WhatsApp & WeChat
+                        </h3>
                         <p className="text-muted-foreground text-sm md:text-base">
-                          +255 784 258 765
+                          WhatsApp: +255 784 258 765
+                          <br />
+                          WeChat: +86 155 2930 9784
                           <br />
                           <span className="text-xs md:text-sm">Available 24/7 for emergencies</span>
                         </p>
@@ -82,7 +86,7 @@ export default function ContactPage() {
                       <div className="min-w-0">
                         <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Email</h3>
                         <p className="text-muted-foreground text-sm md:text-base break-all">
-                          Saitotiosujaki@gmail.com
+                          Osujakisaitoti982@gmail.com
                           <br />
                           <span className="text-xs md:text-sm">We respond within 24 hours</span>
                         </p>
