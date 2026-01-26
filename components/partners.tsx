@@ -61,44 +61,44 @@ export function Partners() {
         </div>
 
         {/* Scrolling logos container */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden py-4">
           {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-white to-transparent z-10" />
 
           {/* Scrolling animation */}
-          <div className="flex animate-scroll">
+          <div className="flex animate-scroll" style={{ width: "max-content" }}>
             {/* First set */}
-            <div className="flex items-center gap-12 md:gap-16 lg:gap-20 px-6 md:px-10">
+            <div className="flex items-center gap-16 md:gap-20 lg:gap-28 px-8 md:px-12">
               {partners.map((partner, index) => (
                 <div
                   key={`first-${index}`}
-                  className="flex-shrink-0 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                  className="flex-shrink-0 hover:scale-110 transition-transform duration-300"
                 >
                   <Image
                     src={partner.logo || "/placeholder.svg"}
                     alt={partner.name}
                     width={partner.width}
                     height={partner.height}
-                    className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+                    className="h-10 md:h-12 lg:h-14 w-auto object-contain"
                   />
                 </div>
               ))}
             </div>
 
             {/* Second set (duplicate for seamless loop) */}
-            <div className="flex items-center gap-12 md:gap-16 lg:gap-20 px-6 md:px-10">
+            <div className="flex items-center gap-16 md:gap-20 lg:gap-28 px-8 md:px-12">
               {partners.map((partner, index) => (
                 <div
                   key={`second-${index}`}
-                  className="flex-shrink-0 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                  className="flex-shrink-0 hover:scale-110 transition-transform duration-300"
                 >
                   <Image
                     src={partner.logo || "/placeholder.svg"}
                     alt={partner.name}
                     width={partner.width}
                     height={partner.height}
-                    className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+                    className="h-10 md:h-12 lg:h-14 w-auto object-contain"
                   />
                 </div>
               ))}
