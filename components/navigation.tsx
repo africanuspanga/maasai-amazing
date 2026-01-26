@@ -46,9 +46,9 @@ export function Navigation() {
             <Image
               src="/images/saitoti-logo-new.png"
               alt="Saitoti Tours & Safaris"
-              width={72}
-              height={72}
-              className="w-14 h-14 md:w-16 md:h-16 lg:w-[72px] lg:h-[72px]"
+              width={80}
+              height={80}
+              className="w-16 h-16 md:w-[72px] md:h-[72px] lg:w-20 lg:h-20"
               priority
             />
           </Link>

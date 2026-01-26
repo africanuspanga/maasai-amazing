@@ -6,7 +6,10 @@ export function WhatsAppFloat() {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/255784258765", "_blank")
+    const message = encodeURIComponent(
+      "Hello! I'm visiting from Saitoti Tours website and I'm interested in booking a safari. Can you help me?"
+    )
+    window.open(`https://wa.me/255784258765?text=${message}`, "_blank")
   }
 
   return (
