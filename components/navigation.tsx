@@ -44,11 +44,11 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center py-2 flex-shrink-0" onClick={handleLinkClick}>
             <Image
-              src="/images/saitoti-logo.png"
+              src="/images/saitoti-new-logo.png"
               alt="Saitoti Tours & Safaris"
-              width={80}
-              height={80}
-              className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
+              width={120}
+              height={120}
+              className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
               priority
             />
           </Link>
@@ -108,6 +108,13 @@ export function Navigation() {
               className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
             >
               ZANZIBAR
+            </Link>
+
+            <Link
+              href="/itineraries"
+              className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
+            >
+              ITINERARIES
             </Link>
 
             {/* Trekking Dropdown */}
@@ -224,6 +231,14 @@ export function Navigation() {
                 onClick={handleLinkClick}
               >
                 ZANZIBAR
+              </Link>
+
+              <Link
+                href="/itineraries"
+                className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
+                onClick={handleLinkClick}
+              >
+                ITINERARIES
               </Link>
 
               {/* Mobile Trekking Section */}

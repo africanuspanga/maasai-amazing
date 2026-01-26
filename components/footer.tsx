@@ -10,13 +10,15 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <Image
-                src="/images/saitoti-logo-footer.png"
-                alt="Saitoti Tours & Safaris"
-                width={80}
-                height={80}
-                className="w-20 h-20"
-              />
+              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center p-2">
+                <Image
+                  src="/images/saitoti-new-logo.png"
+                  alt="Saitoti Tours & Safaris"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
             <p className="text-sm text-gray-300">
               Your gateway to Tanzania's wonders. Authentic safaris, epic treks, and cultural adventures.
@@ -101,7 +103,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2024 Saitoti Tours & Safaris. All rights reserved. | Established 2021</p>
+          <p>&copy; 2026 Saitoti Tours & Safaris. All rights reserved. | Established 2021</p>
         </div>
       </div>
     </footer>
