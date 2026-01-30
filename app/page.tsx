@@ -7,7 +7,7 @@ import { Testimonials } from "@/components/testimonials"
 import { Partners } from "@/components/partners"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
-import { Star, Shield, Users, Award, Clock } from "lucide-react"
+import { Star, Shield, Users, Award, Clock, Calendar } from "lucide-react"
 
 export default function HomePage() {
   return (
