@@ -6,64 +6,64 @@ import Image from "next/image"
 
 const testimonials = [
   {
-    name: "Michael Thompson",
-    location: "Sydney, Australia",
-    country: "Australia",
-    flag: "🇦🇺",
+    name: "Sarah M.",
+    location: "California, USA",
+    country: "United States",
+    image: "/images/testimonials/profile-1.jpg",
     rating: 5,
     quote:
-      "An absolutely incredible safari experience! The guides were knowledgeable and the wildlife viewing was beyond our expectations. Saitoti Tours made our dream come true.",
-    tour: "Serengeti Migration Safari",
+      "We booked the 8-day Northern Circuit and honestly didn't know what to expect. Our guide was patient with all our questions and the lodges were way nicer than I anticipated. Saw lions, elephants, and even a leopard in a tree. Worth every dollar.",
+    tour: "8-Day Elephant Kingdom Safari",
   },
   {
-    name: "Li Wei",
-    location: "Beijing, China",
-    country: "China",
-    flag: "🇨🇳",
-    rating: 5,
-    quote:
-      "Professional service from start to finish. The accommodation was excellent, and our guide's knowledge of the wildlife was amazing. Highly recommend for Chinese travelers!",
-    tour: "Northern Circuit Adventure",
-  },
-  {
-    name: "Marco Rossi",
-    location: "Rome, Italy",
-    country: "Italy",
-    flag: "🇮🇹",
-    rating: 5,
-    quote:
-      "The attention to detail and authentic cultural experiences made this trip truly special. The Maasai village visit was a highlight. Grazie Saitoti Tours!",
-    tour: "Cultural Safari Experience",
-  },
-  {
-    name: "Emma Williams",
+    name: "David K.",
     location: "London, UK",
     country: "United Kingdom",
-    flag: "🇬🇧",
+    image: "/images/testimonials/profile-2.jpg",
     rating: 5,
     quote:
-      "Outstanding organization and passionate guides. The Serengeti migration was breathtaking. Best safari company in Tanzania - worth every penny!",
-    tour: "Luxury Safari Package",
+      "Did the Kilimanjaro Machame route with my son. The porters were incredible - always smiling despite carrying so much. Summit day was brutal but standing at Uhuru Peak made it all worthwhile. Good company, would trek with them again.",
+    tour: "Kilimanjaro - Machame Route",
   },
   {
-    name: "Hans Mueller",
-    location: "Berlin, Germany",
-    country: "Germany",
-    flag: "🇩🇪",
+    name: "Alex R.",
+    location: "Toronto, Canada",
+    country: "Canada",
+    image: "/images/testimonials/profile-3.jpg",
     rating: 5,
     quote:
-      "Fantastic experience! Very well organized with great attention to safety. The landscapes were stunning and we saw all the Big Five. Danke Saitoti!",
-    tour: "Tanzania Highlights Tour",
+      "Zanzibar was exactly what we needed after safari. The beach time was perfect and Stone Town tour was really interesting. Prison Island was fun but crowded. Overall a great balance of adventure and relaxation.",
+    tour: "Zanzibar Classic",
   },
   {
-    name: "Sophie Martin",
-    location: "Paris, France",
-    country: "France",
-    flag: "🇫🇷",
+    name: "Jennifer L.",
+    location: "Sydney, Australia",
+    country: "Australia",
+    image: "/images/testimonials/profile-4.jpg",
     rating: 5,
     quote:
-      "Magnifique! The combination of safari and Zanzibar beach was perfect. Our guide was so knowledgeable and friendly. An unforgettable adventure!",
-    tour: "Bush to Beach Experience",
+      "The Southern Circuit was less crowded than I expected, which was amazing. Ruaha had so many elephants! Our guide knew where to find the animals and was really flexible with our schedule. Solid experience.",
+    tour: "Grand Southern Adventure",
+  },
+  {
+    name: "The Williams Family",
+    location: "Texas, USA",
+    country: "United States",
+    image: "/images/testimonials/profile-5.jpg",
+    rating: 5,
+    quote:
+      "Traveling with two teenagers was easier than expected. They actually put their phones down during game drives! The Ngorongoro Crater was the highlight for all of us. Food at the camps was surprisingly good too.",
+    tour: "7-Day Natural Wonders Safari",
+  },
+  {
+    name: "Marie P.",
+    location: "Brussels, Belgium",
+    country: "Belgium",
+    image: "/images/testimonials/profile-6.jpg",
+    rating: 5,
+    quote:
+      "My third trip to Tanzania and first with Saitoti Tours. The 5-day extension after Kilimanjaro was perfect timing. Saw the migration in Serengeti - thousands of wildebeest crossing the river. Already planning to come back next year.",
+    tour: "5-Day Safari Extension",
   },
 ]
 
@@ -113,8 +113,14 @@ export function Testimonials() {
 
                 {/* Traveler Info */}
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f88f2f] to-[#e67e1e] flex items-center justify-center text-2xl">
-                    {testimonial.flag}
+                  <div className="w-12 h-12 rounded-full overflow-hidden relative flex-shrink-0">
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      fill
+                      className="object-cover"
+                      sizes="48px"
+                    />
                   </div>
                   <div className="flex-1">
                     <div className="font-bold text-[#55331e] text-sm md:text-base">{testimonial.name}</div>
@@ -139,7 +145,7 @@ export function Testimonials() {
             </div>
             <span className="text-gray-700 font-semibold">5.0 Rating</span>
             <span className="text-gray-400">•</span>
-            <span className="text-gray-600">500+ Happy Travelers</span>
+            <span className="text-gray-600">100+ Happy Travelers</span>
           </div>
         </div>
       </div>
