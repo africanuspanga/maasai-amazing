@@ -5,90 +5,94 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
-import { Calendar, DollarSign, Users, CheckCircle, X, ArrowLeft } from "lucide-react"
+import { Calendar, Users, CheckCircle, X, ArrowLeft, Waves } from "lucide-react"
 
 export const metadata = {
-  title: "6 Day Bush to Beach Experience | Saitoti Tours",
+  title: "Zanzibar 4 Days / 3 Nights Package | Saitoti Tours",
   description:
-    "The perfect combination of wild adventure and tropical relaxation. Start with wildlife tracking in Nyerere NP and end on the white sands of Zanzibar.",
+    "Perfect for a quick tropical getaway. This stress-free package includes airport transfers, breakfast and dinner, and two of Zanzibar's most iconic excursions.",
 }
 
-export default function BushToBeachPage() {
+export default function Zanzibar4DaysPage() {
   return (
     <div className="min-h-screen">
       <Navigation />
+      
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/zanzibar-aerial.jpg"
-            alt="Bush to Beach - Zanzibar"
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-1297190187-612x612-tU5KAe7obcLRdB9MwYrfXj1awvu7uC.jpg"
+            alt="Zanzibar Beach Paradise"
             fill
             className="object-cover"
             priority
             sizes="100vw"
             quality={85}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/70 via-blue-900/50 to-teal-900/70" />
         </div>
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black mb-4 leading-tight">
-            6 Day Bush to Beach Experience
-          </h1>
-          <p className="text-lg md:text-xl mb-6">Nyerere National Park to Zanzibar Island</p>
-          <div className="mb-6">
-            <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-[#55331e]">
-              <Link href="/itineraries">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to All Itineraries
-              </Link>
-            </Button>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Waves className="w-8 h-8 text-cyan-300" />
           </div>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black mb-4 leading-tight">
+            Zanzibar Short Escape
+          </h1>
+          <p className="text-lg md:text-xl mb-6">Quick Tropical Getaway to the Spice Island</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
-              <span>6 Days</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <DollarSign className="w-5 h-5" />
-              <span>$1,947 - $2,102</span>
+              <span>4 Days / 3 Nights</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="w-5 h-5" />
-              <span>2-6 people</span>
+              <span>Flexible Group Size</span>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Back Button */}
+      <div className="bg-gradient-to-br from-cyan-50 to-blue-50 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Button asChild variant="ghost" className="text-[#0891b2] hover:text-[#0e7490] hover:bg-cyan-100">
+            <Link href="/itineraries">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to All Itineraries
+            </Link>
+          </Button>
+        </div>
+      </div>
+
       {/* Overview Section */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-cyan-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#55331e] mb-6">Tour Overview</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0891b2] mb-6">Package Overview</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                The perfect combination of wild adventure and tropical relaxation. Start with wildlife tracking in Nyerere National Park, then transition to the pristine white sands and turquoise waters of Zanzibar.
+                Perfect for a quick tropical getaway. This stress-free package includes airport transfers, breakfast and dinner, and two of Zanzibar's most iconic excursions.
               </p>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Experience boat safaris on the Rufiji River, walking safaris through untouched wilderness, spice plantation tours, historical Stone Town exploration, and beach relaxation in one unforgettable journey.
+                Experience the sensory journey through the "Spice Island," explore historic Stone Town, meet giant Aldabra tortoises on Prison Island, and swim with dolphins while snorkeling in crystal-clear waters.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <Card>
+                <Card className="border-2 border-cyan-200 bg-white">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-[#55331e] mb-3">Tour Highlights</h3>
+                    <h3 className="font-semibold text-[#0891b2] mb-3">Package Highlights</h3>
                     <ul className="space-y-2">
                       {[
-                        "Rufiji River boat safari",
-                        "Walking safari in Nyerere",
                         "Stone Town historical tour",
+                        "Spice Farm sensory experience",
                         "Prison Island giant tortoises",
-                        "Zanzibar spice plantations",
-                        "Beach relaxation in Nungwi",
+                        "Mnemba dolphin swimming",
+                        "Snorkeling coral reefs",
+                        "Traditional spiced rice lunch",
                       ].map((highlight, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-[#f88f2f] flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-5 h-5 text-[#0891b2] flex-shrink-0 mt-0.5" />
                           <span className="text-gray-700">{highlight}</span>
                         </li>
                       ))}
@@ -96,17 +100,17 @@ export default function BushToBeachPage() {
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="border-2 border-cyan-200 bg-white">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-[#55331e] mb-3">What's Included</h3>
+                    <h3 className="font-semibold text-[#0891b2] mb-3">What's Included</h3>
                     <ul className="space-y-2">
                       {[
-                        "4x4 safari vehicle",
-                        "All park fees",
-                        "Full board meals",
-                        "Boat/walking safaris",
-                        "Zanzibar activities",
-                        "Ferry tickets",
+                        "Airport transfers",
+                        "Breakfast & dinner daily",
+                        "All entrance fees",
+                        "Professional guides",
+                        "Transport to excursions",
+                        "Snorkeling equipment",
                       ].map((item, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -120,22 +124,23 @@ export default function BushToBeachPage() {
             </div>
 
             <div className="lg:col-span-1">
-              <Card className="sticky top-24 shadow-xl border-2 border-[#f88f2f]/20">
+              <Card className="sticky top-24 shadow-xl border-2 border-cyan-200 bg-white">
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
-                    <p className="text-sm text-gray-600 mb-2">Price per person</p>
-                    <p className="text-4xl font-bold text-[#f88f2f]">$1,947 - $2,102</p>
-                    <p className="text-sm text-gray-500 mt-1">Group size dependent</p>
+                    <p className="text-sm text-gray-600 mb-2">Starting from</p>
+                    <p className="text-4xl font-bold text-[#0891b2]">$706</p>
+                    <p className="text-sm text-gray-500 mt-1">Per person</p>
+                    <p className="text-xs text-gray-500 mt-2">Contact for 3*, 4*, and 5* hotel tiers</p>
                   </div>
 
                   <div className="space-y-4 mb-6">
-                    <Button asChild className="w-full bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg py-6">
-                      <Link href="/contact">Book This Tour</Link>
+                    <Button asChild className="w-full bg-[#0891b2] hover:bg-[#0e7490] text-white text-lg py-6">
+                      <Link href="/contact">Book This Package</Link>
                     </Button>
                     <Button
                       asChild
                       variant="outline"
-                      className="w-full border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white text-lg py-6 bg-transparent"
+                      className="w-full border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white text-lg py-6 bg-transparent"
                     >
                       <Link href="https://wa.me/255784258765" target="_blank">
                         WhatsApp Inquiry
@@ -144,23 +149,23 @@ export default function BushToBeachPage() {
                   </div>
 
                   <div className="border-t pt-6">
-                    <h3 className="font-bold text-[#55331e] mb-3">Quick Info</h3>
+                    <h3 className="font-bold text-[#0891b2] mb-3">Quick Info</h3>
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-600">Duration:</span>
-                        <span className="font-semibold">6 Days</span>
+                        <span className="font-semibold">4 Days / 3 Nights</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Group Size:</span>
-                        <span className="font-semibold">2-6 People</span>
+                        <span className="text-gray-600">Meals:</span>
+                        <span className="font-semibold">Half Board</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Style:</span>
-                        <span className="font-semibold">Safari + Beach</span>
+                        <span className="text-gray-600">Activities:</span>
+                        <span className="font-semibold">2 Excursions</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Start/End:</span>
-                        <span className="font-semibold">Dar es Salaam</span>
+                        <span className="text-gray-600">Airport:</span>
+                        <span className="font-semibold">ZNZ Included</span>
                       </div>
                     </div>
                   </div>
@@ -172,55 +177,49 @@ export default function BushToBeachPage() {
       </section>
 
       {/* Detailed Itinerary */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#55331e] mb-12 text-center">
-            Detailed Day-by-Day Itinerary
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0891b2] mb-12 text-center">
+            Day-by-Day Itinerary
           </h2>
 
           <div className="space-y-6">
             {[
               {
-                day: "1-2",
-                title: "Nyerere National Park Safari",
+                day: 1,
+                title: "Arrival & Hotel Transfer",
                 description:
-                  "Wildlife viewing and boat safaris in Nyerere National Park. Experience the diverse ecosystems along the Rufiji River, spot hippos, crocodiles, elephants, and abundant birdlife as you explore this vast wilderness.",
+                  "Meet our driver at Zanzibar International Airport. Look for your name on our signboard! We'll handle your luggage and provide a smooth transfer to your hotel. Check in, relax, and enjoy your first evening in paradise.",
+              },
+              {
+                day: 2,
+                title: "Stone Town, Spice Farms & Prison Island",
+                description:
+                  "A sensory journey through the 'Spice Island.' Smell and taste fresh cardamom and cloves at authentic spice plantations, explore the historic UNESCO-listed streets of Stone Town, enjoy a traditional spiced rice lunch, and visit the giant Aldabra tortoises on Prison Island. Learn about the island's rich Swahili culture and colonial history.",
               },
               {
                 day: 3,
-                title: "Walking Safari & Ferry to Zanzibar",
+                title: "Mnemba Dolphins & Snorkeling (Half Day)",
                 description:
-                  "Morning walking safari to see animals on foot - an exhilarating experience that brings you closer to nature. After lunch, transfer by ferry to Zanzibar. Check-in at your beachfront resort in Nungwi.",
+                  "Head to the North Coast (Matemwe) for an early morning dolphin encounter. Swim alongside these playful creatures in their natural habitat, then snorkel among the vibrant coral reefs of Mnemba Island. Marvel at colorful tropical fish, sea turtles, and stunning underwater landscapes. Return to your hotel for a relaxing afternoon.",
               },
               {
                 day: 4,
-                title: "Beach Relaxation Day",
+                title: "Departure Transfer",
                 description:
-                  "Full day of relaxation on the pristine beaches of Nungwi. Swim in the crystal-clear turquoise waters, snorkel among colorful fish, or simply unwind on the white sand with a refreshing drink.",
-              },
-              {
-                day: 5,
-                title: "Zanzibar Culture & History",
-                description:
-                  "Morning spice tour through fragrant plantations of cloves, vanilla, and cardamom. Visit the giant Aldabra tortoises on Prison Island, then explore the winding alleys and historical buildings of UNESCO-listed Stone Town.",
-              },
-              {
-                day: 6,
-                title: "Departure",
-                description:
-                  "Enjoy a final breakfast with ocean views before catching the ferry back to Dar es Salaam. Arrive with incredible memories of wildlife encounters and tropical paradise.",
+                  "Enjoy your final breakfast with ocean views before our driver transfers you back to Zanzibar International Airport in time for your flight. Depart with unforgettable memories of the Spice Island.",
               },
             ].map((item) => (
-              <Card key={item.day} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <Card key={item.day} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-cyan-100">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex flex-col md:flex-row md:items-start gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center">
+                      <div className="w-16 h-16 bg-[#0891b2] rounded-full flex items-center justify-center">
                         <span className="text-xl font-bold text-white">Day {item.day}</span>
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <h3 className="text-xl md:text-2xl font-bold text-[#55331e] mb-3">{item.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold text-[#0891b2] mb-3">{item.title}</h3>
                       <p className="text-gray-700 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
@@ -232,14 +231,14 @@ export default function BushToBeachPage() {
       </section>
 
       {/* Included/Excluded */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-cyan-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#55331e] mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0891b2] mb-12 text-center">
             What's Included & Excluded
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="border-2 border-green-200">
+            <Card className="border-2 border-green-200 bg-white">
               <CardContent className="p-6 md:p-8">
                 <h3 className="text-2xl font-bold text-green-700 mb-6 flex items-center gap-2">
                   <CheckCircle className="w-6 h-6" />
@@ -247,16 +246,19 @@ export default function BushToBeachPage() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    "4x4 safari vehicle with pop-up roof",
-                    "Professional English-speaking guide",
-                    "All park entrance fees",
-                    "Full board meals throughout",
-                    "Boat safari on Rufiji River",
-                    "Walking safari in Nyerere",
-                    "Ferry tickets to Zanzibar",
+                    "3, 4, or 5-Star accommodation",
+                    "Daily breakfast & dinner",
+                    "Round-trip airport transfers",
+                    "All entrance fees",
+                    "Professional English-speaking guides",
                     "Stone Town tour",
                     "Prison Island excursion",
                     "Spice plantation tour",
+                    "Mnemba dolphin & snorkeling",
+                    "Snorkeling equipment provided",
+                    "Excursion transport",
+                    "Drinking water during tours",
+                    "Local SIM card",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -267,7 +269,7 @@ export default function BushToBeachPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-red-200">
+            <Card className="border-2 border-red-200 bg-white">
               <CardContent className="p-6 md:p-8">
                 <h3 className="text-2xl font-bold text-red-700 mb-6 flex items-center gap-2">
                   <X className="w-6 h-6" />
@@ -278,8 +280,9 @@ export default function BushToBeachPage() {
                     "International flights",
                     "Tanzania tourist visa",
                     "Travel insurance",
-                    "Tips and gratuities",
+                    "Lunch meals",
                     "Alcoholic beverages",
+                    "Tips and gratuities",
                     "Personal items and souvenirs",
                     "Optional activities not mentioned",
                   ].map((item, index) => (
@@ -296,23 +299,25 @@ export default function BushToBeachPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-[#55331e] text-white">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-cyan-600 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">Experience the Best of Both Worlds</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">
+            Ready for Your Zanzibar Escape?
+          </h2>
           <p className="text-lg md:text-xl mb-8 opacity-90">
-            Combine thrilling wildlife encounters with tropical beach paradise on this unforgettable journey
+            Book your 4-day tropical getaway and experience the magic of the Spice Island
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg px-8 py-3">
+            <Button asChild size="lg" className="bg-white text-[#0891b2] hover:bg-gray-100 text-lg px-8 py-3">
               <Link href="/contact">Book Now</Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] text-lg px-8 py-3 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#0891b2] text-lg px-8 py-3 bg-transparent"
             >
-              <Link href="/itineraries">View All Itineraries</Link>
+              <Link href="/itineraries">View All Packages</Link>
             </Button>
           </div>
         </div>

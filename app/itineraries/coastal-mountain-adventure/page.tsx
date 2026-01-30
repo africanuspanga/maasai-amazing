@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
-import { Calendar, DollarSign, Users, CheckCircle, X } from "lucide-react"
+import { Calendar, DollarSign, Users, CheckCircle, X, ArrowLeft } from "lucide-react"
 
 export const metadata = {
   title: "7 Days Coastal & Mountain Adventure | Saitoti Tours",
@@ -37,6 +37,14 @@ export default function CoastalMountainAdventurePage() {
             7 Days Coastal & Mountain Adventure
           </h1>
           <p className="text-lg md:text-xl mb-6">Bagamoyo - Saadani - Pangani - Usambara</p>
+          <div className="mb-6">
+            <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-[#55331e]">
+              <Link href="/itineraries">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to All Itineraries
+              </Link>
+            </Button>
+          </div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />

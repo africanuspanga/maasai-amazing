@@ -7,7 +7,7 @@ import { Testimonials } from "@/components/testimonials"
 import { Partners } from "@/components/partners"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
-import { Star, Shield, Users, Award, Clock } from "lucide-react"
+import { Star, Shield, Users, Award, Clock, Calendar } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -65,7 +65,7 @@ export default function HomePage() {
                   <div className="text-xs md:text-sm text-gray-500">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-2">500+</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-2">100+</div>
                   <div className="text-xs md:text-sm text-gray-500">Happy Travelers</div>
                 </div>
                 <div className="text-center">
@@ -249,6 +249,423 @@ export default function HomePage() {
                 </Button>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Northern Circuit Itineraries */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#d97706] mb-6">
+              Northern Circuit Safari Adventures
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Experience the legendary Serengeti, Ngorongoro Crater, and climb Mount Kilimanjaro
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* 7-Day Natural Wonders */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/northern-circuit-flamingos.jpg"
+                  alt="Northern Circuit Safari"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">7-Day Natural Wonders</h3>
+                  <p className="text-sm opacity-90">Serengeti & Ngorongoro</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-[#d97706] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  $2,714
+                </div>
+              </div>
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#d97706]" />
+                  <span>7 Days / 6 Nights</span>
+                </div>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Experience two of Africa's Seven Natural Wonders with the Great Migration and Ngorongoro Crater descent.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
+                    <Link href="/itineraries/northern-7-days">View Details</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">
+                    <Link href="/contact">Book Now</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 8-Day Elephant Kingdom */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/northern-circuit-elephant.jpg"
+                  alt="Elephant Kingdom Safari"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">8-Day Elephant Kingdom</h3>
+                  <p className="text-sm opacity-90">Our Bestseller</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-[#d97706] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  $3,284
+                </div>
+              </div>
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#d97706]" />
+                  <span>8 Days / 7 Nights</span>
+                </div>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Our most popular safari featuring Tarangire's giant elephant herds and three days in the Serengeti.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
+                    <Link href="/itineraries/northern-8-days">View Details</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">
+                    <Link href="/contact">Book Now</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Kilimanjaro Machame */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/kilimanjaro-sunrise.jpg"
+                  alt="Kilimanjaro Climb"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">Kilimanjaro Machame</h3>
+                  <p className="text-sm opacity-90">Africa's Highest Peak</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-[#d97706] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  $2,589
+                </div>
+              </div>
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#d97706]" />
+                  <span>7 Days / 6 Nights</span>
+                </div>
+                <p className="text-gray-600 mb-4 text-sm">
+                  The Whiskey Route offers stunning scenery and the best acclimatization for summiting Uhuru Peak.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
+                    <Link href="/itineraries/kilimanjaro-machame">View Details</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">
+                    <Link href="/contact">Book Now</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-8">
+            <Button asChild size="lg" variant="outline" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
+              <Link href="/itineraries">View All Northern Safaris</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Zanzibar Packages */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-cyan-50 via-blue-50 to-teal-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#0891b2] mb-6">
+              Zanzibar Beach Escapes
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Relax on pristine beaches, explore spice farms, and discover Stone Town's rich history
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Zanzibar Short Escape */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/tropical-beach.jpg"
+                  alt="Zanzibar Beach"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">4-Day Short Escape</h3>
+                  <p className="text-sm opacity-90">Perfect Quick Getaway</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-[#0891b2] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  $765
+                </div>
+              </div>
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#0891b2]" />
+                  <span>4 Days / 3 Nights</span>
+                </div>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Stone Town, Prison Island tortoises, and dolphin swimming at Mnemba. All-inclusive with transfers.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
+                    <Link href="/itineraries/zanzibar-4-days">View Details</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">
+                    <Link href="/contact">Book Now</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Zanzibar Classic */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/dhow-sunset.png"
+                  alt="Zanzibar Classic"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">6-Day Zanzibar Classic</h3>
+                  <p className="text-sm opacity-90">Complete Experience</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-[#0891b2] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  $1,130
+                </div>
+              </div>
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#0891b2]" />
+                  <span>6 Days / 5 Nights</span>
+                </div>
+                <p className="text-gray-600 mb-4 text-sm">
+                  The full Zanzibar experience with spice tours, beach time, snorkeling, and cultural immersion.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
+                    <Link href="/itineraries/zanzibar-6-days">View Details</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">
+                    <Link href="/contact">Book Now</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Zanzibar Luxury */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/beach-umbrellas.jpg"
+                  alt="Luxury Zanzibar"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">8-Day Luxury Paradise</h3>
+                  <p className="text-sm opacity-90">Ultimate Relaxation</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-[#0891b2] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  $1,570
+                </div>
+              </div>
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#0891b2]" />
+                  <span>8 Days / 7 Nights</span>
+                </div>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Indulge in luxury beachfront resorts, private excursions, and gourmet dining on the Spice Island.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
+                    <Link href="/itineraries/zanzibar-8-days">View Details</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">
+                    <Link href="/contact">Book Now</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-8">
+            <Button asChild size="lg" variant="outline" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
+              <Link href="/itineraries">View All Zanzibar Packages</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Southern Circuit Safaris */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">
+              Southern Circuit Expeditions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Discover Tanzania's untamed wilderness in remote parks with fewer crowds
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Luxury Southern Circuit */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/safari-vehicle.jpg"
+                  alt="Southern Circuit Safari"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">9-Day Luxury Expedition</h3>
+                  <p className="text-sm opacity-90">Ultimate Southern Circuit</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-[#f88f2f] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  $2,426
+                </div>
+              </div>
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#f88f2f]" />
+                  <span>9 Days / 8 Nights</span>
+                </div>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Luxury lodges in Nyerere, Mikumi, Udzungwa, and Ruaha with boat safaris and waterfall treks.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
+                    <Link href="/itineraries/luxury-southern-circuit">View Details</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
+                    <Link href="/contact">Book Now</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Grand Southern Adventure */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/giraffe-baobab.jpg"
+                  alt="Grand Southern Adventure"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">9-Day Grand Adventure</h3>
+                  <p className="text-sm opacity-90">Cultural & Wildlife</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-[#f88f2f] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  $1,800
+                </div>
+              </div>
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#f88f2f]" />
+                  <span>9 Days</span>
+                </div>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Comprehensive journey through Southern Tanzania with Maasai cultural visits and mountain trekking.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
+                    <Link href="/itineraries/grand-southern-adventure">View Details</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
+                    <Link href="/contact">Book Now</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Bush to Beach */}
+            <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/zanzibar-aerial.jpg"
+                  alt="Bush to Beach"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">6-Day Bush to Beach</h3>
+                  <p className="text-sm opacity-90">Safari & Zanzibar</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-[#f88f2f] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  $1,947
+                </div>
+              </div>
+              <CardContent className="p-4 md:p-6">
+                <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                  <Calendar className="w-4 h-4 text-[#f88f2f]" />
+                  <span>6 Days</span>
+                </div>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Perfect combo of Nyerere wildlife tracking and Zanzibar beach relaxation with Stone Town tours.
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="outline" size="sm" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
+                    <Link href="/itineraries/bush-to-beach">View Details</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
+                    <Link href="/contact">Book Now</Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-8">
+            <Button asChild size="lg" variant="outline" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
+              <Link href="/itineraries">View All Southern Safaris</Link>
+            </Button>
           </div>
         </div>
       </section>

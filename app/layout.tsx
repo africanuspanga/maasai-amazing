@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import { Open_Sans } from "next/font/google"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
   keywords: "Tanzania safari, Kilimanjaro trekking, Serengeti tours, Zanzibar, wildlife photography, African adventure",
   authors: [{ name: "Saitoti Tours & Safaris" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "Saitoti Tours & Safaris - Discover the Soul of Tanzania",
@@ -52,7 +54,10 @@ html {
 }
         `}</style>
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <ScrollToTop />
+        {children}
+      </body>
     </html>
   )
 }
