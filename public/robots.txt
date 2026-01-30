@@ -1,0 +1,29 @@
+# robots.txt for https://saitotitours.com/
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://saitotitours.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Allow search engines to index all content
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

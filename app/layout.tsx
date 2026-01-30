@@ -27,7 +27,8 @@ export const metadata: Metadata = {
   keywords: "Tanzania safari, Kilimanjaro trekking, Serengeti tours, Zanzibar, wildlife photography, African adventure",
   authors: [{ name: "Saitoti Tours & Safaris" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "Saitoti Tours & Safaris - Discover the Soul of Tanzania",
