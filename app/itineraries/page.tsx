@@ -127,6 +127,114 @@ const itineraries = [
     category: "safari",
   },
   {
+    id: "northern-7-days",
+    title: "7-Day Natural Wonders Safari",
+    duration: "7 Days / 6 Nights",
+    image: "/images/northern-circuit-flamingos.jpg",
+    destinations: "Lake Manyara, Serengeti, Ngorongoro",
+    groupSize: "2-6 people",
+    description:
+      "Experience two of Africa's Seven Natural Wonders: the Serengeti and Ngorongoro Crater. This journey showcases the best of Tanzania's northern circuit.",
+    highlights: [
+      "Great Migration in Serengeti",
+      "Ngorongoro Crater descent",
+      "Tree-climbing lions in Manyara",
+      "Big Five sightings",
+    ],
+    priceFrom: "$2,714",
+    category: "northern",
+  },
+  {
+    id: "northern-8-days",
+    title: "8-Day Elephant Kingdom Safari",
+    duration: "8 Days / 7 Nights",
+    image: "/images/northern-circuit-elephant.jpg",
+    destinations: "Tarangire, Serengeti, Ngorongoro",
+    groupSize: "2-6 people",
+    description:
+      "Our bestseller! This extended safari adds Tarangire National Park, the 'Kingdom of Elephants' with massive herds and ancient baobab trees.",
+    highlights: [
+      "Giant elephant herds in Tarangire",
+      "Three days in the Serengeti",
+      "Ngorongoro Crater wildlife",
+      "Ancient baobab forests",
+    ],
+    priceFrom: "$3,284",
+    category: "northern",
+  },
+  {
+    id: "northern-5-days",
+    title: "5-Day Safari Extension",
+    duration: "5 Days / 4 Nights",
+    image: "/images/northern-circuit-balloon.jpg",
+    destinations: "Manyara, Serengeti, Ngorongoro",
+    groupSize: "2-6 people",
+    description:
+      "Perfect for travelers completing a Kilimanjaro climb or Zanzibar holiday. Experience the Big Three parks of Northern Tanzania in a private 4x4.",
+    highlights: [
+      "Post-Kilimanjaro adventure",
+      "Serengeti game drives",
+      "Crater floor experience",
+      "Private safari vehicle",
+    ],
+    priceFrom: "$1,960",
+    category: "northern",
+  },
+  {
+    id: "northern-3-days",
+    title: "3-Day Classic Northern Trio",
+    duration: "3 Days / 2 Nights",
+    image: "/images/northern-circuit-lions.jpg",
+    destinations: "Tarangire, Ngorongoro, Manyara",
+    groupSize: "1-6 people",
+    description:
+      "A high-impact, short-duration safari covering the legendary Tarangire, Ngorongoro Crater, and Lake Manyara. Perfect for time-conscious travelers.",
+    highlights: [
+      "Tarangire elephant herds",
+      "Full day in Ngorongoro Crater",
+      "Black rhino sightings",
+      "Compact adventure",
+    ],
+    priceFrom: "$1,558",
+    category: "northern",
+  },
+  {
+    id: "kilimanjaro-machame",
+    title: "Kilimanjaro - Machame Route",
+    duration: "7 Days / 6 Nights",
+    image: "/images/kilimanjaro-sunrise.jpg",
+    destinations: "Mount Kilimanjaro via Machame",
+    groupSize: "1-10+ people",
+    description:
+      "The 'Whiskey Route' offers the best acclimatization and stunning scenery. Trek through rainforests, moorlands, and high deserts to Africa's roof.",
+    highlights: [
+      "Climb high, sleep low strategy",
+      "Barranco Wall adventure",
+      "Summit at Uhuru Peak",
+      "Camping under stars",
+    ],
+    priceFrom: "$2,589",
+    category: "northern",
+  },
+  {
+    id: "kilimanjaro-marangu",
+    title: "Kilimanjaro - Marangu Route",
+    duration: "6 Days / 5 Nights",
+    image: "/images/kilimanjaro-climbing.jpg",
+    destinations: "Mount Kilimanjaro via Marangu",
+    groupSize: "1-10+ people",
+    description:
+      "The 'Coca-Cola Route' is the only path with hut accommodations. A classic climb with proper acclimatization built into our 6-day itinerary.",
+    highlights: [
+      "Hut accommodations",
+      "Acclimatization day included",
+      "Established classic route",
+      "Summit certificate ceremony",
+    ],
+    priceFrom: "$2,349",
+    category: "northern",
+  },
+  {
     id: "zanzibar-4-days",
     title: "Zanzibar Short Escape",
     duration: "4 Days / 3 Nights",
@@ -304,6 +412,90 @@ export default function ItinerariesPage() {
                       <Link href={`/itineraries/${itinerary.id}`}>More Details</Link>
                     </Button>
                     <Button asChild className="w-full bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
+                      <Link href="/contact">Book Now</Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Northern Circuit Safaris & Kilimanjaro */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#d97706] mb-4">
+              Northern Circuit & Kilimanjaro Adventures
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Witness the Great Migration, climb Africa's highest peak, and explore the legendary parks of Northern Tanzania
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {itineraries.filter(itinerary => itinerary.category === 'northern').map((itinerary) => (
+              <Card
+                key={itinerary.id}
+                className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={itinerary.image || "/placeholder.svg"}
+                    alt={itinerary.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute top-4 right-4 bg-[#d97706] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    From {itinerary.priceFrom}
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-lg font-bold mb-1 pr-4">{itinerary.title}</h3>
+                  </div>
+                </div>
+
+                <CardContent className="p-6">
+                  {/* Tour Info */}
+                  <div className="flex flex-wrap gap-3 mb-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-4 h-4 text-[#d97706]" />
+                      <span>{itinerary.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-4 h-4 text-[#d97706]" />
+                      <span>{itinerary.groupSize}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2 mb-4">
+                    <MapPin className="w-4 h-4 text-[#d97706] mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-gray-600">{itinerary.destinations}</p>
+                  </div>
+
+                  <p className="text-gray-700 mb-4 text-sm leading-relaxed line-clamp-3">{itinerary.description}</p>
+
+                  {/* Highlights */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-[#d97706] text-sm mb-2">Highlights:</h4>
+                    <ul className="space-y-1">
+                      {itinerary.highlights.slice(0, 3).map((highlight, index) => (
+                        <li key={index} className="text-xs text-gray-600 flex items-start gap-2">
+                          <span className="text-[#d97706] mt-0.5">•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <Button asChild variant="outline" className="w-full border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white bg-transparent">
+                      <Link href={`/itineraries/${itinerary.id}`}>More Details</Link>
+                    </Button>
+                    <Button asChild className="w-full bg-[#d97706] hover:bg-[#b45309] text-white">
                       <Link href="/contact">Book Now</Link>
                     </Button>
                   </div>
