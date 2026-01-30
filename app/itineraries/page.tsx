@@ -34,6 +34,7 @@ const itineraries = [
       "Luxury accommodations",
     ],
     priceFrom: "$2,426",
+    category: "safari",
   },
   {
     id: "grand-southern-adventure",
@@ -51,6 +52,7 @@ const itineraries = [
       "Mid-range comfortable stays",
     ],
     priceFrom: "$1,800",
+    category: "safari",
   },
   {
     id: "bush-to-beach",
@@ -68,6 +70,7 @@ const itineraries = [
       "Prison Island visit",
     ],
     priceFrom: "$1,947",
+    category: "safari",
   },
   {
     id: "coastal-mountain-adventure",
@@ -85,6 +88,7 @@ const itineraries = [
       "Historical coastal towns",
     ],
     priceFrom: "$1,600",
+    category: "safari",
   },
   {
     id: "wonderful-southern-expedition",
@@ -102,6 +106,7 @@ const itineraries = [
       "Walking safari experience",
     ],
     priceFrom: "$1,198",
+    category: "safari",
   },
   {
     id: "serengeti-of-south",
@@ -119,6 +124,79 @@ const itineraries = [
       "Authentic Maasai Boma visit",
     ],
     priceFrom: "$1,420",
+    category: "safari",
+  },
+  {
+    id: "zanzibar-4-days",
+    title: "Zanzibar 4 Days / 3 Nights Package",
+    duration: "4 Days / 3 Nights",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-1297190187-612x612-tU5KAe7obcLRdB9MwYrfXj1awvu7uC.jpg",
+    destinations: "Stone Town, Prison Island, Mnemba",
+    groupSize: "Flexible",
+    description:
+      "Perfect for a quick tropical getaway. This stress-free package includes airport transfers, breakfast and dinner, and two of Zanzibar's most iconic excursions.",
+    highlights: [
+      "Stone Town & Spice Farm tour",
+      "Prison Island giant tortoises",
+      "Mnemba dolphin swimming",
+      "Snorkeling crystal waters",
+    ],
+    priceFrom: "$90",
+    category: "zanzibar",
+  },
+  {
+    id: "zanzibar-5-days",
+    title: "Zanzibar 5 Days / 4 Nights Package",
+    duration: "5 Days / 4 Nights",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-2198492232-612x612-DrbeX1istrIy8ckBCumvHYcubq92Wo.jpg",
+    destinations: "Safari Blue, Stone Town, Mnemba",
+    groupSize: "Flexible",
+    description:
+      "An extended stay that adds the famous Safari Blue experience to your itinerary. Includes all transfers, half-board meals, and professional guides.",
+    highlights: [
+      "Full-day Safari Blue trip",
+      "Seafood BBQ on sandbanks",
+      "Dolphin encounters",
+      "Cultural Stone Town tour",
+    ],
+    priceFrom: "$90",
+    category: "zanzibar",
+  },
+  {
+    id: "zanzibar-6-days",
+    title: "Zanzibar 6 Days / 5 Nights Package",
+    duration: "6 Days / 5 Nights",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-2191376209-612x612-Pg774cMeJGiVjsE5UgT4KhpyS9zrdo.jpg",
+    destinations: "Safari Blue, Stone Town, Free Time",
+    groupSize: "Flexible",
+    description:
+      "This package balances adventure with a 'Chilling Day,' allowing you time to soak up the sun at your own pace while still seeing the island's top sights.",
+    highlights: [
+      "Safari Blue ocean adventure",
+      "Full relaxation day",
+      "Prison Island visit",
+      "Spice plantation tour",
+    ],
+    priceFrom: "$90",
+    category: "zanzibar",
+  },
+  {
+    id: "zanzibar-7-days",
+    title: "Zanzibar 7 Days / 6 Nights Package",
+    duration: "7 Days / 6 Nights",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-2132790250-612x612-mx41ERncAmmDzYbHB9fcSMVDEzuXPA.jpg",
+    destinations: "Safari Blue, Jozani, The Rock",
+    groupSize: "Flexible",
+    description:
+      "Our most comprehensive tour. This week-long experience includes the legendary Rock Restaurant and the rare wildlife of Jozani Forest.",
+    highlights: [
+      "Red Colobus monkeys in Jozani",
+      "The Rock Restaurant lunch",
+      "Safari Blue experience",
+      "Complete island exploration",
+    ],
+    priceFrom: "$90",
+    category: "zanzibar",
   },
 ]
 
@@ -152,21 +230,20 @@ export default function ItinerariesPage() {
         </div>
       </section>
 
-      {/* Itineraries Grid */}
+      {/* Southern Circuit Safaris */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#55331e] mb-4">
-              Our Popular Safari Packages
+              Southern Circuit Safari Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From luxury expeditions to cultural adventures, each itinerary is designed to showcase the best of
-              Tanzania
+              Explore Tanzania's untamed wilderness on expertly crafted safari expeditions through the Southern Circuit
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {itineraries.map((itinerary) => (
+            {itineraries.filter(itinerary => itinerary.category === 'safari').map((itinerary) => (
               <Card
                 key={itinerary.id}
                 className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
@@ -227,6 +304,86 @@ export default function ItinerariesPage() {
                       <Link href={`/itineraries/${itinerary.id}`}>More Details</Link>
                     </Button>
                     <Button asChild className="w-full bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
+                      <Link href="/contact">Book Now</Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Zanzibar Beach Packages */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-cyan-50 via-blue-50 to-teal-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0891b2] mb-4">
+              Zanzibar Beach Holiday Packages
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Discover the Spice Island with our all-inclusive beach getaways. From culture to crystal waters, we handle the details.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {itineraries.filter(itinerary => itinerary.category === 'zanzibar').map((itinerary) => (
+              <Card
+                key={itinerary.id}
+                className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={itinerary.image || "/placeholder.svg"}
+                    alt={itinerary.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute top-4 right-4 bg-[#0891b2] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    From {itinerary.priceFrom}
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-lg font-bold mb-1 pr-4">{itinerary.title}</h3>
+                  </div>
+                </div>
+
+                <CardContent className="p-6">
+                  {/* Tour Info */}
+                  <div className="flex flex-wrap gap-3 mb-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-4 h-4 text-[#0891b2]" />
+                      <span>{itinerary.duration}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2 mb-4">
+                    <MapPin className="w-4 h-4 text-[#0891b2] mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-gray-600">{itinerary.destinations}</p>
+                  </div>
+
+                  <p className="text-gray-700 mb-4 text-sm leading-relaxed line-clamp-3">{itinerary.description}</p>
+
+                  {/* Highlights */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-[#0891b2] text-sm mb-2">Highlights:</h4>
+                    <ul className="space-y-1">
+                      {itinerary.highlights.slice(0, 3).map((highlight, index) => (
+                        <li key={index} className="text-xs text-gray-600 flex items-start gap-2">
+                          <span className="text-[#0891b2] mt-0.5">•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <Button asChild variant="outline" className="w-full border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white bg-transparent">
+                      <Link href={`/itineraries/${itinerary.id}`}>More Details</Link>
+                    </Button>
+                    <Button asChild className="w-full bg-[#0891b2] hover:bg-[#0e7490] text-white">
                       <Link href="/contact">Book Now</Link>
                     </Button>
                   </div>
