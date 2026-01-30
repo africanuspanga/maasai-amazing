@@ -37,7 +37,7 @@ export default function Zanzibar4DaysPage() {
             <Waves className="w-8 h-8 text-cyan-300" />
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black mb-4 leading-tight">
-            Zanzibar 4 Days / 3 Nights Package
+            Zanzibar Short Escape
           </h1>
           <p className="text-lg md:text-xl mb-6">Quick Tropical Getaway to the Spice Island</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
@@ -128,7 +128,7 @@ export default function Zanzibar4DaysPage() {
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <p className="text-sm text-gray-600 mb-2">Starting from</p>
-                    <p className="text-4xl font-bold text-[#0891b2]">$90</p>
+                    <p className="text-4xl font-bold text-[#0891b2]">$706</p>
                     <p className="text-sm text-gray-500 mt-1">Per person</p>
                     <p className="text-xs text-gray-500 mt-2">Contact for 3*, 4*, and 5* hotel tiers</p>
                   </div>

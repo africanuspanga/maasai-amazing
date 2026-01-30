@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import { Open_Sans } from "next/font/google"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -52,7 +53,10 @@ html {
 }
         `}</style>
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <ScrollToTop />
+        {children}
+      </body>
     </html>
   )
 }

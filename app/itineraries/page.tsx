@@ -128,7 +128,7 @@ const itineraries = [
   },
   {
     id: "zanzibar-4-days",
-    title: "Zanzibar 4 Days / 3 Nights Package",
+    title: "Zanzibar Short Escape",
     duration: "4 Days / 3 Nights",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-1297190187-612x612-tU5KAe7obcLRdB9MwYrfXj1awvu7uC.jpg",
     destinations: "Stone Town, Prison Island, Mnemba",
@@ -141,12 +141,12 @@ const itineraries = [
       "Mnemba dolphin swimming",
       "Snorkeling crystal waters",
     ],
-    priceFrom: "$90",
+    priceFrom: "$706",
     category: "zanzibar",
   },
   {
     id: "zanzibar-5-days",
-    title: "Zanzibar 5 Days / 4 Nights Package",
+    title: "Zanzibar Classic",
     duration: "5 Days / 4 Nights",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-2198492232-612x612-DrbeX1istrIy8ckBCumvHYcubq92Wo.jpg",
     destinations: "Safari Blue, Stone Town, Mnemba",
@@ -159,12 +159,12 @@ const itineraries = [
       "Dolphin encounters",
       "Cultural Stone Town tour",
     ],
-    priceFrom: "$90",
+    priceFrom: "$826",
     category: "zanzibar",
   },
   {
     id: "zanzibar-6-days",
-    title: "Zanzibar 6 Days / 5 Nights Package",
+    title: "Zanzibar Relax & Explore",
     duration: "6 Days / 5 Nights",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-2191376209-612x612-Pg774cMeJGiVjsE5UgT4KhpyS9zrdo.jpg",
     destinations: "Safari Blue, Stone Town, Free Time",
@@ -177,12 +177,12 @@ const itineraries = [
       "Prison Island visit",
       "Spice plantation tour",
     ],
-    priceFrom: "$90",
+    priceFrom: "$1,206",
     category: "zanzibar",
   },
   {
     id: "zanzibar-7-days",
-    title: "Zanzibar 7 Days / 6 Nights Package",
+    title: "Zanzibar Ultimate Week",
     duration: "7 Days / 6 Nights",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-2132790250-612x612-mx41ERncAmmDzYbHB9fcSMVDEzuXPA.jpg",
     destinations: "Safari Blue, Jozani, The Rock",
@@ -195,7 +195,7 @@ const itineraries = [
       "Safari Blue experience",
       "Complete island exploration",
     ],
-    priceFrom: "$90",
+    priceFrom: "$1,388",
     category: "zanzibar",
   },
 ]
@@ -326,7 +326,7 @@ export default function ItinerariesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {itineraries.filter(itinerary => itinerary.category === 'zanzibar').map((itinerary) => (
               <Card
                 key={itinerary.id}

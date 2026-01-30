@@ -37,9 +37,9 @@ export default function Zanzibar7DaysPage() {
             <Waves className="w-8 h-8 text-cyan-300" />
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black mb-4 leading-tight">
-            Zanzibar 7 Days / 6 Nights Package
+            Zanzibar Ultimate Week
           </h1>
-          <p className="text-lg md:text-xl mb-6">Complete Island Discovery with Jozani & The Rock</p>
+          <p className="text-lg md:text-xl mb-6">7 Days / 6 Nights - Complete Island Discovery with Jozani & The Rock</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
@@ -128,7 +128,7 @@ export default function Zanzibar7DaysPage() {
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <p className="text-sm text-gray-600 mb-2">Starting from</p>
-                    <p className="text-4xl font-bold text-[#0891b2]">$90</p>
+                    <p className="text-4xl font-bold text-[#0891b2]">$1,388</p>
                     <p className="text-sm text-gray-500 mt-1">Per person</p>
                     <p className="text-xs text-gray-500 mt-2">Contact for 3*, 4*, and 5* hotel tiers</p>
                   </div>
