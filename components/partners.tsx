@@ -109,7 +109,7 @@ export function Partners() {
         {/* Trust badges */}
         <div className="mt-10 md:mt-12 flex flex-wrap justify-center gap-6 md:gap-8">
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">500+</div>
+            <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">100+</div>
             <div className="text-sm text-gray-600">5-Star Reviews</div>
           </div>
           <div className="text-center">

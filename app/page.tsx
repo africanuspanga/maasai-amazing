@@ -409,7 +409,7 @@ export default function HomePage() {
             <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-1297190187-612x612-tU5KAe7obcLRdB9MwYrfXj1awvu7uC.jpg"
+                  src="/images/tropical-beach.jpg"
                   alt="Zanzibar Beach"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -448,7 +448,7 @@ export default function HomePage() {
             <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-623406592-612x612-74aJFXlObDbOQCIcFbMjcfYiwVnDvC.jpg"
+                  src="/images/dhow-sunset.png"
                   alt="Zanzibar Classic"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -487,7 +487,7 @@ export default function HomePage() {
             <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-200">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-1390433401-612x612-E5lSF8KmkzKxiP72zrqlQkDpZPjJSa.jpg"
+                  src="/images/beach-umbrellas.jpg"
                   alt="Luxury Zanzibar"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
