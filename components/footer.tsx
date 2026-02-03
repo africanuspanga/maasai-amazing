@@ -99,7 +99,7 @@ function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-[#f88f2f]" />
-                <p className="text-gray-300">Osujakisaitoti982@gmail.com</p>
+                <p className="text-gray-300">tours@aussigroup.com</p>
               </div>
             </div>
           </div>

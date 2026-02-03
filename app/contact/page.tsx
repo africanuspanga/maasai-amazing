@@ -86,7 +86,7 @@ export default function ContactPage() {
                       <div className="min-w-0">
                         <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Email</h3>
                         <p className="text-muted-foreground text-sm md:text-base break-all">
-                          Osujakisaitoti982@gmail.com
+                          tours@aussigroup.com
                           <br />
                           <span className="text-xs md:text-sm">We respond within 24 hours</span>
                         </p>
