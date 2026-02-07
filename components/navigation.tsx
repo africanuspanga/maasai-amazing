@@ -1,14 +1,104 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { useLanguage } from "@/components/language-provider"
+import { type Locale, localeNames, localeFlags } from "@/lib/translations"
+
+function LanguageSwitcher({ variant = "desktop" }: { variant?: "desktop" | "mobile" }) {
+  const { locale, setLocale, t } = useLanguage()
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  const locales: Locale[] = ["en", "fr", "es", "zh"]
+
+  if (variant === "mobile") {
+    return (
+      <div className="px-2 py-3">
+        <div className="flex items-center gap-2 mb-3 text-sm font-semibold text-[#55331e]">
+          <Globe className="w-4 h-4 text-[#f88f2f]" />
+          <span>Language</span>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          {locales.map((loc) => (
+            <button
+              key={loc}
+              onClick={() => setLocale(loc)}
+              className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                locale === loc
+                  ? "bg-[#f88f2f] text-white"
+                  : "bg-gray-50 text-[#55331e] hover:bg-gray-100"
+              }`}
+            >
+              <span className="text-xs font-bold w-6">{localeFlags[loc]}</span>
+              <span>{localeNames[loc]}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-[#55331e] hover:bg-gray-50 transition-colors text-sm font-medium"
+        aria-label="Select language"
+        aria-expanded={open}
+      >
+        <Globe className="w-4 h-4 text-[#f88f2f]" />
+        <span className="text-xs font-bold">{localeFlags[locale]}</span>
+        <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-full mt-2 w-44 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+          {locales.map((loc) => (
+            <button
+              key={loc}
+              onClick={() => {
+                setLocale(loc)
+                setOpen(false)
+              }}
+              className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
+                locale === loc
+                  ? "bg-[#f88f2f]/10 text-[#f88f2f] font-semibold"
+                  : "text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              <span className="text-xs font-bold w-6 text-center">{localeFlags[loc]}</span>
+              <span>{localeNames[loc]}</span>
+              {locale === loc && (
+                <svg className="w-4 h-4 ml-auto text-[#f88f2f]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,50 +144,50 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <div className="hidden lg:flex items-center space-x-5 xl:space-x-7">
             <Link
               href="/"
               className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
             >
-              HOME
+              {t("nav.home")}
             </Link>
             <Link
               href="/about"
               className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
             >
-              ABOUT
+              {t("nav.about")}
             </Link>
 
             {/* Safari Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base">
-                <span>SAFARI</span>
+                <span>{t("nav.safari")}</span>
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="center" className="w-48">
                 <DropdownMenuItem asChild>
                   <Link href="/northern-circuit" className="w-full">
-                    Northern Circuit
+                    {t("nav.northernCircuit")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/southern-circuit" className="w-full">
-                    Southern Circuit
+                    {t("nav.southernCircuit")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/hidden-gems" className="w-full">
-                    Hidden Gems
+                    {t("nav.hiddenGems")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/historical-sites" className="w-full">
-                    Historical Sites
+                    {t("nav.historicalSites")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/culture" className="w-full">
-                    Culture
+                    {t("nav.culture")}
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -107,48 +197,50 @@ export function Navigation() {
               href="/zanzibar"
               className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
             >
-              ZANZIBAR
+              {t("nav.zanzibar")}
             </Link>
 
             <Link
               href="/itineraries"
               className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
             >
-              ITINERARIES
+              {t("nav.itineraries")}
             </Link>
 
             {/* Trekking Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base">
-                <span>TREKKING</span>
+                <span>{t("nav.trekking")}</span>
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="center" className="w-48">
                 <DropdownMenuItem asChild>
                   <Link href="/kilimanjaro" className="w-full">
-                    Kilimanjaro
+                    {t("nav.kilimanjaro")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/mt-meru" className="w-full">
-                    Mt Meru
+                    {t("nav.mtMeru")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/oldonyo-lengai" className="w-full">
-                    Oldonyo Lengai
+                    {t("nav.oldonyoLengai")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/usambara-mountains" className="w-full">
-                    Usambara Mountains
+                    {t("nav.usambaraMountains")}
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button asChild className="bg-[#f88f2f] hover:bg-[#e67e1e] text-sm xl:text-base">
-              <Link href="/contact">CONTACT</Link>
+            <LanguageSwitcher variant="desktop" />
+
+            <Button asChild className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-sm xl:text-base">
+              <Link href="/contact">{t("nav.contact")}</Link>
             </Button>
           </div>
 
@@ -175,53 +267,53 @@ export function Navigation() {
                 className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
                 onClick={handleLinkClick}
               >
-                HOME
+                {t("nav.home")}
               </Link>
               <Link
                 href="/about"
                 className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
                 onClick={handleLinkClick}
               >
-                ABOUT
+                {t("nav.about")}
               </Link>
 
               {/* Mobile Safari Section */}
               <div className="pl-2 space-y-2 py-2">
-                <div className="font-semibold text-[#55331e] text-sm mb-2">SAFARI</div>
+                <div className="font-semibold text-[#55331e] text-sm mb-2">{t("nav.safari")}</div>
                 <Link
                   href="/northern-circuit"
                   className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
-                  Northern Circuit
+                  {t("nav.northernCircuit")}
                 </Link>
                 <Link
                   href="/southern-circuit"
                   className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
-                  Southern Circuit
+                  {t("nav.southernCircuit")}
                 </Link>
                 <Link
                   href="/hidden-gems"
                   className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
-                  Hidden Gems
+                  {t("nav.hiddenGems")}
                 </Link>
                 <Link
                   href="/historical-sites"
                   className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
-                  Historical Sites
+                  {t("nav.historicalSites")}
                 </Link>
                 <Link
                   href="/culture"
                   className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
-                  Culture
+                  {t("nav.culture")}
                 </Link>
               </div>
 
@@ -230,7 +322,7 @@ export function Navigation() {
                 className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
                 onClick={handleLinkClick}
               >
-                ZANZIBAR
+                {t("nav.zanzibar")}
               </Link>
 
               <Link
@@ -238,45 +330,50 @@ export function Navigation() {
                 className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
                 onClick={handleLinkClick}
               >
-                ITINERARIES
+                {t("nav.itineraries")}
               </Link>
 
               {/* Mobile Trekking Section */}
               <div className="pl-2 space-y-2 py-2">
-                <div className="font-semibold text-[#55331e] text-sm mb-2">TREKKING</div>
+                <div className="font-semibold text-[#55331e] text-sm mb-2">{t("nav.trekking")}</div>
                 <Link
                   href="/kilimanjaro"
                   className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
-                  Kilimanjaro
+                  {t("nav.kilimanjaro")}
                 </Link>
                 <Link
                   href="/mt-meru"
                   className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
-                  Mt Meru
+                  {t("nav.mtMeru")}
                 </Link>
                 <Link
                   href="/oldonyo-lengai"
                   className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
-                  Oldonyo Lengai
+                  {t("nav.oldonyoLengai")}
                 </Link>
                 <Link
                   href="/usambara-mountains"
                   className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
-                  Usambara Mountains
+                  {t("nav.usambaraMountains")}
                 </Link>
+              </div>
+
+              {/* Mobile Language Switcher */}
+              <div className="border-t border-gray-100 pt-3 mt-1">
+                <LanguageSwitcher variant="mobile" />
               </div>
 
               <div className="pt-2">
                 <Button asChild className="bg-[#f88f2f] hover:bg-[#e67e1e] w-full" onClick={handleLinkClick}>
-                  <Link href="/contact">CONTACT</Link>
+                  <Link href="/contact">{t("nav.contact")}</Link>
                 </Button>
               </div>
             </div>

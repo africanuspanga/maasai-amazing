@@ -4,6 +4,7 @@ import { createContext, useContext, useState, useEffect, useCallback, type React
 import Image from "next/image"
 import { X, User, Mail, Calendar, Users, MessageSquare, Phone, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/components/language-provider"
 
 interface BookingContextType {
   openBooking: (tourName?: string) => void
@@ -45,8 +46,8 @@ const initialFormData: FormData = {
 function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => void }) {
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const { t } = useLanguage()
 
-  // Lock body scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = "hidden"
     return () => {
@@ -54,7 +55,6 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
     }
   }, [])
 
-  // Close on ESC key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose()
@@ -71,26 +71,26 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
     e.preventDefault()
 
     const message = [
-      `*NEW SAFARI BOOKING REQUEST*`,
+      `*${t("booking.whatsappMessage")}*`,
       ``,
-      tourName ? `*Tour:* ${tourName}` : "",
+      tourName ? `*${t("booking.tour")}:* ${tourName}` : "",
       ``,
-      `*--- Personal Information ---*`,
-      `*Full Name:* ${formData.fullName}`,
-      `*Nationality:* ${formData.nationality}`,
+      `*--- ${t("booking.personalInfo")} ---*`,
+      `*${t("booking.fullName")}:* ${formData.fullName}`,
+      `*${t("booking.nationality")}:* ${formData.nationality}`,
       ``,
-      `*--- Contact Information ---*`,
-      `*Email:* ${formData.email}`,
-      `*Phone:* ${formData.phone}`,
+      `*--- ${t("booking.contactInfo")} ---*`,
+      `*${t("booking.email")}:* ${formData.email}`,
+      `*${t("booking.phone")}:* ${formData.phone}`,
       ``,
-      `*--- Travel Details ---*`,
-      `*Preferred Date:* ${formData.travelDate}`,
-      formData.accommodation ? `*Accommodation:* ${formData.accommodation}` : "",
+      `*--- ${t("booking.travelDetails")} ---*`,
+      `*${t("booking.travelDate")}:* ${formData.travelDate}`,
+      formData.accommodation ? `*${t("booking.accommodation")}:* ${formData.accommodation}` : "",
       ``,
-      `*--- Group Size ---*`,
-      `*Adults:* ${formData.adults}`,
-      `*Children:* ${formData.children}`,
-      formData.specialRequests ? `\n*--- Special Requests ---*\n${formData.specialRequests}` : "",
+      `*--- ${t("booking.groupSize")} ---*`,
+      `*${t("booking.adults")}:* ${formData.adults}`,
+      `*${t("booking.children")}:* ${formData.children}`,
+      formData.specialRequests ? `\n*--- ${t("booking.specialRequests")} ---*\n${formData.specialRequests}` : "",
     ]
       .filter(Boolean)
       .join("\n")
@@ -117,12 +117,10 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-2xl font-serif font-bold text-[#55331e] mb-2">Booking Request Sent!</h3>
-          <p className="text-gray-600 mb-6">
-            Your booking request has been sent via WhatsApp. Our team will get back to you within 24 hours.
-          </p>
+          <h3 className="text-2xl font-serif font-bold text-[#55331e] mb-2">{t("booking.successTitle")}</h3>
+          <p className="text-gray-600 mb-6">{t("booking.successMessage")}</p>
           <Button onClick={onClose} className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white px-8">
-            Close
+            {t("booking.close")}
           </Button>
         </div>
       </div>
@@ -135,7 +133,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label="Book your safari"
+      aria-label={t("booking.title")}
     >
       <div
         className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col"
@@ -154,7 +152,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
               />
             </div>
             <div>
-              <h2 className="text-xl md:text-2xl font-serif font-bold text-white">Book Your Safari</h2>
+              <h2 className="text-xl md:text-2xl font-serif font-bold text-white">{t("booking.title")}</h2>
               <p className="text-white/80 text-sm">
                 {tourName || "Saitoti Tours & Safaris"}
               </p>
@@ -163,7 +161,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
           <button
             onClick={onClose}
             className="text-white/80 hover:text-white transition-colors p-1 rounded-full hover:bg-white/10"
-            aria-label="Close booking form"
+            aria-label={t("booking.close")}
           >
             <X className="w-6 h-6" />
           </button>
@@ -176,12 +174,12 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
             <fieldset>
               <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
                 <User className="w-5 h-5 text-[#f88f2f]" />
-                Personal Information
+                {t("booking.personalInfo")}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700 mb-1">
-                    Full Name <span className="text-red-500">*</span>
+                    {t("booking.fullName")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="fullName"
@@ -195,7 +193,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                 </div>
                 <div>
                   <label htmlFor="nationality" className="block text-sm font-semibold text-gray-700 mb-1">
-                    Nationality <span className="text-red-500">*</span>
+                    {t("booking.nationality")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="nationality"
@@ -214,12 +212,12 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
             <fieldset>
               <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
                 <Mail className="w-5 h-5 text-[#f88f2f]" />
-                Contact Information
+                {t("booking.contactInfo")}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
-                    Email Address <span className="text-red-500">*</span>
+                    {t("booking.email")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="email"
@@ -233,7 +231,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-1">
-                    Phone Number <span className="text-red-500">*</span>
+                    {t("booking.phone")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="phone"
@@ -252,12 +250,12 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
             <fieldset>
               <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
                 <Calendar className="w-5 h-5 text-[#f88f2f]" />
-                Travel Details
+                {t("booking.travelDetails")}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="travelDate" className="block text-sm font-semibold text-gray-700 mb-1">
-                    Preferred Travel Date <span className="text-red-500">*</span>
+                    {t("booking.travelDate")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="travelDate"
@@ -270,7 +268,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                 </div>
                 <div>
                   <label htmlFor="accommodation" className="block text-sm font-semibold text-gray-700 mb-1">
-                    Accommodation Type
+                    {t("booking.accommodation")}
                   </label>
                   <select
                     id="accommodation"
@@ -278,12 +276,12 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                     onChange={(e) => handleChange("accommodation", e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm bg-white text-gray-900"
                   >
-                    <option value="">Select accommodation</option>
-                    <option value="Budget / Camping">Budget / Camping</option>
-                    <option value="Mid-Range Lodge">Mid-Range Lodge</option>
-                    <option value="Luxury Lodge">Luxury Lodge</option>
-                    <option value="Tented Camp">Tented Camp</option>
-                    <option value="Mixed">Mixed</option>
+                    <option value="">{t("booking.selectAccommodation")}</option>
+                    <option value="Budget / Camping">{t("booking.budgetCamping")}</option>
+                    <option value="Mid-Range Lodge">{t("booking.midRange")}</option>
+                    <option value="Luxury Lodge">{t("booking.luxury")}</option>
+                    <option value="Tented Camp">{t("booking.tentedCamp")}</option>
+                    <option value="Mixed">{t("booking.mixed")}</option>
                   </select>
                 </div>
               </div>
@@ -293,12 +291,12 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
             <fieldset>
               <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
                 <Users className="w-5 h-5 text-[#f88f2f]" />
-                Group Size
+                {t("booking.groupSize")}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="adults" className="block text-sm font-semibold text-gray-700 mb-1">
-                    Number of Adults <span className="text-red-500">*</span>
+                    {t("booking.adults")} <span className="text-red-500">*</span>
                   </label>
                   <select
                     id="adults"
@@ -309,14 +307,14 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                   >
                     {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
                       <option key={n} value={String(n)}>
-                        {n} {n === 1 ? "Adult" : "Adults"}
+                        {n} {n === 1 ? t("booking.adult") : t("booking.adultsPlural")}
                       </option>
                     ))}
                   </select>
                 </div>
                 <div>
                   <label htmlFor="children" className="block text-sm font-semibold text-gray-700 mb-1">
-                    Number of Children
+                    {t("booking.children")}
                   </label>
                   <select
                     id="children"
@@ -326,7 +324,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                   >
                     {Array.from({ length: 7 }, (_, i) => i).map((n) => (
                       <option key={n} value={String(n)}>
-                        {n} {n === 1 ? "Child" : "Children"}
+                        {n} {n === 1 ? t("booking.child") : t("booking.childrenPlural")}
                       </option>
                     ))}
                   </select>
@@ -338,16 +336,16 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
             <fieldset>
               <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
                 <MessageSquare className="w-5 h-5 text-[#f88f2f]" />
-                Special Requests
+                {t("booking.specialRequests")}
               </legend>
               <div>
                 <label htmlFor="specialRequests" className="block text-sm font-semibold text-gray-700 mb-1">
-                  Any special requirements or questions?
+                  {t("booking.specialRequestsLabel")}
                 </label>
                 <textarea
                   id="specialRequests"
                   rows={3}
-                  placeholder="Dietary requirements, mobility needs, specific interests, questions about the tour..."
+                  placeholder={t("booking.specialRequestsPlaceholder")}
                   value={formData.specialRequests}
                   onChange={(e) => handleChange("specialRequests", e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm resize-none bg-white text-gray-900"
@@ -362,10 +360,10 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
               type="submit"
               className="w-full bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg py-6 font-semibold rounded-xl"
             >
-              Send Booking Request via WhatsApp
+              {t("booking.submit")}
             </Button>
             <p className="text-center text-xs text-gray-500">
-              You can also email us at{" "}
+              {t("booking.emailUs")}{" "}
               <a href="mailto:tours@aussigroup.com" className="text-[#f88f2f] hover:underline">
                 tours@aussigroup.com
               </a>
