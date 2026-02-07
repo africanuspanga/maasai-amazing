@@ -1,8 +1,13 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, Phone, MapPin } from "lucide-react"
+import { useLanguage } from "@/components/language-provider"
 
 function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -21,32 +26,32 @@ function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-300">
-              Your gateway to Tanzania's wonders. Authentic safaris, epic treks, and cultural adventures.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-white">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4 text-white">{t("footer.quickLinks")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/about" className="text-gray-300 hover:text-[#f88f2f] transition-colors">
-                  About Us
+                  {t("footer.aboutUs")}
                 </Link>
               </li>
               <li>
                 <Link href="/northern-circuit" className="text-gray-300 hover:text-[#f88f2f] transition-colors">
-                  Northern Circuit
+                  {t("footer.northernCircuit")}
                 </Link>
               </li>
               <li>
                 <Link href="/zanzibar" className="text-gray-300 hover:text-[#f88f2f] transition-colors">
-                  Zanzibar
+                  {t("footer.zanzibar")}
                 </Link>
               </li>
               <li>
                 <Link href="/kilimanjaro" className="text-gray-300 hover:text-[#f88f2f] transition-colors">
-                  Kilimanjaro
+                  {t("footer.kilimanjaro")}
                 </Link>
               </li>
             </ul>
@@ -54,26 +59,26 @@ function Footer() {
 
           {/* Safari Tours */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-white">Safari Tours</h3>
+            <h3 className="font-semibold text-lg mb-4 text-white">{t("footer.safariTours")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/southern-circuit" className="text-gray-300 hover:text-[#f88f2f] transition-colors">
-                  Southern Circuit
+                  {t("footer.southernCircuit")}
                 </Link>
               </li>
               <li>
                 <Link href="/hidden-gems" className="text-gray-300 hover:text-[#f88f2f] transition-colors">
-                  Hidden Gems
+                  {t("footer.hiddenGems")}
                 </Link>
               </li>
               <li>
                 <Link href="/culture" className="text-gray-300 hover:text-[#f88f2f] transition-colors">
-                  Cultural Tours
+                  {t("footer.culturalTours")}
                 </Link>
               </li>
               <li>
                 <Link href="/historical-sites" className="text-gray-300 hover:text-[#f88f2f] transition-colors">
-                  Historical Sites
+                  {t("footer.historicalSites")}
                 </Link>
               </li>
             </ul>
@@ -81,7 +86,7 @@ function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-white">Contact Info</h3>
+            <h3 className="font-semibold text-lg mb-4 text-white">{t("footer.contactInfo")}</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#f88f2f]" />
@@ -108,9 +113,9 @@ function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
           <p>
             <Link href="http://driftmark.co.tz/" target="_blank" className="hover:text-gray-300 transition-colors">
-              &copy; 2026 Saitoti Tours & Safaris. All rights reserved.
+              &copy; 2026 Saitoti Tours & Safaris. {t("footer.allRightsReserved")}
             </Link>{" "}
-            | Established 2021
+            | {t("footer.established")}
           </p>
         </div>
       </div>

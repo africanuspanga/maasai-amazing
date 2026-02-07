@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, Quote } from "lucide-react"
 import Image from "next/image"
+import { useLanguage } from "@/components/language-provider"
 
 const testimonials = [
   {
@@ -68,15 +69,17 @@ const testimonials = [
 ]
 
 export function Testimonials() {
+  const { t } = useLanguage()
+
   return (
     <section className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">
-            What Our Travelers Say
+            {t("testimonials.title")}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Real experiences from adventurers who explored Tanzania with us
+            {t("testimonials.subtitle")}
           </p>
         </div>
 
@@ -87,31 +90,26 @@ export function Testimonials() {
               className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
               <CardContent className="p-6 md:p-8">
-                {/* Quote Icon */}
                 <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <Quote className="w-16 h-16 text-[#f88f2f]" />
                 </div>
 
-                {/* Rating Stars */}
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
 
-                {/* Quote */}
                 <blockquote className="text-gray-700 mb-6 leading-relaxed text-sm md:text-base relative z-10">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </blockquote>
 
-                {/* Tour Tag */}
                 <div className="mb-4">
                   <span className="inline-block bg-[#f88f2f]/10 text-[#f88f2f] text-xs font-semibold px-3 py-1 rounded-full">
                     {testimonial.tour}
                   </span>
                 </div>
 
-                {/* Traveler Info */}
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
                   <div className="w-12 h-12 rounded-full overflow-hidden relative flex-shrink-0">
                     <Image
@@ -129,13 +127,11 @@ export function Testimonials() {
                 </div>
               </CardContent>
 
-              {/* Decorative accent */}
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#f88f2f] to-[#e67e1e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
             </Card>
           ))}
         </div>
 
-        {/* Trust Indicators */}
         <div className="mt-12 md:mt-16 text-center">
           <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md">
             <div className="flex -space-x-1">
@@ -143,9 +139,9 @@ export function Testimonials() {
                 <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
               ))}
             </div>
-            <span className="text-gray-700 font-semibold">5.0 Rating</span>
-            <span className="text-gray-400">•</span>
-            <span className="text-gray-600">100+ Happy Travelers</span>
+            <span className="text-gray-700 font-semibold">{t("testimonials.rating")}</span>
+            <span className="text-gray-400">{"•"}</span>
+            <span className="text-gray-600">{t("testimonials.happyTravelers")}</span>
           </div>
         </div>
       </div>
