@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import { Open_Sans } from "next/font/google"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { BookingProvider } from "@/components/booking-provider"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -69,8 +70,10 @@ html {
         `}</style>
       </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <ScrollToTop />
-        {children}
+        <BookingProvider>
+          <ScrollToTop />
+          {children}
+        </BookingProvider>
       </body>
     </html>
   )

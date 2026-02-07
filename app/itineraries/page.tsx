@@ -1,15 +1,10 @@
-import { CardFooter } from "@/components/ui/card"
-import { CardDescription } from "@/components/ui/card"
-import { CardTitle } from "@/components/ui/card"
-import { CardHeader } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
-import { Calendar, Users, MapPin, CheckCircle } from "lucide-react"
+import { ItineraryCard } from "@/components/itinerary-card"
 
 export const metadata = {
   title: "Tanzania Safari Itineraries | Saitoti Tours",
@@ -352,71 +347,7 @@ export default function ItinerariesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {itineraries.filter(itinerary => itinerary.category === 'northern').map((itinerary) => (
-              <Card
-                key={itinerary.id}
-                className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={itinerary.image || "/placeholder.svg"}
-                    alt={itinerary.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute top-4 right-4 bg-[#d97706] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    From {itinerary.priceFrom}
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-lg font-bold mb-1 pr-4">{itinerary.title}</h3>
-                  </div>
-                </div>
-
-                <CardContent className="p-6">
-                  {/* Tour Info */}
-                  <div className="flex flex-wrap gap-3 mb-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4 text-[#d97706]" />
-                      <span>{itinerary.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4 text-[#d97706]" />
-                      <span>{itinerary.groupSize}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2 mb-4">
-                    <MapPin className="w-4 h-4 text-[#d97706] mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-gray-600">{itinerary.destinations}</p>
-                  </div>
-
-                  <p className="text-gray-700 mb-4 text-sm leading-relaxed line-clamp-3">{itinerary.description}</p>
-
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-[#d97706] text-sm mb-2">Highlights:</h4>
-                    <ul className="space-y-1">
-                      {itinerary.highlights.slice(0, 3).map((highlight, index) => (
-                        <li key={index} className="text-xs text-gray-600 flex items-start gap-2">
-                          <span className="text-[#d97706] mt-0.5">•</span>
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* CTA Buttons */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <Button asChild variant="outline" className="w-full border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white bg-transparent">
-                      <Link href={`/itineraries/${itinerary.id}`}>More Details</Link>
-                    </Button>
-                    <Button asChild className="w-full bg-[#d97706] hover:bg-[#b45309] text-white">
-                      <Link href="/contact">Book Now</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <ItineraryCard key={itinerary.id} itinerary={itinerary} theme="amber" />
             ))}
           </div>
         </div>
@@ -436,67 +367,7 @@ export default function ItinerariesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {itineraries.filter(itinerary => itinerary.category === 'zanzibar').map((itinerary) => (
-              <Card
-                key={itinerary.id}
-                className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={itinerary.image || "/placeholder.svg"}
-                    alt={itinerary.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute top-4 right-4 bg-[#0891b2] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    From {itinerary.priceFrom}
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-lg font-bold mb-1 pr-4">{itinerary.title}</h3>
-                  </div>
-                </div>
-
-                <CardContent className="p-6">
-                  {/* Tour Info */}
-                  <div className="flex flex-wrap gap-3 mb-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4 text-[#0891b2]" />
-                      <span>{itinerary.duration}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2 mb-4">
-                    <MapPin className="w-4 h-4 text-[#0891b2] mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-gray-600">{itinerary.destinations}</p>
-                  </div>
-
-                  <p className="text-gray-700 mb-4 text-sm leading-relaxed line-clamp-3">{itinerary.description}</p>
-
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-[#0891b2] text-sm mb-2">Highlights:</h4>
-                    <ul className="space-y-1">
-                      {itinerary.highlights.slice(0, 3).map((highlight, index) => (
-                        <li key={index} className="text-xs text-gray-600 flex items-start gap-2">
-                          <span className="text-[#0891b2] mt-0.5">•</span>
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* CTA Buttons */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <Button asChild variant="outline" className="w-full border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white bg-transparent">
-                      <Link href={`/itineraries/${itinerary.id}`}>More Details</Link>
-                    </Button>
-                    <Button asChild className="w-full bg-[#0891b2] hover:bg-[#0e7490] text-white">
-                      <Link href="/contact">Book Now</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <ItineraryCard key={itinerary.id} itinerary={itinerary} theme="teal" />
             ))}
           </div>
         </div>
@@ -516,71 +387,7 @@ export default function ItinerariesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {itineraries.filter(itinerary => itinerary.category === 'safari').map((itinerary) => (
-              <Card
-                key={itinerary.id}
-                className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={itinerary.image || "/placeholder.svg"}
-                    alt={itinerary.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute top-4 right-4 bg-[#f88f2f] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {itinerary.priceFrom}
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-bold mb-1 pr-4">{itinerary.title}</h3>
-                  </div>
-                </div>
-
-                <CardContent className="p-6">
-                  {/* Tour Info */}
-                  <div className="flex flex-wrap gap-3 mb-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4 text-[#f88f2f]" />
-                      <span>{itinerary.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4 text-[#f88f2f]" />
-                      <span>{itinerary.groupSize}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2 mb-4">
-                    <MapPin className="w-4 h-4 text-[#f88f2f] mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-gray-600">{itinerary.destinations}</p>
-                  </div>
-
-                  <p className="text-gray-700 mb-4 text-sm leading-relaxed line-clamp-3">{itinerary.description}</p>
-
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-[#55331e] text-sm mb-2">Highlights:</h4>
-                    <ul className="space-y-1">
-                      {itinerary.highlights.slice(0, 3).map((highlight, index) => (
-                        <li key={index} className="text-xs text-gray-600 flex items-start gap-2">
-                          <span className="text-[#f88f2f] mt-0.5">•</span>
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* CTA Buttons */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <Button asChild variant="outline" className="w-full border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white bg-transparent">
-                      <Link href={`/itineraries/${itinerary.id}`}>More Details</Link>
-                    </Button>
-                    <Button asChild className="w-full bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
-                      <Link href="/contact">Book Now</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <ItineraryCard key={itinerary.id} itinerary={itinerary} theme="brown" />
             ))}
           </div>
         </div>
