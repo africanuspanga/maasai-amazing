@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Calendar, Users, MapPin, Check, ArrowLeft, Phone } from "lucide-react"
+import { BookNowButton } from "@/components/book-now-button"
 
 export const metadata = {
   title: "7-Day Tanzania Natural Wonders Safari | Saitoti Tours",
@@ -319,9 +320,7 @@ export default function Northern7DaysSafari() {
                 </div>
 
                 <div className="space-y-3">
-                  <Button asChild className="w-full bg-[#d97706] hover:bg-[#b45309] text-white text-lg py-6">
-                    <Link href="/contact">Book This Safari</Link>
-                  </Button>
+                  <BookNowButton tourName="7-Day Natural Wonders Safari" className="w-full bg-[#d97706] hover:bg-[#b45309] text-white text-lg py-6">Book This Safari</BookNowButton>
                   <Button
                     asChild
                     variant="outline"

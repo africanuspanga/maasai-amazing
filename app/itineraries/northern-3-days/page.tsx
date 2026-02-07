@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
+import { BookNowButton } from "@/components/book-now-button"
 
 export default function Northern3DaysPage() {
   return (
@@ -181,9 +182,7 @@ export default function Northern3DaysPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <Button asChild className="w-full bg-[#d97706] hover:bg-[#b45309] text-white py-6">
-                      <Link href="/contact">Book This Safari</Link>
-                    </Button>
+                    <BookNowButton tourName="3-Day Classic Northern Trio" className="w-full bg-[#d97706] hover:bg-[#b45309] text-white py-6">Book This Safari</BookNowButton>
                     <Button
                       asChild
                       variant="outline"
@@ -217,9 +216,7 @@ export default function Northern3DaysPage() {
             Experience three legendary parks in just three action-packed days
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#d97706] hover:bg-[#b45309] text-white">
-              <Link href="/contact">Book Now</Link>
-            </Button>
+            <BookNowButton tourName="3-Day Classic Northern Trio" size="lg" className="bg-[#d97706] hover:bg-[#b45309] text-white">Book Now</BookNowButton>
             <Button asChild size="lg" variant="outline" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
               <Link href="/itineraries">View All Safaris</Link>
             </Button>

@@ -8,6 +8,7 @@ import { Partners } from "@/components/partners"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Star, Shield, Users, Award, Clock, Calendar } from "lucide-react"
+import { BookNowButton } from "@/components/book-now-button"
 
 export default function HomePage() {
   return (
@@ -298,9 +299,7 @@ export default function HomePage() {
                   <Button asChild variant="outline" size="sm" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
                     <Link href="/itineraries/northern-7-days">View Details</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="7-Day Natural Wonders Safari" size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">Book Now</BookNowButton>
                 </div>
               </CardContent>
             </Card>
@@ -337,9 +336,7 @@ export default function HomePage() {
                   <Button asChild variant="outline" size="sm" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
                     <Link href="/itineraries/northern-8-days">View Details</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="8-Day Elephant Kingdom Safari" size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">Book Now</BookNowButton>
                 </div>
               </CardContent>
             </Card>
@@ -376,9 +373,7 @@ export default function HomePage() {
                   <Button asChild variant="outline" size="sm" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
                     <Link href="/itineraries/kilimanjaro-machame">View Details</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="Kilimanjaro Machame Route" size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">Book Now</BookNowButton>
                 </div>
               </CardContent>
             </Card>
@@ -437,9 +432,7 @@ export default function HomePage() {
                   <Button asChild variant="outline" size="sm" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
                     <Link href="/itineraries/zanzibar-4-days">View Details</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="4-Day Zanzibar Short Escape" size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">Book Now</BookNowButton>
                 </div>
               </CardContent>
             </Card>
@@ -476,9 +469,7 @@ export default function HomePage() {
                   <Button asChild variant="outline" size="sm" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
                     <Link href="/itineraries/zanzibar-6-days">View Details</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="6-Day Zanzibar Classic" size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">Book Now</BookNowButton>
                 </div>
               </CardContent>
             </Card>
@@ -515,9 +506,7 @@ export default function HomePage() {
                   <Button asChild variant="outline" size="sm" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
                     <Link href="/itineraries/zanzibar-8-days">View Details</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="8-Day Luxury Zanzibar Paradise" size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">Book Now</BookNowButton>
                 </div>
               </CardContent>
             </Card>
@@ -576,9 +565,7 @@ export default function HomePage() {
                   <Button asChild variant="outline" size="sm" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
                     <Link href="/itineraries/luxury-southern-circuit">View Details</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="9-Day Luxury Southern Circuit Expedition" size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">Book Now</BookNowButton>
                 </div>
               </CardContent>
             </Card>
@@ -615,9 +602,7 @@ export default function HomePage() {
                   <Button asChild variant="outline" size="sm" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
                     <Link href="/itineraries/grand-southern-adventure">View Details</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="9-Day Grand Southern Adventure" size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">Book Now</BookNowButton>
                 </div>
               </CardContent>
             </Card>
@@ -654,9 +639,7 @@ export default function HomePage() {
                   <Button asChild variant="outline" size="sm" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
                     <Link href="/itineraries/bush-to-beach">View Details</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="6-Day Bush to Beach Adventure" size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">Book Now</BookNowButton>
                 </div>
               </CardContent>
             </Card>

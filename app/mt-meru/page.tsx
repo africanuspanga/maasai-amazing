@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Navigation from "@/components/navigation"
 import WhatsAppFloat from "@/components/whatsapp-float"
+import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
 
 export default function MtMeruPage() {
@@ -205,9 +206,7 @@ export default function MtMeruPage() {
             Experience Tanzania's hidden giant and enjoy spectacular views of Kilimanjaro from the summit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">
-              <Link href="/contact">Book Your Climb</Link>
-            </Button>
+            <BookNowButton tourName="Mount Meru Climb" size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">Book Your Climb</BookNowButton>
             <Button
               size="lg"
               variant="outline"

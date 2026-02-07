@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
+import { BookNowButton } from "@/components/book-now-button"
 
 export default function KilimanjaroMachamePage() {
   return (
@@ -247,9 +248,7 @@ export default function KilimanjaroMachamePage() {
                   </div>
 
                   <div className="space-y-3">
-                    <Button asChild className="w-full bg-[#d97706] hover:bg-[#b45309] text-white py-6">
-                      <Link href="/contact">Book This Climb</Link>
-                    </Button>
+                    <BookNowButton tourName="Kilimanjaro - Machame Route" className="w-full bg-[#d97706] hover:bg-[#b45309] text-white py-6">Book This Climb</BookNowButton>
                     <Button
                       asChild
                       variant="outline"

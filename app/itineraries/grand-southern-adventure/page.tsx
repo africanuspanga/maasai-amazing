@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Calendar, DollarSign, Users, CheckCircle, X, ArrowLeft } from "lucide-react"
+import { BookNowButton } from "@/components/book-now-button"
 
 export const metadata = {
   title: "9 Days Grand Southern Adventure | Saitoti Tours",
@@ -127,9 +128,7 @@ export default function GrandSouthernAdventurePage() {
                   </div>
 
                   <div className="space-y-4 mb-6">
-                    <Button asChild className="w-full bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg py-6">
-                      <Link href="/contact">Book This Tour</Link>
-                    </Button>
+                    <BookNowButton tourName="9 Days Grand Southern Adventure" className="w-full bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg py-6">Book This Tour</BookNowButton>
                     <Button
                       asChild
                       variant="outline"
@@ -312,9 +311,7 @@ export default function GrandSouthernAdventurePage() {
             Join us for this comprehensive adventure through Tanzania's most spectacular southern parks
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg px-8 py-3">
-              <Link href="/contact">Book Now</Link>
-            </Button>
+            <BookNowButton tourName="9 Days Grand Southern Adventure" size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg px-8 py-3">Book Now</BookNowButton>
             <Button
               asChild
               size="lg"

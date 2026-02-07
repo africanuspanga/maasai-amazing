@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Navigation from "@/components/navigation"
 import WhatsAppFloat from "@/components/whatsapp-float"
+import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
 
 export default function ZanzibarPage() {
@@ -164,9 +165,7 @@ export default function ZanzibarPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
-                    <Link href="/contact">Book Experience</Link>
-                  </Button>
+                  <BookNowButton tourName={`Zanzibar - ${tour.name}`} className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white">Book Experience</BookNowButton>
                 </CardContent>
               </Card>
             ))}
