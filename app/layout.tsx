@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import { Open_Sans } from "next/font/google"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { BookingProvider } from "@/components/booking-provider"
+import { LanguageProvider } from "@/components/language-provider"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -35,6 +37,20 @@ export const metadata: Metadata = {
     description: "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Saitoti Tours & Safaris - Discover the Soul of Tanzania",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Saitoti Tours & Safaris - Discover the Soul of Tanzania",
+    description: "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel",
+    images: ["/images/og-image.png"],
   },
 }
 
@@ -54,9 +70,13 @@ html {
 }
         `}</style>
       </head>
-      <body className="font-sans antialiased">
-        <ScrollToTop />
-        {children}
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <LanguageProvider>
+          <BookingProvider>
+            <ScrollToTop />
+            {children}
+          </BookingProvider>
+        </LanguageProvider>
       </body>
     </html>
   )

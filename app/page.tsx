@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -8,8 +10,12 @@ import { Partners } from "@/components/partners"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Star, Shield, Users, Award, Clock, Calendar } from "lucide-react"
+import { BookNowButton } from "@/components/book-now-button"
+import { useLanguage } from "@/components/language-provider"
 
 export default function HomePage() {
+  const { t } = useLanguage()
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -31,14 +37,14 @@ export default function HomePage() {
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-black mb-6 leading-tight">
-            Discover the Soul of Tanzania
+            {t("home.heroTitle")}
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel
+            {t("home.heroSubtitle")}
           </p>
           <div className="flex justify-center">
             <Button asChild size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-xl px-12 py-4">
-              <Link href="/contact">Discover Tanzania</Link>
+              <Link href="/contact">{t("home.heroCta")}</Link>
             </Button>
           </div>
         </div>
@@ -50,27 +56,25 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">
-                Your Gateway to Tanzania's Wonders
+                {t("home.aboutGatewayTitle")}
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                With years of experience, unwavering passion, and deep local knowledge, Saitoti Tours and Safaris crafts
-                extraordinary journeys through one of the world's most spectacular destinations. From the endless plains
-                of the Serengeti to the snow-capped peaks of Kilimanjaro, we bring you closer to the heart of Tanzania.
+                {t("home.aboutGatewayText")}
               </p>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 md:gap-6 mb-8">
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-2">3+</div>
-                  <div className="text-xs md:text-sm text-gray-500">Years Experience</div>
+                  <div className="text-xs md:text-sm text-gray-500">{t("home.yearsExperience")}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-2">100+</div>
-                  <div className="text-xs md:text-sm text-gray-500">Happy Travelers</div>
+                  <div className="text-xs md:text-sm text-gray-500">{t("home.happyTravelers")}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-2">15+</div>
-                  <div className="text-xs md:text-sm text-gray-500">Destinations</div>
+                  <div className="text-xs md:text-sm text-gray-500">{t("home.destinations")}</div>
                 </div>
               </div>
 
@@ -80,7 +84,7 @@ export default function HomePage() {
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="text-sm text-gray-500">Rated 5.0 by our travelers</span>
+                <span className="text-sm text-gray-500">{t("home.ratedByTravelers")}</span>
               </div>
             </div>
 
@@ -104,10 +108,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">
-              Why Choose Saitoti Tours & Safaris?
+              {t("home.whyChooseTitle")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience the difference with our commitment to excellence, local expertise, and personalized service
+              {t("home.whyChooseSubtitle")}
             </p>
           </div>
 
@@ -116,9 +120,9 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform duration-200 will-change-transform">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#55331e] mb-3">Safety First</h3>
+              <h3 className="text-xl font-bold text-[#55331e] mb-3">{t("home.safetyFirst")}</h3>
               <p className="text-gray-600 text-sm md:text-base">
-                Your safety is our top priority with experienced guides and well-maintained equipment
+                {t("home.safetyFirstDesc")}
               </p>
             </div>
 
@@ -126,9 +130,9 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform duration-200 will-change-transform">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#55331e] mb-3">Local Expertise</h3>
+              <h3 className="text-xl font-bold text-[#55331e] mb-3">{t("home.localExpertise")}</h3>
               <p className="text-gray-600 text-sm md:text-base">
-                Born and raised in Tanzania, we know the hidden gems and best wildlife spots
+                {t("home.localExpertiseDesc")}
               </p>
             </div>
 
@@ -136,9 +140,9 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform duration-200 will-change-transform">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#55331e] mb-3">Award Winning</h3>
+              <h3 className="text-xl font-bold text-[#55331e] mb-3">{t("home.awardWinning")}</h3>
               <p className="text-gray-600 text-sm md:text-base">
-                Recognized for excellence in service and sustainable tourism practices
+                {t("home.awardWinningDesc")}
               </p>
             </div>
 
@@ -146,9 +150,9 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform duration-200 will-change-transform">
                 <Clock className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#55331e] mb-3">24/7 Support</h3>
+              <h3 className="text-xl font-bold text-[#55331e] mb-3">{t("home.support247")}</h3>
               <p className="text-gray-600 text-sm md:text-base">
-                Round-the-clock assistance to ensure your adventure goes smoothly
+                {t("home.support247Desc")}
               </p>
             </div>
           </div>
@@ -160,11 +164,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">
-              Top Travel Destinations
+              {t("home.topDestTitle")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Explore Tanzania's most iconic destinations, each offering unique wildlife encounters and breathtaking
-              landscapes
+              {t("home.topDestSubtitle")}
             </p>
           </div>
 
@@ -182,16 +185,16 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-xl font-bold mb-1">Serengeti National Park</h3>
-                  <p className="text-sm opacity-90">Witness the Great Migration</p>
+                  <h3 className="text-xl font-bold mb-1">{t("home.serengetiTitle")}</h3>
+                  <p className="text-sm opacity-90">{t("home.serengetiSubtitle")}</p>
                 </div>
               </div>
               <CardContent className="p-4 md:p-6">
                 <p className="text-gray-600 mb-4 text-sm md:text-base">
-                  Experience the world's most spectacular wildlife migration in Tanzania's most famous park.
+                  {t("home.serengetiDesc")}
                 </p>
                 <Button asChild className="w-full bg-[#f88f2f] hover:bg-[#e67e1e]">
-                  <Link href="/northern-circuit">Explore Serengeti</Link>
+                  <Link href="/northern-circuit">{t("home.exploreSerengeti")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -209,16 +212,16 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-xl font-bold mb-1">Zanzibar</h3>
-                  <p className="text-sm opacity-90">Tropical paradise awaits</p>
+                  <h3 className="text-xl font-bold mb-1">{t("home.zanzibarDestTitle")}</h3>
+                  <p className="text-sm opacity-90">{t("home.zanzibarDestSubtitle")}</p>
                 </div>
               </div>
               <CardContent className="p-4 md:p-6">
                 <p className="text-gray-600 mb-4 text-sm md:text-base">
-                  Pristine beaches, rich culture, and spice tours on the enchanting Spice Island.
+                  {t("home.zanzibarDestDesc")}
                 </p>
                 <Button asChild className="w-full bg-[#f88f2f] hover:bg-[#e67e1e]">
-                  <Link href="/zanzibar">Discover Zanzibar</Link>
+                  <Link href="/zanzibar">{t("home.discoverZanzibar")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -236,16 +239,16 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-xl font-bold mb-1">Mount Kilimanjaro</h3>
-                  <p className="text-sm opacity-90">Conquer Africa's highest peak</p>
+                  <h3 className="text-xl font-bold mb-1">{t("home.kilimanjaroDestTitle")}</h3>
+                  <p className="text-sm opacity-90">{t("home.kilimanjaroDestSubtitle")}</p>
                 </div>
               </div>
               <CardContent className="p-4 md:p-6">
                 <p className="text-gray-600 mb-4 text-sm md:text-base">
-                  Challenge yourself with an unforgettable trek to the Roof of Africa.
+                  {t("home.kilimanjaroDestDesc")}
                 </p>
                 <Button asChild className="w-full bg-[#f88f2f] hover:bg-[#e67e1e]">
-                  <Link href="/kilimanjaro">Climb Kilimanjaro</Link>
+                  <Link href="/kilimanjaro">{t("home.climbKilimanjaro")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -258,10 +261,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#d97706] mb-6">
-              Northern Circuit Safari Adventures
+              {t("home.northernCircuitTitle")}
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Experience the legendary Serengeti, Ngorongoro Crater, and climb Mount Kilimanjaro
+              {t("home.northernCircuitSubtitle")}
             </p>
           </div>
 
@@ -296,11 +299,9 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button asChild variant="outline" size="sm" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
-                    <Link href="/itineraries/northern-7-days">View Details</Link>
+                    <Link href="/itineraries/northern-7-days">{t("home.viewDetails")}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="7-Day Natural Wonders Safari" size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white" />
                 </div>
               </CardContent>
             </Card>
@@ -335,11 +336,9 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button asChild variant="outline" size="sm" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
-                    <Link href="/itineraries/northern-8-days">View Details</Link>
+                    <Link href="/itineraries/northern-8-days">{t("home.viewDetails")}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="8-Day Elephant Kingdom Safari" size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white" />
                 </div>
               </CardContent>
             </Card>
@@ -358,7 +357,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
                   <h3 className="text-xl font-bold mb-1">Kilimanjaro Machame</h3>
-                  <p className="text-sm opacity-90">Africa's Highest Peak</p>
+                  <p className="text-sm opacity-90">{"Africa's Highest Peak"}</p>
                 </div>
                 <div className="absolute top-4 right-4 bg-[#d97706] text-white px-3 py-1 rounded-full text-sm font-semibold">
                   $2,589
@@ -374,11 +373,9 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button asChild variant="outline" size="sm" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
-                    <Link href="/itineraries/kilimanjaro-machame">View Details</Link>
+                    <Link href="/itineraries/kilimanjaro-machame">{t("home.viewDetails")}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="Kilimanjaro Machame Route" size="sm" className="bg-[#d97706] hover:bg-[#b45309] text-white" />
                 </div>
               </CardContent>
             </Card>
@@ -386,7 +383,7 @@ export default function HomePage() {
 
           <div className="text-center mt-8">
             <Button asChild size="lg" variant="outline" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
-              <Link href="/itineraries">View All Northern Safaris</Link>
+              <Link href="/itineraries">{t("home.viewAllNorthern")}</Link>
             </Button>
           </div>
         </div>
@@ -397,10 +394,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#0891b2] mb-6">
-              Zanzibar Beach Escapes
+              {t("home.zanzibarBeachTitle")}
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Relax on pristine beaches, explore spice farms, and discover Stone Town's rich history
+              {t("home.zanzibarBeachSubtitle")}
             </p>
           </div>
 
@@ -435,11 +432,9 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button asChild variant="outline" size="sm" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
-                    <Link href="/itineraries/zanzibar-4-days">View Details</Link>
+                    <Link href="/itineraries/zanzibar-4-days">{t("home.viewDetails")}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="4-Day Zanzibar Short Escape" size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white" />
                 </div>
               </CardContent>
             </Card>
@@ -474,11 +469,9 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button asChild variant="outline" size="sm" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
-                    <Link href="/itineraries/zanzibar-6-days">View Details</Link>
+                    <Link href="/itineraries/zanzibar-6-days">{t("home.viewDetails")}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="6-Day Zanzibar Classic" size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white" />
                 </div>
               </CardContent>
             </Card>
@@ -513,11 +506,9 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button asChild variant="outline" size="sm" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
-                    <Link href="/itineraries/zanzibar-8-days">View Details</Link>
+                    <Link href="/itineraries/zanzibar-8-days">{t("home.viewDetails")}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="8-Day Luxury Zanzibar Paradise" size="sm" className="bg-[#0891b2] hover:bg-[#0e7490] text-white" />
                 </div>
               </CardContent>
             </Card>
@@ -525,7 +516,7 @@ export default function HomePage() {
 
           <div className="text-center mt-8">
             <Button asChild size="lg" variant="outline" className="border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white">
-              <Link href="/itineraries">View All Zanzibar Packages</Link>
+              <Link href="/itineraries">{t("home.viewAllZanzibar")}</Link>
             </Button>
           </div>
         </div>
@@ -536,10 +527,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">
-              Southern Circuit Expeditions
+              {t("home.southernCircuitTitle")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover Tanzania's untamed wilderness in remote parks with fewer crowds
+              {t("home.southernCircuitSubtitle")}
             </p>
           </div>
 
@@ -574,11 +565,9 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button asChild variant="outline" size="sm" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
-                    <Link href="/itineraries/luxury-southern-circuit">View Details</Link>
+                    <Link href="/itineraries/luxury-southern-circuit">{t("home.viewDetails")}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="9-Day Luxury Southern Circuit Expedition" size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white" />
                 </div>
               </CardContent>
             </Card>
@@ -597,7 +586,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
                   <h3 className="text-xl font-bold mb-1">9-Day Grand Adventure</h3>
-                  <p className="text-sm opacity-90">Cultural & Wildlife</p>
+                  <p className="text-sm opacity-90">{"Cultural & Wildlife"}</p>
                 </div>
                 <div className="absolute top-4 right-4 bg-[#f88f2f] text-white px-3 py-1 rounded-full text-sm font-semibold">
                   $1,800
@@ -613,11 +602,9 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button asChild variant="outline" size="sm" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
-                    <Link href="/itineraries/grand-southern-adventure">View Details</Link>
+                    <Link href="/itineraries/grand-southern-adventure">{t("home.viewDetails")}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="9-Day Grand Southern Adventure" size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white" />
                 </div>
               </CardContent>
             </Card>
@@ -636,7 +623,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
                   <h3 className="text-xl font-bold mb-1">6-Day Bush to Beach</h3>
-                  <p className="text-sm opacity-90">Safari & Zanzibar</p>
+                  <p className="text-sm opacity-90">{"Safari & Zanzibar"}</p>
                 </div>
                 <div className="absolute top-4 right-4 bg-[#f88f2f] text-white px-3 py-1 rounded-full text-sm font-semibold">
                   $1,947
@@ -652,11 +639,9 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button asChild variant="outline" size="sm" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
-                    <Link href="/itineraries/bush-to-beach">View Details</Link>
+                    <Link href="/itineraries/bush-to-beach">{t("home.viewDetails")}</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
+                  <BookNowButton tourName="6-Day Bush to Beach Adventure" size="sm" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white" />
                 </div>
               </CardContent>
             </Card>
@@ -664,7 +649,7 @@ export default function HomePage() {
 
           <div className="text-center mt-8">
             <Button asChild size="lg" variant="outline" className="border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white">
-              <Link href="/itineraries">View All Southern Safaris</Link>
+              <Link href="/itineraries">{t("home.viewAllSouthern")}</Link>
             </Button>
           </div>
         </div>
@@ -680,14 +665,14 @@ export default function HomePage() {
       <section className="py-16 md:py-20 bg-[#55331e] text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">
-            Ready for Your African Adventure?
+            {t("home.ctaTitle")}
           </h2>
           <p className="text-lg md:text-xl mb-8 opacity-90">
-            Let us craft the perfect Tanzania experience tailored just for you
+            {t("home.ctaSubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg px-8 py-3">
-              <Link href="/contact">Start Planning</Link>
+              <Link href="/contact">{t("home.startPlanning")}</Link>
             </Button>
             <Button
               asChild
@@ -696,7 +681,7 @@ export default function HomePage() {
               className="border-white text-white hover:bg-white hover:text-[#55331e] text-lg px-8 py-3 bg-transparent"
             >
               <Link href="https://wa.me/255784258765" target="_blank">
-                WhatsApp Us
+                {t("home.whatsappUs")}
               </Link>
             </Button>
           </div>

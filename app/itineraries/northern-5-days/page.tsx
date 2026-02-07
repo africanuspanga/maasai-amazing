@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
+import { BookNowButton } from "@/components/book-now-button"
 
 export default function Northern5DaysPage() {
   return (
@@ -197,9 +198,7 @@ export default function Northern5DaysPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <Button asChild className="w-full bg-[#d97706] hover:bg-[#b45309] text-white py-6">
-                      <Link href="/contact">Book This Safari</Link>
-                    </Button>
+                    <BookNowButton tourName="5-Day Safari Extension" className="w-full bg-[#d97706] hover:bg-[#b45309] text-white py-6">Book This Safari</BookNowButton>
                     <Button
                       asChild
                       variant="outline"

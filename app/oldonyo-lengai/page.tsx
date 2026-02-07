@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Navigation from "@/components/navigation"
 import WhatsAppFloat from "@/components/whatsapp-float"
+import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
 
 export default function OldonyoLengaiPage() {
@@ -198,9 +199,7 @@ export default function OldonyoLengaiPage() {
             Conquer Tanzania's active volcano and witness one of nature's most spectacular geological phenomena.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">
-              <Link href="/contact">Book Volcano Climb</Link>
-            </Button>
+            <BookNowButton tourName="Ol Doinyo Lengai Volcano Climb" size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">Book Volcano Climb</BookNowButton>
             <Button
               size="lg"
               variant="outline"

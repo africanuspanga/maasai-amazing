@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Navigation from "@/components/navigation"
 import WhatsAppFloat from "@/components/whatsapp-float"
+import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
 
 export default function NorthernCircuitPage() {
@@ -126,9 +127,7 @@ export default function NorthernCircuitPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact">
-                    <Button className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white">BOOK NOW</Button>
-                  </Link>
+                  <BookNowButton tourName={park.name} className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white">BOOK NOW</BookNowButton>
                 </CardContent>
               </Card>
             ))}
@@ -144,11 +143,7 @@ export default function NorthernCircuitPage() {
             Let us craft the perfect safari experience tailored to your dreams and preferences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">
-                BOOK NOW
-              </Button>
-            </Link>
+            <BookNowButton size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">BOOK NOW</BookNowButton>
             <Link href="/contact">
               <Button
                 size="lg"

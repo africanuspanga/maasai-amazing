@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Calendar, Users, CheckCircle, X, ArrowLeft, Waves } from "lucide-react"
+import { BookNowButton } from "@/components/book-now-button"
 
 export const metadata = {
   title: "Zanzibar 4 Days / 3 Nights Package | Saitoti Tours",
@@ -134,9 +135,7 @@ export default function Zanzibar4DaysPage() {
                   </div>
 
                   <div className="space-y-4 mb-6">
-                    <Button asChild className="w-full bg-[#0891b2] hover:bg-[#0e7490] text-white text-lg py-6">
-                      <Link href="/contact">Book This Package</Link>
-                    </Button>
+                    <BookNowButton tourName="Zanzibar 4 Days / 3 Nights Package" className="w-full bg-[#0891b2] hover:bg-[#0e7490] text-white text-lg py-6">Book This Package</BookNowButton>
                     <Button
                       asChild
                       variant="outline"
@@ -308,9 +307,7 @@ export default function Zanzibar4DaysPage() {
             Book your 4-day tropical getaway and experience the magic of the Spice Island
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-white text-[#0891b2] hover:bg-gray-100 text-lg px-8 py-3">
-              <Link href="/contact">Book Now</Link>
-            </Button>
+            <BookNowButton tourName="Zanzibar 4 Days / 3 Nights Package" size="lg" className="bg-white text-[#0891b2] hover:bg-gray-100 text-lg px-8 py-3">Book Now</BookNowButton>
             <Button
               asChild
               size="lg"
