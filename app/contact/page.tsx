@@ -1,10 +1,15 @@
+"use client"
+
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Card, CardContent } from "@/components/ui/card"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { useLanguage } from "@/components/language-provider"
 
 export default function ContactPage() {
+  const { t } = useLanguage()
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -14,11 +19,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-foreground mb-4 md:mb-6">
-              Get in Touch
+              {t("contact.title")}
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Ready to embark on your Tanzania adventure? We're here to help you plan the perfect safari, trek, or
-              cultural experience.
+              {t("contact.subtitle")}
             </p>
           </div>
         </div>
@@ -32,11 +36,10 @@ export default function ContactPage() {
             <div className="space-y-6 md:space-y-8">
               <div>
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-4 md:mb-6">
-                  Contact Information
+                  {t("contact.contactInformation")}
                 </h2>
                 <p className="text-muted-foreground mb-6 md:mb-8 leading-relaxed">
-                  Reach out to us through any of the following channels. We're available to assist you with planning
-                  your perfect Tanzania experience.
+                  {t("contact.contactInfoSubtitle")}
                 </p>
               </div>
 
@@ -46,7 +49,7 @@ export default function ContactPage() {
                     <div className="flex items-start space-x-3 md:space-x-4">
                       <MapPin className="w-5 h-5 md:w-6 md:h-6 text-primary mt-1 flex-shrink-0" />
                       <div className="min-w-0">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Office Address</h3>
+                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{t("contact.officeAddress")}</h3>
                         <p className="text-muted-foreground text-sm md:text-base">
                           Burka-Olasiti, Arusha
                           <br />
@@ -65,14 +68,14 @@ export default function ContactPage() {
                       <Phone className="w-5 h-5 md:w-6 md:h-6 text-primary mt-1 flex-shrink-0" />
                       <div className="min-w-0">
                         <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">
-                          Phone, WhatsApp & WeChat
+                          {t("contact.phoneWhatsappWechat")}
                         </h3>
                         <p className="text-muted-foreground text-sm md:text-base">
                           WhatsApp: +255 784 258 765
                           <br />
                           WeChat: +86 155 2930 9784
                           <br />
-                          <span className="text-xs md:text-sm">Available 24/7 for emergencies</span>
+                          <span className="text-xs md:text-sm">{t("contact.availableEmergency")}</span>
                         </p>
                       </div>
                     </div>
@@ -84,11 +87,11 @@ export default function ContactPage() {
                     <div className="flex items-start space-x-3 md:space-x-4">
                       <Mail className="w-5 h-5 md:w-6 md:h-6 text-primary mt-1 flex-shrink-0" />
                       <div className="min-w-0">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Email</h3>
+                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{t("contact.email")}</h3>
                         <p className="text-muted-foreground text-sm md:text-base break-all">
                           tours@aussigroup.com
                           <br />
-                          <span className="text-xs md:text-sm">We respond within 24 hours</span>
+                          <span className="text-xs md:text-sm">{t("contact.respondTime")}</span>
                         </p>
                       </div>
                     </div>
@@ -100,15 +103,15 @@ export default function ContactPage() {
                     <div className="flex items-start space-x-3 md:space-x-4">
                       <Clock className="w-5 h-5 md:w-6 md:h-6 text-primary mt-1 flex-shrink-0" />
                       <div className="min-w-0">
-                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Business Hours</h3>
+                        <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{t("contact.businessHours")}</h3>
                         <p className="text-muted-foreground text-sm md:text-base">
-                          Monday - Friday: 8:00 AM - 6:00 PM
+                          {t("contact.mondayFriday")}
                           <br />
-                          Saturday: 9:00 AM - 4:00 PM
+                          {t("contact.saturday")}
                           <br />
-                          Sunday: Emergency calls only
+                          {t("contact.sundayEmergency")}
                           <br />
-                          <span className="text-xs md:text-sm text-primary">East Africa Time (EAT)</span>
+                          <span className="text-xs md:text-sm text-primary">{t("contact.timezone")}</span>
                         </p>
                       </div>
                     </div>
@@ -120,11 +123,10 @@ export default function ContactPage() {
             {/* Image Gallery */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-4 md:mb-6">
-                Experience Tanzania with Us
+                {t("contact.experienceTitle")}
               </h2>
 
               <div className="grid grid-cols-1 gap-4 md:gap-6">
-                {/* Adventure Image 1 */}
                 <Card className="overflow-hidden">
                   <div className="aspect-video relative">
                     <img
@@ -135,15 +137,14 @@ export default function ContactPage() {
                   </div>
                   <CardContent className="p-3 md:p-4">
                     <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">
-                      Wildlife Safaris
+                      {t("contact.wildlifeSafaris")}
                     </h3>
                     <p className="text-xs md:text-sm text-muted-foreground">
-                      Experience close encounters with Africa's Big Five
+                      {t("contact.wildlifeSafarisDesc")}
                     </p>
                   </CardContent>
                 </Card>
 
-                {/* Adventure Image 2 */}
                 <Card className="overflow-hidden">
                   <div className="aspect-video relative">
                     <img
@@ -154,15 +155,14 @@ export default function ContactPage() {
                   </div>
                   <CardContent className="p-3 md:p-4">
                     <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">
-                      Unique Adventures
+                      {t("contact.uniqueAdventures")}
                     </h3>
                     <p className="text-xs md:text-sm text-muted-foreground">
-                      Balloon safaris and exclusive experiences
+                      {t("contact.uniqueAdventuresDesc")}
                     </p>
                   </CardContent>
                 </Card>
 
-                {/* Adventure Image 3 */}
                 <Card className="overflow-hidden">
                   <div className="aspect-video relative">
                     <img
@@ -173,10 +173,10 @@ export default function ContactPage() {
                   </div>
                   <CardContent className="p-3 md:p-4">
                     <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">
-                      Mountain Expeditions
+                      {t("contact.mountainExpeditions")}
                     </h3>
                     <p className="text-xs md:text-sm text-muted-foreground">
-                      Conquer Africa's highest peaks with expert guides
+                      {t("contact.mountainExpeditionsDesc")}
                     </p>
                   </CardContent>
                 </Card>
@@ -185,14 +185,14 @@ export default function ContactPage() {
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="p-4 md:p-6">
                   <h3 className="font-semibold text-foreground mb-3 text-sm md:text-base">
-                    Why Choose Saitoti Tours & Safaris?
+                    {t("contact.whyChooseSaitoti")}
                   </h3>
                   <ul className="space-y-1 md:space-y-2 text-muted-foreground text-xs md:text-sm">
-                    <li>• Expert local guides with decades of experience</li>
-                    <li>• Customized itineraries tailored to your interests</li>
-                    <li>• Small group sizes for personalized attention</li>
-                    <li>• Sustainable tourism supporting local communities</li>
-                    <li>• 24/7 support throughout your Tanzania adventure</li>
+                    <li>{"• "}{t("contact.whyItem1")}</li>
+                    <li>{"• "}{t("contact.whyItem2")}</li>
+                    <li>{"• "}{t("contact.whyItem3")}</li>
+                    <li>{"• "}{t("contact.whyItem4")}</li>
+                    <li>{"• "}{t("contact.whyItem5")}</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -206,10 +206,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-3 md:mb-4">
-              Find Us in Arusha
+              {t("contact.findUs")}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-              Located in the heart of Tanzania's safari capital, we're perfectly positioned to start your adventure
+              {t("contact.findUsSubtitle")}
             </p>
           </div>
 
@@ -217,9 +217,9 @@ export default function ContactPage() {
             <Card>
               <CardContent className="p-4 md:p-6 text-center">
                 <MapPin className="w-10 h-10 md:w-12 md:h-12 text-primary mx-auto mb-3 md:mb-4" />
-                <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Strategic Location</h3>
+                <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{t("contact.strategicLocation")}</h3>
                 <p className="text-muted-foreground text-xs md:text-sm">
-                  Just minutes from Arusha Airport and major safari routes
+                  {t("contact.strategicLocationDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -227,9 +227,9 @@ export default function ContactPage() {
             <Card>
               <CardContent className="p-4 md:p-6 text-center">
                 <Clock className="w-10 h-10 md:w-12 md:h-12 text-primary mx-auto mb-3 md:mb-4" />
-                <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Easy Access</h3>
+                <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{t("contact.easyAccess")}</h3>
                 <p className="text-muted-foreground text-xs md:text-sm">
-                  Convenient location with parking and public transport nearby
+                  {t("contact.easyAccessDesc")}
                 </p>
               </CardContent>
             </Card>
@@ -237,8 +237,8 @@ export default function ContactPage() {
             <Card className="sm:col-span-2 md:col-span-1">
               <CardContent className="p-4 md:p-6 text-center">
                 <Phone className="w-10 h-10 md:w-12 md:h-12 text-primary mx-auto mb-3 md:mb-4" />
-                <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Always Available</h3>
-                <p className="text-muted-foreground text-xs md:text-sm">24/7 emergency support for all our travelers</p>
+                <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{t("contact.alwaysAvailable")}</h3>
+                <p className="text-muted-foreground text-xs md:text-sm">{t("contact.alwaysAvailableDesc")}</p>
               </CardContent>
             </Card>
           </div>

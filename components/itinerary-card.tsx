@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, Users, MapPin } from "lucide-react"
 import { BookNowButton } from "@/components/book-now-button"
+import { useLanguage } from "@/components/language-provider"
 
 interface Itinerary {
   id: string
@@ -48,6 +49,7 @@ const themeColors: Record<ColorTheme, { primary: string; hover: string; text: st
 
 export function ItineraryCard({ itinerary, theme = "brown" }: { itinerary: Itinerary; theme?: ColorTheme }) {
   const colors = themeColors[theme]
+  const { t } = useLanguage()
 
   return (
     <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white">
@@ -60,7 +62,7 @@ export function ItineraryCard({ itinerary, theme = "brown" }: { itinerary: Itine
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         <div className={`absolute top-4 right-4 ${colors.badge} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
-          From {itinerary.priceFrom}
+          {t("card.from")} {itinerary.priceFrom}
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <div className="absolute bottom-4 left-4 text-white">
@@ -92,7 +94,7 @@ export function ItineraryCard({ itinerary, theme = "brown" }: { itinerary: Itine
 
         {/* Highlights */}
         <div className="mb-6">
-          <h4 className={`font-semibold ${theme === "brown" ? "text-[#55331e]" : colors.text} text-sm mb-2`}>Highlights:</h4>
+          <h4 className={`font-semibold ${theme === "brown" ? "text-[#55331e]" : colors.text} text-sm mb-2`}>{t("card.highlights")}</h4>
           <ul className="space-y-1">
             {itinerary.highlights.slice(0, 3).map((highlight, index) => (
               <li key={index} className="text-xs text-gray-600 flex items-start gap-2">
@@ -110,7 +112,7 @@ export function ItineraryCard({ itinerary, theme = "brown" }: { itinerary: Itine
             variant="outline"
             className={`w-full ${colors.border} ${colors.text} ${colors.hover} bg-transparent`}
           >
-            <Link href={`/itineraries/${itinerary.id}`}>More Details</Link>
+            <Link href={`/itineraries/${itinerary.id}`}>{t("card.moreDetails")}</Link>
           </Button>
           <BookNowButton
             tourName={itinerary.title}

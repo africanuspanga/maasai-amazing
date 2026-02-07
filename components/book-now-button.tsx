@@ -1,6 +1,7 @@
 "use client"
 
 import { useBooking } from "@/components/booking-provider"
+import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import type { ReactNode } from "react"
@@ -15,12 +16,13 @@ interface BookNowButtonProps {
 
 export function BookNowButton({
   tourName,
-  children = "Book Now",
+  children,
   className,
   variant = "default",
   size = "default",
 }: BookNowButtonProps) {
   const { openBooking } = useBooking()
+  const { t } = useLanguage()
 
   return (
     <Button
@@ -29,7 +31,7 @@ export function BookNowButton({
       size={size}
       className={cn(className)}
     >
-      {children}
+      {children || t("card.bookNow")}
     </Button>
   )
 }

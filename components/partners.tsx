@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { useLanguage } from "@/components/language-provider"
 
 const partners = [
   {
@@ -48,15 +49,16 @@ const partners = [
 ]
 
 export function Partners() {
+  const { t } = useLanguage()
   return (
     <section className="py-12 md:py-16 bg-white border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-[#55331e] mb-3">
-            Recommended By
+            {t("partners.title")}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Trusted by travelers worldwide and recognized by leading tourism platforms
+            {t("partners.subtitle")}
           </p>
         </div>
 
@@ -110,19 +112,19 @@ export function Partners() {
         <div className="mt-10 md:mt-12 flex flex-wrap justify-center gap-6 md:gap-8">
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">100+</div>
-            <div className="text-sm text-gray-600">5-Star Reviews</div>
+            <div className="text-sm text-gray-600">{t("partners.starReviews")}</div>
           </div>
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">98%</div>
-            <div className="text-sm text-gray-600">Satisfaction Rate</div>
+            <div className="text-sm text-gray-600">{t("partners.satisfactionRate")}</div>
           </div>
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">3+</div>
-            <div className="text-sm text-gray-600">Years Experience</div>
+            <div className="text-sm text-gray-600">{t("home.yearsExperience")}</div>
           </div>
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-[#f88f2f] mb-1">15+</div>
-            <div className="text-sm text-gray-600">Top Destinations</div>
+            <div className="text-sm text-gray-600">{t("home.destinations")}</div>
           </div>
         </div>
       </div>
