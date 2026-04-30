@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { useLanguage } from "@/components/language-provider"
 import { type Locale, localeNames, localeFlags } from "@/lib/translations"
-import { Logo } from "@/components/logo"
 
 function LanguageSwitcher({ variant = "desktop" }: { variant?: "desktop" | "mobile" }) {
   const { locale, setLocale, t } = useLanguage()
@@ -127,12 +126,18 @@ export function Navigation() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-gray-200">
+    <nav className="sticky top-0 z-50 bg-gradient-to-b from-white to-[#f0e6d3] backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-[#e0d5c5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 md:h-22 lg:h-24">
           {/* Logo */}
           <div onClick={handleLinkClick} className="py-2">
-            <Logo size="xl" showText={false} />
+            <Link href="/" className="flex items-center">
+              <img
+                src="/Maasai%20Amazing%20Safaris.png"
+                alt="Maasai Amazing Safaris"
+                className="object-contain w-auto h-auto max-h-16 md:max-h-18 lg:max-h-20"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
