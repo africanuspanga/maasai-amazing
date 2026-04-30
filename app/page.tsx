@@ -105,14 +105,14 @@ export default function HomePage() {
                     sizes="(max-width: 768px) 100vw, 40vw"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 md:p-5 z-10">
-                  <div className="flex items-center gap-3">
-                    <div className="flex -space-x-1.5">
+                <div className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 bg-white rounded-2xl shadow-2xl p-5 md:p-6 z-10 border border-gray-100">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="flex gap-1">
                       {[1, 2, 3, 4, 5].map((i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <span className="text-sm font-semibold text-[#210c00]">{t("home.ratedByTravelers")}</span>
+                    <span className="text-sm font-bold text-[#210c00]">{t("home.ratedByTravelers")}</span>
                   </div>
                 </div>
               </div>

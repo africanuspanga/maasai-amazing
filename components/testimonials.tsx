@@ -7,7 +7,7 @@ import { useLanguage } from "@/components/language-provider"
 
 const testimonials = [
   {
-    name: "Sarah M.",
+    name: "Emily R.",
     location: "California, USA",
     country: "United States",
     image: "/images/testimonials/profile-1.jpg",
@@ -17,7 +17,7 @@ const testimonials = [
     tour: "8-Day Elephant Kingdom Safari",
   },
   {
-    name: "David K.",
+    name: "James T.",
     location: "London, UK",
     country: "United Kingdom",
     image: "/images/testimonials/profile-2.jpg",
@@ -27,7 +27,7 @@ const testimonials = [
     tour: "Kilimanjaro - Machame Route",
   },
   {
-    name: "Alex R.",
+    name: "Michael S.",
     location: "Toronto, Canada",
     country: "Canada",
     image: "/images/testimonials/profile-3.jpg",
@@ -37,7 +37,7 @@ const testimonials = [
     tour: "Zanzibar Classic",
   },
   {
-    name: "Jennifer L.",
+    name: "Olivia M.",
     location: "Sydney, Australia",
     country: "Australia",
     image: "/images/testimonials/profile-4.jpg",
@@ -47,7 +47,7 @@ const testimonials = [
     tour: "Grand Southern Adventure",
   },
   {
-    name: "The Williams Family",
+    name: "The Johnson Family",
     location: "Texas, USA",
     country: "United States",
     image: "/images/testimonials/profile-5.jpg",
@@ -57,7 +57,7 @@ const testimonials = [
     tour: "7-Day Natural Wonders Safari",
   },
   {
-    name: "Marie P.",
+    name: "Sophie D.",
     location: "Brussels, Belgium",
     country: "Belgium",
     image: "/images/testimonials/profile-6.jpg",
