@@ -420,7 +420,7 @@ export default function HomePage() {
                     <span>{item.days}</span>
                   </div>
                   <div className="flex gap-2">
-                    <Button asChild variant="outline" size="sm" className="flex-1 border-white/30 text-white hover:bg-white hover:text-[#210c00] rounded-full">
+                    <Button asChild variant="outline" size="sm" className="flex-1 bg-white text-[#210c00] hover:bg-[#f88518] hover:text-white rounded-full border-0">
                       <Link href={item.link}>{t("home.viewDetails")}</Link>
                     </Button>
                     <BookNowButton tourName={item.tour} size="sm" className="flex-1 bg-[#f88518] hover:bg-[#c24503] text-white rounded-full" />
@@ -431,7 +431,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-10">
-            <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-[#210c00] rounded-full px-10">
+            <Button asChild size="lg" className="bg-white text-[#210c00] hover:bg-[#f88518] hover:text-white rounded-full px-10">
               <Link href="/itineraries">{t("home.viewAllSouthern")}</Link>
             </Button>
           </div>
