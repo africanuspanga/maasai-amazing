@@ -73,9 +73,9 @@ export default function ContactPage() {
                           {t("contact.phoneWhatsappWechat")}
                         </h3>
                         <p className="text-muted-foreground text-sm md:text-base">
-                          Phone: +255 754 746 464
+                          Phone: +255 760 246 801
                           <br />
-                          WhatsApp: +255 754 746 464
+                          WhatsApp: +255 760 246 801
                           <br />
                           <span className="text-xs md:text-sm">{t("contact.availableEmergency")}</span>
                         </p>
