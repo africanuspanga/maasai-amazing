@@ -1,10 +1,10 @@
 "use client"
 
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode, type FormEvent } from "react"
-import Image from "next/image"
 import { X, User, Mail, Calendar, Users, MessageSquare, Phone, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
+import { LogoMark } from "@/components/logo"
 
 interface BookingContextType {
   openBooking: (tourName?: string) => void
@@ -95,7 +95,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
       .filter(Boolean)
       .join("\n")
 
-    window.open(`https://wa.me/255784258765?text=${encodeURIComponent(message)}`, "_blank")
+    window.open(`https://wa.me/255754746464?text=${encodeURIComponent(message)}`, "_blank")
     setIsSubmitted(true)
   }
 
@@ -117,9 +117,9 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-2xl font-serif font-bold text-[#55331e] mb-2">{t("booking.successTitle")}</h3>
+          <h3 className="text-2xl font-serif font-bold text-[#210c00] mb-2">{t("booking.successTitle")}</h3>
           <p className="text-gray-600 mb-6">{t("booking.successMessage")}</p>
-          <Button onClick={onClose} className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white px-8">
+          <Button onClick={onClose} className="bg-[#f88518] hover:bg-[#c24503] text-white px-8">
             {t("booking.close")}
           </Button>
         </div>
@@ -140,12 +140,12 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#55331e] to-[#7a4c2e] px-6 py-5 flex items-center justify-between flex-shrink-0">
+        <div className="bg-gradient-to-r from-[#210c00] to-[#7a4c2e] px-6 py-5 flex items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center p-1 flex-shrink-0">
               <Image
-                src="/images/saitoti-logo-new.png"
-                alt="Saitoti Tours & Safaris"
+                src="/images/maasai-logo.png"
+                alt="Maasai Amazing Safaris"
                 width={48}
                 height={48}
                 className="w-full h-full object-contain"
@@ -154,7 +154,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
             <div>
               <h2 className="text-xl md:text-2xl font-serif font-bold text-white">{t("booking.title")}</h2>
               <p className="text-white/80 text-sm">
-                {tourName || "Saitoti Tours & Safaris"}
+                {tourName || "Maasai Amazing Safaris"}
               </p>
             </div>
           </div>
@@ -172,8 +172,8 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
           <div className="space-y-6">
             {/* Personal Information */}
             <fieldset>
-              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
-                <User className="w-5 h-5 text-[#f88f2f]" />
+              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#210c00] mb-4">
+                <User className="w-5 h-5 text-[#f88518]" />
                 {t("booking.personalInfo")}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -188,7 +188,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                     placeholder="John Doe"
                     value={formData.fullName}
                     onChange={(e) => handleChange("fullName", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88518]/50 focus:border-[#f88518] outline-none transition-colors text-sm bg-white text-gray-900"
                   />
                 </div>
                 <div>
@@ -202,7 +202,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                     placeholder="e.g., United States"
                     value={formData.nationality}
                     onChange={(e) => handleChange("nationality", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88518]/50 focus:border-[#f88518] outline-none transition-colors text-sm bg-white text-gray-900"
                   />
                 </div>
               </div>
@@ -210,8 +210,8 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
 
             {/* Contact Information */}
             <fieldset>
-              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
-                <Mail className="w-5 h-5 text-[#f88f2f]" />
+              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#210c00] mb-4">
+                <Mail className="w-5 h-5 text-[#f88518]" />
                 {t("booking.contactInfo")}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -226,7 +226,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={(e) => handleChange("email", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88518]/50 focus:border-[#f88518] outline-none transition-colors text-sm bg-white text-gray-900"
                   />
                 </div>
                 <div>
@@ -240,7 +240,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                     placeholder="+1 234 567 8900"
                     value={formData.phone}
                     onChange={(e) => handleChange("phone", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88518]/50 focus:border-[#f88518] outline-none transition-colors text-sm bg-white text-gray-900"
                   />
                 </div>
               </div>
@@ -248,8 +248,8 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
 
             {/* Travel Details */}
             <fieldset>
-              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
-                <Calendar className="w-5 h-5 text-[#f88f2f]" />
+              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#210c00] mb-4">
+                <Calendar className="w-5 h-5 text-[#f88518]" />
                 {t("booking.travelDetails")}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -263,7 +263,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                     required
                     value={formData.travelDate}
                     onChange={(e) => handleChange("travelDate", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88518]/50 focus:border-[#f88518] outline-none transition-colors text-sm bg-white text-gray-900"
                   />
                 </div>
                 <div>
@@ -274,7 +274,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                     id="accommodation"
                     value={formData.accommodation}
                     onChange={(e) => handleChange("accommodation", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88518]/50 focus:border-[#f88518] outline-none transition-colors text-sm bg-white text-gray-900"
                   >
                     <option value="">{t("booking.selectAccommodation")}</option>
                     <option value="Budget / Camping">{t("booking.budgetCamping")}</option>
@@ -289,8 +289,8 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
 
             {/* Group Size */}
             <fieldset>
-              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
-                <Users className="w-5 h-5 text-[#f88f2f]" />
+              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#210c00] mb-4">
+                <Users className="w-5 h-5 text-[#f88518]" />
                 {t("booking.groupSize")}
               </legend>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -303,7 +303,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                     required
                     value={formData.adults}
                     onChange={(e) => handleChange("adults", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88518]/50 focus:border-[#f88518] outline-none transition-colors text-sm bg-white text-gray-900"
                   >
                     {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
                       <option key={n} value={String(n)}>
@@ -320,7 +320,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                     id="children"
                     value={formData.children}
                     onChange={(e) => handleChange("children", e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88518]/50 focus:border-[#f88518] outline-none transition-colors text-sm bg-white text-gray-900"
                   >
                     {Array.from({ length: 7 }, (_, i) => i).map((n) => (
                       <option key={n} value={String(n)}>
@@ -334,8 +334,8 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
 
             {/* Special Requests */}
             <fieldset>
-              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#55331e] mb-4">
-                <MessageSquare className="w-5 h-5 text-[#f88f2f]" />
+              <legend className="flex items-center gap-2 text-lg font-serif font-bold text-[#210c00] mb-4">
+                <MessageSquare className="w-5 h-5 text-[#f88518]" />
                 {t("booking.specialRequests")}
               </legend>
               <div>
@@ -348,7 +348,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
                   placeholder={t("booking.specialRequestsPlaceholder")}
                   value={formData.specialRequests}
                   onChange={(e) => handleChange("specialRequests", e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88f2f]/50 focus:border-[#f88f2f] outline-none transition-colors text-sm resize-none bg-white text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f88518]/50 focus:border-[#f88518] outline-none transition-colors text-sm resize-none bg-white text-gray-900"
                 />
               </div>
             </fieldset>
@@ -358,14 +358,14 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
           <div className="mt-6 flex flex-col gap-3">
             <Button
               type="submit"
-              className="w-full bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg py-6 font-semibold rounded-xl"
+              className="w-full bg-[#f88518] hover:bg-[#c24503] text-white text-lg py-6 font-semibold rounded-xl"
             >
               {t("booking.submit")}
             </Button>
             <p className="text-center text-xs text-gray-500">
               {t("booking.emailUs")}{" "}
-              <a href="mailto:tours@aussigroup.com" className="text-[#f88f2f] hover:underline">
-                tours@aussigroup.com
+              <a href="mailto:info@maasaiamazingsafaris.com" className="text-[#f88518] hover:underline">
+                info@maasaiamazingsafaris.com
               </a>
             </p>
           </div>

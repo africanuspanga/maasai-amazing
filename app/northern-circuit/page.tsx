@@ -79,7 +79,7 @@ export default function NorthernCircuitPage() {
       <WhatsAppFloat />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-[#55331e]/90 to-[#f88f2f]/90">
+      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-[#210c00]/90 to-[#f88518]/90">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">Northern Circuit Safaris</h1>
@@ -96,7 +96,7 @@ export default function NorthernCircuitPage() {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">
               Explore Six Magnificent Parks
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -116,18 +116,18 @@ export default function NorthernCircuitPage() {
                 </div>
 
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-[#55331e] mb-3 font-serif">{park.name}</h3>
+                  <h3 className="text-xl font-bold text-[#210c00] mb-3 font-serif">{park.name}</h3>
                   <p className="text-gray-600 mb-4 font-sans">{park.description}</p>
                   <p className="text-gray-700 mb-4 text-sm leading-relaxed font-sans">{park.detailedDescription}</p>
                   <ul className="space-y-2 mb-6">
                     {park.highlights.map((highlight, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                        <span className="text-[#f88f2f] mt-1">•</span>
+                        <span className="text-[#f88518] mt-1">•</span>
                         {highlight}
                       </li>
                     ))}
                   </ul>
-                  <BookNowButton tourName={park.name} className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white">BOOK NOW</BookNowButton>
+                  <BookNowButton tourName={park.name} className="w-full bg-[#f88518] hover:bg-[#c24503] text-white">BOOK NOW</BookNowButton>
                 </CardContent>
               </Card>
             ))}
@@ -136,19 +136,19 @@ export default function NorthernCircuitPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#55331e] text-white">
+      <section className="py-16 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">Ready for Your Northern Circuit Adventure?</h2>
           <p className="text-lg mb-8 opacity-90">
             Let us craft the perfect safari experience tailored to your dreams and preferences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <BookNowButton size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">BOOK NOW</BookNowButton>
+            <BookNowButton size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white px-8">BOOK NOW</BookNowButton>
             <Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#55331e] px-8 bg-transparent"
+                className="border-white text-white hover:bg-white hover:text-[#210c00] px-8 bg-transparent"
               >
                 Contact Us
               </Button>

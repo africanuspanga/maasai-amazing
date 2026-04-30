@@ -89,7 +89,7 @@ export default function HistoricalSitesPage() {
       <WhatsAppFloat />
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-r from-[#55331e]/90 to-[#f88f2f]/90">
+      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-r from-[#210c00]/90 to-[#f88518]/90">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">Historical Sites</h1>
@@ -105,7 +105,7 @@ export default function HistoricalSitesPage() {
       {/* Introduction */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
             Journey Through Time and Civilization
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -115,15 +115,15 @@ export default function HistoricalSitesPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#f88f2f] mb-2">3</div>
+              <div className="text-3xl font-bold text-[#f88518] mb-2">3</div>
               <p className="text-gray-600">UNESCO Sites</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#f88f2f] mb-2">2M+</div>
+              <div className="text-3xl font-bold text-[#f88518] mb-2">2M+</div>
               <p className="text-gray-600">Years of History</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#f88f2f] mb-2">5</div>
+              <div className="text-3xl font-bold text-[#f88518] mb-2">5</div>
               <p className="text-gray-600">Historic Destinations</p>
             </div>
           </div>
@@ -131,10 +131,10 @@ export default function HistoricalSitesPage() {
       </section>
 
       {/* Historical Sites Grid */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">
               Five Remarkable Historical Destinations
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -156,8 +156,8 @@ export default function HistoricalSitesPage() {
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-xl font-bold text-[#55331e] font-serif">{site.name}</h3>
-                      <p className="text-[#f88f2f] font-medium">{site.status}</p>
+                      <h3 className="text-xl font-bold text-[#210c00] font-serif">{site.name}</h3>
+                      <p className="text-[#f88518] font-medium">{site.status}</p>
                     </div>
                     <div className="text-right text-sm">
                       <p className="font-medium">{site.period}</p>
@@ -168,18 +168,18 @@ export default function HistoricalSitesPage() {
                   <p className="text-gray-600 mb-4 leading-relaxed">{site.details}</p>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold text-[#55331e] mb-3">Historical Highlights:</h4>
+                    <h4 className="font-semibold text-[#210c00] mb-3">Historical Highlights:</h4>
                     <ul className="space-y-2">
                       {site.highlights.map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                          <span className="text-[#f88f2f] mt-1">•</span>
+                          <span className="text-[#f88518] mt-1">•</span>
                           {highlight}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <Button className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+                  <Button className="w-full bg-[#f88518] hover:bg-[#c24503] text-white">
                     <Link href="/contact">Explore This Site</Link>
                   </Button>
                 </CardContent>
@@ -194,7 +194,7 @@ export default function HistoricalSitesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
                 Why Explore Tanzania's Historical Heritage?
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -203,43 +203,43 @@ export default function HistoricalSitesPage() {
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Human Origins:</span>
+                    <span className="font-semibold text-[#210c00]">Human Origins:</span>
                     <span className="text-gray-600 ml-2">
                       Discover where humanity began and evolved over millions of years
                     </span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Trading Civilizations:</span>
+                    <span className="font-semibold text-[#210c00]">Trading Civilizations:</span>
                     <span className="text-gray-600 ml-2">
                       Explore the sophisticated societies that connected Africa to the world
                     </span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Cultural Understanding:</span>
+                    <span className="font-semibold text-[#210c00]">Cultural Understanding:</span>
                     <span className="text-gray-600 ml-2">
                       Gain insights into the diverse cultures that shaped modern Tanzania
                     </span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">UNESCO Recognition:</span>
+                    <span className="font-semibold text-[#210c00]">UNESCO Recognition:</span>
                     <span className="text-gray-600 ml-2">
                       Visit sites recognized as having outstanding universal value
                     </span>
                   </div>
                 </li>
               </ul>
-              <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+              <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white">
                 <Link href="/contact">Plan Your Historical Journey</Link>
               </Button>
             </div>
@@ -255,7 +255,7 @@ export default function HistoricalSitesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#55331e] text-white">
+      <section className="py-16 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">Ready to Walk Through History?</h2>
           <p className="text-lg mb-8 opacity-90">
@@ -263,13 +263,13 @@ export default function HistoricalSitesPage() {
             human heritage.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">
+            <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white px-8">
               <Link href="/contact">Explore Historical Sites</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] px-8 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] px-8 bg-transparent"
             >
               <Link href="/contact">Get Cultural Tour Package</Link>
             </Button>

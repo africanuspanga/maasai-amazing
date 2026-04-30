@@ -65,7 +65,7 @@ export default function KilimanjaroMachamePage() {
             <div className="lg:col-span-2 space-y-8">
               {/* Overview */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#d97706] mb-4">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#c24503] mb-4">
                   Route Overview
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -81,12 +81,12 @@ export default function KilimanjaroMachamePage() {
 
               {/* Itinerary */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#d97706] mb-6">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#c24503] mb-6">
                   Day by Day Itinerary
                 </h2>
                 <div className="space-y-6">
                   {/* Day 1 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 1: Machame Gate to Machame Camp</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 1,800m to 3,000m | <strong>Distance:</strong> 11km | <strong>Time:</strong> 5-7 hours
@@ -97,7 +97,7 @@ export default function KilimanjaroMachamePage() {
                   </div>
 
                   {/* Day 2 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 2: Machame Camp to Shira Camp</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 3,000m to 3,840m | <strong>Distance:</strong> 5km | <strong>Time:</strong> 4-6 hours
@@ -108,7 +108,7 @@ export default function KilimanjaroMachamePage() {
                   </div>
 
                   {/* Day 3 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 3: Shira Camp to Barranco Camp via Lava Tower</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 3,840m to 4,640m to 3,960m | <strong>Distance:</strong> 10km | <strong>Time:</strong> 6-8 hours
@@ -119,7 +119,7 @@ export default function KilimanjaroMachamePage() {
                   </div>
 
                   {/* Day 4 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 4: Barranco Camp to Karanga Camp</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 3,960m to 3,995m | <strong>Distance:</strong> 5km | <strong>Time:</strong> 4-5 hours
@@ -130,7 +130,7 @@ export default function KilimanjaroMachamePage() {
                   </div>
 
                   {/* Day 5 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 5: Karanga Camp to Barafu Camp</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 3,995m to 4,673m | <strong>Distance:</strong> 4km | <strong>Time:</strong> 4-5 hours
@@ -141,7 +141,7 @@ export default function KilimanjaroMachamePage() {
                   </div>
 
                   {/* Day 6 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 6: Summit Day - Uhuru Peak & Descend to Mweka</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 4,673m to 5,895m to 3,068m | <strong>Distance:</strong> 17km | <strong>Time:</strong> 12-15 hours
@@ -152,7 +152,7 @@ export default function KilimanjaroMachamePage() {
                   </div>
 
                   {/* Day 7 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 7: Mweka Camp to Mweka Gate</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 3,068m to 1,640m | <strong>Distance:</strong> 10km | <strong>Time:</strong> 3-4 hours
@@ -167,7 +167,7 @@ export default function KilimanjaroMachamePage() {
               {/* Included/Excluded */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-xl font-bold text-[#d97706] mb-4">Included</h3>
+                  <h3 className="text-xl font-bold text-[#c24503] mb-4">Included</h3>
                   <ul className="space-y-2">
                     {[
                       "Professional mountain guide",
@@ -191,7 +191,7 @@ export default function KilimanjaroMachamePage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#d97706] mb-4">Not Included</h3>
+                  <h3 className="text-xl font-bold text-[#c24503] mb-4">Not Included</h3>
                   <ul className="space-y-2">
                     {[
                       "International flights",
@@ -217,25 +217,25 @@ export default function KilimanjaroMachamePage() {
 
             {/* Right Column - Booking Card */}
             <div className="lg:col-span-1">
-              <Card className="sticky top-24 border-2 border-[#d97706] shadow-xl">
+              <Card className="sticky top-24 border-2 border-[#c24503] shadow-xl">
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <p className="text-sm text-gray-600 mb-2">Starting from</p>
-                    <p className="text-4xl font-bold text-[#d97706]">$2,589</p>
+                    <p className="text-4xl font-bold text-[#c24503]">$2,589</p>
                     <p className="text-sm text-gray-500 mt-1">per person</p>
                   </div>
 
                   <div className="space-y-4 mb-6">
                     <div className="flex items-center gap-3 text-sm">
-                      <Calendar className="w-5 h-5 text-[#d97706]" />
+                      <Calendar className="w-5 h-5 text-[#c24503]" />
                       <span className="text-gray-700">7 Days / 6 Nights</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
-                      <Users className="w-5 h-5 text-[#d97706]" />
+                      <Users className="w-5 h-5 text-[#c24503]" />
                       <span className="text-gray-700">1-10+ people</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
-                      <Mountain className="w-5 h-5 text-[#d97706]" />
+                      <Mountain className="w-5 h-5 text-[#c24503]" />
                       <span className="text-gray-700">5,895m Summit</span>
                     </div>
                   </div>
@@ -248,13 +248,13 @@ export default function KilimanjaroMachamePage() {
                   </div>
 
                   <div className="space-y-3">
-                    <BookNowButton tourName="Kilimanjaro - Machame Route" className="w-full bg-[#d97706] hover:bg-[#b45309] text-white py-6">Book This Climb</BookNowButton>
+                    <BookNowButton tourName="Kilimanjaro - Machame Route" className="w-full bg-[#c24503] hover:bg-[#a33d02] text-white py-6">Book This Climb</BookNowButton>
                     <Button
                       asChild
                       variant="outline"
-                      className="w-full border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white py-6"
+                      className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white py-6"
                     >
-                      <Link href="https://wa.me/255745371468" target="_blank">
+                      <Link href="https://wa.me/255754746464" target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>
@@ -275,17 +275,17 @@ export default function KilimanjaroMachamePage() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-amber-100 to-orange-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#d97706] mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-4">
             Ready to Summit Africa's Highest Peak?
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Join us on the scenic Machame Route for the adventure of a lifetime
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#d97706] hover:bg-[#b45309] text-white">
+            <Button asChild size="lg" className="bg-[#c24503] hover:bg-[#a33d02] text-white">
               <Link href="/contact">Start Your Journey</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
+            <Button asChild size="lg" variant="outline" className="border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white">
               <Link href="/kilimanjaro">Kilimanjaro Info</Link>
             </Button>
           </div>

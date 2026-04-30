@@ -125,7 +125,7 @@ export default function KilimanjaroPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url(/images/kilimanjaro-distance.png)" }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#55331e]/90 to-[#f88f2f]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#210c00]/90 to-[#f88518]/90"></div>
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4">
           <h1 className="text-4xl md:text-7xl font-bold mb-6 font-serif">Mount Kilimanjaro</h1>
@@ -146,10 +146,10 @@ export default function KilimanjaroPage() {
               <img
                 src="/images/giant-senecio.png"
                 alt="Giant Senecio plants on Kilimanjaro"
-                className="w-full max-w-4xl mx-auto h-64 object-cover rounded-lg shadow-lg"
+                className="w-full max-w-4xl mx-auto h-64 object-cover rounded-lg shadow-sm"
               />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
               Why Kilimanjaro Should Be Your Next Adventure
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -161,7 +161,7 @@ export default function KilimanjaroPage() {
             {whyClimb.map((reason, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-0">
-                  <h3 className="text-xl font-bold text-[#55331e] mb-3 font-serif">{reason.title}</h3>
+                  <h3 className="text-xl font-bold text-[#210c00] mb-3 font-serif">{reason.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{reason.description}</p>
                 </CardContent>
               </Card>
@@ -171,10 +171,10 @@ export default function KilimanjaroPage() {
       </section>
 
       {/* Routes Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
               Choose Your Route to the Summit
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -209,8 +209,8 @@ export default function KilimanjaroPage() {
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-xl font-bold text-[#55331e] font-serif">{route.name}</h3>
-                      <p className="text-[#f88f2f] font-medium">{route.nickname}</p>
+                      <h3 className="text-xl font-bold text-[#210c00] font-serif">{route.name}</h3>
+                      <p className="text-[#f88518] font-medium">{route.nickname}</p>
                     </div>
                     <div className="text-right text-sm">
                       <p className="font-medium">{route.duration}</p>
@@ -221,18 +221,18 @@ export default function KilimanjaroPage() {
                   <p className="text-gray-600 mb-4">{route.description}</p>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold text-[#55331e] mb-2">Route Highlights:</h4>
+                    <h4 className="font-semibold text-[#210c00] mb-2">Route Highlights:</h4>
                     <ul className="space-y-1">
                       {route.highlights.map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                          <span className="text-[#f88f2f] mt-1">•</span>
+                          <span className="text-[#f88518] mt-1">•</span>
                           {highlight}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <Button className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+                  <Button className="w-full bg-[#f88518] hover:bg-[#c24503] text-white">
                     <Link href="/contact">Choose This Route</Link>
                   </Button>
                 </CardContent>
@@ -254,7 +254,7 @@ export default function KilimanjaroPage() {
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
                 Prepare for Your Summit Success
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -264,23 +264,23 @@ export default function KilimanjaroPage() {
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                   <span>Personalized training programs</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                   <span>Complete equipment rental available</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                   <span>Pre-climb briefing and preparation</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                   <span>Expert guides with high success rates</span>
                 </li>
               </ul>
-              <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+              <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white">
                 <Link href="/contact">Get Preparation Guide</Link>
               </Button>
             </div>
@@ -294,20 +294,20 @@ export default function KilimanjaroPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url(/images/night-camping.png)" }}
         ></div>
-        <div className="absolute inset-0 bg-[#55331e]/85"></div>
+        <div className="absolute inset-0 bg-[#210c00]/85"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">Ready to Conquer Kilimanjaro?</h2>
           <p className="text-lg mb-8 opacity-90">
-            Join thousands of successful climbers who have reached the Roof of Africa with Saitoti Tours & Safaris.
+            Join thousands of successful climbers who have reached the Roof of Africa with Maasai Amazing Safaris.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">
+            <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white px-8">
               <Link href="/contact">Start Planning Your Climb</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] px-8 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] px-8 bg-transparent"
             >
               <Link href="/contact">Download Route Guide</Link>
             </Button>

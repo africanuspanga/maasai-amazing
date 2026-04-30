@@ -63,7 +63,7 @@ const testimonials = [
     image: "/images/testimonials/profile-6.jpg",
     rating: 5,
     quote:
-      "My third trip to Tanzania and first with Saitoti Tours. The 5-day extension after Kilimanjaro was perfect timing. Saw the migration in Serengeti - thousands of wildebeest crossing the river. Already planning to come back next year.",
+      "My third trip to Tanzania and first with Maasai Amazing Safaris. The 5-day extension after Kilimanjaro was perfect timing. Saw the migration in Serengeti - thousands of wildebeest crossing the river. Already planning to come back next year.",
     tour: "5-Day Safari Extension",
   },
 ]
@@ -75,7 +75,7 @@ export function Testimonials() {
     <section className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#210c00] mb-6">
             {t("testimonials.title")}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -91,7 +91,7 @@ export function Testimonials() {
             >
               <CardContent className="p-6 md:p-8">
                 <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Quote className="w-16 h-16 text-[#f88f2f]" />
+                  <Quote className="w-16 h-16 text-[#f88518]" />
                 </div>
 
                 <div className="flex items-center gap-1 mb-4">
@@ -105,7 +105,7 @@ export function Testimonials() {
                 </blockquote>
 
                 <div className="mb-4">
-                  <span className="inline-block bg-[#f88f2f]/10 text-[#f88f2f] text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="inline-block bg-[#f88518]/10 text-[#f88518] text-xs font-semibold px-3 py-1 rounded-full">
                     {testimonial.tour}
                   </span>
                 </div>
@@ -121,13 +121,13 @@ export function Testimonials() {
                     />
                   </div>
                   <div className="flex-1">
-                    <div className="font-bold text-[#55331e] text-sm md:text-base">{testimonial.name}</div>
+                    <div className="font-bold text-[#210c00] text-sm md:text-base">{testimonial.name}</div>
                     <div className="text-gray-500 text-xs md:text-sm">{testimonial.location}</div>
                   </div>
                 </div>
               </CardContent>
 
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#f88f2f] to-[#e67e1e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#f88518] to-[#c24503] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
             </Card>
           ))}
         </div>

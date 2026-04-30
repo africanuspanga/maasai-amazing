@@ -1,39 +1,41 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Montserrat } from "next/font/google"
-import { Open_Sans } from "next/font/google"
+import { Playfair_Display } from "next/font/google"
+import { Inter } from "next/font/google"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { BookingProvider } from "@/components/booking-provider"
 import { LanguageProvider } from "@/components/language-provider"
 import "./globals.css"
 
-const montserrat = Montserrat({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-montserrat",
-  weight: ["400", "600", "700", "900"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700", "900"],
 })
 
-const openSans = Open_Sans({
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-open-sans",
-  weight: ["400", "500", "600"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
-  title: "Saitoti Tours & Safaris - Discover the Soul of Tanzania",
+  metadataBase: new URL("https://maasaiamazingsafaris.com"),
+  title: "Maasai Amazing Safaris - Discover the Soul of Tanzania",
   description:
-    "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel. Experience Tanzania's wildlife and natural wonders with expert guides.",
-  generator: "v0.app",
-  keywords: "Tanzania safari, Kilimanjaro trekking, Serengeti tours, Zanzibar, wildlife photography, African adventure",
-  authors: [{ name: "Saitoti Tours & Safaris" }],
+    "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel. Experience Tanzania's wildlife and natural wonders with expert Maasai guides.",
+  generator: "next.js",
+  keywords: "Tanzania safari, Kilimanjaro trekking, Serengeti tours, Zanzibar, wildlife photography, African adventure, Maasai safari",
+  authors: [{ name: "Maasai Amazing Safaris" }],
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/Maasai%20Favicon.png",
+    apple: "/Maasai%20Favicon.png",
+    shortcut: "/Maasai%20Favicon.png",
   },
   openGraph: {
-    title: "Saitoti Tours & Safaris - Discover the Soul of Tanzania",
+    title: "Maasai Amazing Safaris - Discover the Soul of Tanzania",
     description: "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel",
     type: "website",
     locale: "en_US",
@@ -42,13 +44,13 @@ export const metadata: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Saitoti Tours & Safaris - Discover the Soul of Tanzania",
+        alt: "Maasai Amazing Safaris - Discover the Soul of Tanzania",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saitoti Tours & Safaris - Discover the Soul of Tanzania",
+    title: "Maasai Amazing Safaris - Discover the Soul of Tanzania",
     description: "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel",
     images: ["/images/og-image.png"],
   },
@@ -60,13 +62,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         <style>{`
 html {
-  font-family: ${openSans.style.fontFamily};
-  --font-sans: ${openSans.style.fontFamily};
-  --font-serif: ${montserrat.style.fontFamily};
+  font-family: ${inter.style.fontFamily};
+  --font-sans: ${inter.style.fontFamily};
+  --font-serif: ${playfair.style.fontFamily};
 }
         `}</style>
       </head>

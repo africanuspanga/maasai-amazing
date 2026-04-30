@@ -57,7 +57,7 @@ export default function ZanzibarPage() {
       <WhatsAppFloat />
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-r from-[#55331e]/90 to-[#f88f2f]/90">
+      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-r from-[#210c00]/90 to-[#f88518]/90">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">Zanzibar</h1>
@@ -73,7 +73,7 @@ export default function ZanzibarPage() {
       {/* Introduction */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
             Where History Meets Paradise
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -85,10 +85,10 @@ export default function ZanzibarPage() {
       </section>
 
       {/* Featured Tours */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">
               Featured Zanzibar Experiences
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -153,19 +153,19 @@ export default function ZanzibarPage() {
 
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-bold text-[#55331e] font-serif">{tour.name}</h3>
-                    <span className="text-sm bg-[#f88f2f] text-white px-2 py-1 rounded">{tour.duration}</span>
+                    <h3 className="text-xl font-bold text-[#210c00] font-serif">{tour.name}</h3>
+                    <span className="text-sm bg-[#f88518] text-white px-2 py-1 rounded">{tour.duration}</span>
                   </div>
                   <p className="text-gray-600 mb-4 font-sans">{tour.description}</p>
                   <ul className="space-y-2 mb-6">
                     {tour.highlights.map((highlight, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                        <span className="text-[#f88f2f] mt-1">•</span>
+                        <span className="text-[#f88518] mt-1">•</span>
                         {highlight}
                       </li>
                     ))}
                   </ul>
-                  <BookNowButton tourName={`Zanzibar - ${tour.name}`} className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white">Book Experience</BookNowButton>
+                  <BookNowButton tourName={`Zanzibar - ${tour.name}`} className="w-full bg-[#f88518] hover:bg-[#c24503] text-white">Book Experience</BookNowButton>
                 </CardContent>
               </Card>
             ))}
@@ -178,7 +178,7 @@ export default function ZanzibarPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
                 Pristine Beaches & Crystal Waters
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -188,23 +188,23 @@ export default function ZanzibarPage() {
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                   <span>Powder-soft white sand beaches</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                   <span>Crystal-clear turquoise waters</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                   <span>World-class snorkeling and diving</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                   <span>Romantic sunset sailing</span>
                 </li>
               </ul>
-              <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+              <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white">
                 <Link href="/contact">Explore Beach Experiences</Link>
               </Button>
             </div>
@@ -220,20 +220,20 @@ export default function ZanzibarPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#55331e] text-white">
+      <section className="py-16 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">Ready to Experience Zanzibar Magic?</h2>
           <p className="text-lg mb-8 opacity-90">
             Let us create your perfect Zanzibar getaway, combining culture, adventure, and relaxation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">
+            <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white px-8">
               <Link href="/contact">Plan Your Trip</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] px-8 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] px-8 bg-transparent"
             >
               <Link href="/contact">Get Quote</Link>
             </Button>

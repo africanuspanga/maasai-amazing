@@ -1,9 +1,9 @@
-# robots.txt for https://saitotitours.com/
+# robots.txt for https://maasaiamazingsafaris.com/
 User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://saitotitours.com/sitemap.xml
+Sitemap: https://maasaiamazingsafaris.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

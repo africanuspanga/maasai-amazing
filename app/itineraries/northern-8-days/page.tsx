@@ -65,7 +65,7 @@ export default function Northern8DaysPage() {
             <div className="lg:col-span-2 space-y-8">
               {/* Overview */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#d97706] mb-4">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#c24503] mb-4">
                   Safari Overview
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -78,12 +78,12 @@ export default function Northern8DaysPage() {
 
               {/* Itinerary */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#d97706] mb-6">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#c24503] mb-6">
                   Day by Day Itinerary
                 </h2>
                 <div className="space-y-6">
                   {/* Day 1 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 1: Arrival in Arusha</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Arrive at Kilimanjaro International Airport where you'll be met by your safari guide. Transfer to your hotel in Arusha for a pre-safari briefing and equipment check. Overnight at comfortable accommodation with dinner included.
@@ -91,7 +91,7 @@ export default function Northern8DaysPage() {
                   </div>
 
                   {/* Day 2 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 2: Tarangire National Park</h3>
                     <p className="text-gray-700 leading-relaxed">
                       After breakfast, drive to Tarangire National Park. Known for its giant elephant herds and ancient baobab trees, Tarangire offers exceptional wildlife viewing along the Tarangire River. Expect to see lions, leopards, and over 550 bird species. Full day game drive with picnic lunch in the park.
@@ -99,7 +99,7 @@ export default function Northern8DaysPage() {
                   </div>
 
                   {/* Day 3 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 3: Tarangire to Serengeti</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Depart after breakfast for the legendary Serengeti National Park. Journey through the Ngorongoro Conservation Area with spectacular views. Arrive in the Serengeti for an afternoon game drive. The endless plains host the world's greatest wildlife spectacle - the Great Migration.
@@ -107,7 +107,7 @@ export default function Northern8DaysPage() {
                   </div>
 
                   {/* Day 4-5 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Days 4-5: Full Days in Serengeti</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Two full days exploring different regions of the Serengeti. Morning and afternoon game drives offer opportunities to witness predator hunts, river crossings (seasonal), and massive herds of wildebeest and zebra. Optional hot air balloon safari available (extra cost).
@@ -115,7 +115,7 @@ export default function Northern8DaysPage() {
                   </div>
 
                   {/* Day 6 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 6: Serengeti to Ngorongoro</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Morning game drive in the Serengeti, then drive to the Ngorongoro Conservation Area. Arrive at your lodge on the crater rim in time for sunset with breathtaking views over the caldera. Optional visit to a Maasai village can be arranged.
@@ -123,7 +123,7 @@ export default function Northern8DaysPage() {
                   </div>
 
                   {/* Day 7 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 7: Ngorongoro Crater</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Early descent into the Ngorongoro Crater for a full day game drive. This UNESCO World Heritage Site is home to over 25,000 animals including the endangered black rhino. Picnic lunch on the crater floor surrounded by hippos and flamingos.
@@ -131,7 +131,7 @@ export default function Northern8DaysPage() {
                   </div>
 
                   {/* Day 8 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 8: Return to Arusha & Departure</h3>
                     <p className="text-gray-700 leading-relaxed">
                       After breakfast, drive back to Arusha. Depending on your flight schedule, enjoy a hot lunch in town before your airport transfer. End of safari services.
@@ -143,7 +143,7 @@ export default function Northern8DaysPage() {
               {/* Included/Excluded */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-xl font-bold text-[#d97706] mb-4">Included</h3>
+                  <h3 className="text-xl font-bold text-[#c24503] mb-4">Included</h3>
                   <ul className="space-y-2">
                     {[
                       "Airport transfers",
@@ -165,7 +165,7 @@ export default function Northern8DaysPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#d97706] mb-4">Not Included</h3>
+                  <h3 className="text-xl font-bold text-[#c24503] mb-4">Not Included</h3>
                   <ul className="space-y-2">
                     {[
                       "International flights",
@@ -190,37 +190,37 @@ export default function Northern8DaysPage() {
 
             {/* Right Column - Booking Card */}
             <div className="lg:col-span-1">
-              <Card className="sticky top-24 border-2 border-[#d97706] shadow-xl">
+              <Card className="sticky top-24 border-2 border-[#c24503] shadow-xl">
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <p className="text-sm text-gray-600 mb-2">Starting from</p>
-                    <p className="text-4xl font-bold text-[#d97706]">$3,284</p>
+                    <p className="text-4xl font-bold text-[#c24503]">$3,284</p>
                     <p className="text-sm text-gray-500 mt-1">per person</p>
                   </div>
 
                   <div className="space-y-4 mb-6">
                     <div className="flex items-center gap-3 text-sm">
-                      <Calendar className="w-5 h-5 text-[#d97706]" />
+                      <Calendar className="w-5 h-5 text-[#c24503]" />
                       <span className="text-gray-700">8 Days / 7 Nights</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
-                      <Users className="w-5 h-5 text-[#d97706]" />
+                      <Users className="w-5 h-5 text-[#c24503]" />
                       <span className="text-gray-700">2-6 people</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
-                      <MapPin className="w-5 h-5 text-[#d97706]" />
+                      <MapPin className="w-5 h-5 text-[#c24503]" />
                       <span className="text-gray-700">Tarangire, Serengeti, Ngorongoro</span>
                     </div>
                   </div>
 
                   <div className="space-y-3">
-                    <BookNowButton tourName="8-Day Elephant Kingdom Safari" className="w-full bg-[#d97706] hover:bg-[#b45309] text-white py-6">Book This Safari</BookNowButton>
+                    <BookNowButton tourName="8-Day Elephant Kingdom Safari" className="w-full bg-[#c24503] hover:bg-[#a33d02] text-white py-6">Book This Safari</BookNowButton>
                     <Button
                       asChild
                       variant="outline"
-                      className="w-full border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white py-6"
+                      className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white py-6"
                     >
-                      <Link href="https://wa.me/255745371468" target="_blank">
+                      <Link href="https://wa.me/255754746464" target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>
@@ -241,17 +241,17 @@ export default function Northern8DaysPage() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-amber-100 to-orange-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#d97706] mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-4">
             Ready for Your Northern Safari?
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Join us for an unforgettable journey through Tanzania's most iconic wildlife destinations
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#d97706] hover:bg-[#b45309] text-white">
+            <Button asChild size="lg" className="bg-[#c24503] hover:bg-[#a33d02] text-white">
               <Link href="/contact">Get Custom Quote</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
+            <Button asChild size="lg" variant="outline" className="border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white">
               <Link href="/itineraries">View All Safaris</Link>
             </Button>
           </div>

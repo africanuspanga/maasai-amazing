@@ -9,7 +9,7 @@ import { Calendar, Users, CheckCircle, X, ArrowLeft, Waves } from "lucide-react"
 import { BookNowButton } from "@/components/book-now-button"
 
 export const metadata = {
-  title: "Zanzibar 7 Days / 6 Nights Package | Saitoti Tours",
+  title: "Zanzibar 7 Days / 6 Nights Package | Maasai Amazing Safaris",
   description:
     "Our most comprehensive tour. This week-long experience includes the legendary Rock Restaurant and the rare wildlife of Jozani Forest.",
 }
@@ -57,7 +57,7 @@ export default function Zanzibar7DaysPage() {
       {/* Back Button */}
       <div className="bg-gradient-to-br from-cyan-50 to-blue-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button asChild variant="ghost" className="text-[#0891b2] hover:text-[#0e7490] hover:bg-cyan-100">
+          <Button asChild variant="ghost" className="text-[#c24503] hover:text-[#a33d02] hover:bg-cyan-100">
             <Link href="/itineraries">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to All Itineraries
@@ -71,7 +71,7 @@ export default function Zanzibar7DaysPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0891b2] mb-6">Package Overview</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-6">Package Overview</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 Our most comprehensive tour. This week-long experience includes the legendary Rock Restaurant and the rare wildlife of Jozani Forest, along with all of Zanzibar's classic excursions.
               </p>
@@ -82,7 +82,7 @@ export default function Zanzibar7DaysPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <Card className="border-2 border-cyan-200 bg-white">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-[#0891b2] mb-3">Package Highlights</h3>
+                    <h3 className="font-semibold text-[#c24503] mb-3">Package Highlights</h3>
                     <ul className="space-y-2">
                       {[
                         "Jozani Forest Red Colobus monkeys",
@@ -93,7 +93,7 @@ export default function Zanzibar7DaysPage() {
                         "Complete island exploration",
                       ].map((highlight, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-[#0891b2] flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-5 h-5 text-[#c24503] flex-shrink-0 mt-0.5" />
                           <span className="text-gray-700">{highlight}</span>
                         </li>
                       ))}
@@ -103,7 +103,7 @@ export default function Zanzibar7DaysPage() {
 
                 <Card className="border-2 border-cyan-200 bg-white">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-[#0891b2] mb-3">What's Included</h3>
+                    <h3 className="font-semibold text-[#c24503] mb-3">What's Included</h3>
                     <ul className="space-y-2">
                       {[
                         "Airport transfers",
@@ -129,26 +129,26 @@ export default function Zanzibar7DaysPage() {
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <p className="text-sm text-gray-600 mb-2">Starting from</p>
-                    <p className="text-4xl font-bold text-[#0891b2]">$1,388</p>
+                    <p className="text-4xl font-bold text-[#c24503]">$1,388</p>
                     <p className="text-sm text-gray-500 mt-1">Per person</p>
                     <p className="text-xs text-gray-500 mt-2">Contact for 3*, 4*, and 5* hotel tiers</p>
                   </div>
 
                   <div className="space-y-4 mb-6">
-                    <BookNowButton tourName="Zanzibar 7 Days / 6 Nights Package" className="w-full bg-[#0891b2] hover:bg-[#0e7490] text-white text-lg py-6">Book This Package</BookNowButton>
+                    <BookNowButton tourName="Zanzibar 7 Days / 6 Nights Package" className="w-full bg-[#c24503] hover:bg-[#a33d02] text-white text-lg py-6">Book This Package</BookNowButton>
                     <Button
                       asChild
                       variant="outline"
-                      className="w-full border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white text-lg py-6 bg-transparent"
+                      className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white text-lg py-6 bg-transparent"
                     >
-                      <Link href="https://wa.me/255784258765" target="_blank">
+                      <Link href="https://wa.me/255754746464" target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>
                   </div>
 
                   <div className="border-t pt-6">
-                    <h3 className="font-bold text-[#0891b2] mb-3">Quick Info</h3>
+                    <h3 className="font-bold text-[#c24503] mb-3">Quick Info</h3>
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-600">Duration:</span>
@@ -178,7 +178,7 @@ export default function Zanzibar7DaysPage() {
       {/* Detailed Itinerary */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0891b2] mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-12 text-center">
             Day-by-Day Itinerary
           </h2>
 
@@ -231,12 +231,12 @@ export default function Zanzibar7DaysPage() {
                 <CardContent className="p-6 md:p-8">
                   <div className="flex flex-col md:flex-row md:items-start gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-[#0891b2] rounded-full flex items-center justify-center">
+                      <div className="w-16 h-16 bg-[#c24503] rounded-full flex items-center justify-center">
                         <span className="text-xl font-bold text-white">Day {item.day}</span>
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <h3 className="text-xl md:text-2xl font-bold text-[#0891b2] mb-3">{item.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold text-[#c24503] mb-3">{item.title}</h3>
                       <p className="text-gray-700 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
@@ -250,7 +250,7 @@ export default function Zanzibar7DaysPage() {
       {/* Included/Excluded */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-cyan-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0891b2] mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-12 text-center">
             What's Included & Excluded
           </h2>
 
@@ -331,12 +331,12 @@ export default function Zanzibar7DaysPage() {
             Book your complete 7-day island discovery and experience everything Zanzibar has to offer
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <BookNowButton tourName="Zanzibar 7 Days / 6 Nights Package" size="lg" className="bg-white text-[#0891b2] hover:bg-gray-100 text-lg px-8 py-3">Book Now</BookNowButton>
+            <BookNowButton tourName="Zanzibar 7 Days / 6 Nights Package" size="lg" className="bg-white text-[#c24503] hover:bg-gray-100 text-lg px-8 py-3">Book Now</BookNowButton>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#0891b2] text-lg px-8 py-3 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#c24503] text-lg px-8 py-3 bg-transparent"
             >
               <Link href="/itineraries">View All Packages</Link>
             </Button>

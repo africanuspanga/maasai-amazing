@@ -1,7 +1,7 @@
 import { ItinerariesPageContent } from "@/components/itineraries-page-content"
 
 export const metadata = {
-  title: "Tanzania Safari Itineraries | Saitoti Tours",
+  title: "Tanzania Safari Itineraries | Maasai Amazing Safaris",
   description:
     "Explore our carefully crafted Tanzania safari itineraries. From luxury safaris to bush-to-beach adventures, find the perfect journey through Tanzania's wonders.",
 }

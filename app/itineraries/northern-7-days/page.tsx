@@ -9,7 +9,7 @@ import { Calendar, Users, MapPin, Check, ArrowLeft, Phone } from "lucide-react"
 import { BookNowButton } from "@/components/book-now-button"
 
 export const metadata = {
-  title: "7-Day Tanzania Natural Wonders Safari | Saitoti Tours",
+  title: "7-Day Tanzania Natural Wonders Safari | Maasai Amazing Safaris",
   description:
     "Experience two of Africa's Seven Natural Wonders: the Serengeti and Ngorongoro Crater. 7-day safari through Lake Manyara, Serengeti, and Ngorongoro.",
 }
@@ -59,7 +59,7 @@ export default function Northern7DaysSafari() {
       {/* Navigation Breadcrumb */}
       <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Button asChild variant="ghost" className="text-[#d97706] hover:text-[#b45309] hover:bg-amber-100">
+          <Button asChild variant="ghost" className="text-[#c24503] hover:text-[#a33d02] hover:bg-amber-100">
             <Link href="/itineraries">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to All Itineraries
@@ -74,7 +74,7 @@ export default function Northern7DaysSafari() {
           <div className="lg:col-span-2 space-y-12">
             {/* Overview */}
             <section>
-              <h2 className="text-3xl font-serif font-bold text-[#d97706] mb-6">Safari Overview</h2>
+              <h2 className="text-3xl font-serif font-bold text-[#c24503] mb-6">Safari Overview</h2>
               <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                 <p>
                   Experience Africa's greatest national parks on this 7-day safari, including two of the Seven Natural
@@ -92,11 +92,11 @@ export default function Northern7DaysSafari() {
 
             {/* Day by Day Itinerary */}
             <section>
-              <h2 className="text-3xl font-serif font-bold text-[#d97706] mb-8">Day by Day Itinerary</h2>
+              <h2 className="text-3xl font-serif font-bold text-[#c24503] mb-8">Day by Day Itinerary</h2>
               <div className="space-y-6">
-                <Card className="border-l-4 border-l-[#d97706] shadow-md">
+                <Card className="border-l-4 border-l-[#c24503] shadow-md">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-[#d97706] mb-3">Day 1: Arrival at Kilimanjaro (JRO)</h3>
+                    <h3 className="text-xl font-bold text-[#c24503] mb-3">Day 1: Arrival at Kilimanjaro (JRO)</h3>
                     <p className="text-gray-700">
                       Welcome to Tanzania! Meet your private safari guide at Kilimanjaro International Airport and
                       transfer to your lodge in Arusha. Relax, acclimate, and prepare for your incredible journey
@@ -105,9 +105,9 @@ export default function Northern7DaysSafari() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-l-[#d97706] shadow-md">
+                <Card className="border-l-4 border-l-[#c24503] shadow-md">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-[#d97706] mb-3">Day 2: Lake Manyara National Park</h3>
+                    <h3 className="text-xl font-bold text-[#c24503] mb-3">Day 2: Lake Manyara National Park</h3>
                     <p className="text-gray-700">
                       After breakfast, depart for Lake Manyara National Park. Explore diverse landscapes from
                       groundwater forests to the alkaline soda lake, famous for its spectacular birdlife including
@@ -117,9 +117,9 @@ export default function Northern7DaysSafari() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-l-[#d97706] shadow-md">
+                <Card className="border-l-4 border-l-[#c24503] shadow-md">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-[#d97706] mb-3">Days 3-4: Serengeti National Park</h3>
+                    <h3 className="text-xl font-bold text-[#c24503] mb-3">Days 3-4: Serengeti National Park</h3>
                     <p className="text-gray-700">
                       Spend two full days in the heart of the Serengeti. Witness the Great Migration (seasonal),
                       endless plains, and search for lions, leopards, cheetahs, and all members of the Big Five. Early
@@ -129,9 +129,9 @@ export default function Northern7DaysSafari() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-l-[#d97706] shadow-md">
+                <Card className="border-l-4 border-l-[#c24503] shadow-md">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-[#d97706] mb-3">Day 5: Ngorongoro Crater</h3>
+                    <h3 className="text-xl font-bold text-[#c24503] mb-3">Day 5: Ngorongoro Crater</h3>
                     <p className="text-gray-700">
                       Descend 600 meters into the magnificent Ngorongoro Crater for a full day game drive. This unique
                       ecosystem hosts an incredible density of wildlife including the rare black rhino, lions,
@@ -141,9 +141,9 @@ export default function Northern7DaysSafari() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-l-[#d97706] shadow-md">
+                <Card className="border-l-4 border-l-[#c24503] shadow-md">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-[#d97706] mb-3">Days 6-7: Departure</h3>
+                    <h3 className="text-xl font-bold text-[#c24503] mb-3">Days 6-7: Departure</h3>
                     <p className="text-gray-700">
                       Enjoy a final morning in the bush with an optional early game drive. After breakfast, transfer
                       back to Kilimanjaro International Airport for your outbound flight, carrying memories of an
@@ -230,7 +230,7 @@ export default function Northern7DaysSafari() {
 
             {/* Accommodation Tiers */}
             <section>
-              <h2 className="text-3xl font-serif font-bold text-[#d97706] mb-6">Accommodation Options</h2>
+              <h2 className="text-3xl font-serif font-bold text-[#c24503] mb-6">Accommodation Options</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="shadow-md hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
@@ -239,9 +239,9 @@ export default function Northern7DaysSafari() {
                     <p className="text-xs text-gray-500">Examples: Ahadi Lodge, Manyara Best View</p>
                   </CardContent>
                 </Card>
-                <Card className="shadow-md hover:shadow-lg transition-shadow border-2 border-[#d97706]">
+                <Card className="shadow-md hover:shadow-lg transition-shadow border-2 border-[#c24503]">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-bold text-[#d97706] mb-2">Gold Tier</h3>
+                    <h3 className="text-lg font-bold text-[#c24503] mb-2">Gold Tier</h3>
                     <p className="text-sm text-gray-600 mb-3">Mid-range luxury with enhanced amenities</p>
                     <p className="text-xs text-gray-500">Examples: Arusha Villa, Asanja Moru</p>
                   </CardContent>
@@ -259,9 +259,9 @@ export default function Northern7DaysSafari() {
 
           {/* Sidebar - Booking Card */}
           <div className="lg:col-span-1">
-            <Card className="sticky top-24 shadow-xl border-2 border-[#d97706]">
+            <Card className="sticky top-24 shadow-xl border-2 border-[#c24503]">
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-[#d97706] mb-4">Pricing</h3>
+                <h3 className="text-2xl font-bold text-[#c24503] mb-4">Pricing</h3>
                 
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center pb-3 border-b">
@@ -270,15 +270,15 @@ export default function Northern7DaysSafari() {
                   <div className="grid grid-cols-3 gap-2 text-sm">
                     <div>
                       <p className="text-gray-500 text-xs">2 People</p>
-                      <p className="font-bold text-[#d97706]">$2,147</p>
+                      <p className="font-bold text-[#c24503]">$2,147</p>
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs">4 People</p>
-                      <p className="font-bold text-[#d97706]">$1,728</p>
+                      <p className="font-bold text-[#c24503]">$1,728</p>
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs">6 People</p>
-                      <p className="font-bold text-[#d97706]">$1,588</p>
+                      <p className="font-bold text-[#c24503]">$1,588</p>
                     </div>
                   </div>
 
@@ -288,15 +288,15 @@ export default function Northern7DaysSafari() {
                   <div className="grid grid-cols-3 gap-2 text-sm">
                     <div>
                       <p className="text-gray-500 text-xs">2 People</p>
-                      <p className="font-bold text-[#d97706]">$2,386</p>
+                      <p className="font-bold text-[#c24503]">$2,386</p>
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs">4 People</p>
-                      <p className="font-bold text-[#d97706]">$1,869</p>
+                      <p className="font-bold text-[#c24503]">$1,869</p>
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs">6 People</p>
-                      <p className="font-bold text-[#d97706]">$1,697</p>
+                      <p className="font-bold text-[#c24503]">$1,697</p>
                     </div>
                   </div>
 
@@ -306,27 +306,27 @@ export default function Northern7DaysSafari() {
                   <div className="grid grid-cols-3 gap-2 text-sm">
                     <div>
                       <p className="text-gray-500 text-xs">2 People</p>
-                      <p className="font-bold text-[#d97706]">$2,714</p>
+                      <p className="font-bold text-[#c24503]">$2,714</p>
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs">4 People</p>
-                      <p className="font-bold text-[#d97706]">$2,107</p>
+                      <p className="font-bold text-[#c24503]">$2,107</p>
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs">6 People</p>
-                      <p className="font-bold text-[#d97706]">$1,905</p>
+                      <p className="font-bold text-[#c24503]">$1,905</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <BookNowButton tourName="7-Day Natural Wonders Safari" className="w-full bg-[#d97706] hover:bg-[#b45309] text-white text-lg py-6">Book This Safari</BookNowButton>
+                  <BookNowButton tourName="7-Day Natural Wonders Safari" className="w-full bg-[#c24503] hover:bg-[#a33d02] text-white text-lg py-6">Book This Safari</BookNowButton>
                   <Button
                     asChild
                     variant="outline"
-                    className="w-full border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white py-6"
+                    className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white py-6"
                   >
-                    <Link href="https://wa.me/255784258765" target="_blank">
+                    <Link href="https://wa.me/255754746464" target="_blank">
                       <Phone className="w-4 h-4 mr-2" />
                       WhatsApp Us
                     </Link>
@@ -345,21 +345,21 @@ export default function Northern7DaysSafari() {
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-amber-100 to-orange-100">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#d97706] mb-6">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-6">
             Ready to Experience Tanzania's Natural Wonders?
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Contact us today to customize this itinerary or ask any questions about your safari adventure
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#d97706] hover:bg-[#b45309] text-white text-lg px-8">
+            <Button asChild size="lg" className="bg-[#c24503] hover:bg-[#a33d02] text-white text-lg px-8">
               <Link href="/contact">Get a Custom Quote</Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white text-lg px-8 bg-white"
+              className="border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white text-lg px-8 bg-white"
             >
               <Link href="/itineraries">View Other Itineraries</Link>
             </Button>

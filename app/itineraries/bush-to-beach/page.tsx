@@ -9,7 +9,7 @@ import { Calendar, DollarSign, Users, CheckCircle, X, ArrowLeft } from "lucide-r
 import { BookNowButton } from "@/components/book-now-button"
 
 export const metadata = {
-  title: "6 Day Bush to Beach Experience | Saitoti Tours",
+  title: "6 Day Bush to Beach Experience | Maasai Amazing Safaris",
   description:
     "The perfect combination of wild adventure and tropical relaxation. Start with wildlife tracking in Nyerere NP and end on the white sands of Zanzibar.",
 }
@@ -38,7 +38,7 @@ export default function BushToBeachPage() {
           </h1>
           <p className="text-lg md:text-xl mb-6">Nyerere National Park to Zanzibar Island</p>
           <div className="mb-6">
-            <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-[#55331e]">
+            <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-[#210c00]">
               <Link href="/itineraries">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to All Itineraries
@@ -67,7 +67,7 @@ export default function BushToBeachPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#55331e] mb-6">Tour Overview</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#210c00] tracking-tight mb-6">Tour Overview</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 The perfect combination of wild adventure and tropical relaxation. Start with wildlife tracking in Nyerere National Park, then transition to the pristine white sands and turquoise waters of Zanzibar.
               </p>
@@ -78,7 +78,7 @@ export default function BushToBeachPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-[#55331e] mb-3">Tour Highlights</h3>
+                    <h3 className="font-semibold text-[#210c00] mb-3">Tour Highlights</h3>
                     <ul className="space-y-2">
                       {[
                         "Rufiji River boat safari",
@@ -89,7 +89,7 @@ export default function BushToBeachPage() {
                         "Beach relaxation in Nungwi",
                       ].map((highlight, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-[#f88f2f] flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="w-5 h-5 text-[#f88518] flex-shrink-0 mt-0.5" />
                           <span className="text-gray-700">{highlight}</span>
                         </li>
                       ))}
@@ -99,7 +99,7 @@ export default function BushToBeachPage() {
 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-[#55331e] mb-3">What's Included</h3>
+                    <h3 className="font-semibold text-[#210c00] mb-3">What's Included</h3>
                     <ul className="space-y-2">
                       {[
                         "4x4 safari vehicle",
@@ -121,29 +121,29 @@ export default function BushToBeachPage() {
             </div>
 
             <div className="lg:col-span-1">
-              <Card className="sticky top-24 shadow-xl border-2 border-[#f88f2f]/20">
+              <Card className="sticky top-24 shadow-xl border-2 border-[#f88518]/20">
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <p className="text-sm text-gray-600 mb-2">Price per person</p>
-                    <p className="text-4xl font-bold text-[#f88f2f]">$1,947 - $2,102</p>
+                    <p className="text-4xl font-bold text-[#f88518]">$1,947 - $2,102</p>
                     <p className="text-sm text-gray-500 mt-1">Group size dependent</p>
                   </div>
 
                   <div className="space-y-4 mb-6">
-                    <BookNowButton tourName="6 Day Bush to Beach Experience" className="w-full bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg py-6">Book This Tour</BookNowButton>
+                    <BookNowButton tourName="6 Day Bush to Beach Experience" className="w-full bg-[#f88518] hover:bg-[#c24503] text-white text-lg py-6">Book This Tour</BookNowButton>
                     <Button
                       asChild
                       variant="outline"
-                      className="w-full border-[#f88f2f] text-[#f88f2f] hover:bg-[#f88f2f] hover:text-white text-lg py-6 bg-transparent"
+                      className="w-full border-[#f88518] text-[#f88518] hover:bg-[#f88518] hover:text-white text-lg py-6 bg-transparent"
                     >
-                      <Link href="https://wa.me/255784258765" target="_blank">
+                      <Link href="https://wa.me/255754746464" target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>
                   </div>
 
                   <div className="border-t pt-6">
-                    <h3 className="font-bold text-[#55331e] mb-3">Quick Info</h3>
+                    <h3 className="font-bold text-[#210c00] mb-3">Quick Info</h3>
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-600">Duration:</span>
@@ -171,9 +171,9 @@ export default function BushToBeachPage() {
       </section>
 
       {/* Detailed Itinerary */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#55331e] mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#210c00] tracking-tight mb-12 text-center">
             Detailed Day-by-Day Itinerary
           </h2>
 
@@ -214,12 +214,12 @@ export default function BushToBeachPage() {
                 <CardContent className="p-6 md:p-8">
                   <div className="flex flex-col md:flex-row md:items-start gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center">
+                      <div className="w-16 h-16 bg-[#f88518] rounded-2xl flex items-center justify-center">
                         <span className="text-xl font-bold text-white">Day {item.day}</span>
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <h3 className="text-xl md:text-2xl font-bold text-[#55331e] mb-3">{item.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold text-[#210c00] mb-3">{item.title}</h3>
                       <p className="text-gray-700 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
@@ -233,7 +233,7 @@ export default function BushToBeachPage() {
       {/* Included/Excluded */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#55331e] mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#210c00] tracking-tight mb-12 text-center">
             What's Included & Excluded
           </h2>
 
@@ -295,19 +295,19 @@ export default function BushToBeachPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-[#55331e] text-white">
+      <section className="py-16 md:py-20 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">Experience the Best of Both Worlds</h2>
           <p className="text-lg md:text-xl mb-8 opacity-90">
             Combine thrilling wildlife encounters with tropical beach paradise on this unforgettable journey
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <BookNowButton tourName="6 Day Bush to Beach Experience" size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg px-8 py-3">Book Now</BookNowButton>
+            <BookNowButton tourName="6 Day Bush to Beach Experience" size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white text-lg px-8 py-3">Book Now</BookNowButton>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] text-lg px-8 py-3 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] text-lg px-8 py-3 bg-transparent"
             >
               <Link href="/itineraries">View All Itineraries</Link>
             </Button>

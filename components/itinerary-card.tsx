@@ -25,25 +25,25 @@ type ColorTheme = "amber" | "teal" | "brown"
 
 const themeColors: Record<ColorTheme, { primary: string; hover: string; text: string; border: string; badge: string }> = {
   amber: {
-    primary: "bg-[#d97706] hover:bg-[#b45309]",
-    hover: "hover:bg-[#d97706] hover:text-white",
-    text: "text-[#d97706]",
-    border: "border-[#d97706]",
-    badge: "bg-[#d97706]",
+    primary: "bg-[#c24503] hover:bg-[#a33d02]",
+    hover: "hover:bg-[#c24503] hover:text-white",
+    text: "text-[#c24503]",
+    border: "border-[#c24503]",
+    badge: "bg-[#c24503]",
   },
   teal: {
-    primary: "bg-[#0891b2] hover:bg-[#0e7490]",
-    hover: "hover:bg-[#0891b2] hover:text-white",
-    text: "text-[#0891b2]",
-    border: "border-[#0891b2]",
-    badge: "bg-[#0891b2]",
+    primary: "bg-[#c24503] hover:bg-[#a33d02]",
+    hover: "hover:bg-[#c24503] hover:text-white",
+    text: "text-[#c24503]",
+    border: "border-[#c24503]",
+    badge: "bg-[#c24503]",
   },
   brown: {
-    primary: "bg-[#f88f2f] hover:bg-[#e67e1e]",
-    hover: "hover:bg-[#f88f2f] hover:text-white",
-    text: "text-[#f88f2f]",
-    border: "border-[#f88f2f]",
-    badge: "bg-[#f88f2f]",
+    primary: "bg-[#f88518] hover:bg-[#c24503]",
+    hover: "hover:bg-[#f88518] hover:text-white",
+    text: "text-[#f88518]",
+    border: "border-[#f88518]",
+    badge: "bg-[#f88518]",
   },
 }
 
@@ -94,7 +94,7 @@ export function ItineraryCard({ itinerary, theme = "brown" }: { itinerary: Itine
 
         {/* Highlights */}
         <div className="mb-6">
-          <h4 className={`font-semibold ${theme === "brown" ? "text-[#55331e]" : colors.text} text-sm mb-2`}>{t("card.highlights")}</h4>
+          <h4 className={`font-semibold ${theme === "brown" ? "text-[#210c00]" : colors.text} text-sm mb-2`}>{t("card.highlights")}</h4>
           <ul className="space-y-1">
             {itinerary.highlights.slice(0, 3).map((highlight, index) => (
               <li key={index} className="text-xs text-gray-600 flex items-start gap-2">

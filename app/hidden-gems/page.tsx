@@ -56,7 +56,7 @@ export default function HiddenGemsPage() {
       <WhatsAppFloat />
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-r from-[#55331e]/90 to-[#f88f2f]/90">
+      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-r from-[#210c00]/90 to-[#f88518]/90">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">Hidden Gems</h1>
@@ -71,7 +71,7 @@ export default function HiddenGemsPage() {
       {/* Introduction */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
             Discover Tanzania's Best-Kept Secrets
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -81,15 +81,15 @@ export default function HiddenGemsPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#f88f2f] mb-2">3</div>
+              <div className="text-3xl font-bold text-[#f88518] mb-2">3</div>
               <p className="text-gray-600">Secret Locations</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#f88f2f] mb-2">Authentic</div>
+              <div className="text-3xl font-bold text-[#f88518] mb-2">Authentic</div>
               <p className="text-gray-600">Cultural Experiences</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#f88f2f] mb-2">Untouched</div>
+              <div className="text-3xl font-bold text-[#f88518] mb-2">Untouched</div>
               <p className="text-gray-600">Natural Beauty</p>
             </div>
           </div>
@@ -97,10 +97,10 @@ export default function HiddenGemsPage() {
       </section>
 
       {/* Hidden Gems Grid */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">
               Three Extraordinary Hidden Treasures
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -128,8 +128,8 @@ export default function HiddenGemsPage() {
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-xl font-bold text-[#55331e] font-serif">{gem.name}</h3>
-                      <p className="text-[#f88f2f] font-medium">{gem.description}</p>
+                      <h3 className="text-xl font-bold text-[#210c00] font-serif">{gem.name}</h3>
+                      <p className="text-[#f88518] font-medium">{gem.description}</p>
                     </div>
                     <div className="text-right text-sm">
                       <p className="font-medium">{gem.duration}</p>
@@ -140,18 +140,18 @@ export default function HiddenGemsPage() {
                   <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{gem.details}</p>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold text-[#55331e] mb-3">Experience Highlights:</h4>
+                    <h4 className="font-semibold text-[#210c00] mb-3">Experience Highlights:</h4>
                     <ul className="space-y-2">
                       {gem.highlights.map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                          <span className="text-[#f88f2f] mt-1">•</span>
+                          <span className="text-[#f88518] mt-1">•</span>
                           {highlight}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <Button className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white mt-auto">
+                  <Button className="w-full bg-[#f88518] hover:bg-[#c24503] text-white mt-auto">
                     <Link href="/contact">Discover This Gem</Link>
                   </Button>
                 </CardContent>
@@ -173,7 +173,7 @@ export default function HiddenGemsPage() {
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
                 Why Explore Tanzania's Hidden Gems?
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -183,35 +183,35 @@ export default function HiddenGemsPage() {
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Authentic Cultural Exchange:</span>
+                    <span className="font-semibold text-[#210c00]">Authentic Cultural Exchange:</span>
                     <span className="text-gray-600 ml-2">Meet local communities and learn traditional practices</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Pristine Natural Beauty:</span>
+                    <span className="font-semibold text-[#210c00]">Pristine Natural Beauty:</span>
                     <span className="text-gray-600 ml-2">Untouched landscapes perfect for photography</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Personal Discovery:</span>
+                    <span className="font-semibold text-[#210c00]">Personal Discovery:</span>
                     <span className="text-gray-600 ml-2">Create unique stories and unforgettable memories</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Peaceful Experiences:</span>
+                    <span className="font-semibold text-[#210c00]">Peaceful Experiences:</span>
                     <span className="text-gray-600 ml-2">Escape crowds and connect with nature</span>
                   </div>
                 </li>
               </ul>
-              <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+              <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white">
                 <Link href="/contact">Plan Your Hidden Gems Tour</Link>
               </Button>
             </div>
@@ -220,9 +220,9 @@ export default function HiddenGemsPage() {
       </section>
 
       {/* Combination Tours */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-[#faf6f1]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">Perfect Combinations</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">Perfect Combinations</h2>
           <p className="text-lg text-gray-600 mb-8">
             These hidden gems pair beautifully with our main safari and trekking experiences, adding depth and
             authenticity to your Tanzania adventure.
@@ -230,7 +230,7 @@ export default function HiddenGemsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="p-6">
               <CardContent className="p-0">
-                <h3 className="text-xl font-bold text-[#55331e] mb-3 font-serif">Safari + Hidden Gems</h3>
+                <h3 className="text-xl font-bold text-[#210c00] mb-3 font-serif">Safari + Hidden Gems</h3>
                 <p className="text-gray-600">
                   Combine your Northern Circuit safari with visits to Materuni Waterfall and Lake Duluti for a perfect
                   blend of wildlife and cultural experiences.
@@ -239,7 +239,7 @@ export default function HiddenGemsPage() {
             </Card>
             <Card className="p-6">
               <CardContent className="p-0">
-                <h3 className="text-xl font-bold text-[#55331e] mb-3 font-serif">Kilimanjaro + Wellness</h3>
+                <h3 className="text-xl font-bold text-[#210c00] mb-3 font-serif">Kilimanjaro + Wellness</h3>
                 <p className="text-gray-600">
                   After conquering Kilimanjaro, relax and rejuvenate at Rundugai Hot Springs while learning about local
                   healing traditions.
@@ -251,20 +251,20 @@ export default function HiddenGemsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#55331e] text-white">
+      <section className="py-16 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">Ready to Discover Tanzania's Secrets?</h2>
           <p className="text-lg mb-8 opacity-90">
             Let us guide you to the hidden treasures that reveal the true heart of Tanzania.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">
+            <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white px-8">
               <Link href="/contact">Explore Hidden Gems</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] px-8 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] px-8 bg-transparent"
             >
               <Link href="/contact">Customize Your Journey</Link>
             </Button>

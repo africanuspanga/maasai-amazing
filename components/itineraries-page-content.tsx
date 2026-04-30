@@ -58,7 +58,7 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
       <section className="py-16 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#d97706] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-4">
               {t("itineraries.northernKiliTitle")}
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -78,7 +78,7 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
       <section className="py-16 md:py-20 bg-gradient-to-br from-cyan-50 via-blue-50 to-teal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0891b2] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-4">
               {t("itineraries.zanzibarBeachTitle")}
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -98,7 +98,7 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#55331e] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#210c00] mb-4">
               {t("itineraries.southernPackTitle")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -115,7 +115,7 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-[#55331e] text-white">
+      <section className="py-16 md:py-20 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">
             {t("itineraries.ctaTitle")}
@@ -124,16 +124,16 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
             {t("itineraries.ctaSubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg px-8 py-3">
+            <Button asChild size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white text-lg px-8 py-3">
               <Link href="/contact">{t("itineraries.planCustom")}</Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] text-lg px-8 py-3 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] text-lg px-8 py-3 bg-transparent"
             >
-              <Link href="https://wa.me/255784258765" target="_blank">
+              <Link href="https://wa.me/255754746464" target="_blank">
                 {t("itineraries.chatWhatsapp")}
               </Link>
             </Button>

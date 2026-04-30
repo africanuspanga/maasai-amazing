@@ -71,7 +71,7 @@ export default function ContactPage() {
                           {t("contact.phoneWhatsappWechat")}
                         </h3>
                         <p className="text-muted-foreground text-sm md:text-base">
-                          WhatsApp: +255 784 258 765
+                          WhatsApp: +255 754 746 464
                           <br />
                           WeChat: +86 155 2930 9784
                           <br />
@@ -89,7 +89,7 @@ export default function ContactPage() {
                       <div className="min-w-0">
                         <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{t("contact.email")}</h3>
                         <p className="text-muted-foreground text-sm md:text-base break-all">
-                          tours@aussigroup.com
+                          info@maasaiamazingsafaris.com
                           <br />
                           <span className="text-xs md:text-sm">{t("contact.respondTime")}</span>
                         </p>
@@ -185,7 +185,7 @@ export default function ContactPage() {
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="p-4 md:p-6">
                   <h3 className="font-semibold text-foreground mb-3 text-sm md:text-base">
-                    {t("contact.whyChooseSaitoti")}
+                    {t("contact.whyChooseUs")}
                   </h3>
                   <ul className="space-y-1 md:space-y-2 text-muted-foreground text-xs md:text-sm">
                     <li>{"• "}{t("contact.whyItem1")}</li>

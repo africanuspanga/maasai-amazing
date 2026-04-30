@@ -44,7 +44,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">{t("about.ourStory")}</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#210c00] tracking-tight mb-6">{t("about.ourStory")}</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 {t("about.ourStoryP1")}
               </p>
@@ -54,18 +54,18 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#f88f2f] mb-2">10+</div>
+                  <div className="text-3xl font-bold text-[#f88518] mb-2">10+</div>
                   <div className="text-sm text-gray-500">{t("about.teamExperience")}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#f88f2f] mb-2">2021</div>
+                  <div className="text-3xl font-bold text-[#f88518] mb-2">2021</div>
                   <div className="text-sm text-gray-500">{t("about.companyEstablished")}</div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+              <div className="aspect-[4/3] rounded-[2rem] overflow-hidden">
                 <Image
                   src="/images/safari-bird.jpg"
                   alt="Safari bird on vehicle with safari cars in background"
@@ -79,10 +79,10 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#210c00] tracking-tight mb-6">
               {t("about.whyChooseUs")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -92,40 +92,40 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center group">
-              <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#f88518] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#55331e] mb-3">{t("home.safetyFirst")}</h3>
+              <h3 className="text-xl font-bold text-[#210c00] mb-3">{t("home.safetyFirst")}</h3>
               <p className="text-gray-600">
                 {t("home.safetyFirstDesc")}
               </p>
             </div>
 
             <div className="text-center group">
-              <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#f88518] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#55331e] mb-3">{t("home.localExpertise")}</h3>
+              <h3 className="text-xl font-bold text-[#210c00] mb-3">{t("home.localExpertise")}</h3>
               <p className="text-gray-600">
                 {t("home.localExpertiseDesc")}
               </p>
             </div>
 
             <div className="text-center group">
-              <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#f88518] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Heart className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#55331e] mb-3">{t("about.passionateService")}</h3>
+              <h3 className="text-xl font-bold text-[#210c00] mb-3">{t("about.passionateService")}</h3>
               <p className="text-gray-600">
                 {t("about.passionateServiceDesc")}
               </p>
             </div>
 
             <div className="text-center group">
-              <div className="w-16 h-16 bg-[#f88f2f] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-[#f88518] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Globe className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#55331e] mb-3">{t("about.sustainableTourism")}</h3>
+              <h3 className="text-xl font-bold text-[#210c00] mb-3">{t("about.sustainableTourism")}</h3>
               <p className="text-gray-600">
                 {t("about.sustainableTourismDesc")}
               </p>
@@ -139,7 +139,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+              <div className="aspect-[4/3] rounded-[2rem] overflow-hidden">
                 <Image
                   src="/images/giraffe-serengeti.jpg"
                   alt="Giraffe in Serengeti National Park Tanzania"
@@ -150,7 +150,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#55331e] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#210c00] tracking-tight mb-6">
                 {t("about.ourExpertise")}
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -159,19 +159,19 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
-                  <Camera className="w-6 h-6 text-[#f88f2f]" />
+                  <Camera className="w-6 h-6 text-[#f88518]" />
                   <span className="text-gray-700">{t("about.wildlifePhotography")}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mountain className="w-6 h-6 text-[#f88f2f]" />
+                  <Mountain className="w-6 h-6 text-[#f88518]" />
                   <span className="text-gray-700">{t("about.mountainTrekking")}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Users className="w-6 h-6 text-[#f88f2f]" />
+                  <Users className="w-6 h-6 text-[#f88518]" />
                   <span className="text-gray-700">{t("about.culturalTours")}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Globe className="w-6 h-6 text-[#f88f2f]" />
+                  <Globe className="w-6 h-6 text-[#f88518]" />
                   <span className="text-gray-700">{t("about.beachHolidays")}</span>
                 </div>
               </div>
@@ -181,23 +181,23 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#55331e] text-white">
+      <section className="py-20 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">{t("about.ctaTitle")}</h2>
           <p className="text-lg md:text-xl mb-8 opacity-90">
             {t("about.ctaSubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-lg px-8 py-3">
+            <Button asChild size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white text-lg px-8 py-3">
               <Link href="/contact">{t("home.startPlanning")}</Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] text-lg px-8 py-3 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] text-lg px-8 py-3 bg-transparent"
             >
-              <Link href="https://wa.me/255784258765" target="_blank">
+              <Link href="https://wa.me/255754746464" target="_blank">
                 {t("home.whatsappUs")}
               </Link>
             </Button>

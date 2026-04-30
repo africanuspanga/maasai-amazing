@@ -65,7 +65,7 @@ export default function KilimanjaroMaranguPage() {
             <div className="lg:col-span-2 space-y-8">
               {/* Overview */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#d97706] mb-4">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#c24503] mb-4">
                   Route Overview
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -81,12 +81,12 @@ export default function KilimanjaroMaranguPage() {
 
               {/* Itinerary */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#d97706] mb-6">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#c24503] mb-6">
                   Day by Day Itinerary
                 </h2>
                 <div className="space-y-6">
                   {/* Day 1 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 1: Marangu Gate to Mandara Hut</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 1,870m to 2,700m | <strong>Distance:</strong> 8km | <strong>Time:</strong> 4-5 hours
@@ -97,7 +97,7 @@ export default function KilimanjaroMaranguPage() {
                   </div>
 
                   {/* Day 2 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 2: Mandara Hut to Horombo Hut</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 2,700m to 3,720m | <strong>Distance:</strong> 12km | <strong>Time:</strong> 6-8 hours
@@ -108,7 +108,7 @@ export default function KilimanjaroMaranguPage() {
                   </div>
 
                   {/* Day 3 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 3: Acclimatization Day at Horombo Hut</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 3,720m to 4,300m to 3,720m | <strong>Distance:</strong> 10km | <strong>Time:</strong> 4-6 hours
@@ -119,7 +119,7 @@ export default function KilimanjaroMaranguPage() {
                   </div>
 
                   {/* Day 4 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 4: Horombo Hut to Kibo Hut</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 3,720m to 4,703m | <strong>Distance:</strong> 10km | <strong>Time:</strong> 6-8 hours
@@ -130,7 +130,7 @@ export default function KilimanjaroMaranguPage() {
                   </div>
 
                   {/* Day 5 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 5: Summit Day - Uhuru Peak & Descend to Horombo</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 4,703m to 5,895m to 3,720m | <strong>Distance:</strong> 21km | <strong>Time:</strong> 12-15 hours
@@ -141,7 +141,7 @@ export default function KilimanjaroMaranguPage() {
                   </div>
 
                   {/* Day 6 */}
-                  <div className="border-l-4 border-[#d97706] pl-6">
+                  <div className="border-l-4 border-[#c24503] pl-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Day 6: Horombo Hut to Marangu Gate</h3>
                     <p className="text-gray-700 leading-relaxed mb-2">
                       <strong>Elevation:</strong> 3,720m to 1,870m | <strong>Distance:</strong> 20km | <strong>Time:</strong> 5-7 hours
@@ -156,7 +156,7 @@ export default function KilimanjaroMaranguPage() {
               {/* Included/Excluded */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-xl font-bold text-[#d97706] mb-4">Included</h3>
+                  <h3 className="text-xl font-bold text-[#c24503] mb-4">Included</h3>
                   <ul className="space-y-2">
                     {[
                       "Professional mountain guide",
@@ -180,7 +180,7 @@ export default function KilimanjaroMaranguPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#d97706] mb-4">Not Included</h3>
+                  <h3 className="text-xl font-bold text-[#c24503] mb-4">Not Included</h3>
                   <ul className="space-y-2">
                     {[
                       "International flights",
@@ -205,22 +205,22 @@ export default function KilimanjaroMaranguPage() {
 
               {/* Why Choose Marangu */}
               <div className="bg-amber-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-[#d97706] mb-4">Why Choose the Marangu Route?</h3>
+                <h3 className="text-xl font-bold text-[#c24503] mb-4">Why Choose the Marangu Route?</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3 text-gray-700">
-                    <Home className="w-5 h-5 text-[#d97706] flex-shrink-0 mt-0.5" />
+                    <Home className="w-5 h-5 text-[#c24503] flex-shrink-0 mt-0.5" />
                     <span><strong>Hut Accommodation:</strong> Sleep in bunk beds with mattresses instead of tents</span>
                   </li>
                   <li className="flex items-start gap-3 text-gray-700">
-                    <Check className="w-5 h-5 text-[#d97706] flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#c24503] flex-shrink-0 mt-0.5" />
                     <span><strong>Dining Halls:</strong> Eat meals in communal dining areas</span>
                   </li>
                   <li className="flex items-start gap-3 text-gray-700">
-                    <Check className="w-5 h-5 text-[#d97706] flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#c24503] flex-shrink-0 mt-0.5" />
                     <span><strong>Gradual Ascent:</strong> Gentler slope compared to other routes</span>
                   </li>
                   <li className="flex items-start gap-3 text-gray-700">
-                    <Check className="w-5 h-5 text-[#d97706] flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-[#c24503] flex-shrink-0 mt-0.5" />
                     <span><strong>Acclimatization Day:</strong> Extra day at Horombo increases success rate</span>
                   </li>
                 </ul>
@@ -229,25 +229,25 @@ export default function KilimanjaroMaranguPage() {
 
             {/* Right Column - Booking Card */}
             <div className="lg:col-span-1">
-              <Card className="sticky top-24 border-2 border-[#d97706] shadow-xl">
+              <Card className="sticky top-24 border-2 border-[#c24503] shadow-xl">
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <p className="text-sm text-gray-600 mb-2">Starting from</p>
-                    <p className="text-4xl font-bold text-[#d97706]">$2,349</p>
+                    <p className="text-4xl font-bold text-[#c24503]">$2,349</p>
                     <p className="text-sm text-gray-500 mt-1">per person</p>
                   </div>
 
                   <div className="space-y-4 mb-6">
                     <div className="flex items-center gap-3 text-sm">
-                      <Calendar className="w-5 h-5 text-[#d97706]" />
+                      <Calendar className="w-5 h-5 text-[#c24503]" />
                       <span className="text-gray-700">6 Days / 5 Nights</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
-                      <Users className="w-5 h-5 text-[#d97706]" />
+                      <Users className="w-5 h-5 text-[#c24503]" />
                       <span className="text-gray-700">1-10+ people</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
-                      <Home className="w-5 h-5 text-[#d97706]" />
+                      <Home className="w-5 h-5 text-[#c24503]" />
                       <span className="text-gray-700">Hut Accommodation</span>
                     </div>
                   </div>
@@ -260,13 +260,13 @@ export default function KilimanjaroMaranguPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <BookNowButton tourName="Kilimanjaro - Marangu Route" className="w-full bg-[#d97706] hover:bg-[#b45309] text-white py-6">Book This Climb</BookNowButton>
+                    <BookNowButton tourName="Kilimanjaro - Marangu Route" className="w-full bg-[#c24503] hover:bg-[#a33d02] text-white py-6">Book This Climb</BookNowButton>
                     <Button
                       asChild
                       variant="outline"
-                      className="w-full border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white py-6"
+                      className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white py-6"
                     >
-                      <Link href="https://wa.me/255745371468" target="_blank">
+                      <Link href="https://wa.me/255754746464" target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>
@@ -287,17 +287,17 @@ export default function KilimanjaroMaranguPage() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-amber-100 to-orange-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#d97706] mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-4">
             Climb the Classic Route to the Roof of Africa
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Experience Kilimanjaro with the comfort of hut accommodation on the historic Marangu Route
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#d97706] hover:bg-[#b45309] text-white">
+            <Button asChild size="lg" className="bg-[#c24503] hover:bg-[#a33d02] text-white">
               <Link href="/contact">Begin Your Climb</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-[#d97706] text-[#d97706] hover:bg-[#d97706] hover:text-white">
+            <Button asChild size="lg" variant="outline" className="border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white">
               <Link href="/kilimanjaro">Kilimanjaro Info</Link>
             </Button>
           </div>

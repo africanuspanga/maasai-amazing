@@ -62,7 +62,7 @@ export default function SouthernCircuitPage() {
       <WhatsAppFloat />
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-r from-[#55331e]/90 to-[#f88f2f]/90">
+      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-r from-[#210c00]/90 to-[#f88518]/90">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">Southern Circuit Safaris</h1>
@@ -78,7 +78,7 @@ export default function SouthernCircuitPage() {
       {/* Introduction */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">Untouched Wilderness Awaits</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">Untouched Wilderness Awaits</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
             The Southern Circuit represents Tanzania's wild heart - vast, remote, and spectacularly beautiful. These
             parks offer intimate wildlife encounters in pristine environments where you'll often have sightings to
@@ -86,15 +86,15 @@ export default function SouthernCircuitPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#f88f2f] mb-2">4</div>
+              <div className="text-3xl font-bold text-[#f88518] mb-2">4</div>
               <p className="text-gray-600">Spectacular Parks</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#f88f2f] mb-2">50,000+</div>
+              <div className="text-3xl font-bold text-[#f88518] mb-2">50,000+</div>
               <p className="text-gray-600">Square Kilometers</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#f88f2f] mb-2">Exclusive</div>
+              <div className="text-3xl font-bold text-[#f88518] mb-2">Exclusive</div>
               <p className="text-gray-600">Wildlife Experiences</p>
             </div>
           </div>
@@ -102,10 +102,10 @@ export default function SouthernCircuitPage() {
       </section>
 
       {/* Parks Grid */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">
               Four Magnificent Southern Parks
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -136,23 +136,23 @@ export default function SouthernCircuitPage() {
                 </div>
 
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-[#55331e] mb-2 font-serif">{park.name}</h3>
-                  <p className="text-[#f88f2f] font-medium mb-4">{park.description}</p>
+                  <h3 className="text-xl font-bold text-[#210c00] mb-2 font-serif">{park.name}</h3>
+                  <p className="text-[#f88518] font-medium mb-4">{park.description}</p>
                   <p className="text-gray-600 mb-4 leading-relaxed">{park.details}</p>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold text-[#55331e] mb-3">Park Highlights:</h4>
+                    <h4 className="font-semibold text-[#210c00] mb-3">Park Highlights:</h4>
                     <ul className="space-y-2">
                       {park.highlights.map((highlight, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                          <span className="text-[#f88f2f] mt-1">•</span>
+                          <span className="text-[#f88518] mt-1">•</span>
                           {highlight}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <Button className="w-full bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+                  <Button className="w-full bg-[#f88518] hover:bg-[#c24503] text-white">
                     <Link href="/contact" className="w-full block">
                       Explore This Park
                     </Link>
@@ -169,7 +169,7 @@ export default function SouthernCircuitPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">
                 Why Choose the Southern Circuit?
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -179,35 +179,35 @@ export default function SouthernCircuitPage() {
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Exclusive Experiences:</span>
+                    <span className="font-semibold text-[#210c00]">Exclusive Experiences:</span>
                     <span className="text-gray-600 ml-2">Fewer crowds, more intimate wildlife encounters</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Diverse Activities:</span>
+                    <span className="font-semibold text-[#210c00]">Diverse Activities:</span>
                     <span className="text-gray-600 ml-2">Boat safaris, walking safaris, and beach combinations</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Pristine Wilderness:</span>
+                    <span className="font-semibold text-[#210c00]">Pristine Wilderness:</span>
                     <span className="text-gray-600 ml-2">Untouched landscapes and authentic African experiences</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-[#f88f2f] rounded-full mt-2"></span>
+                  <span className="w-2 h-2 bg-[#f88518] rounded-full mt-2"></span>
                   <div>
-                    <span className="font-semibold text-[#55331e]">Year-Round Destination:</span>
+                    <span className="font-semibold text-[#210c00]">Year-Round Destination:</span>
                     <span className="text-gray-600 ml-2">Excellent wildlife viewing in all seasons</span>
                   </div>
                 </li>
               </ul>
-              <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+              <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white">
                 <Link href="/contact">Plan Your Southern Safari</Link>
               </Button>
             </div>
@@ -223,7 +223,7 @@ export default function SouthernCircuitPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#55331e] text-white">
+      <section className="py-16 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
             Ready to Explore Tanzania's Hidden Wilderness?
@@ -232,13 +232,13 @@ export default function SouthernCircuitPage() {
             Discover the authentic Africa that few travelers experience in the pristine Southern Circuit parks.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">
+            <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white px-8">
               <Link href="/contact">Start Your Adventure</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] px-8 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] px-8 bg-transparent"
             >
               <Link href="/contact">Get Detailed Itinerary</Link>
             </Button>

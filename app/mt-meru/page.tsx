@@ -39,7 +39,7 @@ export default function MtMeruPage() {
       <WhatsAppFloat />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-r from-[#55331e]/90 to-[#f88f2f]/90">
+      <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-r from-[#210c00]/90 to-[#f88518]/90">
         <div className="absolute inset-0">
           <img
             src="/images/mt-meru-distant.png"
@@ -64,7 +64,7 @@ export default function MtMeruPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">Why Climb Mount Meru?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">Why Climb Mount Meru?</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Mount Meru offers one of Tanzania's most rewarding climbing experiences. This active volcano provides
                 stunning views of Kilimanjaro, diverse wildlife encounters, and a challenging yet achievable summit for
@@ -75,7 +75,7 @@ export default function MtMeruPage() {
                 including elephants, buffalos, and various primates during your ascent. The summit rewards climbers with
                 breathtaking sunrise views and panoramic vistas across northern Tanzania.
               </p>
-              <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+              <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white">
                 <Link href="/contact">Plan Your Mt. Meru Climb</Link>
               </Button>
             </div>
@@ -100,10 +100,10 @@ export default function MtMeruPage() {
       </section>
 
       {/* Highlights Grid */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">
               Mount Meru Climbing Highlights
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -115,7 +115,7 @@ export default function MtMeruPage() {
             {highlights.map((highlight, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-0">
-                  <h3 className="text-xl font-bold text-[#55331e] mb-3 font-serif">{highlight.title}</h3>
+                  <h3 className="text-xl font-bold text-[#210c00] mb-3 font-serif">{highlight.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{highlight.description}</p>
                 </CardContent>
               </Card>
@@ -128,7 +128,7 @@ export default function MtMeruPage() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-4 font-serif">The Climbing Experience</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">The Climbing Experience</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               A 3-4 day adventure through diverse ecosystems to the summit of Tanzania's second highest peak.
             </p>
@@ -137,7 +137,7 @@ export default function MtMeruPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="p-8">
               <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-[#55331e] mb-4 font-serif">Route Details</h3>
+                <h3 className="text-2xl font-bold text-[#210c00] mb-4 font-serif">Route Details</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-2 border-b border-gray-200">
                     <span className="font-medium">Duration:</span>
@@ -165,30 +165,30 @@ export default function MtMeruPage() {
 
             <Card className="p-8">
               <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-[#55331e] mb-4 font-serif">What's Included</h3>
+                <h3 className="text-2xl font-bold text-[#210c00] mb-4 font-serif">What's Included</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Professional mountain guides</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Mountain hut accommodation</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>All meals during the climb</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Park fees and permits</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Safety equipment</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Certificate of achievement</span>
                   </li>
                 </ul>
@@ -199,18 +199,18 @@ export default function MtMeruPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#55331e] text-white">
+      <section className="py-16 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">Ready to Conquer Mount Meru?</h2>
           <p className="text-lg mb-8 opacity-90">
             Experience Tanzania's hidden giant and enjoy spectacular views of Kilimanjaro from the summit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <BookNowButton tourName="Mount Meru Climb" size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">Book Your Climb</BookNowButton>
+            <BookNowButton tourName="Mount Meru Climb" size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white px-8">Book Your Climb</BookNowButton>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] px-8 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] px-8 bg-transparent"
             >
               <Link href="/contact">Get Climbing Guide</Link>
             </Button>

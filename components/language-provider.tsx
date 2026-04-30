@@ -29,7 +29,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const saved = localStorage.getItem("saitoti-lang") as Locale | null
+    const saved = localStorage.getItem("maasai-lang") as Locale | null
     if (saved && ["en", "fr", "es", "zh"].includes(saved)) {
       setLocaleState(saved)
     }
@@ -38,7 +38,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale)
-    localStorage.setItem("saitoti-lang", newLocale)
+    localStorage.setItem("maasai-lang", newLocale)
   }, [])
 
   const t = useCallback(

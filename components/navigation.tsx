@@ -2,12 +2,12 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { Menu, X, ChevronDown, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { useLanguage } from "@/components/language-provider"
 import { type Locale, localeNames, localeFlags } from "@/lib/translations"
+import { Logo } from "@/components/logo"
 
 function LanguageSwitcher({ variant = "desktop" }: { variant?: "desktop" | "mobile" }) {
   const { locale, setLocale, t } = useLanguage()
@@ -29,8 +29,8 @@ function LanguageSwitcher({ variant = "desktop" }: { variant?: "desktop" | "mobi
   if (variant === "mobile") {
     return (
       <div className="px-2 py-3">
-        <div className="flex items-center gap-2 mb-3 text-sm font-semibold text-[#55331e]">
-          <Globe className="w-4 h-4 text-[#f88f2f]" />
+        <div className="flex items-center gap-2 mb-3 text-sm font-semibold text-[#210c00]">
+          <Globe className="w-4 h-4 text-[#f88518]" />
           <span>Language</span>
         </div>
         <div className="grid grid-cols-2 gap-2">
@@ -40,11 +40,11 @@ function LanguageSwitcher({ variant = "desktop" }: { variant?: "desktop" | "mobi
               onClick={() => setLocale(loc)}
               className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 locale === loc
-                  ? "bg-[#f88f2f] text-white"
-                  : "bg-gray-50 text-[#55331e] hover:bg-gray-100"
+                  ? "bg-[#f88518] text-white"
+                  : "bg-gray-50 text-[#210c00] hover:bg-gray-100"
               }`}
             >
-              <span className="text-xs font-bold w-6">{localeFlags[loc]}</span>
+              <span className="text-lg">{localeFlags[loc]}</span>
               <span>{localeNames[loc]}</span>
             </button>
           ))}
@@ -57,12 +57,11 @@ function LanguageSwitcher({ variant = "desktop" }: { variant?: "desktop" | "mobi
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-[#55331e] hover:bg-gray-50 transition-colors text-sm font-medium"
+        className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-[#210c00] hover:bg-gray-50 transition-colors text-sm font-medium"
         aria-label="Select language"
         aria-expanded={open}
       >
-        <Globe className="w-4 h-4 text-[#f88f2f]" />
-        <span className="text-xs font-bold">{localeFlags[locale]}</span>
+        <span className="text-lg">{localeFlags[locale]}</span>
         <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
@@ -77,14 +76,14 @@ function LanguageSwitcher({ variant = "desktop" }: { variant?: "desktop" | "mobi
               }}
               className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
                 locale === loc
-                  ? "bg-[#f88f2f]/10 text-[#f88f2f] font-semibold"
+                  ? "bg-[#f88518]/10 text-[#f88518] font-semibold"
                   : "text-gray-700 hover:bg-gray-50"
               }`}
             >
-              <span className="text-xs font-bold w-6 text-center">{localeFlags[loc]}</span>
+              <span className="text-lg">{localeFlags[loc]}</span>
               <span>{localeNames[loc]}</span>
               {locale === loc && (
-                <svg className="w-4 h-4 ml-auto text-[#f88f2f]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 ml-auto text-[#f88518]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               )}
@@ -132,35 +131,28 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 md:h-22 lg:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0" onClick={handleLinkClick}>
-            <Image
-              src="/images/saitoti-logo-new.png"
-              alt="Saitoti Tours & Safaris"
-              width={80}
-              height={80}
-              className="w-16 h-16 md:w-[72px] md:h-[72px] lg:w-20 lg:h-20"
-              priority
-            />
-          </Link>
+          <div onClick={handleLinkClick} className="py-2">
+            <Logo size="xl" showText={false} />
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-5 xl:space-x-7">
             <Link
               href="/"
-              className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
+              className="text-[#210c00] hover:text-[#f88518] transition-colors font-medium text-sm xl:text-base"
             >
               {t("nav.home")}
             </Link>
             <Link
               href="/about"
-              className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
+              className="text-[#210c00] hover:text-[#f88518] transition-colors font-medium text-sm xl:text-base"
             >
               {t("nav.about")}
             </Link>
 
             {/* Safari Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base">
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-[#210c00] hover:text-[#f88518] transition-colors font-medium text-sm xl:text-base">
                 <span>{t("nav.safari")}</span>
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
@@ -195,21 +187,21 @@ export function Navigation() {
 
             <Link
               href="/zanzibar"
-              className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
+              className="text-[#210c00] hover:text-[#f88518] transition-colors font-medium text-sm xl:text-base"
             >
               {t("nav.zanzibar")}
             </Link>
 
             <Link
               href="/itineraries"
-              className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base"
+              className="text-[#210c00] hover:text-[#f88518] transition-colors font-medium text-sm xl:text-base"
             >
               {t("nav.itineraries")}
             </Link>
 
             {/* Trekking Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium text-sm xl:text-base">
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-[#210c00] hover:text-[#f88518] transition-colors font-medium text-sm xl:text-base">
                 <span>{t("nav.trekking")}</span>
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
@@ -239,7 +231,7 @@ export function Navigation() {
 
             <LanguageSwitcher variant="desktop" />
 
-            <Button asChild className="bg-[#f88f2f] hover:bg-[#e67e1e] text-white text-sm xl:text-base">
+            <Button asChild className="bg-[#f88518] hover:bg-[#c24503] text-white text-sm xl:text-base">
               <Link href="/contact">{t("nav.contact")}</Link>
             </Button>
           </div>
@@ -264,14 +256,14 @@ export function Navigation() {
             <div className="flex flex-col space-y-3">
               <Link
                 href="/"
-                className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
+                className="text-[#210c00] hover:text-[#f88518] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
                 onClick={handleLinkClick}
               >
                 {t("nav.home")}
               </Link>
               <Link
                 href="/about"
-                className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
+                className="text-[#210c00] hover:text-[#f88518] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
                 onClick={handleLinkClick}
               >
                 {t("nav.about")}
@@ -279,38 +271,38 @@ export function Navigation() {
 
               {/* Mobile Safari Section */}
               <div className="pl-2 space-y-2 py-2">
-                <div className="font-semibold text-[#55331e] text-sm mb-2">{t("nav.safari")}</div>
+                <div className="font-semibold text-[#210c00] text-sm mb-2">{t("nav.safari")}</div>
                 <Link
                   href="/northern-circuit"
-                  className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
+                  className="block text-[#210c00] hover:text-[#f88518] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
                   {t("nav.northernCircuit")}
                 </Link>
                 <Link
                   href="/southern-circuit"
-                  className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
+                  className="block text-[#210c00] hover:text-[#f88518] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
                   {t("nav.southernCircuit")}
                 </Link>
                 <Link
                   href="/hidden-gems"
-                  className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
+                  className="block text-[#210c00] hover:text-[#f88518] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
                   {t("nav.hiddenGems")}
                 </Link>
                 <Link
                   href="/historical-sites"
-                  className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
+                  className="block text-[#210c00] hover:text-[#f88518] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
                   {t("nav.historicalSites")}
                 </Link>
                 <Link
                   href="/culture"
-                  className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
+                  className="block text-[#210c00] hover:text-[#f88518] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
                   {t("nav.culture")}
@@ -319,7 +311,7 @@ export function Navigation() {
 
               <Link
                 href="/zanzibar"
-                className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
+                className="text-[#210c00] hover:text-[#f88518] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
                 onClick={handleLinkClick}
               >
                 {t("nav.zanzibar")}
@@ -327,7 +319,7 @@ export function Navigation() {
 
               <Link
                 href="/itineraries"
-                className="text-[#55331e] hover:text-[#f88f2f] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
+                className="text-[#210c00] hover:text-[#f88518] transition-colors font-medium py-2 px-2 rounded-md hover:bg-gray-50"
                 onClick={handleLinkClick}
               >
                 {t("nav.itineraries")}
@@ -335,31 +327,31 @@ export function Navigation() {
 
               {/* Mobile Trekking Section */}
               <div className="pl-2 space-y-2 py-2">
-                <div className="font-semibold text-[#55331e] text-sm mb-2">{t("nav.trekking")}</div>
+                <div className="font-semibold text-[#210c00] text-sm mb-2">{t("nav.trekking")}</div>
                 <Link
                   href="/kilimanjaro"
-                  className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
+                  className="block text-[#210c00] hover:text-[#f88518] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
                   {t("nav.kilimanjaro")}
                 </Link>
                 <Link
                   href="/mt-meru"
-                  className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
+                  className="block text-[#210c00] hover:text-[#f88518] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
                   {t("nav.mtMeru")}
                 </Link>
                 <Link
                   href="/oldonyo-lengai"
-                  className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
+                  className="block text-[#210c00] hover:text-[#f88518] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
                   {t("nav.oldonyoLengai")}
                 </Link>
                 <Link
                   href="/usambara-mountains"
-                  className="block text-[#55331e] hover:text-[#f88f2f] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
+                  className="block text-[#210c00] hover:text-[#f88518] transition-colors py-2 px-3 rounded-md hover:bg-gray-50 text-sm"
                   onClick={handleLinkClick}
                 >
                   {t("nav.usambaraMountains")}
@@ -372,7 +364,7 @@ export function Navigation() {
               </div>
 
               <div className="pt-2">
-                <Button asChild className="bg-[#f88f2f] hover:bg-[#e67e1e] w-full" onClick={handleLinkClick}>
+                <Button asChild className="bg-[#f88518] hover:bg-[#c24503] w-full" onClick={handleLinkClick}>
                   <Link href="/contact">{t("nav.contact")}</Link>
                 </Button>
               </div>

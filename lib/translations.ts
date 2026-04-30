@@ -8,10 +8,10 @@ export const localeNames: Record<Locale, string> = {
 }
 
 export const localeFlags: Record<Locale, string> = {
-  en: "EN",
-  fr: "FR",
-  es: "ES",
-  zh: "ZH",
+  en: "🇬🇧",
+  fr: "🇫🇷",
+  es: "🇪🇸",
+  zh: "🇨🇳",
 }
 
 export const translations: Record<Locale, Record<string, string>> = {
@@ -86,7 +86,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.culturalTours": "Cultural Tours",
     "footer.historicalSites": "Historical Sites",
     "footer.contactInfo": "Contact Info",
-    "footer.established": "Established 2021",
+    "footer.established": "Tanzania's Finest Safaris",
 
     // Card & Buttons
     "card.highlights": "Highlights:",
@@ -96,7 +96,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // WhatsApp
     "whatsapp.tooltip": "Chat with us on WhatsApp",
-    "whatsapp.message": "Hello! I'm visiting from Saitoti Tours website and I'm interested in booking a safari. Can you help me?",
+    "whatsapp.message": "Hello! I'm visiting from Maasai Amazing Safaris website and I'm interested in booking a safari. Can you help me?",
 
     // Testimonials
     "testimonials.title": "What Our Travelers Say",
@@ -105,12 +105,12 @@ export const translations: Record<Locale, Record<string, string>> = {
     "testimonials.happyTravelers": "100+ Happy Travelers",
 
     // Home Page
-    "home.heroTitle": "Discover the Soul of Tanzania",
-    "home.heroSubtitle": "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel",
-    "home.heroCta": "Discover Tanzania",
+    "home.heroTitle": "Discover Tanzania's Wild Heart",
+    "home.heroSubtitle": "Authentic Maasai-guided safaris crafted for modern explorers",
+    "home.heroCta": "Start Your Adventure",
     "home.aboutTitle": "Your Gateway to Tanzania's Wild Heart",
-    "home.aboutText": "With over 4 years of experience, Saitoti Tours has been crafting unforgettable East African adventures. We specialize in personalized safaris across Tanzania's most iconic landscapes.",
-    "home.whyChooseTitle": "Why Choose Saitoti Tours?",
+    "home.aboutText": "With over 4 years of experience, Maasai Amazing Safaris has been crafting unforgettable East African adventures. We specialize in personalized safaris across Tanzania's most iconic landscapes.",
+    "home.whyChooseTitle": "Why Choose Maasai Amazing Safaris?",
     "home.expertGuides": "Expert Guides",
     "home.expertGuidesDesc": "Certified, English-speaking guides with deep knowledge of Tanzania",
     "home.safetyFirst": "Safety First",
@@ -159,7 +159,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // Home Page - About Section
     "home.aboutGatewayTitle": "Your Gateway to Tanzania's Wonders",
-    "home.aboutGatewayText": "With years of experience, unwavering passion, and deep local knowledge, Saitoti Tours and Safaris crafts extraordinary journeys through one of the world's most spectacular destinations. From the endless plains of the Serengeti to the snow-capped peaks of Kilimanjaro, we bring you closer to the heart of Tanzania.",
+    "home.aboutGatewayText": "With years of experience, unwavering passion, and deep Maasai heritage, Maasai Amazing Safaris crafts extraordinary journeys through one of the world's most spectacular destinations. From the endless plains of the Serengeti to the snow-capped peaks of Kilimanjaro, we bring you closer to the heart of Tanzania.",
     "home.yearsExperience": "Years Experience",
     "home.happyTravelers": "Happy Travelers",
     "home.destinations": "Destinations",
@@ -208,10 +208,10 @@ export const translations: Record<Locale, Record<string, string>> = {
     "partners.satisfactionRate": "Satisfaction Rate",
 
     // About Page
-    "about.heroTitle": "About Saitoti Tours & Safaris",
+    "about.heroTitle": "About Maasai Amazing Safaris",
     "about.heroSubtitle": "Your trusted partner for authentic Tanzania adventures since 2021",
     "about.ourStory": "Our Story",
-    "about.ourStoryP1": "Established in 2021, Saitoti Tours & Safaris was born from a passion for sharing Tanzania's incredible natural beauty and rich cultural heritage with the world. Though our company is young, our team brings more than a decade of experience in safaris and tours across Tanzania's most spectacular locations.",
+    "about.ourStoryP1": "Established in 2021, Maasai Amazing Safaris was born from a passion for sharing Tanzania's incredible natural beauty and rich cultural heritage with the world. Though our company is young, our team brings more than a decade of experience in safaris and tours across Tanzania's most spectacular locations.",
     "about.ourStoryP2": "We believe that travel should be transformative, connecting you not just with breathtaking landscapes and wildlife, but with the heart and soul of Tanzania. Every journey we craft is designed to create lasting memories while supporting local communities and conservation efforts.",
     "about.teamExperience": "Years Team Experience",
     "about.companyEstablished": "Company Established",
@@ -250,7 +250,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "contact.uniqueAdventuresDesc": "Balloon safaris and exclusive experiences",
     "contact.mountainExpeditions": "Mountain Expeditions",
     "contact.mountainExpeditionsDesc": "Conquer Africa's highest peaks with expert guides",
-    "contact.whyChooseSaitoti": "Why Choose Saitoti Tours & Safaris?",
+    "contact.whyChooseUs": "Why Choose Maasai Amazing Safaris?",
     "contact.whyItem1": "Expert local guides with decades of experience",
     "contact.whyItem2": "Customized itineraries tailored to your interests",
     "contact.whyItem3": "Small group sizes for personalized attention",
@@ -361,7 +361,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.culturalTours": "Tours Culturels",
     "footer.historicalSites": "Sites Historiques",
     "footer.contactInfo": "Coordonnées",
-    "footer.established": "Établi 2021",
+    "footer.established": "Les Meilleurs Safaris de Tanzanie",
 
     // Card & Buttons
     "card.highlights": "Points Forts:",
@@ -371,7 +371,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // WhatsApp
     "whatsapp.tooltip": "Discutez avec nous sur WhatsApp",
-    "whatsapp.message": "Bonjour ! Je visite le site de Saitoti Tours et je suis intéressé par la réservation d'un safari. Pouvez-vous m'aider ?",
+    "whatsapp.message": "Bonjour ! Je visite le site de Maasai Amazing Safaris et je suis intéressé par la réservation d'un safari. Pouvez-vous m'aider ?",
 
     // Testimonials
     "testimonials.title": "Ce que disent nos voyageurs",
@@ -380,12 +380,12 @@ export const translations: Record<Locale, Record<string, string>> = {
     "testimonials.happyTravelers": "100+ Voyageurs Satisfaits",
 
     // Home Page
-    "home.heroTitle": "Découvrez l'Âme de la Tanzanie",
-    "home.heroSubtitle": "Safaris authentiques, randonnées épiques et aventures culturelles dans le joyau de l'Afrique de l'Est",
-    "home.heroCta": "Découvrez la Tanzanie",
+    "home.heroTitle": "Découvrez la Tanzanie Sauvage",
+    "home.heroSubtitle": "Safaris authentiques guidés par les Maasai pour explorateurs modernes",
+    "home.heroCta": "Commencez Votre Aventure",
     "home.aboutTitle": "Votre Passerelle vers le Cœur Sauvage de la Tanzanie",
-    "home.aboutText": "Avec plus de 4 ans d'expérience, Saitoti Tours crée des aventures inoubliables en Afrique de l'Est. Nous spécialisons dans les safaris personnalisés à travers les paysages les plus emblématiques de la Tanzanie.",
-    "home.whyChooseTitle": "Pourquoi Choisir Saitoti Tours?",
+    "home.aboutText": "Avec plus de 4 ans d'expérience, Maasai Amazing Safaris crée des aventures inoubliables en Afrique de l'Est. Nous spécialisons dans les safaris personnalisés à travers les paysages les plus emblématiques de la Tanzanie.",
+    "home.whyChooseTitle": "Pourquoi Choisir Maasai Amazing Safaris?",
     "home.expertGuides": "Guides Experts",
     "home.expertGuidesDesc": "Guides certifiés et anglophones ayant une connaissance approfondie de la Tanzanie",
     "home.safetyFirst": "Sécurité d'Abord",
@@ -434,7 +434,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // Home Page - About Section
     "home.aboutGatewayTitle": "Votre Passerelle vers les Merveilles de la Tanzanie",
-    "home.aboutGatewayText": "Avec des années d'expérience, une passion inébranlable et une connaissance locale approfondie, Saitoti Tours and Safaris crée des voyages extraordinaires à travers l'une des destinations les plus spectaculaires du monde.",
+    "home.aboutGatewayText": "Avec des années d'expérience, une passion inébranlable et un héritage maasai profond, Maasai Amazing Safaris crée des voyages extraordinaires à travers l'une des destinations les plus spectaculaires du monde.",
     "home.yearsExperience": "Ans d'Expérience",
     "home.happyTravelers": "Voyageurs Satisfaits",
     "home.destinations": "Destinations",
@@ -475,10 +475,10 @@ export const translations: Record<Locale, Record<string, string>> = {
     "partners.subtitle": "Reconnu par les voyageurs du monde entier et les principales plateformes de tourisme",
     "partners.starReviews": "Avis 5 Étoiles",
     "partners.satisfactionRate": "Taux de Satisfaction",
-    "about.heroTitle": "À Propos de Saitoti Tours & Safaris",
+    "about.heroTitle": "À Propos de Maasai Amazing Safaris",
     "about.heroSubtitle": "Votre partenaire de confiance pour des aventures authentiques en Tanzanie depuis 2021",
     "about.ourStory": "Notre Histoire",
-    "about.ourStoryP1": "Fondé en 2021, Saitoti Tours & Safaris est né d'une passion pour partager la beauté naturelle et le patrimoine culturel de la Tanzanie avec le monde. Bien que notre entreprise soit jeune, notre équipe apporte plus d'une décennie d'expérience.",
+    "about.ourStoryP1": "Fondé en 2021, Maasai Amazing Safaris est né d'une passion pour partager la beauté naturelle et le patrimoine culturel de la Tanzanie avec le monde. Bien que notre entreprise soit jeune, notre équipe apporte plus d'une décennie d'expérience.",
     "about.ourStoryP2": "Nous croyons que le voyage devrait être transformateur, vous connectant non seulement avec des paysages à couper le souffle et la faune, mais avec le cœur et l'âme de la Tanzanie.",
     "about.teamExperience": "Ans d'Expérience d'Équipe",
     "about.companyEstablished": "Entreprise Établie",
@@ -515,7 +515,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "contact.uniqueAdventuresDesc": "Safaris en ballon et expériences exclusives",
     "contact.mountainExpeditions": "Expéditions en Montagne",
     "contact.mountainExpeditionsDesc": "Conquérez les plus hauts sommets d'Afrique avec des guides experts",
-    "contact.whyChooseSaitoti": "Pourquoi Choisir Saitoti Tours & Safaris ?",
+    "contact.whyChooseUs": "Pourquoi Choisir Maasai Amazing Safaris ?",
     "contact.whyItem1": "Guides locaux experts avec des décennies d'expérience",
     "contact.whyItem2": "Itinéraires personnalisés adaptés à vos intérêts",
     "contact.whyItem3": "Petits groupes pour une attention personnalisée",
@@ -624,7 +624,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.culturalTours": "Tours Culturales",
     "footer.historicalSites": "Sitios Históricos",
     "footer.contactInfo": "Información de Contacto",
-    "footer.established": "Establecido 2021",
+    "footer.established": "Los Mejores Safaris de Tanzania",
 
     // Card & Buttons
     "card.highlights": "Destacados:",
@@ -634,7 +634,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // WhatsApp
     "whatsapp.tooltip": "Chatea con nosotros en WhatsApp",
-    "whatsapp.message": "¡Hola! Visité el sitio web de Saitoti Tours y estoy interesado en reservar un safari. ¿Puede ayudarme?",
+    "whatsapp.message": "¡Hola! Visité el sitio web de Maasai Amazing Safaris y estoy interesado en reservar un safari. ¿Puede ayudarme?",
 
     // Testimonials
     "testimonials.title": "Lo que dicen nuestros viajeros",
@@ -643,12 +643,12 @@ export const translations: Record<Locale, Record<string, string>> = {
     "testimonials.happyTravelers": "100+ Viajeros Satisfechos",
 
     // Home Page
-    "home.heroTitle": "Descubra el Alma de Tanzania",
-    "home.heroSubtitle": "Safaris auténticos, caminatas épicas y aventuras culturales en la joya de África Oriental",
-    "home.heroCta": "Descubra Tanzania",
+    "home.heroTitle": "Descubra el Corazón Salvaje",
+    "home.heroSubtitle": "Safaris auténticos guiados por maasáis para exploradores modernos",
+    "home.heroCta": "Inicie Su Aventura",
     "home.aboutTitle": "Su Puerta de Entrada al Corazón Salvaje de Tanzania",
-    "home.aboutText": "Con más de 4 años de experiencia, Saitoti Tours crea aventuras inolvidables en África Oriental. Nos especializamos en safaris personalizados a través de los paisajes más icónicos de Tanzania.",
-    "home.whyChooseTitle": "¿Por Qué Elegir Saitoti Tours?",
+    "home.aboutText": "Con más de 4 años de experiencia, Maasai Amazing Safaris crea aventuras inolvidables en África Oriental. Nos especializamos en safaris personalizados a través de los paisajes más icónicos de Tanzania.",
+    "home.whyChooseTitle": "¿Por Qué Elegir Maasai Amazing Safaris?",
     "home.expertGuides": "Guías Expertos",
     "home.expertGuidesDesc": "Guías certificados de habla inglesa con conocimiento profundo de Tanzania",
     "home.safetyFirst": "Seguridad Primero",
@@ -696,7 +696,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "itineraries.southernSubtitle": "Descubra la naturaleza selvática y sin domar del sur de Tanzania",
 
     "home.aboutGatewayTitle": "Su Puerta de Entrada a las Maravillas de Tanzania",
-    "home.aboutGatewayText": "Con años de experiencia, pasión inquebrantable y profundo conocimiento local, Saitoti Tours and Safaris crea viajes extraordinarios a través de uno de los destinos más espectaculares del mundo.",
+    "home.aboutGatewayText": "Con años de experiencia, pasión inquebrantable y profunda herencia maasái, Maasai Amazing Safaris crea viajes extraordinarios a través de uno de los destinos más espectaculares del mundo.",
     "home.yearsExperience": "Años de Experiencia",
     "home.happyTravelers": "Viajeros Satisfechos",
     "home.destinations": "Destinos",
@@ -737,10 +737,10 @@ export const translations: Record<Locale, Record<string, string>> = {
     "partners.subtitle": "Confiado por viajeros de todo el mundo y reconocido por plataformas líderes de turismo",
     "partners.starReviews": "Reseñas de 5 Estrellas",
     "partners.satisfactionRate": "Tasa de Satisfacción",
-    "about.heroTitle": "Sobre Saitoti Tours & Safaris",
+    "about.heroTitle": "Sobre Maasai Amazing Safaris",
     "about.heroSubtitle": "Su socio de confianza para aventuras auténticas en Tanzania desde 2021",
     "about.ourStory": "Nuestra Historia",
-    "about.ourStoryP1": "Establecido en 2021, Saitoti Tours & Safaris nació de la pasión por compartir la increíble belleza natural y el rico patrimonio cultural de Tanzania con el mundo.",
+    "about.ourStoryP1": "Establecido en 2021, Maasai Amazing Safaris nació de la pasión por compartir la increíble belleza natural y el rico patrimonio cultural de Tanzania con el mundo.",
     "about.ourStoryP2": "Creemos que viajar debe ser transformador, conectándote no solo con paisajes impresionantes y vida silvestre, sino con el corazón y el alma de Tanzania.",
     "about.teamExperience": "Años de Experiencia del Equipo",
     "about.companyEstablished": "Empresa Establecida",
@@ -777,7 +777,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "contact.uniqueAdventuresDesc": "Safaris en globo y experiencias exclusivas",
     "contact.mountainExpeditions": "Expediciones de Montaña",
     "contact.mountainExpeditionsDesc": "Conquiste los picos más altos de África con guías expertos",
-    "contact.whyChooseSaitoti": "¿Por Qué Elegir Saitoti Tours & Safaris?",
+    "contact.whyChooseUs": "¿Por Qué Elegir Maasai Amazing Safaris?",
     "contact.whyItem1": "Guías locales expertos con décadas de experiencia",
     "contact.whyItem2": "Itinerarios personalizados adaptados a sus intereses",
     "contact.whyItem3": "Grupos pequeños para atención personalizada",
@@ -886,7 +886,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.culturalTours": "文化旅游",
     "footer.historicalSites": "历史遗迹",
     "footer.contactInfo": "联系信息",
-    "footer.established": "成立于2021年",
+    "footer.established": "坦桑尼亚最棒的野生动物之旅",
 
     // Card & Buttons
     "card.highlights": "亮点:",
@@ -896,7 +896,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // WhatsApp
     "whatsapp.tooltip": "在WhatsApp上与我们聊天",
-    "whatsapp.message": "你好!我正在访问Saitoti Tours网站,对预订野生动物之旅感兴趣。你能帮我吗?",
+    "whatsapp.message": "你好!我正在访问Maasai Amazing Safaris网站,对预订野生动物之旅感兴趣。你能帮我吗?",
 
     // Testimonials
     "testimonials.title": "我们的旅行者说什么",
@@ -905,12 +905,12 @@ export const translations: Record<Locale, Record<string, string>> = {
     "testimonials.happyTravelers": "100+满意的旅行者",
 
     // Home Page
-    "home.heroTitle": "探索坦桑尼亚的灵魂",
-    "home.heroSubtitle": "在东非皇冠上的正宗野生动物之旅、史诗般的徒步旅行和文化冒险",
-    "home.heroCta": "探索坦桑尼亚",
+    "home.heroTitle": "探索野性坦桑尼亚",
+    "home.heroSubtitle": "马赛人引导的正宗野生动物之旅，为现代探险家打造",
+    "home.heroCta": "开启冒险之旅",
     "home.aboutTitle": "进入坦桑尼亚野生心脏的大门",
-    "home.aboutText": "拥有4年以上的经验,Saitoti Tours一直在创造令人难忘的东非冒险。我们专门从事跨越坦桑尼亚最标志性景观的个性化野生动物之旅。",
-    "home.whyChooseTitle": "为什么选择Saitoti Tours?",
+    "home.aboutText": "拥有4年以上的经验,Maasai Amazing Safaris一直在创造令人难忘的东非冒险。我们专门从事跨越坦桑尼亚最标志性景观的个性化野生动物之旅。",
+    "home.whyChooseTitle": "为什么选择Maasai Amazing Safaris?",
     "home.expertGuides": "专家导游",
     "home.expertGuidesDesc": "具有英语能力且对坦桑尼亚有深入了解的认证导游",
     "home.safetyFirst": "安全第一",
@@ -958,7 +958,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "itineraries.southernSubtitle": "发现坦桑尼亚未驯化的南部荒野",
 
     "home.aboutGatewayTitle": "通往坦桑尼亚奇观的大门",
-    "home.aboutGatewayText": "凭借多年的经验、坚定的热情和深厚的本地知识，Saitoti Tours and Safaris为您打造穿越世界上最壮观目的地之一的非凡旅程。",
+    "home.aboutGatewayText": "凭借多年的经验、坚定的热情和深厚的马赛遗产，Maasai Amazing Safaris为您打造穿越世界上最壮观目的地之一的非凡旅程。",
     "home.yearsExperience": "年经验",
     "home.happyTravelers": "满意的旅行者",
     "home.destinations": "目的地",
@@ -999,10 +999,10 @@ export const translations: Record<Locale, Record<string, string>> = {
     "partners.subtitle": "受到全球旅行者的信任，并获得领先旅游平台的认可",
     "partners.starReviews": "五星评价",
     "partners.satisfactionRate": "满意率",
-    "about.heroTitle": "关于Saitoti Tours & Safaris",
+    "about.heroTitle": "关于Maasai Amazing Safaris",
     "about.heroSubtitle": "自2021年以来，您在坦桑尼亚正宗冒险的可靠伙伴",
     "about.ourStory": "我们的故事",
-    "about.ourStoryP1": "成立于2021年，Saitoti Tours & Safaris源于与世界分享坦桑尼亚令人难以置信的自然美景和丰富文化遗产的热情。",
+    "about.ourStoryP1": "成立于2021年，Maasai Amazing Safaris源于与世界分享坦桑尼亚令人难以置信的自然美景和丰富文化遗产的热情。",
     "about.ourStoryP2": "我们相信旅行应该是变革性的，不仅将您与令人叹为观止的风景和野生动物联系起来，还与坦桑尼亚的心灵和灵魂联系起来。",
     "about.teamExperience": "年团队经验",
     "about.companyEstablished": "公司成立",
@@ -1039,7 +1039,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "contact.uniqueAdventuresDesc": "热气球之旅和独家体验",
     "contact.mountainExpeditions": "山地探险",
     "contact.mountainExpeditionsDesc": "在专业导游带领下征服非洲最高峰",
-    "contact.whyChooseSaitoti": "为什么选择Saitoti Tours & Safaris？",
+    "contact.whyChooseUs": "为什么选择Maasai Amazing Safaris？",
     "contact.whyItem1": "拥有数十年经验的本地专业导游",
     "contact.whyItem2": "根据您的兴趣量身定制的行程",
     "contact.whyItem3": "小团体规模以提供个性化关注",

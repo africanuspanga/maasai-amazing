@@ -11,7 +11,7 @@ export default function UsambaraMountainsPage() {
       <WhatsAppFloat />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-r from-[#55331e]/90 to-[#f88f2f]/90">
+      <section className="relative h-[80vh] flex items-center justify-center bg-gradient-to-r from-[#210c00]/90 to-[#f88518]/90">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -35,7 +35,7 @@ export default function UsambaraMountainsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-6 font-serif">Biodiversity Hotspot</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-6 font-serif">Biodiversity Hotspot</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 The Usambara Mountains are part of the Eastern Arc Mountains, an ancient mountain range that has been
                 isolated for millions of years. This isolation has created a unique ecosystem with an extraordinary
@@ -46,7 +46,7 @@ export default function UsambaraMountainsPage() {
                 terraced hillsides. Traditional villages dot the landscape, where local communities practice sustainable
                 agriculture and maintain their cultural heritage.
               </p>
-              <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white">
+              <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white">
                 <Link href="/contact">Explore Usambara Mountains</Link>
               </Button>
             </div>
@@ -71,10 +71,10 @@ export default function UsambaraMountainsPage() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">
               Usambara Mountains Highlights
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -85,7 +85,7 @@ export default function UsambaraMountainsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-0">
-                <h3 className="text-xl font-bold text-[#55331e] mb-3 font-serif">Endemic Species</h3>
+                <h3 className="text-xl font-bold text-[#210c00] mb-3 font-serif">Endemic Species</h3>
                 <p className="text-gray-600">
                   Home to numerous endemic plant and animal species found nowhere else on Earth.
                 </p>
@@ -94,7 +94,7 @@ export default function UsambaraMountainsPage() {
 
             <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-0">
-                <h3 className="text-xl font-bold text-[#55331e] mb-3 font-serif">Lush Forests</h3>
+                <h3 className="text-xl font-bold text-[#210c00] mb-3 font-serif">Lush Forests</h3>
                 <p className="text-gray-600">
                   Explore pristine montane forests with incredible biodiversity and misty atmospheres.
                 </p>
@@ -103,7 +103,7 @@ export default function UsambaraMountainsPage() {
 
             <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-0">
-                <h3 className="text-xl font-bold text-[#55331e] mb-3 font-serif">Traditional Villages</h3>
+                <h3 className="text-xl font-bold text-[#210c00] mb-3 font-serif">Traditional Villages</h3>
                 <p className="text-gray-600">
                   Visit authentic villages with terraced agriculture and preserved cultural traditions.
                 </p>
@@ -112,7 +112,7 @@ export default function UsambaraMountainsPage() {
 
             <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-0">
-                <h3 className="text-xl font-bold text-[#55331e] mb-3 font-serif">Cool Climate</h3>
+                <h3 className="text-xl font-bold text-[#210c00] mb-3 font-serif">Cool Climate</h3>
                 <p className="text-gray-600">Enjoy refreshing mountain air and escape from Tanzania's tropical heat.</p>
               </CardContent>
             </Card>
@@ -124,7 +124,7 @@ export default function UsambaraMountainsPage() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#55331e] mb-4 font-serif">Mountain Activities</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">Mountain Activities</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Experience the diverse activities available in the Usambara Mountains.
             </p>
@@ -133,22 +133,22 @@ export default function UsambaraMountainsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="p-8">
               <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-[#55331e] mb-4 font-serif">Hiking & Trekking</h3>
+                <h3 className="text-2xl font-bold text-[#210c00] mb-4 font-serif">Hiking & Trekking</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Forest hiking trails through endemic ecosystems</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Village-to-village trekking experiences</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Waterfall hikes and scenic viewpoints</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Bird watching and nature photography</span>
                   </li>
                 </ul>
@@ -157,22 +157,22 @@ export default function UsambaraMountainsPage() {
 
             <Card className="p-8">
               <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-[#55331e] mb-4 font-serif">Cultural Experiences</h3>
+                <h3 className="text-2xl font-bold text-[#210c00] mb-4 font-serif">Cultural Experiences</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Traditional village homestays</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Terraced agriculture learning experiences</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Local craft workshops and markets</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[#f88f2f] rounded-full"></span>
+                    <span className="w-2 h-2 bg-[#f88518] rounded-full"></span>
                     <span>Traditional cooking classes</span>
                   </li>
                 </ul>
@@ -183,20 +183,20 @@ export default function UsambaraMountainsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#55331e] text-white">
+      <section className="py-16 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">Ready to Explore the Galapagos of Africa?</h2>
           <p className="text-lg mb-8 opacity-90">
             Discover the incredible biodiversity and cultural richness of the Usambara Mountains.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#f88f2f] hover:bg-[#e67e1a] text-white px-8">
+            <Button size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white px-8">
               <Link href="/contact">Plan Your Mountain Adventure</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#55331e] px-8 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-[#210c00] px-8 bg-transparent"
             >
               <Link href="/contact">Learn About Biodiversity</Link>
             </Button>
