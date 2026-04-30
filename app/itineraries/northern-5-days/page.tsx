@@ -204,7 +204,7 @@ export default function Northern5DaysPage() {
                       variant="outline"
                       className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white py-6"
                     >
-                      <Link href="https://wa.me/255754746464" target="_blank">
+                      <Link href="https://wa.me/255760246801" target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>

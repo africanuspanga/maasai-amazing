@@ -197,7 +197,7 @@ export default function AboutPage() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-[#210c00] text-lg px-8 py-3 bg-transparent"
             >
-              <Link href="https://wa.me/255754746464" target="_blank">
+              <Link href="https://wa.me/255760246801" target="_blank">
                 {t("home.whatsappUs")}
               </Link>
             </Button>

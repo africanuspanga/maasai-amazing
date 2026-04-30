@@ -155,7 +155,7 @@ export default function LuxurySouthernCircuitPage() {
                       variant="outline"
                       className="w-full border-[#f88518] text-[#f88518] hover:bg-[#f88518] hover:text-white text-lg py-6 bg-transparent"
                     >
-                      <Link href="https://wa.me/255754746464" target="_blank">
+                      <Link href="https://wa.me/255760246801" target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>

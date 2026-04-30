@@ -141,7 +141,7 @@ export default function Zanzibar6DaysPage() {
                       variant="outline"
                       className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white text-lg py-6 bg-transparent"
                     >
-                      <Link href="https://wa.me/255754746464" target="_blank">
+                      <Link href="https://wa.me/255760246801" target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>

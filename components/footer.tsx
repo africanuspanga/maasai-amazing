@@ -92,8 +92,8 @@ function Footer() {
               <div className="flex items-start space-x-2">
                 <Phone className="w-4 h-4 mt-0.5 text-[#f88518] flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>WhatsApp: +255 754 746 464</p>
-                  <p>Phone: +255 754 746 464</p>
+                  <p>WhatsApp: +255 760 246 801</p>
+                  <p>Phone: +255 760 246 801</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">

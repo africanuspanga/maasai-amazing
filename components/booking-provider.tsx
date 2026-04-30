@@ -95,7 +95,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
       .filter(Boolean)
       .join("\n")
 
-    window.open(`https://wa.me/255754746464?text=${encodeURIComponent(message)}`, "_blank")
+    window.open(`https://wa.me/255760246801?text=${encodeURIComponent(message)}`, "_blank")
     setIsSubmitted(true)
   }
 
