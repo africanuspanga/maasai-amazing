@@ -141,6 +141,7 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
         </div>
       </section>
 
+      <div className="h-1 bg-gradient-to-r from-[#f88518] via-[#c24503] to-[#f88518]" />
       <Footer />
       <WhatsAppFloat />
     </div>
