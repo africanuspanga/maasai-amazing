@@ -51,9 +51,11 @@ export default function ContactPage() {
                       <div className="min-w-0">
                         <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{t("contact.officeAddress")}</h3>
                         <p className="text-muted-foreground text-sm md:text-base">
-                          Burka-Olasiti, Arusha
+                          Mikocheni, Dar es Salaam
                           <br />
-                          P.O. Box 23119
+                          Warioba Road
+                          <br />
+                          Opposite Laurent International Primary School
                           <br />
                           Tanzania
                         </p>

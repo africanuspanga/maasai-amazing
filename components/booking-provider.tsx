@@ -140,17 +140,9 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#210c00] to-[#7a4c2e] px-6 py-5 flex items-center justify-between flex-shrink-0">
+        <div className="bg-gradient-to-r from-[#210c00] to-[#c24503] px-6 py-5 flex items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center p-1 flex-shrink-0">
-              <Image
-                src="/images/maasai-logo.png"
-                alt="Maasai Amazing Safaris"
-                width={48}
-                height={48}
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <LogoMark size="md" />
             <div>
               <h2 className="text-xl md:text-2xl font-serif font-bold text-white">{t("booking.title")}</h2>
               <p className="text-white/80 text-sm">

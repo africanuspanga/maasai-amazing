@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
@@ -156,6 +157,10 @@ export default function NorthernCircuitPage() {
           </div>
         </div>
       </section>
+
+      <div className="h-1 bg-gradient-to-r from-[#f88518] via-[#c24503] to-[#f88518]" />
+      <Footer />
+      <WhatsAppFloat />
     </div>
   )
 }

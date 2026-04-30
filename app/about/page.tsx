@@ -58,8 +58,8 @@ export default function AboutPage() {
                   <div className="text-sm text-gray-500">{t("about.teamExperience")}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#f88518] mb-2">2021</div>
-                  <div className="text-sm text-gray-500">{t("about.companyEstablished")}</div>
+                  <div className="text-3xl font-bold text-[#f88518] mb-2">5+</div>
+                  <div className="text-sm text-gray-500">{t("home.yearsExperience")}</div>
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#210c00] text-white">
+      <section className="py-20 bg-gradient-to-br from-[#210c00] via-[#3d1800] to-[#c24503] text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">{t("about.ctaTitle")}</h2>
           <p className="text-lg md:text-xl mb-8 opacity-90">
