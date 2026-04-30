@@ -5,6 +5,15 @@ import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Tanzania Historical Sites & Heritage Tours | UNESCO World Heritage",
+  description:
+    "Journey through Tanzania's rich history. Visit Kilwa Kisiwani, Stone Town, Olduvai Gorge, Bagamoyo and Kondoa Rock Art - UNESCO sites spanning millions of years of human heritage.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/historical-sites",
+  },
+}
+
 export default function HistoricalSitesPage() {
   const sites = [
     {

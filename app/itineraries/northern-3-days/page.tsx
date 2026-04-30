@@ -8,6 +8,15 @@ import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 
+export const metadata = {
+  title: "3-Day Tanzania Safari | Tarangire, Ngorongoro & Manyara",
+  description:
+    "Perfect short safari covering Tarangire, Ngorongoro Crater & Lake Manyara. 3 days of incredible wildlife including Big Five. Ideal for time-conscious travelers from $1,558.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/itineraries/northern-3-days",
+  },
+}
+
 export default function Northern3DaysPage() {
   return (
     <div className="min-h-screen bg-white">

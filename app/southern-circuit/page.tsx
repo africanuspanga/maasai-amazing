@@ -5,6 +5,15 @@ import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Southern Circuit Tanzania Safari | Ruaha, Nyerere & Mikumi",
+  description:
+    "Explore Tanzania's hidden wilderness on a Southern Circuit safari. Discover Ruaha, Nyerere (Selous), Mikumi & Saadani with exclusive, crowd-free wildlife experiences.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/southern-circuit",
+  },
+}
+
 export default function SouthernCircuitPage() {
   const parks = [
     {

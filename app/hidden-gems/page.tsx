@@ -5,6 +5,15 @@ import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Tanzania Hidden Gems Tours | Materuni, Lake Duluti & Hot Springs",
+  description:
+    "Discover Tanzania's secret treasures beyond the famous parks. Explore Materuni Waterfall, Lake Duluti, Rundugai Hot Springs and authentic cultural experiences off the beaten path.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/hidden-gems",
+  },
+}
+
 export default function HiddenGemsPage() {
   const gems = [
     {

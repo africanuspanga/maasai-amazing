@@ -6,6 +6,15 @@ import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Zanzibar Beach Holidays & Tours | Spice Island Packages",
+  description:
+    "Discover Zanzibar's pristine beaches, historic Stone Town, and spice plantations. 4-8 day beach holiday packages with Maasai Amazing Safaris. Book your tropical escape.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/zanzibar",
+  },
+}
+
 export default function ZanzibarPage() {
   const tours = [
     {

@@ -8,6 +8,15 @@ import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 
+export const metadata = {
+  title: "Kilimanjaro Machame Route 7 Days | Whiskey Route Climb",
+  description:
+    "Climb Kilimanjaro via the scenic Machame Route. 7-day 'Whiskey Route' with best acclimatization, Barranco Wall, and 85% summit success rate. All-inclusive from $2,589.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/itineraries/kilimanjaro-machame",
+  },
+}
+
 export default function KilimanjaroMachamePage() {
   return (
     <div className="min-h-screen bg-white">

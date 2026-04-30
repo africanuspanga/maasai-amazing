@@ -1,0 +1,27 @@
+{
+  "name": "Maasai Amazing Safaris",
+  "short_name": "Maasai Safaris",
+  "description": "Authentic Tanzania safaris, Kilimanjaro treks, and Zanzibar beach holidays with expert Maasai guides.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#210c00",
+  "theme_color": "#f88518",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/Maasai%20Favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Maasai%20Favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "tourism", "lifestyle"]
+}

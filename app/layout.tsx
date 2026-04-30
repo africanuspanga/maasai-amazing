@@ -23,22 +23,58 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maasaiamazingsafaris.com"),
-  title: "Maasai Amazing Safaris - Discover the Soul of Tanzania",
+  title: {
+    default: "Maasai Amazing Safaris | Authentic Tanzania Safari & Kilimanjaro Tours",
+    template: "%s | Maasai Amazing Safaris",
+  },
   description:
-    "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel. Experience Tanzania's wildlife and natural wonders with expert Maasai guides.",
+    "Discover Tanzania's soul with Maasai Amazing Safaris. Expert-guided wildlife safaris, Kilimanjaro treks, Zanzibar beach holidays & cultural adventures. Book your dream African journey today.",
   generator: "next.js",
-  keywords: "Tanzania safari, Kilimanjaro trekking, Serengeti tours, Zanzibar, wildlife photography, African adventure, Maasai safari",
+  keywords: [
+    "Tanzania safari",
+    "Kilimanjaro trekking",
+    "Serengeti tours",
+    "Zanzibar beach holiday",
+    "Ngorongoro Crater safari",
+    "Maasai safari",
+    "African adventure",
+    "wildlife photography",
+    "Tarangire National Park",
+    "Mount Kilimanjaro climb",
+    "Tanzania travel",
+    "safari packages",
+    "Northern Circuit safari",
+    "Southern Circuit safari",
+    "cultural tours Tanzania",
+  ],
   authors: [{ name: "Maasai Amazing Safaris" }],
+  creator: "Maasai Amazing Safaris",
+  publisher: "Maasai Amazing Safaris",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/Maasai%20Favicon.png",
     apple: "/Maasai%20Favicon.png",
     shortcut: "/Maasai%20Favicon.png",
   },
+  manifest: "/manifest.json",
   openGraph: {
-    title: "Maasai Amazing Safaris - Discover the Soul of Tanzania",
-    description: "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel",
+    title: "Maasai Amazing Safaris | Authentic Tanzania Safari & Kilimanjaro Tours",
+    description:
+      "Discover Tanzania's soul with Maasai Amazing Safaris. Expert-guided wildlife safaris, Kilimanjaro treks, Zanzibar beach holidays & cultural adventures.",
     type: "website",
     locale: "en_US",
+    siteName: "Maasai Amazing Safaris",
+    url: "https://maasaiamazingsafaris.com",
     images: [
       {
         url: "/images/og-image.png",
@@ -50,10 +86,107 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maasai Amazing Safaris - Discover the Soul of Tanzania",
-    description: "Authentic safaris, epic treks, and cultural adventures in East Africa's crown jewel",
+    title: "Maasai Amazing Safaris | Authentic Tanzania Safari & Kilimanjaro Tours",
+    description:
+      "Discover Tanzania's soul with Maasai Amazing Safaris. Expert-guided wildlife safaris, Kilimanjaro treks, Zanzibar beach holidays & cultural adventures.",
     images: ["/images/og-image.png"],
   },
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com",
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: "Maasai Amazing Safaris",
+  alternateName: "Maasai Amazing Safaris Tanzania",
+  url: "https://maasaiamazingsafaris.com",
+  logo: "https://maasaiamazingsafaris.com/Maasai%20Favicon.png",
+  image: "https://maasaiamazingsafaris.com/images/og-image.png",
+  description:
+    "Premier Tanzania-based safari and travel company specializing in authentic African adventures, Kilimanjaro climbing, and Zanzibar beach holidays.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Warioba Road, Opposite Laurent International Primary School, Mikocheni",
+    addressLocality: "Dar es Salaam",
+    addressCountry: "TZ",
+  },
+  telephone: "+255760246801",
+  whatsapp: "+255760246801",
+  email: "info@maasaiamazingsafaris.com",
+  priceRange: "$$$",
+  currenciesAccepted: "USD, TZS",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "15:00",
+    },
+  ],
+  areaServed: {
+    "@type": "Place",
+    name: "Tanzania",
+    containsPlace: [
+      { "@type": "TouristAttraction", name: "Serengeti National Park" },
+      { "@type": "TouristAttraction", name: "Ngorongoro Crater" },
+      { "@type": "TouristAttraction", name: "Mount Kilimanjaro" },
+      { "@type": "TouristAttraction", name: "Zanzibar Island" },
+      { "@type": "TouristAttraction", name: "Tarangire National Park" },
+      { "@type": "TouristAttraction", name: "Lake Manyara National Park" },
+      { "@type": "TouristAttraction", name: "Ruaha National Park" },
+      { "@type": "TouristAttraction", name: "Nyerere National Park (Selous)" },
+    ],
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Safari & Tour Packages",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "TouristAttraction",
+          name: "Northern Circuit Safari",
+          description: "Serengeti, Ngorongoro, Tarangire & Lake Manyara safaris",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "TouristAttraction",
+          name: "Kilimanjaro Climbing",
+          description: "Machame, Marangu, Lemosho & Rongai route expeditions",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "TouristAttraction",
+          name: "Zanzibar Beach Holiday",
+          description: "Stone Town, spice tours, pristine beaches & water sports",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "TouristAttraction",
+          name: "Southern Circuit Safari",
+          description: "Ruaha, Nyerere (Selous), Mikumi & Saadani wilderness",
+        },
+      },
+    ],
+  },
+  sameAs: [
+    "https://wa.me/255760246801",
+  ],
 }
 
 export default function RootLayout({
@@ -64,6 +197,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <style>{`
 html {
   font-family: ${inter.style.fontFamily};

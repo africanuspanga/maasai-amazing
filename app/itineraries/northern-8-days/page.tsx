@@ -8,6 +8,15 @@ import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 
+export const metadata = {
+  title: "8-Day Tanzania Safari | Tarangire, Serengeti & Ngorongoro",
+  description:
+    "Our bestselling 8-day safari! Explore Tarangire's elephants, 3 days in Serengeti, and Ngorongoro Crater. The ultimate Northern Circuit wildlife experience from $3,284.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/itineraries/northern-8-days",
+  },
+}
+
 export default function Northern8DaysPage() {
   return (
     <div className="min-h-screen bg-white">

@@ -1,6 +1,7 @@
 # robots.txt for https://maasaiamazingsafaris.com/
 User-agent: *
 Allow: /
+Disallow: /api/
 
 # Sitemaps
 Sitemap: https://maasaiamazingsafaris.com/sitemap.xml

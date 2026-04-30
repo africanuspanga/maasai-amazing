@@ -8,6 +8,15 @@ import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 
+export const metadata = {
+  title: "Kilimanjaro Marangu Route 6 Days | Coca-Cola Route",
+  description:
+    "Kilimanjaro's classic Marangu Route with hut accommodations. 6-day 'Coca-Cola Route' - the only path with sleeping huts. All-inclusive climbing package from $2,349.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/itineraries/kilimanjaro-marangu",
+  },
+}
+
 export default function KilimanjaroMaranguPage() {
   return (
     <div className="min-h-screen bg-white">

@@ -8,6 +8,15 @@ import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 
+export const metadata = {
+  title: "5-Day Tanzania Safari | Serengeti, Ngorongoro & Manyara",
+  description:
+    "5-day Northern Circuit safari to Serengeti, Ngorongoro Crater & Lake Manyara. Perfect post-Kilimanjaro adventure with private 4x4 vehicle from $1,960.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/itineraries/northern-5-days",
+  },
+}
+
 export default function Northern5DaysPage() {
   return (
     <div className="min-h-screen bg-white">

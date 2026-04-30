@@ -4,6 +4,15 @@ import Navigation from "@/components/navigation"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Mount Kilimanjaro Climbing Routes & Tours | Machame, Marangu & More",
+  description:
+    "Climb Africa's highest peak with expert guides. Explore all Kilimanjaro routes - Machame, Marangu, Lemosho, Rongai. 85%+ success rate. All-inclusive packages from $2,349.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/kilimanjaro",
+  },
+}
+
 export default function KilimanjaroPage() {
   const routes = [
     {

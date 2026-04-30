@@ -4,6 +4,15 @@ import Navigation from "@/components/navigation"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Usambara Mountains Hiking Tours | The Galapagos of Africa",
+  description:
+    "Explore the biodiversity-rich Usambara Mountains. Endemic species, lush forests, traditional villages and spectacular hiking in Tanzania's cool climate mountain retreat.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/usambara-mountains",
+  },
+}
+
 export default function UsambaraMountainsPage() {
   return (
     <div className="min-h-screen bg-background">

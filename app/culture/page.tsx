@@ -6,6 +6,15 @@ import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Tanzania Cultural Tours | Maasai Bomas & Hadzabe Tribes",
+  description:
+    "Immerse yourself in authentic Tanzanian culture. Visit Maasai bomas, meet Hadzabe hunter-gatherers, and experience traditional ceremonies with respectful, community-supporting tours.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/culture",
+  },
+}
+
 export default function CulturePage() {
   return (
     <div className="min-h-screen bg-background">

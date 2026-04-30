@@ -5,6 +5,15 @@ import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Oldonyo Lengai Volcano Climb | Tanzania's Active Volcano",
+  description:
+    "Challenge yourself on Tanzania's only active volcano. Oldonyo Lengai (2,962m) - The Mountain of God. Unique natrocarbonatite lava, night climbs, and spectacular Rift Valley views.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/oldonyo-lengai",
+  },
+}
+
 export default function OldonyoLengaiPage() {
   return (
     <div className="min-h-screen bg-background">

@@ -5,6 +5,15 @@ import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Mount Meru Climbing Tours | Tanzania's Second Highest Peak",
+  description:
+    "Climb Mount Meru (4,566m) with stunning Kilimanjaro views. 3-4 day trekking adventure through Arusha National Park. Perfect acclimatization before Kilimanjaro or standalone expedition.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/mt-meru",
+  },
+}
+
 export default function MtMeruPage() {
   const highlights = [
     {

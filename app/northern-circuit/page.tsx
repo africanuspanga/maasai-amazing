@@ -6,6 +6,15 @@ import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Northern Circuit Tanzania Safari | Serengeti, Ngorongoro & Tarangire",
+  description:
+    "Experience Tanzania's premier wildlife safari circuit. Visit Serengeti National Park, Ngorongoro Crater, Tarangire & Lake Manyara with expert guides. 3-8 day packages available.",
+  alternates: {
+    canonical: "https://maasaiamazingsafaris.com/northern-circuit",
+  },
+}
+
 export default function NorthernCircuitPage() {
   const parks = [
     {
