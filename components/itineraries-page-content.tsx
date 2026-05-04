@@ -7,23 +7,17 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { ItineraryCard } from "@/components/itinerary-card"
-import { useLanguage } from "@/components/language-provider"
+import { useSiteSettings } from "@/components/site-settings-provider"
+import type { ItinerariesIndexContent, ItineraryRecord } from "@/lib/cms/schema"
 
-interface Itinerary {
-  id: string
-  title: string
-  duration: string
-  image: string
-  destinations: string
-  groupSize: string
-  description: string
-  highlights: string[]
-  priceFrom: string
-  category: string
-}
-
-export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary[] }) {
-  const { t } = useLanguage()
+export function ItinerariesPageContent({
+  itineraries,
+  content,
+}: {
+  itineraries: ItineraryRecord[]
+  content: ItinerariesIndexContent
+}) {
+  const settings = useSiteSettings()
 
   return (
     <div className="min-h-screen">
@@ -33,7 +27,7 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
       <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/safari-zebras-ngorongoro.jpg"
+            src={content.heroImage}
             alt="Safari zebras in Ngorongoro"
             fill
             className="object-cover"
@@ -46,10 +40,10 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-black mb-4 leading-tight">
-            {t("itineraries.pageTitle")}
+            {content.heroTitle}
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl leading-relaxed">
-            {t("itineraries.pageSubtitle")}
+            {content.heroSubtitle}
           </p>
         </div>
       </section>
@@ -59,16 +53,16 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-4">
-              {t("itineraries.northernKiliTitle")}
+              {content.northernTitle}
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              {t("itineraries.northernKiliSubtitle")}
+              {content.northernSubtitle}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {itineraries.filter(itinerary => itinerary.category === 'northern').map((itinerary) => (
-              <ItineraryCard key={itinerary.id} itinerary={itinerary} theme="amber" />
+            {itineraries.filter((itinerary) => itinerary.category === "northern").map((itinerary) => (
+              <ItineraryCard key={itinerary.slug} itinerary={itinerary} theme="amber" />
             ))}
           </div>
         </div>
@@ -79,16 +73,16 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-4">
-              {t("itineraries.zanzibarBeachTitle")}
+              {content.zanzibarTitle}
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              {t("itineraries.zanzibarBeachSubtitle")}
+              {content.zanzibarSubtitle}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-            {itineraries.filter(itinerary => itinerary.category === 'zanzibar').map((itinerary) => (
-              <ItineraryCard key={itinerary.id} itinerary={itinerary} theme="teal" />
+            {itineraries.filter((itinerary) => itinerary.category === "zanzibar").map((itinerary) => (
+              <ItineraryCard key={itinerary.slug} itinerary={itinerary} theme="teal" />
             ))}
           </div>
         </div>
@@ -99,16 +93,16 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#210c00] mb-4">
-              {t("itineraries.southernPackTitle")}
+              {content.southernTitle}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {t("itineraries.southernPackSubtitle")}
+              {content.southernSubtitle}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {itineraries.filter(itinerary => itinerary.category === 'safari').map((itinerary) => (
-              <ItineraryCard key={itinerary.id} itinerary={itinerary} theme="brown" />
+            {itineraries.filter((itinerary) => itinerary.category === "safari").map((itinerary) => (
+              <ItineraryCard key={itinerary.slug} itinerary={itinerary} theme="brown" />
             ))}
           </div>
         </div>
@@ -118,14 +112,14 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
       <section className="py-16 md:py-20 bg-[#210c00] text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">
-            {t("itineraries.ctaTitle")}
+            {content.ctaTitle}
           </h2>
           <p className="text-lg md:text-xl mb-8 opacity-90">
-            {t("itineraries.ctaSubtitle")}
+            {content.ctaSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white text-lg px-8 py-3">
-              <Link href="/contact">{t("itineraries.planCustom")}</Link>
+              <Link href={content.ctaPrimaryHref}>{content.ctaPrimaryLabel}</Link>
             </Button>
             <Button
               asChild
@@ -133,8 +127,8 @@ export function ItinerariesPageContent({ itineraries }: { itineraries: Itinerary
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-[#210c00] text-lg px-8 py-3 bg-transparent"
             >
-              <Link href="https://wa.me/255760246801" target="_blank">
-                {t("itineraries.chatWhatsapp")}
+              <Link href={`https://wa.me/${settings.whatsappNumber}`} target="_blank">
+                {content.ctaSecondaryLabel}
               </Link>
             </Button>
           </div>

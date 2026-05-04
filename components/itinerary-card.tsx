@@ -7,19 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, Users, MapPin } from "lucide-react"
 import { BookNowButton } from "@/components/book-now-button"
 import { useLanguage } from "@/components/language-provider"
-
-interface Itinerary {
-  id: string
-  title: string
-  duration: string
-  image: string
-  destinations: string
-  groupSize: string
-  description: string
-  highlights: string[]
-  priceFrom: string
-  category: string
-}
+import type { ItineraryRecord } from "@/lib/cms/schema"
 
 type ColorTheme = "amber" | "teal" | "brown"
 
@@ -47,7 +35,7 @@ const themeColors: Record<ColorTheme, { primary: string; hover: string; text: st
   },
 }
 
-export function ItineraryCard({ itinerary, theme = "brown" }: { itinerary: Itinerary; theme?: ColorTheme }) {
+export function ItineraryCard({ itinerary, theme = "brown" }: { itinerary: ItineraryRecord; theme?: ColorTheme }) {
   const colors = themeColors[theme]
   const { t } = useLanguage()
 
@@ -112,10 +100,10 @@ export function ItineraryCard({ itinerary, theme = "brown" }: { itinerary: Itine
             variant="outline"
             className={`w-full ${colors.border} ${colors.text} ${colors.hover} bg-transparent`}
           >
-            <Link href={`/itineraries/${itinerary.id}`}>{t("card.moreDetails")}</Link>
+            <Link href={`/itineraries/${itinerary.slug}`}>{t("card.moreDetails")}</Link>
           </Button>
           <BookNowButton
-            tourName={itinerary.title}
+            tourName={itinerary.bookTourName ?? itinerary.title}
             className={`w-full ${colors.primary} text-white`}
           />
         </div>

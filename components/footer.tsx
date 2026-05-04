@@ -4,9 +4,11 @@ import Link from "next/link"
 import { Mail, Phone, MapPin } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { LogoMark } from "@/components/logo"
+import { useSiteSettings } from "@/components/site-settings-provider"
 
 function Footer() {
   const { t } = useLanguage()
+  const settings = useSiteSettings()
 
   return (
     <footer className="bg-[#210c00] text-white">
@@ -18,7 +20,7 @@ function Footer() {
               <LogoMark size="xl" />
             </div>
             <p className="text-sm text-gray-300">
-              {t("footer.description")}
+              {settings.footerDescription}
             </p>
           </div>
 
@@ -83,22 +85,23 @@ function Footer() {
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#f88518] flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>Mikocheni, Dar es Salaam</p>
-                  <p>Warioba Road</p>
-                  <p>Opposite Laurent International Primary School</p>
-                  <p>Tanzania</p>
+                  {settings.addressLines.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
                 </div>
               </div>
               <div className="flex items-start space-x-2">
                 <Phone className="w-4 h-4 mt-0.5 text-[#f88518] flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>WhatsApp: +255 760 246 801</p>
-                  <p>Phone: +255 760 246 801</p>
+                  <p>WhatsApp: {settings.whatsappDisplay}</p>
+                  <p>Phone: {settings.phoneDisplay}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-[#f88518] flex-shrink-0" />
-                <p className="text-gray-300">info@maasaiamazingsafaris.com</p>
+                <a href={`mailto:${settings.contactEmail}`} className="text-gray-300 hover:text-[#f88518] transition-colors">
+                  {settings.contactEmail}
+                </a>
               </div>
             </div>
           </div>
@@ -106,7 +109,7 @@ function Footer() {
 
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} Maasai Amazing Safaris. {t("footer.allRightsReserved")} | {t("footer.established")}
+            &copy; {new Date().getFullYear()} {settings.companyName}. {t("footer.allRightsReserved")} | {settings.companyTagline}
           </p>
         </div>
       </div>

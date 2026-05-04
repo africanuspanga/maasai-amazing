@@ -7,6 +7,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
+import { getGlobalSettings } from "@/lib/cms/service"
 
 export const metadata = {
   title: "5-Day Tanzania Safari | Serengeti, Ngorongoro & Manyara",
@@ -17,7 +18,8 @@ export const metadata = {
   },
 }
 
-export default function Northern5DaysPage() {
+export default async function Northern5DaysPage() {
+  const settings = await getGlobalSettings()
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -213,7 +215,7 @@ export default function Northern5DaysPage() {
                       variant="outline"
                       className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white py-6"
                     >
-                      <Link href="https://wa.me/255760246801" target="_blank">
+                      <Link href={`https://wa.me/${settings.whatsappNumber}`} target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>

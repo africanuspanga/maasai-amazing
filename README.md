@@ -1,30 +1,44 @@
-# Award winning website
+# Maasai Amazing Safaris
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+This is the Next.js website for Maasai Amazing Safaris, now connected to Supabase for editable content and booking lead capture.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/africanus-s-projects/v0-award-winning-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/YQgQJTNVvoz)
+## CMS Overview
 
-## Overview
+- Public pages pull their core editable content from Supabase with local JSON fallbacks in [content/cms-seed.json](/Users/admin/maasai-amazing-safaris/content/cms-seed.json).
+- Admin dashboard: `/admin`
+- Admin login is checked server-side only.
+- Booking requests are saved to Supabase through `/api/inquiries` and still open WhatsApp for instant follow-up.
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Admin Auth
 
-## Deployment
+Set these environment variables locally and in Vercel:
 
-Your project is live at:
+- `CMS_ADMIN_EMAIL`
+- `CMS_ADMIN_PASSWORD`
+- `CMS_SESSION_SECRET`
 
-**[https://vercel.com/africanus-s-projects/v0-award-winning-website](https://vercel.com/africanus-s-projects/v0-award-winning-website)**
+## Supabase Setup
 
-## Build your app
+- Local config lives in [supabase/config.toml](/Users/admin/maasai-amazing-safaris/supabase/config.toml)
+- Database schema lives in [supabase/migrations/20260505121500_cms_backend.sql](/Users/admin/maasai-amazing-safaris/supabase/migrations/20260505121500_cms_backend.sql)
+- Seed script: `npm run seed:cms`
 
-Continue building your app on:
+Required environment variables are shown in [.env.example](/Users/admin/maasai-amazing-safaris/.env.example).
 
-**[https://v0.app/chat/projects/YQgQJTNVvoz](https://v0.app/chat/projects/YQgQJTNVvoz)**
+## Keepalive
 
-## How It Works
+A GitHub Actions workflow was added at [.github/workflows/supabase-keepalive.yml](/Users/admin/maasai-amazing-safaris/.github/workflows/supabase-keepalive.yml).
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Set these repository secrets so it can ping the public CMS endpoint daily:
+
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+
+## Verification
+
+- `supabase db push`
+- `npm run seed:cms`
+- `npx tsc --noEmit`
+- `npm run build`
+
+`npm run lint` is still not usable in this repo because the current `next lint` script is incompatible with the installed Next.js setup.

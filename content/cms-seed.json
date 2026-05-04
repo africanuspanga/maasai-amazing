@@ -1,0 +1,808 @@
+{
+  "global": {
+    "companyName": "Maasai Amazing Safaris",
+    "companyTagline": "Tanzania's Finest Safaris",
+    "footerDescription": "Discover the soul of Tanzania with authentic safaris, epic treks, and cultural adventures.",
+    "contactEmail": "info@maasaiamazingsafaris.com",
+    "adminEmail": "info@maasaiamazingsafaris.com",
+    "phoneNumber": "+255760246801",
+    "phoneDisplay": "+255 760 246 801",
+    "whatsappNumber": "255760246801",
+    "whatsappDisplay": "+255 760 246 801",
+    "addressLines": [
+      "Mikocheni, Dar es Salaam",
+      "Warioba Road",
+      "Opposite Laurent International Primary School",
+      "Tanzania"
+    ],
+    "responseTimeLabel": "We respond within 24 hours",
+    "emergencyAvailabilityLabel": "Available 24/7 for emergencies",
+    "businessHours": [
+      "Monday - Friday: 8:00 AM - 6:00 PM",
+      "Saturday: 9:00 AM - 4:00 PM",
+      "Sunday: Emergency calls only"
+    ],
+    "timezoneLabel": "East Africa Time (EAT)",
+    "trustStats": [
+      {
+        "value": "100+",
+        "label": "5-Star Reviews"
+      },
+      {
+        "value": "98%",
+        "label": "Satisfaction Rate"
+      },
+      {
+        "value": "3+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "15+",
+        "label": "Destinations"
+      }
+    ]
+  },
+  "home": {
+    "heroBadge": "Tanzania's Premier Maasai Safari Experience",
+    "heroTitle": "Discover Tanzania's Wild Heart",
+    "heroSubtitle": "Authentic Maasai-guided safaris crafted for modern explorers",
+    "heroPrimaryCtaLabel": "Start Your Adventure",
+    "heroPrimaryCtaHref": "/contact",
+    "heroSecondaryCtaLabel": "Explore Tours",
+    "heroSecondaryCtaHref": "/itineraries",
+    "stats": [
+      {
+        "value": "5+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "100+",
+        "label": "Happy Travelers"
+      },
+      {
+        "value": "15+",
+        "label": "Destinations"
+      }
+    ],
+    "aboutEyebrow": "About Us",
+    "aboutTitle": "Your Gateway to Tanzania's Wonders",
+    "aboutBody": "With years of experience, unwavering passion, and deep Maasai heritage, Maasai Amazing Safaris crafts extraordinary journeys through one of the world's most spectacular destinations. From the endless plains of the Serengeti to the snow-capped peaks of Kilimanjaro, we bring you closer to the heart of Tanzania.",
+    "aboutCtaLabel": "Learn Our Story",
+    "aboutCtaHref": "/about",
+    "aboutImage": "/images/gazelle.jpg",
+    "ratingLabel": "Rated 5.0 by our travelers",
+    "whyEyebrow": "Why Travel With Us",
+    "whyTitle": "Why Choose Maasai Amazing Safaris?",
+    "whySubtitle": "Experience the difference with our commitment to excellence, local expertise, and personalized service",
+    "whyItems": [
+      {
+        "icon": "shield",
+        "title": "Safety First",
+        "description": "Fully insured vehicles and adherence to international safety standards"
+      },
+      {
+        "icon": "users",
+        "title": "Local Expertise",
+        "description": "Born and raised in Tanzania, we know the hidden gems and best wildlife spots"
+      },
+      {
+        "icon": "award",
+        "title": "Award Winning",
+        "description": "Recognized for excellence in service and sustainable tourism practices"
+      },
+      {
+        "icon": "clock",
+        "title": "24/7 Support",
+        "description": "Round-the-clock assistance to ensure your adventure goes smoothly"
+      }
+    ],
+    "destinationsEyebrow": "Destinations",
+    "destinationsTitle": "Top Travel Destinations",
+    "destinationsSubtitle": "Explore Tanzania's most iconic destinations, each offering unique wildlife encounters and breathtaking landscapes",
+    "destinationCards": [
+      {
+        "title": "Serengeti National Park",
+        "description": "Experience the world's most spectacular wildlife migration in Tanzania's most famous park.",
+        "image": "/images/wildebeest-migration.png",
+        "href": "/northern-circuit",
+        "ctaLabel": "Explore Serengeti",
+        "isLarge": true
+      },
+      {
+        "title": "Zanzibar",
+        "description": "Pristine beaches, rich culture, and spice tours on the enchanting Spice Island.",
+        "image": "/images/tropical-beach.jpg",
+        "href": "/zanzibar",
+        "ctaLabel": "Discover Zanzibar",
+        "isLarge": false
+      },
+      {
+        "title": "Mount Kilimanjaro",
+        "description": "Challenge yourself with an unforgettable trek to the Roof of Africa.",
+        "image": "/images/giraffe-wild.jpg",
+        "href": "/kilimanjaro",
+        "ctaLabel": "Climb Kilimanjaro",
+        "isLarge": false
+      }
+    ],
+    "featuredSections": [
+      {
+        "key": "northern",
+        "eyebrow": "Safari Packages",
+        "title": "Northern Circuit Safari Adventures",
+        "subtitle": "Experience the legendary Serengeti, Ngorongoro Crater, and climb Mount Kilimanjaro",
+        "ctaLabel": "View All Northern Safaris",
+        "ctaHref": "/itineraries",
+        "slugs": [
+          "northern-7-days",
+          "northern-8-days",
+          "kilimanjaro-machame"
+        ]
+      },
+      {
+        "key": "zanzibar",
+        "eyebrow": "Beach Escapes",
+        "title": "Zanzibar Beach Escapes",
+        "subtitle": "Relax on pristine beaches, explore spice farms, and discover Stone Town's rich history",
+        "ctaLabel": "View All Zanzibar Packages",
+        "ctaHref": "/itineraries",
+        "slugs": [
+          "zanzibar-4-days",
+          "zanzibar-6-days",
+          "zanzibar-7-days"
+        ]
+      },
+      {
+        "key": "southern",
+        "eyebrow": "Adventure",
+        "title": "Southern Circuit Expeditions",
+        "subtitle": "Discover Tanzania's untamed wilderness in remote parks with fewer crowds",
+        "ctaLabel": "View All Southern Safaris",
+        "ctaHref": "/itineraries",
+        "slugs": [
+          "luxury-southern-circuit",
+          "grand-southern-adventure",
+          "bush-to-beach"
+        ]
+      }
+    ],
+    "partnersTitle": "Recommended By",
+    "partnersSubtitle": "Trusted by travelers worldwide and recognized by leading tourism platforms",
+    "testimonialsTitle": "What Our Travelers Say",
+    "testimonialsSubtitle": "Real experiences from adventurers who explored Tanzania with us",
+    "testimonialsRatingLabel": "5.0 Rating",
+    "testimonialsHappyTravelersLabel": "100+ Happy Travelers",
+    "ctaTitle": "Ready for Your African Adventure?",
+    "ctaSubtitle": "Let us craft the perfect Tanzania experience tailored just for you",
+    "ctaPrimaryLabel": "Start Planning",
+    "ctaPrimaryHref": "/contact",
+    "ctaSecondaryLabel": "WhatsApp Us"
+  },
+  "about": {
+    "heroTitle": "About Maasai Amazing Safaris",
+    "heroSubtitle": "Your trusted partner for authentic Tanzania adventures since 2021",
+    "storyTitle": "Our Story",
+    "storyParagraphs": [
+      "Established in 2021, Maasai Amazing Safaris was born from a passion for sharing Tanzania's incredible natural beauty and rich cultural heritage with the world. Though our company is young, our team brings more than a decade of experience in safaris and tours across Tanzania's most spectacular locations.",
+      "We believe that travel should be transformative, connecting you not just with breathtaking landscapes and wildlife, but with the heart and soul of Tanzania. Every journey we craft is designed to create lasting memories while supporting local communities and conservation efforts."
+    ],
+    "storyImage": "/images/safari-bird.jpg",
+    "storyStats": [
+      {
+        "value": "10+",
+        "label": "Years Team Experience"
+      },
+      {
+        "value": "5+",
+        "label": "Years Experience"
+      }
+    ],
+    "whyTitle": "Why Choose Us?",
+    "whySubtitle": "Experience the difference with our commitment to excellence, local expertise, and personalized service",
+    "whyItems": [
+      {
+        "icon": "shield",
+        "title": "Safety First",
+        "description": "Fully insured vehicles and adherence to international safety standards"
+      },
+      {
+        "icon": "users",
+        "title": "Local Expertise",
+        "description": "Born and raised in Tanzania, we know the hidden gems and best wildlife spots"
+      },
+      {
+        "icon": "heart",
+        "title": "Passionate Service",
+        "description": "We're passionate about sharing Tanzania's beauty and creating unforgettable experiences"
+      },
+      {
+        "icon": "globe",
+        "title": "Sustainable Tourism",
+        "description": "Committed to responsible tourism that benefits local communities and wildlife conservation"
+      }
+    ],
+    "expertiseTitle": "Our Expertise",
+    "expertiseBody": "With over a decade of combined experience, our team specializes in creating authentic Tanzania experiences. From the vast plains of the Serengeti to the pristine beaches of Zanzibar, from the challenging slopes of Kilimanjaro to the hidden gems of the Southern Circuit, we know Tanzania like no other.",
+    "expertiseImage": "/images/giraffe-serengeti.jpg",
+    "expertiseItems": [
+      {
+        "icon": "camera",
+        "label": "Wildlife Photography"
+      },
+      {
+        "icon": "mountain",
+        "label": "Mountain Trekking"
+      },
+      {
+        "icon": "users",
+        "label": "Cultural Tours"
+      },
+      {
+        "icon": "globe",
+        "label": "Beach Holidays"
+      }
+    ],
+    "ctaTitle": "Ready to Explore Tanzania?",
+    "ctaSubtitle": "Let our experienced team create the perfect Tanzania adventure for you",
+    "ctaPrimaryLabel": "Start Planning",
+    "ctaPrimaryHref": "/contact",
+    "ctaSecondaryLabel": "WhatsApp Us"
+  },
+  "contact": {
+    "heroTitle": "Get in Touch",
+    "heroSubtitle": "Ready to embark on your Tanzania adventure? We're here to help!",
+    "infoTitle": "Contact Information",
+    "infoSubtitle": "Reach out to us through any of the following channels. We're available to assist you with planning your perfect Tanzania experience.",
+    "experienceTitle": "Experience Tanzania with Us",
+    "experienceCards": [
+      {
+        "title": "Wildlife Safaris",
+        "description": "Experience close encounters with Africa's Big Five",
+        "image": "/images/lion-portrait.png",
+        "alt": "Majestic lion in golden hour light representing our wildlife safari expertise"
+      },
+      {
+        "title": "Unique Adventures",
+        "description": "Balloon safaris and exclusive experiences",
+        "image": "/images/balloon-safari.png",
+        "alt": "Hot air balloon floating over African savanna at sunset"
+      },
+      {
+        "title": "Mountain Expeditions",
+        "description": "Conquer Africa's highest peaks with expert guides",
+        "image": "/images/kilimanjaro-night.png",
+        "alt": "Kilimanjaro silhouette under starry sky with illuminated camping tent"
+      }
+    ],
+    "whyChooseTitle": "Why Choose Maasai Amazing Safaris?",
+    "whyChooseItems": [
+      "Expert local guides with decades of experience",
+      "Customized itineraries tailored to your interests",
+      "Small group sizes for personalized attention",
+      "Sustainable tourism supporting local communities",
+      "24/7 support throughout your Tanzania adventure"
+    ],
+    "findUsTitle": "Find Us in Dar es Salaam",
+    "findUsSubtitle": "Located in Mikocheni, Dar es Salaam, we're ready to help plan your Tanzania adventure",
+    "locationCards": [
+      {
+        "icon": "map-pin",
+        "title": "Strategic Location",
+        "description": "Conveniently located on Warioba Road in the heart of Dar es Salaam"
+      },
+      {
+        "icon": "clock",
+        "title": "Easy Access",
+        "description": "Convenient location with parking and public transport nearby"
+      },
+      {
+        "icon": "phone",
+        "title": "Always Available",
+        "description": "24/7 emergency support for all our travelers"
+      }
+    ]
+  },
+  "itinerariesIndex": {
+    "heroTitle": "Our Safari Itineraries",
+    "heroSubtitle": "Choose from our carefully curated selection of adventures across Tanzania",
+    "heroImage": "/images/safari-zebras-ngorongoro.jpg",
+    "northernTitle": "Northern Circuit Safaris & Kilimanjaro",
+    "northernSubtitle": "Explore the legendary parks, crater landscapes, and summit routes that define northern Tanzania.",
+    "zanzibarTitle": "Zanzibar Beach Packages",
+    "zanzibarSubtitle": "Balance ocean adventure, island culture, and beach downtime with flexible Zanzibar escapes.",
+    "southernTitle": "Southern Circuit & Beyond",
+    "southernSubtitle": "Discover Tanzania's untamed southern wilderness with remote parks, cultural experiences, and fewer crowds.",
+    "ctaTitle": "Need Something More Personal?",
+    "ctaSubtitle": "We can customize any itinerary around your dates, budget, group size, and travel style.",
+    "ctaPrimaryLabel": "Plan a Custom Trip",
+    "ctaPrimaryHref": "/contact",
+    "ctaSecondaryLabel": "Chat on WhatsApp"
+  },
+  "itineraries": [
+    {
+      "slug": "luxury-southern-circuit",
+      "title": "9 Days Luxury Southern Circuit Expedition",
+      "shortTitle": "9-Day Luxury Expedition",
+      "featuredSubtitle": "Ultimate Southern Circuit",
+      "duration": "9 Days / 8 Nights",
+      "image": "/images/safari-vehicle.jpg",
+      "destinations": "Nyerere, Mikumi, Udzungwa, Ruaha",
+      "groupSize": "2-6 people",
+      "description": "Experience the ultimate luxury in Tanzania's southern parks. This tour combines high-end accommodations with diverse landscapes of Nyerere, Mikumi, Udzungwa, and Ruaha.",
+      "highlights": [
+        "Boat safaris on Rufiji River",
+        "Trekking Sanje Waterfalls",
+        "Extensive game viewing in Ruaha",
+        "Luxury accommodations"
+      ],
+      "priceFrom": "$2,426",
+      "category": "safari",
+      "featuredSection": "southern",
+      "sortOrder": 1,
+      "bookTourName": "9 Days Luxury Southern Circuit Expedition"
+    },
+    {
+      "slug": "grand-southern-adventure",
+      "title": "9 Days Grand Southern Adventure",
+      "shortTitle": "9-Day Grand Adventure",
+      "featuredSubtitle": "Cultural & Wildlife",
+      "duration": "9 Days",
+      "image": "/images/giraffe-baobab.jpg",
+      "destinations": "Nyerere, Mikumi, Udzungwa, Ruaha",
+      "groupSize": "2-6 people",
+      "description": "A comprehensive journey through the heart of Southern Tanzania, featuring three major national parks and a deep dive into local culture.",
+      "highlights": [
+        "Extended game drives in Ruaha",
+        "Visit to Maasai Boma",
+        "Trekking Udzungwa Mountains",
+        "Mid-range comfortable stays"
+      ],
+      "priceFrom": "$1,800",
+      "category": "safari",
+      "featuredSection": "southern",
+      "sortOrder": 2,
+      "bookTourName": "9 Days Grand Southern Adventure"
+    },
+    {
+      "slug": "bush-to-beach",
+      "title": "6 Day Bush to Beach Experience",
+      "shortTitle": "6-Day Bush to Beach",
+      "featuredSubtitle": "Safari & Zanzibar",
+      "duration": "6 Days",
+      "image": "/images/zanzibar-aerial.jpg",
+      "destinations": "Nyerere NP to Zanzibar Island",
+      "groupSize": "2-6 people",
+      "description": "The perfect combination of wild adventure and tropical relaxation. Start with wildlife tracking in Nyerere NP and end on the white sands of Zanzibar.",
+      "highlights": [
+        "Rufiji River boat safari",
+        "Walking safari experiences",
+        "Exploring Stone Town",
+        "Prison Island visit"
+      ],
+      "priceFrom": "$1,947",
+      "category": "safari",
+      "featuredSection": "southern",
+      "sortOrder": 3,
+      "bookTourName": "6 Day Bush to Beach Experience"
+    },
+    {
+      "slug": "coastal-mountain-adventure",
+      "title": "7 Days Coastal & Mountain Adventure",
+      "shortTitle": "7-Day Coastal Adventure",
+      "featuredSubtitle": "History & Mountain Trails",
+      "duration": "7 Days",
+      "image": "/images/waterfall-hiker.jpg",
+      "destinations": "Bagamoyo to Usambara",
+      "groupSize": "2-6 people",
+      "description": "A unique journey that bridges Tanzania's rich history with its coastal beauty and lush mountain landscapes. Visit ancient ruins and hidden forest paradise.",
+      "highlights": [
+        "8th-century Bagamoyo ruins",
+        "Boat safari in Saadani",
+        "Night hiking in Amani Reserve",
+        "Historical coastal towns"
+      ],
+      "priceFrom": "$1,600",
+      "category": "safari",
+      "featuredSection": null,
+      "sortOrder": 4,
+      "bookTourName": "7 Days Coastal & Mountain Adventure"
+    },
+    {
+      "slug": "wonderful-southern-expedition",
+      "title": "6 Days Wonderful Southern Expedition",
+      "shortTitle": "6-Day Southern Expedition",
+      "featuredSubtitle": "Wildlife & Waterfalls",
+      "duration": "6 Days",
+      "image": "/images/boat-sunset.jpg",
+      "destinations": "Nyerere, Mikumi, Udzungwa",
+      "groupSize": "2-6 people",
+      "description": "This comprehensive safari takes you through the diverse ecosystems of Nyerere (Selous), Mikumi, and the Udzungwa Mountains.",
+      "highlights": [
+        "Boat safari on Rufiji River",
+        "Trekking to Sanje Waterfalls",
+        "Maasai village cultural visit",
+        "Walking safari experience"
+      ],
+      "priceFrom": "$1,198",
+      "category": "safari",
+      "featuredSection": null,
+      "sortOrder": 5,
+      "bookTourName": "6 Days Wonderful Southern Expedition"
+    },
+    {
+      "slug": "serengeti-of-south",
+      "title": "6 Days Serengeti of the South",
+      "shortTitle": "6-Day Serengeti of South",
+      "featuredSubtitle": "Ruaha & Mikumi",
+      "duration": "6 Days",
+      "image": "/images/maasai-women.jpg",
+      "destinations": "Mikumi, Ruaha & Maasai Culture",
+      "groupSize": "2-6 people",
+      "description": "A deep dive into the rugged landscapes of Ruaha National Park combined with the accessible wildlife of Mikumi and authentic Maasai cultural experience.",
+      "highlights": [
+        "Multi-day Ruaha exploration",
+        "Massive elephant herds",
+        "Lion and leopard tracking",
+        "Authentic Maasai Boma visit"
+      ],
+      "priceFrom": "$1,420",
+      "category": "safari",
+      "featuredSection": null,
+      "sortOrder": 6,
+      "bookTourName": "6 Days Serengeti of the South"
+    },
+    {
+      "slug": "northern-7-days",
+      "title": "7-Day Natural Wonders Safari",
+      "shortTitle": "7-Day Natural Wonders",
+      "featuredSubtitle": "Serengeti & Ngorongoro",
+      "duration": "7 Days / 6 Nights",
+      "image": "/images/northern-circuit-flamingos.jpg",
+      "destinations": "Lake Manyara, Serengeti, Ngorongoro",
+      "groupSize": "2-6 people",
+      "description": "Experience two of Africa's Seven Natural Wonders: the Serengeti and Ngorongoro Crater. This journey showcases the best of Tanzania's northern circuit.",
+      "highlights": [
+        "Great Migration in Serengeti",
+        "Ngorongoro Crater descent",
+        "Tree-climbing lions in Manyara",
+        "Big Five sightings"
+      ],
+      "priceFrom": "$2,714",
+      "category": "northern",
+      "featuredSection": "northern",
+      "sortOrder": 1,
+      "bookTourName": "7-Day Tanzania Natural Wonders Safari"
+    },
+    {
+      "slug": "northern-8-days",
+      "title": "8-Day Elephant Kingdom Safari",
+      "shortTitle": "8-Day Elephant Kingdom",
+      "featuredSubtitle": "Our Bestseller",
+      "duration": "8 Days / 7 Nights",
+      "image": "/images/northern-circuit-elephant.jpg",
+      "destinations": "Tarangire, Serengeti, Ngorongoro",
+      "groupSize": "2-6 people",
+      "description": "Our bestseller. This extended safari adds Tarangire National Park, the Kingdom of Elephants with massive herds and ancient baobab trees.",
+      "highlights": [
+        "Giant elephant herds in Tarangire",
+        "Three days in the Serengeti",
+        "Ngorongoro Crater wildlife",
+        "Ancient baobab forests"
+      ],
+      "priceFrom": "$3,284",
+      "category": "northern",
+      "featuredSection": "northern",
+      "sortOrder": 2,
+      "bookTourName": "8-Day Elephant Kingdom Safari"
+    },
+    {
+      "slug": "northern-5-days",
+      "title": "5-Day Safari Extension",
+      "shortTitle": "5-Day Safari Extension",
+      "featuredSubtitle": "Perfect Add-On Adventure",
+      "duration": "5 Days / 4 Nights",
+      "image": "/images/northern-circuit-balloon.jpg",
+      "destinations": "Manyara, Serengeti, Ngorongoro",
+      "groupSize": "2-6 people",
+      "description": "Perfect for travelers completing a Kilimanjaro climb or Zanzibar holiday. Experience the Big Three parks of Northern Tanzania in a private 4x4.",
+      "highlights": [
+        "Post-Kilimanjaro adventure",
+        "Serengeti game drives",
+        "Crater floor experience",
+        "Private safari vehicle"
+      ],
+      "priceFrom": "$1,960",
+      "category": "northern",
+      "featuredSection": null,
+      "sortOrder": 3,
+      "bookTourName": "5-Day Safari Extension"
+    },
+    {
+      "slug": "northern-3-days",
+      "title": "3-Day Classic Northern Trio",
+      "shortTitle": "3-Day Northern Trio",
+      "featuredSubtitle": "Compact Big Game Safari",
+      "duration": "3 Days / 2 Nights",
+      "image": "/images/northern-circuit-lions.jpg",
+      "destinations": "Tarangire, Ngorongoro, Manyara",
+      "groupSize": "1-6 people",
+      "description": "A high-impact, short-duration safari covering the legendary Tarangire, Ngorongoro Crater, and Lake Manyara. Perfect for time-conscious travelers.",
+      "highlights": [
+        "Tarangire elephant herds",
+        "Full day in Ngorongoro Crater",
+        "Black rhino sightings",
+        "Compact adventure"
+      ],
+      "priceFrom": "$1,558",
+      "category": "northern",
+      "featuredSection": null,
+      "sortOrder": 4,
+      "bookTourName": "3-Day Classic Northern Trio"
+    },
+    {
+      "slug": "kilimanjaro-machame",
+      "title": "Kilimanjaro - Machame Route",
+      "shortTitle": "Kilimanjaro Machame",
+      "featuredSubtitle": "Africa's Highest Peak",
+      "duration": "7 Days / 6 Nights",
+      "image": "/images/kilimanjaro-sunrise.jpg",
+      "destinations": "Mount Kilimanjaro via Machame",
+      "groupSize": "1-10+ people",
+      "description": "The Whiskey Route offers the best acclimatization and stunning scenery. Trek through rainforests, moorlands, and high deserts to Africa's roof.",
+      "highlights": [
+        "Climb high, sleep low strategy",
+        "Barranco Wall adventure",
+        "Summit at Uhuru Peak",
+        "Camping under stars"
+      ],
+      "priceFrom": "$2,589",
+      "category": "northern",
+      "featuredSection": "northern",
+      "sortOrder": 5,
+      "bookTourName": "Kilimanjaro - Machame Route"
+    },
+    {
+      "slug": "kilimanjaro-marangu",
+      "title": "Kilimanjaro - Marangu Route",
+      "shortTitle": "Kilimanjaro Marangu",
+      "featuredSubtitle": "Hut-Based Summit Route",
+      "duration": "6 Days / 5 Nights",
+      "image": "/images/kilimanjaro-climbing.jpg",
+      "destinations": "Mount Kilimanjaro via Marangu",
+      "groupSize": "1-10+ people",
+      "description": "The Coca-Cola Route is the only path with hut accommodations. A classic climb with proper acclimatization built into our 6-day itinerary.",
+      "highlights": [
+        "Hut accommodations",
+        "Acclimatization day included",
+        "Established classic route",
+        "Summit certificate ceremony"
+      ],
+      "priceFrom": "$2,349",
+      "category": "northern",
+      "featuredSection": null,
+      "sortOrder": 6,
+      "bookTourName": "Kilimanjaro - Marangu Route"
+    },
+    {
+      "slug": "zanzibar-4-days",
+      "title": "Zanzibar Short Escape",
+      "shortTitle": "4-Day Short Escape",
+      "featuredSubtitle": "Perfect Quick Getaway",
+      "duration": "4 Days / 3 Nights",
+      "image": "/images/tropical-beach.jpg",
+      "destinations": "Stone Town, Prison Island, Mnemba",
+      "groupSize": "Flexible",
+      "description": "Perfect for a quick tropical getaway. This stress-free package includes airport transfers, breakfast and dinner, and two of Zanzibar's most iconic excursions.",
+      "highlights": [
+        "Stone Town & Spice Farm tour",
+        "Prison Island giant tortoises",
+        "Mnemba dolphin swimming",
+        "Snorkeling crystal waters"
+      ],
+      "priceFrom": "$706",
+      "category": "zanzibar",
+      "featuredSection": "zanzibar",
+      "sortOrder": 1,
+      "bookTourName": "Zanzibar Short Escape"
+    },
+    {
+      "slug": "zanzibar-5-days",
+      "title": "Zanzibar Classic",
+      "shortTitle": "5-Day Zanzibar Classic",
+      "featuredSubtitle": "Island Highlights",
+      "duration": "5 Days / 4 Nights",
+      "image": "/images/dhow-sunset.png",
+      "destinations": "Safari Blue, Stone Town, Mnemba",
+      "groupSize": "Flexible",
+      "description": "An extended stay that adds the famous Safari Blue experience to your itinerary. Includes all transfers, half-board meals, and professional guides.",
+      "highlights": [
+        "Full-day Safari Blue trip",
+        "Seafood BBQ on sandbanks",
+        "Dolphin encounters",
+        "Cultural Stone Town tour"
+      ],
+      "priceFrom": "$826",
+      "category": "zanzibar",
+      "featuredSection": null,
+      "sortOrder": 2,
+      "bookTourName": "Zanzibar Classic"
+    },
+    {
+      "slug": "zanzibar-6-days",
+      "title": "Zanzibar Relax & Explore",
+      "shortTitle": "6-Day Zanzibar Classic",
+      "featuredSubtitle": "Complete Experience",
+      "duration": "6 Days / 5 Nights",
+      "image": "/images/dhow-sunset.png",
+      "destinations": "Safari Blue, Stone Town, Free Time",
+      "groupSize": "Flexible",
+      "description": "This package balances adventure with a chilling day, allowing you time to soak up the sun at your own pace while still seeing the island's top sights.",
+      "highlights": [
+        "Safari Blue ocean adventure",
+        "Full relaxation day",
+        "Prison Island visit",
+        "Spice plantation tour"
+      ],
+      "priceFrom": "$1,130",
+      "category": "zanzibar",
+      "featuredSection": "zanzibar",
+      "sortOrder": 3,
+      "bookTourName": "Zanzibar Relax & Explore"
+    },
+    {
+      "slug": "zanzibar-7-days",
+      "title": "Zanzibar Ultimate Week",
+      "shortTitle": "7-Day Luxury Paradise",
+      "featuredSubtitle": "Ultimate Relaxation",
+      "duration": "7 Days / 6 Nights",
+      "image": "/images/beach-umbrellas.jpg",
+      "destinations": "Safari Blue, Jozani, The Rock",
+      "groupSize": "Flexible",
+      "description": "Our most comprehensive tour. This week-long experience includes the legendary Rock Restaurant and the rare wildlife of Jozani Forest.",
+      "highlights": [
+        "Red Colobus monkeys in Jozani",
+        "The Rock Restaurant lunch",
+        "Safari Blue experience",
+        "Complete island exploration"
+      ],
+      "priceFrom": "$1,570",
+      "category": "zanzibar",
+      "featuredSection": "zanzibar",
+      "sortOrder": 4,
+      "bookTourName": "Zanzibar Ultimate Week"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "testimonial-1",
+      "name": "Emily R.",
+      "location": "California, USA",
+      "country": "United States",
+      "image": "/images/testimonials/profile-1.jpg",
+      "rating": 5,
+      "quote": "We booked the 8-day Northern Circuit and honestly didn't know what to expect. Our guide was patient with all our questions and the lodges were way nicer than I anticipated. Saw lions, elephants, and even a leopard in a tree. Worth every dollar.",
+      "tour": "8-Day Elephant Kingdom Safari",
+      "sortOrder": 1
+    },
+    {
+      "id": "testimonial-2",
+      "name": "James T.",
+      "location": "London, UK",
+      "country": "United Kingdom",
+      "image": "/images/testimonials/profile-2.jpg",
+      "rating": 5,
+      "quote": "Did the Kilimanjaro Machame route with my son. The porters were incredible, always smiling despite carrying so much. Summit day was brutal but standing at Uhuru Peak made it all worthwhile. Good company, would trek with them again.",
+      "tour": "Kilimanjaro - Machame Route",
+      "sortOrder": 2
+    },
+    {
+      "id": "testimonial-3",
+      "name": "Michael S.",
+      "location": "Toronto, Canada",
+      "country": "Canada",
+      "image": "/images/testimonials/profile-3.jpg",
+      "rating": 5,
+      "quote": "Zanzibar was exactly what we needed after safari. The beach time was perfect and Stone Town tour was really interesting. Prison Island was fun but crowded. Overall a great balance of adventure and relaxation.",
+      "tour": "Zanzibar Classic",
+      "sortOrder": 3
+    },
+    {
+      "id": "testimonial-4",
+      "name": "Olivia M.",
+      "location": "Sydney, Australia",
+      "country": "Australia",
+      "image": "/images/testimonials/profile-4.jpg",
+      "rating": 5,
+      "quote": "The Southern Circuit was less crowded than I expected, which was amazing. Ruaha had so many elephants. Our guide knew where to find the animals and was really flexible with our schedule. Solid experience.",
+      "tour": "Grand Southern Adventure",
+      "sortOrder": 4
+    },
+    {
+      "id": "testimonial-5",
+      "name": "The Johnson Family",
+      "location": "Texas, USA",
+      "country": "United States",
+      "image": "/images/testimonials/profile-5.jpg",
+      "rating": 5,
+      "quote": "Traveling with two teenagers was easier than expected. They actually put their phones down during game drives. The Ngorongoro Crater was the highlight for all of us. Food at the camps was surprisingly good too.",
+      "tour": "7-Day Natural Wonders Safari",
+      "sortOrder": 5
+    },
+    {
+      "id": "testimonial-6",
+      "name": "Sophie D.",
+      "location": "Brussels, Belgium",
+      "country": "Belgium",
+      "image": "/images/testimonials/profile-6.jpg",
+      "rating": 5,
+      "quote": "My third trip to Tanzania and first with Maasai Amazing Safaris. The 5-day extension after Kilimanjaro was perfect timing. Saw the migration in Serengeti, with thousands of wildebeest crossing the river. Already planning to come back next year.",
+      "tour": "5-Day Safari Extension",
+      "sortOrder": 6
+    }
+  ],
+  "partners": [
+    {
+      "id": "tripadvisor",
+      "name": "TripAdvisor",
+      "logo": "/images/partners/tripadvisor-logo.webp",
+      "websiteUrl": "",
+      "width": 180,
+      "height": 60,
+      "sortOrder": 1
+    },
+    {
+      "id": "trustpilot",
+      "name": "Trustpilot",
+      "logo": "/images/partners/trustpilot-logo.png",
+      "websiteUrl": "",
+      "width": 160,
+      "height": 60,
+      "sortOrder": 2
+    },
+    {
+      "id": "google-reviews",
+      "name": "Google Reviews",
+      "logo": "/images/partners/google-reviews-logo.png",
+      "websiteUrl": "",
+      "width": 180,
+      "height": 60,
+      "sortOrder": 3
+    },
+    {
+      "id": "safariogo",
+      "name": "Safariogo",
+      "logo": "/images/partners/safariogo-logo.png",
+      "websiteUrl": "",
+      "width": 160,
+      "height": 60,
+      "sortOrder": 4
+    },
+    {
+      "id": "tanzania-tourist-board",
+      "name": "Tanzania Tourist Board",
+      "logo": "/images/partners/tanzania-tourist-board.jpg",
+      "websiteUrl": "",
+      "width": 140,
+      "height": 60,
+      "sortOrder": 5
+    },
+    {
+      "id": "apta",
+      "name": "APTA",
+      "logo": "/images/partners/apta-logo.jpg",
+      "websiteUrl": "",
+      "width": 140,
+      "height": 60,
+      "sortOrder": 6
+    },
+    {
+      "id": "get-your-guide",
+      "name": "Get Your Guide",
+      "logo": "/images/partners/getyourguide-logo.png",
+      "websiteUrl": "",
+      "width": 140,
+      "height": 60,
+      "sortOrder": 7
+    }
+  ]
+}

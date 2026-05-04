@@ -1,64 +1,25 @@
 "use client"
 
 import Image from "next/image"
-import { useLanguage } from "@/components/language-provider"
+import type { GlobalSettings, PartnerRecord } from "@/lib/cms/schema"
 
-const partners = [
-  {
-    name: "TripAdvisor",
-    logo: "/images/partners/tripadvisor-logo.webp",
-    width: 180,
-    height: 60,
-  },
-  {
-    name: "Trustpilot",
-    logo: "/images/partners/trustpilot-logo.png",
-    width: 160,
-    height: 60,
-  },
-  {
-    name: "Google Reviews",
-    logo: "/images/partners/google-reviews-logo.png",
-    width: 180,
-    height: 60,
-  },
-  {
-    name: "Safariogo",
-    logo: "/images/partners/safariogo-logo.png",
-    width: 160,
-    height: 60,
-  },
-  {
-    name: "Tanzania Tourist Board",
-    logo: "/images/partners/tanzania-tourist-board.jpg",
-    width: 140,
-    height: 60,
-  },
-  {
-    name: "APTA",
-    logo: "/images/partners/apta-logo.jpg",
-    width: 140,
-    height: 60,
-  },
-  {
-    name: "Get Your Guide",
-    logo: "/images/partners/getyourguide-logo.png",
-    width: 140,
-    height: 60,
-  },
-]
+interface PartnersProps {
+  title: string
+  subtitle: string
+  stats: GlobalSettings["trustStats"]
+  partners: PartnerRecord[]
+}
 
-export function Partners() {
-  const { t } = useLanguage()
+export function Partners({ title, subtitle, stats, partners }: PartnersProps) {
   return (
     <section className="py-12 md:py-16 bg-white border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-[#210c00] mb-3">
-            {t("partners.title")}
+            {title}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            {t("partners.subtitle")}
+            {subtitle}
           </p>
         </div>
 
@@ -110,22 +71,12 @@ export function Partners() {
 
         {/* Trust badges */}
         <div className="mt-10 md:mt-12 flex flex-wrap justify-center gap-6 md:gap-8">
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-[#f88518] mb-1">100+</div>
-            <div className="text-sm text-gray-600">{t("partners.starReviews")}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-[#f88518] mb-1">98%</div>
-            <div className="text-sm text-gray-600">{t("partners.satisfactionRate")}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-[#f88518] mb-1">3+</div>
-            <div className="text-sm text-gray-600">{t("home.yearsExperience")}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-[#f88518] mb-1">15+</div>
-            <div className="text-sm text-gray-600">{t("home.destinations")}</div>
-          </div>
+          {stats.map((item) => (
+            <div key={`${item.value}-${item.label}`} className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-[#f88518] mb-1">{item.value}</div>
+              <div className="text-sm text-gray-600">{item.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

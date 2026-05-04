@@ -1,5 +1,11 @@
 import type { Metadata } from "next"
 import HomePageClient from "@/components/home-page-client"
+import {
+  getFeaturedItineraries,
+  getHomeContent,
+  getPublishedPartners,
+  getPublishedTestimonials,
+} from "@/lib/cms/service"
 
 export const metadata: Metadata = {
   title: "Maasai Amazing Safaris | Authentic Tanzania Safari & Kilimanjaro Tours",
@@ -24,6 +30,25 @@ export const metadata: Metadata = {
   },
 }
 
-export default function HomePage() {
-  return <HomePageClient />
+export default async function HomePage() {
+  const [content, partners, testimonials] = await Promise.all([
+    getHomeContent(),
+    getPublishedPartners(),
+    getPublishedTestimonials(),
+  ])
+
+  const [northern, zanzibar, southern] = await Promise.all([
+    getFeaturedItineraries(content.featuredSections.find((section) => section.key === "northern")?.slugs ?? []),
+    getFeaturedItineraries(content.featuredSections.find((section) => section.key === "zanzibar")?.slugs ?? []),
+    getFeaturedItineraries(content.featuredSections.find((section) => section.key === "southern")?.slugs ?? []),
+  ])
+
+  return (
+    <HomePageClient
+      content={content}
+      featuredBySection={{ northern, zanzibar, southern }}
+      partners={partners}
+      testimonials={testimonials}
+    />
+  )
 }

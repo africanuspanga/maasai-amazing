@@ -5,6 +5,7 @@ import { X, User, Mail, Calendar, Users, MessageSquare, Phone, Globe } from "luc
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
 import { LogoMark } from "@/components/logo"
+import { useSiteSettings } from "@/components/site-settings-provider"
 
 interface BookingContextType {
   openBooking: (tourName?: string) => void
@@ -46,7 +47,9 @@ const initialFormData: FormData = {
 function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => void }) {
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSending, setIsSending] = useState(false)
   const { t } = useLanguage()
+  const settings = useSiteSettings()
 
   useEffect(() => {
     document.body.style.overflow = "hidden"
@@ -67,8 +70,9 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    setIsSending(true)
 
     const message = [
       `*${t("booking.whatsappMessage")}*`,
@@ -95,8 +99,39 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
       .filter(Boolean)
       .join("\n")
 
-    window.open(`https://wa.me/255760246801?text=${encodeURIComponent(message)}`, "_blank")
+    try {
+      await fetch("/api/inquiries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          inquiryType: "booking",
+          locale: "en",
+          sourcePage: typeof window !== "undefined" ? window.location.pathname : "",
+          tourName,
+          fullName: formData.fullName,
+          nationality: formData.nationality,
+          email: formData.email,
+          phone: formData.phone,
+          preferredTravelDate: formData.travelDate,
+          accommodation: formData.accommodation,
+          adults: Number(formData.adults),
+          children: Number(formData.children),
+          specialRequests: formData.specialRequests,
+          payload: {
+            tourName,
+            tourMessage: message,
+          },
+        }),
+      })
+    } catch {
+      // Keep the WhatsApp flow working even if the CMS backend is unavailable.
+    }
+
+    window.open(`https://wa.me/${settings.whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank")
     setIsSubmitted(true)
+    setIsSending(false)
   }
 
   if (isSubmitted) {
@@ -146,7 +181,7 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
             <div>
               <h2 className="text-xl md:text-2xl font-serif font-bold text-white">{t("booking.title")}</h2>
               <p className="text-white/80 text-sm">
-                {tourName || "Maasai Amazing Safaris"}
+                {tourName || settings.companyName}
               </p>
             </div>
           </div>
@@ -350,14 +385,15 @@ function BookingModal({ tourName, onClose }: { tourName: string; onClose: () => 
           <div className="mt-6 flex flex-col gap-3">
             <Button
               type="submit"
+              disabled={isSending}
               className="w-full bg-[#f88518] hover:bg-[#c24503] text-white text-lg py-6 font-semibold rounded-xl"
             >
               {t("booking.submit")}
             </Button>
             <p className="text-center text-xs text-gray-500">
               {t("booking.emailUs")}{" "}
-              <a href="mailto:info@maasaiamazingsafaris.com" className="text-[#f88518] hover:underline">
-                info@maasaiamazingsafaris.com
+              <a href={`mailto:${settings.contactEmail}`} className="text-[#f88518] hover:underline">
+                {settings.contactEmail}
               </a>
             </p>
           </div>

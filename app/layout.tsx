@@ -5,6 +5,8 @@ import { Inter } from "next/font/google"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { BookingProvider } from "@/components/booking-provider"
 import { LanguageProvider } from "@/components/language-provider"
+import { SiteSettingsProvider } from "@/components/site-settings-provider"
+import { getGlobalSettings } from "@/lib/cms/service"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -96,104 +98,102 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  name: "Maasai Amazing Safaris",
-  alternateName: "Maasai Amazing Safaris Tanzania",
-  url: "https://maasaiamazingsafaris.com",
-  logo: "https://maasaiamazingsafaris.com/Maasai%20Favicon.png",
-  image: "https://maasaiamazingsafaris.com/images/og-image.png",
-  description:
-    "Premier Tanzania-based safari and travel company specializing in authentic African adventures, Kilimanjaro climbing, and Zanzibar beach holidays.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Warioba Road, Opposite Laurent International Primary School, Mikocheni",
-    addressLocality: "Dar es Salaam",
-    addressCountry: "TZ",
-  },
-  telephone: "+255760246801",
-  whatsapp: "+255760246801",
-  email: "info@maasaiamazingsafaris.com",
-  priceRange: "$$$",
-  currenciesAccepted: "USD, TZS",
-  paymentAccepted: "Cash, Credit Card, Bank Transfer",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "15:00",
-    },
-  ],
-  areaServed: {
-    "@type": "Place",
-    name: "Tanzania",
-    containsPlace: [
-      { "@type": "TouristAttraction", name: "Serengeti National Park" },
-      { "@type": "TouristAttraction", name: "Ngorongoro Crater" },
-      { "@type": "TouristAttraction", name: "Mount Kilimanjaro" },
-      { "@type": "TouristAttraction", name: "Zanzibar Island" },
-      { "@type": "TouristAttraction", name: "Tarangire National Park" },
-      { "@type": "TouristAttraction", name: "Lake Manyara National Park" },
-      { "@type": "TouristAttraction", name: "Ruaha National Park" },
-      { "@type": "TouristAttraction", name: "Nyerere National Park (Selous)" },
-    ],
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Safari & Tour Packages",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "TouristAttraction",
-          name: "Northern Circuit Safari",
-          description: "Serengeti, Ngorongoro, Tarangire & Lake Manyara safaris",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "TouristAttraction",
-          name: "Kilimanjaro Climbing",
-          description: "Machame, Marangu, Lemosho & Rongai route expeditions",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "TouristAttraction",
-          name: "Zanzibar Beach Holiday",
-          description: "Stone Town, spice tours, pristine beaches & water sports",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "TouristAttraction",
-          name: "Southern Circuit Safari",
-          description: "Ruaha, Nyerere (Selous), Mikumi & Saadani wilderness",
-        },
-      },
-    ],
-  },
-  sameAs: [
-    "https://wa.me/255760246801",
-  ],
-}
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const globalSettings = await getGlobalSettings()
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    name: globalSettings.companyName,
+    alternateName: `${globalSettings.companyName} Tanzania`,
+    url: "https://maasaiamazingsafaris.com",
+    logo: "https://maasaiamazingsafaris.com/Maasai%20Favicon.png",
+    image: "https://maasaiamazingsafaris.com/images/og-image.png",
+    description:
+      "Premier Tanzania-based safari and travel company specializing in authentic African adventures, Kilimanjaro climbing, and Zanzibar beach holidays.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: globalSettings.addressLines.slice(1, 3).join(", "),
+      addressLocality: globalSettings.addressLines[0],
+      addressCountry: "TZ",
+    },
+    telephone: globalSettings.phoneNumber,
+    email: globalSettings.contactEmail,
+    priceRange: "$$$",
+    currenciesAccepted: "USD, TZS",
+    paymentAccepted: "Cash, Credit Card, Bank Transfer",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "09:00",
+        closes: "16:00",
+      },
+    ],
+    areaServed: {
+      "@type": "Place",
+      name: "Tanzania",
+      containsPlace: [
+        { "@type": "TouristAttraction", name: "Serengeti National Park" },
+        { "@type": "TouristAttraction", name: "Ngorongoro Crater" },
+        { "@type": "TouristAttraction", name: "Mount Kilimanjaro" },
+        { "@type": "TouristAttraction", name: "Zanzibar Island" },
+        { "@type": "TouristAttraction", name: "Tarangire National Park" },
+        { "@type": "TouristAttraction", name: "Lake Manyara National Park" },
+        { "@type": "TouristAttraction", name: "Ruaha National Park" },
+        { "@type": "TouristAttraction", name: "Nyerere National Park (Selous)" },
+      ],
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Safari & Tour Packages",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "TouristAttraction",
+            name: "Northern Circuit Safari",
+            description: "Serengeti, Ngorongoro, Tarangire & Lake Manyara safaris",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "TouristAttraction",
+            name: "Kilimanjaro Climbing",
+            description: "Machame, Marangu, Lemosho & Rongai route expeditions",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "TouristAttraction",
+            name: "Zanzibar Beach Holiday",
+            description: "Stone Town, spice tours, pristine beaches & water sports",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "TouristAttraction",
+            name: "Southern Circuit Safari",
+            description: "Ruaha, Nyerere (Selous), Mikumi & Saadani wilderness",
+          },
+        },
+      ],
+    },
+    sameAs: [`https://wa.me/${globalSettings.whatsappNumber}`],
+  }
+
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
@@ -210,12 +210,14 @@ html {
         `}</style>
       </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <LanguageProvider>
-          <BookingProvider>
-            <ScrollToTop />
-            {children}
-          </BookingProvider>
-        </LanguageProvider>
+        <SiteSettingsProvider settings={globalSettings}>
+          <LanguageProvider>
+            <BookingProvider>
+              <ScrollToTop />
+              {children}
+            </BookingProvider>
+          </LanguageProvider>
+        </SiteSettingsProvider>
       </body>
     </html>
   )

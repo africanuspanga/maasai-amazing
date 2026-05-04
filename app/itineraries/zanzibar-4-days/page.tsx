@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Calendar, Users, CheckCircle, X, ArrowLeft, Waves } from "lucide-react"
 import { BookNowButton } from "@/components/book-now-button"
+import { getGlobalSettings } from "@/lib/cms/service"
 
 export const metadata = {
   title: "Zanzibar 4 Days / 3 Nights Package | Maasai Amazing Safaris",
@@ -14,7 +15,8 @@ export const metadata = {
     "Perfect for a quick tropical getaway. This stress-free package includes airport transfers, breakfast and dinner, and two of Zanzibar's most iconic excursions.",
 }
 
-export default function Zanzibar4DaysPage() {
+export default async function Zanzibar4DaysPage() {
+  const settings = await getGlobalSettings()
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -141,7 +143,7 @@ export default function Zanzibar4DaysPage() {
                       variant="outline"
                       className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white text-lg py-6 bg-transparent"
                     >
-                      <Link href="https://wa.me/255760246801" target="_blank">
+                      <Link href={`https://wa.me/${settings.whatsappNumber}`} target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>

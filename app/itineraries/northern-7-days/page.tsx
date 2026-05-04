@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Calendar, Users, MapPin, Check, ArrowLeft, Phone } from "lucide-react"
 import { BookNowButton } from "@/components/book-now-button"
+import { getGlobalSettings } from "@/lib/cms/service"
 
 export const metadata = {
   title: "7-Day Tanzania Natural Wonders Safari | Maasai Amazing Safaris",
@@ -14,7 +15,8 @@ export const metadata = {
     "Experience two of Africa's Seven Natural Wonders: the Serengeti and Ngorongoro Crater. 7-day safari through Lake Manyara, Serengeti, and Ngorongoro.",
 }
 
-export default function Northern7DaysSafari() {
+export default async function Northern7DaysSafari() {
+  const settings = await getGlobalSettings()
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -326,7 +328,7 @@ export default function Northern7DaysSafari() {
                     variant="outline"
                     className="w-full border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white py-6"
                   >
-                    <Link href="https://wa.me/255760246801" target="_blank">
+                    <Link href={`https://wa.me/${settings.whatsappNumber}`} target="_blank">
                       <Phone className="w-4 h-4 mr-2" />
                       WhatsApp Us
                     </Link>

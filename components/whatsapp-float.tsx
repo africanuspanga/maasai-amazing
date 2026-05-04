@@ -2,14 +2,16 @@
 
 import { useState } from "react"
 import { useLanguage } from "@/components/language-provider"
+import { useSiteSettings } from "@/components/site-settings-provider"
 
 export function WhatsAppFloat() {
   const [isHovered, setIsHovered] = useState(false)
   const { t } = useLanguage()
+  const settings = useSiteSettings()
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(t("whatsapp.message"))
-    window.open(`https://wa.me/255760246801?text=${message}`, "_blank")
+    window.open(`https://wa.me/${settings.whatsappNumber}?text=${message}`, "_blank")
   }
 
   return (

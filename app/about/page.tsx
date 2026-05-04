@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import AboutPageClient from "@/components/about-page-client"
+import { getAboutContent } from "@/lib/cms/service"
 
 export const metadata: Metadata = {
   title: "About Maasai Amazing Safaris | Tanzania's Premier Safari Company",
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   },
 }
 
-export default function AboutPage() {
-  return <AboutPageClient />
+export default async function AboutPage() {
+  const content = await getAboutContent()
+
+  return <AboutPageClient content={content} />
 }

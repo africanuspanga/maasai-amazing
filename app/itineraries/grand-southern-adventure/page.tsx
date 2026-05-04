@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Calendar, DollarSign, Users, CheckCircle, X, ArrowLeft } from "lucide-react"
 import { BookNowButton } from "@/components/book-now-button"
+import { getGlobalSettings } from "@/lib/cms/service"
 
 export const metadata = {
   title: "9 Days Grand Southern Adventure | Maasai Amazing Safaris",
@@ -14,7 +15,8 @@ export const metadata = {
     "A comprehensive journey through the heart of Southern Tanzania, featuring three major national parks and a deep dive into local culture.",
 }
 
-export default function GrandSouthernAdventurePage() {
+export default async function GrandSouthernAdventurePage() {
+  const settings = await getGlobalSettings()
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -134,7 +136,7 @@ export default function GrandSouthernAdventurePage() {
                       variant="outline"
                       className="w-full border-[#f88518] text-[#f88518] hover:bg-[#f88518] hover:text-white text-lg py-6 bg-transparent"
                     >
-                      <Link href="https://wa.me/255760246801" target="_blank">
+                      <Link href={`https://wa.me/${settings.whatsappNumber}`} target="_blank">
                         WhatsApp Inquiry
                       </Link>
                     </Button>

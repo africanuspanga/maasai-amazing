@@ -9,18 +9,182 @@ import { Testimonials } from "@/components/testimonials"
 import { Partners } from "@/components/partners"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
-import { Star, Shield, Users, Award, Clock, Calendar, ChevronDown, MapPin } from "lucide-react"
+import { Star, Calendar, ChevronDown } from "lucide-react"
 import { BookNowButton } from "@/components/book-now-button"
 import { useLanguage } from "@/components/language-provider"
+import { useSiteSettings } from "@/components/site-settings-provider"
+import { getCmsIcon } from "@/lib/cms/icons"
+import type { HomeContent, ItineraryRecord, PartnerRecord, TestimonialRecord } from "@/lib/cms/schema"
 
-export default function HomePageClient() {
+type FeaturedSectionKey = "northern" | "zanzibar" | "southern"
+
+const featuredSectionStyles: Record<
+  FeaturedSectionKey,
+  {
+    sectionClassName: string
+    eyebrowClassName: string
+    titleClassName: string
+    subtitleClassName: string
+    cardClassName: string
+    cardBodyClassName: string
+    priceBadgeClassName: string
+    iconClassName: string
+    primaryButtonClassName: string
+    secondaryButtonClassName: string
+    sectionButtonClassName: string
+    secondaryButtonVariant?: "outline" | "default"
+  }
+> = {
+  northern: {
+    sectionClassName: "py-20 md:py-28 bg-gradient-to-br from-[#fff7ed] via-[#fef3c7] to-[#fff7ed]",
+    eyebrowClassName: "text-[#c24503]",
+    titleClassName: "text-[#210c00]",
+    subtitleClassName: "text-gray-600",
+    cardClassName: "group overflow-hidden border-0 shadow-sm hover:shadow-2xl transition-all duration-500 rounded-3xl bg-white",
+    cardBodyClassName: "p-5 md:p-6",
+    priceBadgeClassName: "bg-[#c24503]",
+    iconClassName: "text-[#c24503]",
+    primaryButtonClassName:
+      "flex-1 border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white rounded-full",
+    secondaryButtonClassName: "flex-1 bg-[#c24503] hover:bg-[#a33d02] text-white rounded-full",
+    sectionButtonClassName:
+      "border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white rounded-full px-10",
+    secondaryButtonVariant: "outline",
+  },
+  zanzibar: {
+    sectionClassName: "py-20 md:py-28 bg-white",
+    eyebrowClassName: "text-[#c24503]",
+    titleClassName: "text-[#210c00]",
+    subtitleClassName: "text-gray-600",
+    cardClassName: "group overflow-hidden border-0 shadow-sm hover:shadow-2xl transition-all duration-500 rounded-3xl bg-[#faf6f1]",
+    cardBodyClassName: "p-5 md:p-6",
+    priceBadgeClassName: "bg-[#f88518]",
+    iconClassName: "text-[#f88518]",
+    primaryButtonClassName:
+      "flex-1 border-[#f88518] text-[#f88518] hover:bg-[#f88518] hover:text-white rounded-full",
+    secondaryButtonClassName: "flex-1 bg-[#f88518] hover:bg-[#c24503] text-white rounded-full",
+    sectionButtonClassName:
+      "border-[#f88518] text-[#f88518] hover:bg-[#f88518] hover:text-white rounded-full px-10",
+    secondaryButtonVariant: "outline",
+  },
+  southern: {
+    sectionClassName: "py-20 md:py-28 bg-gradient-to-br from-[#210c00] to-[#3d1800] text-white",
+    eyebrowClassName: "text-[#f88518]",
+    titleClassName: "text-white",
+    subtitleClassName: "text-white/70",
+    cardClassName:
+      "group overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500",
+    cardBodyClassName: "p-5 md:p-6",
+    priceBadgeClassName: "bg-[#f88518]",
+    iconClassName: "text-[#f88518]",
+    primaryButtonClassName: "flex-1 bg-white text-[#210c00] hover:bg-[#f88518] hover:text-white rounded-full border-0",
+    secondaryButtonClassName: "flex-1 bg-[#f88518] hover:bg-[#c24503] text-white rounded-full",
+    sectionButtonClassName: "bg-white text-[#210c00] hover:bg-[#f88518] hover:text-white rounded-full px-10",
+    secondaryButtonVariant: "default",
+  },
+}
+
+function FeaturedSection({
+  section,
+  itineraries,
+  buttonLabel,
+}: {
+  section: HomeContent["featuredSections"][number]
+  itineraries: ItineraryRecord[]
+  buttonLabel: string
+}) {
   const { t } = useLanguage()
+  const styles = featuredSectionStyles[section.key]
+
+  return (
+    <section className={styles.sectionClassName}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 md:mb-20">
+          <span className={`${styles.eyebrowClassName} font-semibold text-sm uppercase tracking-widest mb-4 block`}>
+            {section.eyebrow}
+          </span>
+          <h2 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight mb-6 ${styles.titleClassName}`}>
+            {section.title}
+          </h2>
+          <p className={`text-lg max-w-2xl mx-auto ${styles.subtitleClassName}`}>{section.subtitle}</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {itineraries.map((item) => (
+            <Card key={item.slug} className={styles.cardClassName}>
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold mb-1">{item.shortTitle}</h3>
+                  <p className="text-sm opacity-90">{item.featuredSubtitle}</p>
+                </div>
+                <div className={`absolute top-4 right-4 ${styles.priceBadgeClassName} text-white px-4 py-1.5 rounded-full text-sm font-bold`}>
+                  {item.priceFrom}
+                </div>
+              </div>
+              <CardContent className={styles.cardBodyClassName}>
+                <div className={`flex items-center gap-2 mb-3 text-sm ${section.key === "southern" ? "text-white/60" : "text-gray-500"}`}>
+                  <Calendar className={`w-4 h-4 ${styles.iconClassName}`} />
+                  <span>{item.duration}</span>
+                </div>
+                <div className="flex gap-2">
+                  <Button
+                    asChild
+                    variant={styles.secondaryButtonVariant ?? "outline"}
+                    size="sm"
+                    className={styles.primaryButtonClassName}
+                  >
+                    <Link href={`/itineraries/${item.slug}`}>{buttonLabel}</Link>
+                  </Button>
+                  <BookNowButton
+                    tourName={item.bookTourName ?? item.title}
+                    size="sm"
+                    className={styles.secondaryButtonClassName}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Button asChild size="lg" variant={section.key === "southern" ? "default" : "outline"} className={styles.sectionButtonClassName}>
+            <Link href={section.ctaHref}>{section.ctaLabel}</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default function HomePageClient({
+  content,
+  featuredBySection,
+  partners,
+  testimonials,
+}: {
+  content: HomeContent
+  featuredBySection: Record<FeaturedSectionKey, ItineraryRecord[]>
+  partners: PartnerRecord[]
+  testimonials: TestimonialRecord[]
+}) {
+  const { t } = useLanguage()
+  const settings = useSiteSettings()
+  const primaryDestination = content.destinationCards.find((item) => item.isLarge) ?? content.destinationCards[0]
+  const secondaryDestinations = content.destinationCards.filter((item) => item.title !== primaryDestination?.title)
 
   return (
     <div className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
@@ -39,17 +203,17 @@ export default function HomePageClient() {
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium">
             <span className="w-2 h-2 rounded-full bg-[#f88518] animate-pulse" />
-            Tanzania&apos;s Premier Maasai Safari Experience
+            {content.heroBadge}
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black mb-6 leading-[0.95] tracking-tight">
-            {t("home.heroTitle")}
+            {content.heroTitle}
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed text-white/90 font-light">
-            {t("home.heroSubtitle")}
+            {content.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white text-lg px-10 py-6 rounded-full">
-              <Link href="/contact">{t("home.heroCta")}</Link>
+              <Link href={content.heroPrimaryCtaHref}>{content.heroPrimaryCtaLabel}</Link>
             </Button>
             <Button
               asChild
@@ -57,7 +221,7 @@ export default function HomePageClient() {
               variant="outline"
               className="border-white/40 text-white hover:bg-white/10 text-lg px-10 py-6 rounded-full bg-white/5 backdrop-blur-sm"
             >
-              <Link href="/itineraries">Explore Tours</Link>
+              <Link href={content.heroSecondaryCtaHref}>{content.heroSecondaryCtaLabel}</Link>
             </Button>
           </div>
         </div>
@@ -67,27 +231,19 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* Stats Bar */}
       <section className="bg-[#210c00] py-10 md:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 gap-6 md:gap-12">
-            <div className="text-center">
-              <div className="text-4xl md:text-6xl font-serif font-black text-[#f88518] mb-2">5+</div>
-              <div className="text-sm md:text-base text-white/70 uppercase tracking-widest">{t("home.yearsExperience")}</div>
-            </div>
-            <div className="text-center border-x border-white/10">
-              <div className="text-4xl md:text-6xl font-serif font-black text-[#f88518] mb-2">100+</div>
-              <div className="text-sm md:text-base text-white/70 uppercase tracking-widest">{t("home.happyTravelers")}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-6xl font-serif font-black text-[#f88518] mb-2">15+</div>
-              <div className="text-sm md:text-base text-white/70 uppercase tracking-widest">{t("home.destinations")}</div>
-            </div>
+            {content.stats.map((item, index) => (
+              <div key={`${item.value}-${item.label}`} className={`text-center ${index === 1 ? "border-x border-white/10" : ""}`}>
+                <div className="text-4xl md:text-6xl font-serif font-black text-[#f88518] mb-2">{item.value}</div>
+                <div className="text-sm md:text-base text-white/70 uppercase tracking-widest">{item.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
       <section className="py-20 md:py-28 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -97,8 +253,8 @@ export default function HomePageClient() {
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#c24503]/10 rounded-full blur-2xl" />
                 <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
                   <Image
-                    src="/images/gazelle.jpg"
-                    alt="Gazelle in African savanna at sunset"
+                    src={content.aboutImage}
+                    alt={content.aboutTitle}
                     fill
                     className="object-cover"
                     loading="lazy"
@@ -112,336 +268,136 @@ export default function HomePageClient() {
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <span className="text-sm font-bold text-[#210c00]">{t("home.ratedByTravelers")}</span>
+                    <span className="text-sm font-bold text-[#210c00]">{content.ratingLabel}</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-7 order-1 lg:order-2">
-              <span className="text-[#c24503] font-semibold text-sm uppercase tracking-widest mb-4 block">About Us</span>
+              <span className="text-[#c24503] font-semibold text-sm uppercase tracking-widest mb-4 block">{content.aboutEyebrow}</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#210c00] tracking-tight mb-8 leading-[1.1]">
-                {t("home.aboutGatewayTitle")}
+                {content.aboutTitle}
               </h2>
               <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-                {t("home.aboutGatewayText")}
+                {content.aboutBody}
               </p>
               <Button asChild className="bg-[#f88518] hover:bg-[#c24503] text-white rounded-full px-8 py-6 text-base">
-                <Link href="/about">Learn Our Story</Link>
+                <Link href={content.aboutCtaHref}>{content.aboutCtaLabel}</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
       <section className="py-20 md:py-28 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 md:mb-20">
-            <span className="text-[#c24503] font-semibold text-sm uppercase tracking-widest mb-4 block">Why Travel With Us</span>
+            <span className="text-[#c24503] font-semibold text-sm uppercase tracking-widest mb-4 block">{content.whyEyebrow}</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#210c00] tracking-tight mb-6">
-              {t("home.whyChooseTitle")}
+              {content.whyTitle}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {t("home.whyChooseSubtitle")}
-            </p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">{content.whySubtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {[
-              { icon: Shield, title: t("home.safetyFirst"), desc: t("home.safetyFirstDesc") },
-              { icon: Users, title: t("home.localExpertise"), desc: t("home.localExpertiseDesc") },
-              { icon: Award, title: t("home.awardWinning"), desc: t("home.awardWinningDesc") },
-              { icon: Clock, title: t("home.support247"), desc: t("home.support247Desc") },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-white/50"
-              >
-                <div className="w-14 h-14 bg-[#f88518] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                  <item.icon className="w-7 h-7 text-white" />
+            {content.whyItems.map((item) => {
+              const Icon = getCmsIcon(item.icon)
+              return (
+                <div
+                  key={item.title}
+                  className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-white/50"
+                >
+                  <div className="w-14 h-14 bg-[#f88518] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                    <Icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#210c00] mb-3">{item.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
                 </div>
-                <h3 className="text-xl font-bold text-[#210c00] mb-3">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Top Destinations */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 md:mb-20">
-            <span className="text-[#c24503] font-semibold text-sm uppercase tracking-widest mb-4 block">Destinations</span>
+            <span className="text-[#c24503] font-semibold text-sm uppercase tracking-widest mb-4 block">{content.destinationsEyebrow}</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#210c00] tracking-tight mb-6">
-              {t("home.topDestTitle")}
+              {content.destinationsTitle}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {t("home.topDestSubtitle")}
-            </p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">{content.destinationsSubtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {/* Serengeti */}
-            <Card className="group overflow-hidden border-0 shadow-none hover:shadow-2xl transition-all duration-500 rounded-3xl md:row-span-2">
-              <div className="relative h-full min-h-[400px] md:min-h-full overflow-hidden">
-                <Image
-                  src="/images/wildebeest-migration.png"
-                  alt="Wildebeest migration in Serengeti National Park"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-2">{t("home.serengetiTitle")}</h3>
-                  <p className="text-white/80 mb-4">{t("home.serengetiDesc")}</p>
-                  <Button asChild className="bg-white text-[#210c00] hover:bg-[#f88518] hover:text-white rounded-full px-6">
-                    <Link href="/northern-circuit">{t("home.exploreSerengeti")}</Link>
-                  </Button>
+            {primaryDestination ? (
+              <Card className="group overflow-hidden border-0 shadow-none hover:shadow-2xl transition-all duration-500 rounded-3xl md:row-span-2">
+                <div className="relative h-full min-h-[400px] md:min-h-full overflow-hidden">
+                  <Image
+                    src={primaryDestination.image}
+                    alt={primaryDestination.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-2">{primaryDestination.title}</h3>
+                    <p className="text-white/80 mb-4">{primaryDestination.description}</p>
+                    <Button asChild className="bg-white text-[#210c00] hover:bg-[#f88518] hover:text-white rounded-full px-6">
+                      <Link href={primaryDestination.href}>{primaryDestination.ctaLabel}</Link>
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            ) : null}
 
-            {/* Zanzibar */}
-            <Card className="group overflow-hidden border-0 shadow-none hover:shadow-2xl transition-all duration-500 rounded-3xl">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="/images/tropical-beach.jpg"
-                  alt="Beautiful tropical beach in Zanzibar"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-serif font-bold text-white mb-1">{t("home.zanzibarDestTitle")}</h3>
-                  <p className="text-white/80 text-sm mb-3">{t("home.zanzibarDestDesc")}</p>
-                  <Button asChild variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-[#210c00] rounded-full">
-                    <Link href="/zanzibar">{t("home.discoverZanzibar")}</Link>
-                  </Button>
-                </div>
-              </div>
-            </Card>
-
-            {/* Kilimanjaro */}
-            <Card className="group overflow-hidden border-0 shadow-none hover:shadow-2xl transition-all duration-500 rounded-3xl">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="/images/giraffe-wild.jpg"
-                  alt="Giraffes in Tanzania with Mount Kilimanjaro in background"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-serif font-bold text-white mb-1">{t("home.kilimanjaroDestTitle")}</h3>
-                  <p className="text-white/80 text-sm mb-3">{t("home.kilimanjaroDestDesc")}</p>
-                  <Button asChild variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-[#210c00] rounded-full">
-                    <Link href="/kilimanjaro">{t("home.climbKilimanjaro")}</Link>
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Northern Circuit Itineraries */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-[#fff7ed] via-[#fef3c7] to-[#fff7ed]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-20">
-            <span className="text-[#c24503] font-semibold text-sm uppercase tracking-widest mb-4 block">Safari Packages</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#210c00] tracking-tight mb-6">
-              {t("home.northernCircuitTitle")}
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {t("home.northernCircuitSubtitle")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              { title: "7-Day Natural Wonders", sub: "Serengeti & Ngorongoro", price: "$2,714", days: "7 Days / 6 Nights", img: "/images/northern-circuit-flamingos.jpg", link: "/itineraries/northern-7-days", tour: "7-Day Natural Wonders Safari" },
-              { title: "8-Day Elephant Kingdom", sub: "Our Bestseller", price: "$3,284", days: "8 Days / 7 Nights", img: "/images/northern-circuit-elephant.jpg", link: "/itineraries/northern-8-days", tour: "8-Day Elephant Kingdom Safari" },
-              { title: "Kilimanjaro Machame", sub: "Africa's Highest Peak", price: "$2,589", days: "7 Days / 6 Nights", img: "/images/kilimanjaro-sunrise.jpg", link: "/itineraries/kilimanjaro-machame", tour: "Kilimanjaro Machame Route" },
-            ].map((item, idx) => (
-              <Card key={idx} className="group overflow-hidden border-0 shadow-sm hover:shadow-2xl transition-all duration-500 rounded-3xl bg-white">
+            {secondaryDestinations.map((item) => (
+              <Card key={item.title} className="group overflow-hidden border-0 shadow-none hover:shadow-2xl transition-all duration-500 rounded-3xl">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
-                    src={item.img}
+                    src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                    <p className="text-sm opacity-90">{item.sub}</p>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-[#c24503] text-white px-4 py-1.5 rounded-full text-sm font-bold">
-                    {item.price}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-xl font-serif font-bold text-white mb-1">{item.title}</h3>
+                    <p className="text-white/80 text-sm mb-3">{item.description}</p>
+                    <Button asChild variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-[#210c00] rounded-full">
+                      <Link href={item.href}>{item.ctaLabel}</Link>
+                    </Button>
                   </div>
                 </div>
-                <CardContent className="p-5 md:p-6">
-                  <div className="flex items-center gap-2 mb-3 text-sm text-gray-500">
-                    <Calendar className="w-4 h-4 text-[#c24503]" />
-                    <span>{item.days}</span>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button asChild variant="outline" size="sm" className="flex-1 border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white rounded-full">
-                      <Link href={item.link}>{t("home.viewDetails")}</Link>
-                    </Button>
-                    <BookNowButton tourName={item.tour} size="sm" className="flex-1 bg-[#c24503] hover:bg-[#a33d02] text-white rounded-full" />
-                  </div>
-                </CardContent>
               </Card>
             ))}
           </div>
-
-          <div className="text-center mt-10">
-            <Button asChild size="lg" variant="outline" className="border-[#c24503] text-[#c24503] hover:bg-[#c24503] hover:text-white rounded-full px-10">
-              <Link href="/itineraries">{t("home.viewAllNorthern")}</Link>
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* Featured Zanzibar Packages */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-20">
-            <span className="text-[#c24503] font-semibold text-sm uppercase tracking-widest mb-4 block">Beach Escapes</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#210c00] tracking-tight mb-6">
-              {t("home.zanzibarBeachTitle")}
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {t("home.zanzibarBeachSubtitle")}
-            </p>
-          </div>
+      {content.featuredSections.map((section) => (
+        <FeaturedSection
+          key={section.key}
+          section={section}
+          itineraries={featuredBySection[section.key]}
+          buttonLabel={t("home.viewDetails")}
+        />
+      ))}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              { title: "4-Day Short Escape", sub: "Perfect Quick Getaway", price: "$765", days: "4 Days / 3 Nights", img: "/images/tropical-beach.jpg", link: "/itineraries/zanzibar-4-days", tour: "4-Day Zanzibar Short Escape" },
-              { title: "6-Day Zanzibar Classic", sub: "Complete Experience", price: "$1,130", days: "6 Days / 5 Nights", img: "/images/dhow-sunset.png", link: "/itineraries/zanzibar-6-days", tour: "6-Day Zanzibar Classic" },
-              { title: "8-Day Luxury Paradise", sub: "Ultimate Relaxation", price: "$1,570", days: "8 Days / 7 Nights", img: "/images/beach-umbrellas.jpg", link: "/itineraries/zanzibar-8-days", tour: "8-Day Luxury Zanzibar Paradise" },
-            ].map((item, idx) => (
-              <Card key={idx} className="group overflow-hidden border-0 shadow-sm hover:shadow-2xl transition-all duration-500 rounded-3xl bg-[#faf6f1]">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                    <p className="text-sm opacity-90">{item.sub}</p>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-[#f88518] text-white px-4 py-1.5 rounded-full text-sm font-bold">
-                    {item.price}
-                  </div>
-                </div>
-                <CardContent className="p-5 md:p-6">
-                  <div className="flex items-center gap-2 mb-3 text-sm text-gray-500">
-                    <Calendar className="w-4 h-4 text-[#f88518]" />
-                    <span>{item.days}</span>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button asChild variant="outline" size="sm" className="flex-1 border-[#f88518] text-[#f88518] hover:bg-[#f88518] hover:text-white rounded-full">
-                      <Link href={item.link}>{t("home.viewDetails")}</Link>
-                    </Button>
-                    <BookNowButton tourName={item.tour} size="sm" className="flex-1 bg-[#f88518] hover:bg-[#c24503] text-white rounded-full" />
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      <Partners title={content.partnersTitle} subtitle={content.partnersSubtitle} stats={settings.trustStats} partners={partners} />
+      <Testimonials
+        title={content.testimonialsTitle}
+        subtitle={content.testimonialsSubtitle}
+        ratingLabel={content.testimonialsRatingLabel}
+        happyTravelersLabel={content.testimonialsHappyTravelersLabel}
+        testimonials={testimonials}
+      />
 
-          <div className="text-center mt-10">
-            <Button asChild size="lg" variant="outline" className="border-[#f88518] text-[#f88518] hover:bg-[#f88518] hover:text-white rounded-full px-10">
-              <Link href="/itineraries">{t("home.viewAllZanzibar")}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Southern Circuit Safaris */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-[#210c00] to-[#3d1800] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-20">
-            <span className="text-[#f88518] font-semibold text-sm uppercase tracking-widest mb-4 block">Adventure</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight mb-6">
-              {t("home.southernCircuitTitle")}
-            </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              {t("home.southernCircuitSubtitle")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              { title: "9-Day Luxury Expedition", sub: "Ultimate Southern Circuit", price: "$2,426", days: "9 Days / 8 Nights", img: "/images/safari-vehicle.jpg", link: "/itineraries/luxury-southern-circuit", tour: "9-Day Luxury Southern Circuit Expedition" },
-              { title: "9-Day Grand Adventure", sub: "Cultural & Wildlife", price: "$1,800", days: "9 Days", img: "/images/giraffe-baobab.jpg", link: "/itineraries/grand-southern-adventure", tour: "9-Day Grand Southern Adventure" },
-              { title: "6-Day Bush to Beach", sub: "Safari & Zanzibar", price: "$1,947", days: "6 Days", img: "/images/zanzibar-aerial.jpg", link: "/itineraries/bush-to-beach", tour: "6-Day Bush to Beach Adventure" },
-            ].map((item, idx) => (
-              <div key={idx} className="group overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                    <p className="text-sm opacity-90">{item.sub}</p>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-[#f88518] text-white px-4 py-1.5 rounded-full text-sm font-bold">
-                    {item.price}
-                  </div>
-                </div>
-                <div className="p-5 md:p-6">
-                  <div className="flex items-center gap-2 mb-3 text-sm text-white/60">
-                    <Calendar className="w-4 h-4 text-[#f88518]" />
-                    <span>{item.days}</span>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button asChild variant="outline" size="sm" className="flex-1 bg-white text-[#210c00] hover:bg-[#f88518] hover:text-white rounded-full border-0">
-                      <Link href={item.link}>{t("home.viewDetails")}</Link>
-                    </Button>
-                    <BookNowButton tourName={item.tour} size="sm" className="flex-1 bg-[#f88518] hover:bg-[#c24503] text-white rounded-full" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Button asChild size="lg" className="bg-white text-[#210c00] hover:bg-[#f88518] hover:text-white rounded-full px-10">
-              <Link href="/itineraries">{t("home.viewAllSouthern")}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <Partners />
-      <Testimonials />
-
-      {/* CTA Section */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#210c00] via-[#3d1800] to-[#c24503]" />
         <div className="absolute inset-0 opacity-20">
@@ -450,14 +406,12 @@ export default function HomePageClient() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-8 text-white tracking-tight">
-            {t("home.ctaTitle")}
+            {content.ctaTitle}
           </h2>
-          <p className="text-lg md:text-xl mb-10 text-white/80 max-w-2xl mx-auto">
-            {t("home.ctaSubtitle")}
-          </p>
+          <p className="text-lg md:text-xl mb-10 text-white/80 max-w-2xl mx-auto">{content.ctaSubtitle}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-[#f88518] hover:bg-[#c24503] text-white text-lg px-10 py-6 rounded-full">
-              <Link href="/contact">{t("home.startPlanning")}</Link>
+              <Link href={content.ctaPrimaryHref}>{content.ctaPrimaryLabel}</Link>
             </Button>
             <Button
               asChild
@@ -465,8 +419,8 @@ export default function HomePageClient() {
               variant="outline"
               className="border-white/30 text-white hover:bg-white hover:text-[#210c00] text-lg px-10 py-6 rounded-full bg-white/5 backdrop-blur-sm"
             >
-              <Link href="https://wa.me/255760246801" target="_blank">
-                {t("home.whatsappUs")}
+              <Link href={`https://wa.me/${settings.whatsappNumber}`} target="_blank">
+                {content.ctaSecondaryLabel}
               </Link>
             </Button>
           </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import ContactPageClient from "@/components/contact-page-client"
+import { getContactContent } from "@/lib/cms/service"
 
 export const metadata: Metadata = {
   title: "Contact Maasai Amazing Safaris | Plan Your Tanzania Adventure",
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ContactPage() {
-  return <ContactPageClient />
+export default async function ContactPage() {
+  const content = await getContactContent()
+
+  return <ContactPageClient content={content} />
 }
