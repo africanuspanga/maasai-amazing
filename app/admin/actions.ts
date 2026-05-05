@@ -9,6 +9,7 @@ import {
   globalSettingsSchema,
   homeContentSchema,
   itinerariesIndexContentSchema,
+  normalizeItineraryPageDetails,
   itineraryRecordSchema,
   partnerRecordSchema,
   testimonialRecordSchema,
@@ -39,6 +40,14 @@ function getBoolean(formData: FormData, field: string) {
 
 function getNumber(formData: FormData, field: string) {
   return Number(getString(formData, field) || 0)
+}
+
+function slugify(value: string) {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
 }
 
 function parseJsonField(formData: FormData, field: string) {
@@ -235,10 +244,13 @@ export async function saveItinerariesIndexSettingsAction(formData: FormData) {
 export async function saveItineraryAction(formData: FormData) {
   await requireAdminSession()
 
+  const title = getString(formData, "title")
+  const slug = getString(formData, "slug") || slugify(title)
+
   const record = itineraryRecordSchema.parse({
-    slug: getString(formData, "slug"),
-    title: getString(formData, "title"),
-    shortTitle: getString(formData, "shortTitle"),
+    slug,
+    title,
+    shortTitle: getString(formData, "shortTitle") || title,
     featuredSubtitle: getOptionalString(formData, "featuredSubtitle"),
     duration: getString(formData, "duration"),
     image: getString(formData, "image"),
@@ -253,7 +265,11 @@ export async function saveItineraryAction(formData: FormData) {
     bookTourName: getOptionalString(formData, "bookTourName"),
   })
 
-  await upsertItinerary({ ...record, isPublished: getBoolean(formData, "isPublished") })
+  const rawDetails = getString(formData, "details")
+  const detailsInput = rawDetails ? JSON.parse(rawDetails) : {}
+  const details = normalizeItineraryPageDetails(detailsInput, record)
+
+  await upsertItinerary({ ...record, details, isPublished: getBoolean(formData, "isPublished") })
   revalidateCmsPaths()
   redirect("/admin/itineraries?saved=1")
 }

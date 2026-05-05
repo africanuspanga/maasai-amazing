@@ -3,12 +3,14 @@ import { createSupabaseAdminClient, createSupabasePublicClient, hasSupabaseAdmin
 import {
   aboutContentSchema,
   contactContentSchema,
+  createDefaultItineraryPageDetails,
   defaultCmsContent,
   globalSettingsSchema,
   homeContentSchema,
   inquiryInsertSchema,
   itinerariesIndexContentSchema,
   itineraryRecordSchema,
+  normalizeItineraryPageDetails,
   partnerRecordSchema,
   testimonialRecordSchema,
   type AboutContent,
@@ -16,6 +18,7 @@ import {
   type GlobalSettings,
   type HomeContent,
   type InquiryInsert,
+  type ItineraryPageDetails,
   type ItinerariesIndexContent,
   type ItineraryRecord,
   type PartnerRecord,
@@ -23,6 +26,7 @@ import {
 } from "@/lib/cms/schema"
 
 type SettingKey = "global" | "home" | "about" | "contact" | "itinerariesIndex"
+type AdminItineraryRecord = ItineraryRecord & { isPublished: boolean; details: ItineraryPageDetails }
 
 function getPublicClientSafe() {
   if (!hasSupabasePublicEnv()) {
@@ -42,6 +46,62 @@ function getAdminClientSafe() {
   }
 
   return createSupabaseAdminClient()
+}
+
+function coerceString(value: unknown, fallback = "") {
+  if (typeof value === "string") {
+    return value
+  }
+
+  if (typeof value === "number") {
+    return String(value)
+  }
+
+  return fallback
+}
+
+function coerceNullableString(value: unknown) {
+  const normalized = coerceString(value).trim()
+  return normalized ? normalized : null
+}
+
+function coerceNumber(value: unknown, fallback = 0) {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value
+  }
+
+  if (typeof value === "string") {
+    const parsed = Number(value)
+    return Number.isFinite(parsed) ? parsed : fallback
+  }
+
+  return fallback
+}
+
+function coerceStringArray(value: unknown) {
+  if (!Array.isArray(value)) {
+    return []
+  }
+
+  return value
+    .map((entry) => coerceString(entry).trim())
+    .filter(Boolean)
+}
+
+function coerceItineraryCategory(value: unknown): ItineraryRecord["category"] {
+  if (value === "northern" || value === "zanzibar" || value === "safari") {
+    return value
+  }
+
+  return "safari"
+}
+
+function coerceFeaturedSection(value: unknown): ItineraryRecord["featuredSection"] {
+  if (value === "northern" || value === "zanzibar" || value === "southern") {
+    return value
+  }
+
+  return null
 }
 
 async function getSetting<T>(key: SettingKey, fallback: T, parse: (value: unknown) => T): Promise<T> {
@@ -65,23 +125,35 @@ async function getSetting<T>(key: SettingKey, fallback: T, parse: (value: unknow
 }
 
 function mapItineraryRecord(row: Record<string, unknown>): ItineraryRecord {
-  return itineraryRecordSchema.parse({
-    slug: row.slug,
-    title: row.title,
-    shortTitle: row.short_title ?? row.title,
-    featuredSubtitle: row.featured_subtitle ?? null,
-    duration: row.duration,
-    image: row.image,
-    destinations: row.destinations,
-    groupSize: row.group_size,
-    description: row.description,
-    highlights: row.highlights ?? [],
-    priceFrom: row.price_from,
-    category: row.category,
-    featuredSection: row.featured_section ?? null,
-    sortOrder: row.sort_order ?? 0,
-    bookTourName: row.book_tour_name ?? null,
-  })
+  const record = {
+    slug: coerceString(row.slug),
+    title: coerceString(row.title),
+    shortTitle: coerceString(row.short_title, coerceString(row.title)),
+    featuredSubtitle: coerceNullableString(row.featured_subtitle),
+    duration: coerceString(row.duration),
+    image: coerceString(row.image),
+    destinations: coerceString(row.destinations),
+    groupSize: coerceString(row.group_size),
+    description: coerceString(row.description),
+    highlights: coerceStringArray(row.highlights),
+    priceFrom: coerceString(row.price_from),
+    category: coerceItineraryCategory(row.category),
+    featuredSection: coerceFeaturedSection(row.featured_section),
+    sortOrder: coerceNumber(row.sort_order),
+    bookTourName: coerceNullableString(row.book_tour_name),
+  }
+
+  return itineraryRecordSchema.parse(record)
+}
+
+function mapAdminItineraryRecord(row: Record<string, unknown>): AdminItineraryRecord {
+  const record = mapItineraryRecord(row)
+
+  return {
+    ...record,
+    isPublished: typeof row.is_published === "boolean" ? row.is_published : true,
+    details: normalizeItineraryPageDetails(row.details, record),
+  }
 }
 
 function mapTestimonialRecord(row: Record<string, unknown>): TestimonialRecord {
@@ -238,7 +310,7 @@ export async function getAdminItineraries() {
     throw error
   }
 
-  return (data ?? []).map((row) => mapItineraryRecord(row))
+  return (data ?? []).map((row) => mapAdminItineraryRecord(row))
 }
 
 export async function getAdminTestimonials() {
@@ -283,7 +355,7 @@ export async function upsertCmsSetting(key: SettingKey, label: string, payload: 
   }
 }
 
-export async function upsertItinerary(record: ItineraryRecord & { isPublished?: boolean }) {
+export async function upsertItinerary(record: AdminItineraryRecord) {
   const client = getAdminClientSafe()
   const { error } = await client.from("cms_itineraries").upsert([
     {
@@ -302,7 +374,8 @@ export async function upsertItinerary(record: ItineraryRecord & { isPublished?: 
       book_tour_name: record.bookTourName,
       featured_section: record.featuredSection,
       sort_order: record.sortOrder,
-      is_published: record.isPublished ?? true,
+      is_published: record.isPublished,
+      details: record.details,
     },
   ], { onConflict: "slug" })
 
@@ -310,6 +383,47 @@ export async function upsertItinerary(record: ItineraryRecord & { isPublished?: 
     throw error
   }
 }
+
+export const getPublishedItineraryBySlug = cache(async (slug: string): Promise<(ItineraryRecord & { details: ItineraryPageDetails }) | null> => {
+  const fallback = defaultCmsContent.itineraries.find((item) => item.slug === slug)
+  const client = getPublicClientSafe()
+
+  if (!client) {
+    if (!fallback) {
+      return null
+    }
+
+    return {
+      ...fallback,
+      details: createDefaultItineraryPageDetails(fallback),
+    }
+  }
+
+  const { data, error } = await client
+    .from("cms_itineraries")
+    .select("*")
+    .eq("slug", slug)
+    .eq("is_published", true)
+    .maybeSingle()
+
+  if (error || !data) {
+    if (!fallback) {
+      return null
+    }
+
+    return {
+      ...fallback,
+      details: createDefaultItineraryPageDetails(fallback),
+    }
+  }
+
+  const record = mapItineraryRecord(data)
+
+  return {
+    ...record,
+    details: normalizeItineraryPageDetails(data.details, record),
+  }
+})
 
 export async function deleteItinerary(slug: string) {
   const client = getAdminClientSafe()

@@ -5,12 +5,15 @@ import {
   saveHomeSettingsAction,
   saveItinerariesIndexSettingsAction,
 } from "@/app/admin/actions"
+import { HomeStructuredFields } from "@/components/admin/home-structured-fields"
+import { getPublicImageSuggestions } from "@/lib/cms/media"
 import {
   getAboutContent,
   getContactContent,
   getGlobalSettings,
   getHomeContent,
   getItinerariesIndexContent,
+  getPublishedItineraries,
 } from "@/lib/cms/service"
 
 function CardSection({
@@ -98,12 +101,14 @@ export default async function AdminSettingsPage({
   searchParams: Promise<{ saved?: string }>
 }) {
   const params = await searchParams
-  const [globalSettings, homeContent, aboutContent, contactContent, itinerariesIndexContent] = await Promise.all([
+  const [globalSettings, homeContent, aboutContent, contactContent, itinerariesIndexContent, availableItineraries, imageSuggestions] = await Promise.all([
     getGlobalSettings(),
     getHomeContent(),
     getAboutContent(),
     getContactContent(),
     getItinerariesIndexContent(),
+    getPublishedItineraries(),
+    getPublicImageSuggestions(),
   ])
 
   return (
@@ -175,7 +180,7 @@ export default async function AdminSettingsPage({
 
       <CardSection
         title="Home Page"
-        description="Controls homepage hero copy, stats, destination cards, featured itinerary sections, partner/testimonial headers, and CTA text."
+        description="Controls homepage hero copy, promoted itinerary cards, destination cards, and CTA text with structured fields instead of raw JSON."
       >
         <form action={saveHomeSettingsAction} className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
@@ -225,27 +230,10 @@ export default async function AdminSettingsPage({
             rows={3}
           />
           <TextareaField label="CTA Subtitle" name="ctaSubtitle" defaultValue={homeContent.ctaSubtitle} rows={3} />
-          <TextareaField label="Stats JSON" name="stats" defaultValue={JSON.stringify(homeContent.stats, null, 2)} rows={10} mono />
-          <TextareaField
-            label="Why Items JSON"
-            name="whyItems"
-            defaultValue={JSON.stringify(homeContent.whyItems, null, 2)}
-            rows={14}
-            mono
-          />
-          <TextareaField
-            label="Destination Cards JSON"
-            name="destinationCards"
-            defaultValue={JSON.stringify(homeContent.destinationCards, null, 2)}
-            rows={18}
-            mono
-          />
-          <TextareaField
-            label="Featured Sections JSON"
-            name="featuredSections"
-            defaultValue={JSON.stringify(homeContent.featuredSections, null, 2)}
-            rows={18}
-            mono
+          <HomeStructuredFields
+            initialContent={homeContent}
+            availableItineraries={availableItineraries}
+            imageSuggestions={imageSuggestions}
           />
           <SaveButton />
         </form>
