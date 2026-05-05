@@ -26,7 +26,7 @@ import {
 } from "@/lib/cms/schema"
 
 type SettingKey = "global" | "home" | "about" | "contact" | "itinerariesIndex"
-type AdminItineraryRecord = ItineraryRecord & { isPublished: boolean; details: ItineraryPageDetails }
+export type AdminItineraryRecord = ItineraryRecord & { isPublished: boolean; details: ItineraryPageDetails }
 
 function getPublicClientSafe() {
   if (!hasSupabasePublicEnv()) {
@@ -327,6 +327,47 @@ export async function getAdminItineraries() {
   }
 
   return (data ?? []).map((row) => mapAdminItineraryRecord(row))
+}
+
+export async function getAdminItineraryBySlug(slug: string) {
+  const client = getAdminClientSafe()
+  const { data, error } = await client.from("cms_itineraries").select("*").eq("slug", slug).maybeSingle()
+
+  if (error) {
+    throw error
+  }
+
+  if (!data) {
+    return null
+  }
+
+  return mapAdminItineraryRecord(data)
+}
+
+export function createEmptyAdminItinerary(): AdminItineraryRecord {
+  const record: ItineraryRecord = {
+    slug: "",
+    title: "",
+    shortTitle: "",
+    featuredSubtitle: null,
+    duration: "",
+    image: "",
+    destinations: "",
+    groupSize: "",
+    description: "",
+    highlights: [],
+    priceFrom: "",
+    category: "safari",
+    featuredSection: null,
+    sortOrder: 0,
+    bookTourName: null,
+  }
+
+  return {
+    ...record,
+    isPublished: true,
+    details: createDefaultItineraryPageDetails(record),
+  }
 }
 
 export async function getAdminTestimonials() {

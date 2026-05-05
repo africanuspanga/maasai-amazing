@@ -247,6 +247,7 @@ export async function saveItineraryAction(formData: FormData) {
 
   const title = getString(formData, "title")
   const slug = getString(formData, "slug") || slugify(title)
+  const redirectMode = getString(formData, "redirectMode")
 
   const record = itineraryRecordSchema.parse({
     slug,
@@ -272,14 +273,24 @@ export async function saveItineraryAction(formData: FormData) {
 
   await upsertItinerary({ ...record, details, isPublished: getBoolean(formData, "isPublished") })
   revalidateCmsPaths()
+  revalidatePath(`/admin/itineraries/${slug}`)
+
+  if (redirectMode === "editor") {
+    redirect(`/admin/itineraries/${slug}?saved=1`)
+  }
+
   redirect("/admin/itineraries?saved=1")
 }
 
 export async function deleteItineraryAction(formData: FormData) {
   await requireAdminSession()
-  await deleteItinerary(getString(formData, "slug"))
+  const slug = getString(formData, "slug")
+  const redirectTo = getString(formData, "redirectTo")
+
+  await deleteItinerary(slug)
   revalidateCmsPaths()
-  redirect("/admin/itineraries?deleted=1")
+  revalidatePath(`/admin/itineraries/${slug}`)
+  redirect(redirectTo || "/admin/itineraries?deleted=1")
 }
 
 export async function saveTestimonialAction(formData: FormData) {
