@@ -4,35 +4,17 @@ import { getAdminDashboardData } from "@/lib/cms/service"
 const cards = [
   {
     href: "/admin/settings",
-    title: "Page Settings",
-    description: "Update the Home, About, Contact, and global brand content.",
-    key: "settings",
+    title: "Site Settings",
+    description: "Edit homepage messaging, destination cards, itinerary section headers, and brand contact details.",
+    countKey: "settings",
   },
   {
     href: "/admin/itineraries",
-    title: "Itineraries",
-    description: "Manage itinerary cards, featured prices, durations, and sales copy.",
-    key: "itineraries",
+    title: "Tours & Pricing",
+    description: "Add and edit destinations, Kilimanjaro routes, Zanzibar tours, safaris, and their pricing.",
+    countKey: "itineraries",
   },
-  {
-    href: "/admin/testimonials",
-    title: "Testimonials",
-    description: "Edit traveler quotes, ratings, headshots, and featured tour references.",
-    key: "testimonials",
-  },
-  {
-    href: "/admin/partners",
-    title: "Partners",
-    description: "Control trust logos and partner badges shown on the homepage.",
-    key: "partners",
-  },
-  {
-    href: "/admin/inquiries",
-    title: "Inquiries",
-    description: "Review booking requests captured from the website and update follow-up status.",
-    key: "inquiries",
-  },
-]
+] as const
 
 export default async function AdminOverviewPage() {
   const data = await getAdminDashboardData()
@@ -40,23 +22,20 @@ export default async function AdminOverviewPage() {
   const metrics = {
     settings: data.settings.length,
     itineraries: data.itinerariesCount,
-    testimonials: data.testimonialsCount,
-    partners: data.partnersCount,
-    inquiries: data.inquiriesCount,
   }
 
   return (
-    <div className="space-y-8">
-      <section className="rounded-[2rem] bg-white p-6 shadow-sm border border-[#eadcc8]">
-        <h2 className="text-3xl font-serif font-bold text-[#210c00]">Overview</h2>
+    <div className="space-y-6 sm:space-y-8">
+      <section className="rounded-[2rem] border border-[#eadcc8] bg-white p-5 shadow-sm sm:p-6">
+        <h2 className="text-2xl font-serif font-bold text-[#210c00] sm:text-3xl">Overview</h2>
         <p className="mt-2 max-w-3xl text-gray-600">
-          This dashboard is connected to Supabase for editable site content and lead capture. Use the sections below
-          to keep tour pricing, homepage messaging, contact details, testimonials, and partner logos current without
-          editing code.
+          This dashboard is now focused on the parts that matter most for your team: destinations, routes, tours, and
+          pricing. Use the sections below to keep the trip catalog and homepage promotions current without editing
+          code.
         </p>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+      <section className="grid gap-4 md:grid-cols-2">
         {cards.map((card) => (
           <Link
             key={card.href}
@@ -65,7 +44,7 @@ export default async function AdminOverviewPage() {
           >
             <p className="text-xs uppercase tracking-[0.25em] text-[#c24503]">Count</p>
             <p className="mt-2 text-3xl font-serif font-bold text-[#210c00]">
-              {metrics[card.key as keyof typeof metrics]}
+              {metrics[card.countKey]}
             </p>
             <h3 className="mt-4 text-lg font-semibold text-[#210c00]">{card.title}</h3>
             <p className="mt-2 text-sm text-gray-600">{card.description}</p>
@@ -73,8 +52,38 @@ export default async function AdminOverviewPage() {
         ))}
       </section>
 
-      <section className="rounded-[2rem] border border-[#eadcc8] bg-white p-6 shadow-sm">
-        <h3 className="text-2xl font-serif font-bold text-[#210c00]">Recent CMS Sections</h3>
+      <section className="rounded-[2rem] border border-[#eadcc8] bg-white p-5 shadow-sm sm:p-6">
+        <h3 className="text-xl font-serif font-bold text-[#210c00] sm:text-2xl">Catalog Snapshot</h3>
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          <div className="rounded-2xl bg-[#f7f1ea] px-4 py-4">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#c24503]">Published</p>
+            <p className="mt-2 text-2xl font-serif font-bold text-[#210c00]">{data.publishedCount}</p>
+          </div>
+          <div className="rounded-2xl bg-[#f7f1ea] px-4 py-4">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#c24503]">Destinations</p>
+            <p className="mt-2 text-2xl font-serif font-bold text-[#210c00]">{data.categoryCounts.destination}</p>
+          </div>
+          <div className="rounded-2xl bg-[#f7f1ea] px-4 py-4">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#c24503]">Kilimanjaro</p>
+            <p className="mt-2 text-2xl font-serif font-bold text-[#210c00]">{data.categoryCounts.kilimanjaro}</p>
+          </div>
+          <div className="rounded-2xl bg-[#f7f1ea] px-4 py-4">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#c24503]">Northern</p>
+            <p className="mt-2 text-2xl font-serif font-bold text-[#210c00]">{data.categoryCounts.northern}</p>
+          </div>
+          <div className="rounded-2xl bg-[#f7f1ea] px-4 py-4">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#c24503]">Zanzibar</p>
+            <p className="mt-2 text-2xl font-serif font-bold text-[#210c00]">{data.categoryCounts.zanzibar}</p>
+          </div>
+          <div className="rounded-2xl bg-[#f7f1ea] px-4 py-4">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#c24503]">Southern</p>
+            <p className="mt-2 text-2xl font-serif font-bold text-[#210c00]">{data.categoryCounts.safari}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="rounded-[2rem] border border-[#eadcc8] bg-white p-5 shadow-sm sm:p-6">
+        <h3 className="text-xl font-serif font-bold text-[#210c00] sm:text-2xl">Recent CMS Sections</h3>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           {data.settings.map((item) => (
             <div key={item.key} className="rounded-2xl bg-[#f7f1ea] px-4 py-3">

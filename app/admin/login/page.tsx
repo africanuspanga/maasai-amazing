@@ -1,3 +1,4 @@
+import Link from "next/link"
 import type { Metadata } from "next"
 import { loginAction } from "@/app/admin/actions"
 
@@ -13,13 +14,23 @@ export default async function AdminLoginPage({
   const params = await searchParams
 
   return (
-    <div className="min-h-screen bg-[#f7f1ea] flex items-center justify-center px-4">
-      <div className="w-full max-w-md rounded-3xl bg-white shadow-2xl p-8 border border-[#eadcc8]">
+    <div className="flex min-h-screen items-center justify-center bg-[#f7f1ea] px-4 py-8">
+      <div className="w-full max-w-lg rounded-3xl border border-[#eadcc8] bg-white p-6 shadow-2xl sm:p-8">
         <div className="mb-8 text-center">
+          <Link
+            href="/"
+            className="mx-auto mb-6 inline-flex rounded-[1.75rem] border border-[#eadcc8] bg-[#fcfaf7] px-4 py-3 transition hover:border-[#f88518]"
+          >
+            <img
+              src="/Maasai%20Amazing%20Safaris.png"
+              alt="Maasai Amazing Safaris"
+              className="h-auto w-auto max-h-16 sm:max-h-20"
+            />
+          </Link>
           <p className="text-xs uppercase tracking-[0.3em] text-[#c24503] mb-3">Admin</p>
-          <h1 className="text-3xl font-serif font-bold text-[#210c00]">Maasai Amazing Safaris CMS</h1>
+          <h1 className="text-2xl font-serif font-bold text-[#210c00] sm:text-3xl">Maasai Amazing Safaris CMS</h1>
           <p className="mt-3 text-sm text-gray-600">
-            Sign in to update tours, homepage content, testimonials, partners, and booking leads.
+            Sign in to manage tours, routes, destinations, pricing, and homepage content from your phone or desktop.
           </p>
         </div>
 
@@ -29,7 +40,7 @@ export default async function AdminLoginPage({
           </div>
         ) : null}
 
-        <form action={loginAction} className="space-y-4">
+        <form action={loginAction} className="space-y-4 [&_button]:touch-manipulation [&_input]:text-base">
           <div>
             <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#210c00]">
               Email
@@ -58,7 +69,7 @@ export default async function AdminLoginPage({
 
           <button
             type="submit"
-            className="w-full rounded-2xl bg-[#f88518] px-4 py-3 text-white font-semibold transition hover:bg-[#c24503]"
+            className="w-full rounded-2xl bg-[#f88518] px-4 py-3 text-base font-semibold text-white transition hover:bg-[#c24503]"
           >
             Sign In
           </button>

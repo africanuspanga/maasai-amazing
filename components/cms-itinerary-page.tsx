@@ -114,6 +114,7 @@ export async function CmsItineraryPage({ slug }: { slug: string }) {
   const included = itinerary.details.included.filter(Boolean)
   const excluded = itinerary.details.excluded.filter(Boolean)
   const quickFacts = itinerary.details.quickFacts.filter((item) => item.label && item.value)
+  const pricingItems = itinerary.details.pricingItems.filter((item) => item.label && item.price)
 
   return (
     <div className="min-h-screen bg-white">
@@ -158,6 +159,22 @@ export async function CmsItineraryPage({ slug }: { slug: string }) {
               <p className="mt-1 text-4xl font-black">{itinerary.details.startingPrice || itinerary.priceFrom}</p>
               {itinerary.details.pricingNote ? (
                 <p className="mt-4 text-sm leading-relaxed text-white/80">{itinerary.details.pricingNote}</p>
+              ) : null}
+
+              {pricingItems.length ? (
+                <div className="mt-5 space-y-3 rounded-2xl border border-white/15 bg-white/5 p-4">
+                  {pricingItems.map((item, index) => (
+                    <div key={`${item.label}-${index}`} className="rounded-xl border border-white/10 bg-black/10 px-3 py-3">
+                      <div className="flex items-start justify-between gap-3">
+                        <span className="text-sm font-medium text-white">{item.label}</span>
+                        <span className="text-sm font-bold text-white">{item.price}</span>
+                      </div>
+                      {item.note ? (
+                        <p className="mt-2 text-xs leading-5 text-white/70">{item.note}</p>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
               ) : null}
 
               <div className="mt-6 grid gap-3">

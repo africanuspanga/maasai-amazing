@@ -71,9 +71,6 @@ function revalidateCmsPaths() {
   revalidatePath("/admin")
   revalidatePath("/admin/settings")
   revalidatePath("/admin/itineraries")
-  revalidatePath("/admin/testimonials")
-  revalidatePath("/admin/partners")
-  revalidatePath("/admin/inquiries")
 }
 
 export async function loginAction(formData: FormData) {
@@ -223,6 +220,10 @@ export async function saveItinerariesIndexSettingsAction(formData: FormData) {
     heroTitle: getString(formData, "heroTitle"),
     heroSubtitle: getString(formData, "heroSubtitle"),
     heroImage: getString(formData, "heroImage"),
+    destinationTitle: getString(formData, "destinationTitle"),
+    destinationSubtitle: getString(formData, "destinationSubtitle"),
+    kilimanjaroTitle: getString(formData, "kilimanjaroTitle"),
+    kilimanjaroSubtitle: getString(formData, "kilimanjaroSubtitle"),
     northernTitle: getString(formData, "northernTitle"),
     northernSubtitle: getString(formData, "northernSubtitle"),
     zanzibarTitle: getString(formData, "zanzibarTitle"),

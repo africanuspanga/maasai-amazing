@@ -16,6 +16,9 @@ import {
   getPublishedItineraries,
 } from "@/lib/cms/service"
 
+const adminFormClassName =
+  "space-y-4 [&_input]:text-base [&_textarea]:text-base [&_select]:text-base [&_button]:touch-manipulation"
+
 function CardSection({
   title,
   description,
@@ -26,11 +29,20 @@ function CardSection({
   children: React.ReactNode
 }) {
   return (
-    <section className="rounded-[2rem] border border-[#eadcc8] bg-white p-6 shadow-sm">
-      <h2 className="text-2xl font-serif font-bold text-[#210c00]">{title}</h2>
-      <p className="mt-2 text-sm text-gray-600">{description}</p>
-      <div className="mt-6">{children}</div>
-    </section>
+    <details open className="group rounded-[2rem] border border-[#eadcc8] bg-white shadow-sm">
+      <summary className="cursor-pointer list-none px-4 py-4 sm:px-6 sm:py-5">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 className="text-xl font-serif font-bold text-[#210c00] sm:text-2xl">{title}</h2>
+            <p className="mt-2 text-sm text-gray-600">{description}</p>
+          </div>
+          <span className="text-xs font-medium uppercase tracking-[0.22em] text-[#c24503]">
+            Tap to expand or collapse
+          </span>
+        </div>
+      </summary>
+      <div className="border-t border-[#eadcc8] px-4 py-5 sm:px-6">{children}</div>
+    </details>
   )
 }
 
@@ -52,7 +64,7 @@ function Field({
         name={name}
         type={type}
         defaultValue={defaultValue}
-        className="w-full rounded-2xl border border-[#d9c3a8] px-4 py-3 outline-none transition focus:border-[#f88518] focus:ring-2 focus:ring-[#f88518]/20"
+        className="w-full rounded-2xl border border-[#d9c3a8] px-4 py-3 text-base outline-none transition focus:border-[#f88518] focus:ring-2 focus:ring-[#f88518]/20"
       />
     </label>
   )
@@ -78,7 +90,7 @@ function TextareaField({
         name={name}
         rows={rows}
         defaultValue={defaultValue}
-        className={`w-full rounded-2xl border border-[#d9c3a8] px-4 py-3 outline-none transition focus:border-[#f88518] focus:ring-2 focus:ring-[#f88518]/20 ${mono ? "font-mono text-sm" : ""}`}
+        className={`w-full rounded-2xl border border-[#d9c3a8] px-4 py-3 text-base outline-none transition focus:border-[#f88518] focus:ring-2 focus:ring-[#f88518]/20 ${mono ? "font-mono text-sm" : ""}`}
       />
     </label>
   )
@@ -86,12 +98,14 @@ function TextareaField({
 
 function SaveButton({ label = "Save Changes" }: { label?: string }) {
   return (
-    <button
-      type="submit"
-      className="rounded-full bg-[#f88518] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#c24503]"
-    >
-      {label}
-    </button>
+    <div className="pt-2">
+      <button
+        type="submit"
+        className="w-full rounded-full bg-[#f88518] px-5 py-3 text-base font-semibold text-white transition hover:bg-[#c24503] sm:w-auto"
+      >
+        {label}
+      </button>
+    </div>
   )
 }
 
@@ -112,9 +126,9 @@ export default async function AdminSettingsPage({
   ])
 
   return (
-    <div className="space-y-8">
-      <section className="rounded-[2rem] bg-white p-6 shadow-sm border border-[#eadcc8]">
-        <h1 className="text-3xl font-serif font-bold text-[#210c00]">Page Settings</h1>
+    <div className="space-y-6 sm:space-y-8">
+      <section className="rounded-[2rem] border border-[#eadcc8] bg-white p-4 shadow-sm sm:p-6">
+        <h1 className="text-2xl font-serif font-bold text-[#210c00] sm:text-3xl">Page Settings</h1>
         <p className="mt-2 max-w-3xl text-gray-600">
           These sections control the editable page content stored in Supabase. Simple text fields are broken out
           below, while repeatable areas use JSON so we can keep the current design flexible without forcing code
@@ -131,7 +145,7 @@ export default async function AdminSettingsPage({
         title="Global Brand & Contact"
         description="Used across the footer, WhatsApp links, booking modal, contact blocks, and structured data."
       >
-        <form action={saveGlobalSettingsAction} className="space-y-4">
+        <form action={saveGlobalSettingsAction} className={adminFormClassName}>
           <div className="grid gap-4 md:grid-cols-2">
             <Field label="Company Name" name="companyName" defaultValue={globalSettings.companyName} />
             <Field label="Company Tagline" name="companyTagline" defaultValue={globalSettings.companyTagline} />
@@ -182,7 +196,7 @@ export default async function AdminSettingsPage({
         title="Home Page"
         description="Controls homepage hero copy, promoted itinerary cards, destination cards, and CTA text with structured fields instead of raw JSON."
       >
-        <form action={saveHomeSettingsAction} className="space-y-4">
+        <form action={saveHomeSettingsAction} className={adminFormClassName}>
           <div className="grid gap-4 md:grid-cols-2">
             <Field label="Hero Badge" name="heroBadge" defaultValue={homeContent.heroBadge} />
             <Field label="Hero Title" name="heroTitle" defaultValue={homeContent.heroTitle} />
@@ -243,7 +257,7 @@ export default async function AdminSettingsPage({
         title="About Page"
         description="Controls the brand story, expertise items, and about-page CTA block."
       >
-        <form action={saveAboutSettingsAction} className="space-y-4">
+        <form action={saveAboutSettingsAction} className={adminFormClassName}>
           <div className="grid gap-4 md:grid-cols-2">
             <Field label="Hero Title" name="heroTitle" defaultValue={aboutContent.heroTitle} />
             <Field label="Hero Subtitle" name="heroSubtitle" defaultValue={aboutContent.heroSubtitle} />
@@ -295,7 +309,7 @@ export default async function AdminSettingsPage({
         title="Contact Page"
         description="Controls the contact page hero, experience cards, selling bullets, and location cards."
       >
-        <form action={saveContactSettingsAction} className="space-y-4">
+        <form action={saveContactSettingsAction} className={adminFormClassName}>
           <div className="grid gap-4 md:grid-cols-2">
             <Field label="Hero Title" name="heroTitle" defaultValue={contactContent.heroTitle} />
             <Field label="Info Title" name="infoTitle" defaultValue={contactContent.infoTitle} />
@@ -332,12 +346,14 @@ export default async function AdminSettingsPage({
 
       <CardSection
         title="Itineraries Index Page"
-        description="Controls the `/itineraries` hero, section headers, and CTA text."
+        description="Controls the `/itineraries` hero, section headers for destinations and routes, and CTA text."
       >
-        <form action={saveItinerariesIndexSettingsAction} className="space-y-4">
+        <form action={saveItinerariesIndexSettingsAction} className={adminFormClassName}>
           <div className="grid gap-4 md:grid-cols-2">
             <Field label="Hero Title" name="heroTitle" defaultValue={itinerariesIndexContent.heroTitle} />
             <Field label="Hero Image" name="heroImage" defaultValue={itinerariesIndexContent.heroImage} />
+            <Field label="Destinations Title" name="destinationTitle" defaultValue={itinerariesIndexContent.destinationTitle} />
+            <Field label="Kilimanjaro Title" name="kilimanjaroTitle" defaultValue={itinerariesIndexContent.kilimanjaroTitle} />
             <Field label="Northern Title" name="northernTitle" defaultValue={itinerariesIndexContent.northernTitle} />
             <Field label="Zanzibar Title" name="zanzibarTitle" defaultValue={itinerariesIndexContent.zanzibarTitle} />
             <Field label="Southern Title" name="southernTitle" defaultValue={itinerariesIndexContent.southernTitle} />
@@ -351,6 +367,18 @@ export default async function AdminSettingsPage({
             />
           </div>
           <TextareaField label="Hero Subtitle" name="heroSubtitle" defaultValue={itinerariesIndexContent.heroSubtitle} rows={3} />
+          <TextareaField
+            label="Destinations Subtitle"
+            name="destinationSubtitle"
+            defaultValue={itinerariesIndexContent.destinationSubtitle}
+            rows={3}
+          />
+          <TextareaField
+            label="Kilimanjaro Subtitle"
+            name="kilimanjaroSubtitle"
+            defaultValue={itinerariesIndexContent.kilimanjaroSubtitle}
+            rows={3}
+          />
           <TextareaField
             label="Northern Subtitle"
             name="northernSubtitle"

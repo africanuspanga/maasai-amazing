@@ -1,7 +1,22 @@
 "use client"
 
-import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react"
+import { createContext, useContext, useState, useSyncExternalStore, useCallback, type ReactNode } from "react"
 import { type Locale, t as translate } from "@/lib/translations"
+
+const supportedLocales: Locale[] = ["en", "fr", "es", "zh"]
+
+function getInitialLocale(): Locale {
+  if (typeof window === "undefined") {
+    return "en"
+  }
+
+  const saved = localStorage.getItem("maasai-lang") as Locale | null
+  return saved && supportedLocales.includes(saved) ? saved : "en"
+}
+
+function subscribe() {
+  return () => {}
+}
 
 interface LanguageContextType {
   locale: Locale
@@ -25,16 +40,8 @@ export function useLanguage() {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en")
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    const saved = localStorage.getItem("maasai-lang") as Locale | null
-    if (saved && ["en", "fr", "es", "zh"].includes(saved)) {
-      setLocaleState(saved)
-    }
-    setMounted(true)
-  }, [])
+  const [locale, setLocaleState] = useState<Locale>(getInitialLocale)
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false)
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale)

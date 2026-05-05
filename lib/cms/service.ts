@@ -89,7 +89,7 @@ function coerceStringArray(value: unknown) {
 }
 
 function coerceItineraryCategory(value: unknown): ItineraryRecord["category"] {
-  if (value === "northern" || value === "zanzibar" || value === "safari") {
+  if (value === "destination" || value === "kilimanjaro" || value === "northern" || value === "zanzibar" || value === "safari") {
     return value
   }
 
@@ -285,20 +285,36 @@ export const getPublishedPartners = cache(async (): Promise<PartnerRecord[]> => 
 export async function getAdminDashboardData() {
   const client = getAdminClientSafe()
 
-  const [settings, itineraries, testimonials, partners, inquiries] = await Promise.all([
+  const [settings, itineraries] = await Promise.all([
     client.from("cms_settings").select("key, updated_at"),
-    client.from("cms_itineraries").select("slug", { count: "exact", head: true }),
-    client.from("cms_testimonials").select("id", { count: "exact", head: true }),
-    client.from("cms_partners").select("id", { count: "exact", head: true }),
-    client.from("cms_inquiries").select("id", { count: "exact", head: true }),
+    client.from("cms_itineraries").select("slug, category, is_published"),
   ])
+
+  const itineraryRows = (itineraries.data ?? []) as Array<{
+    slug: string
+    category: ItineraryRecord["category"]
+    is_published: boolean
+  }>
+
+  const categoryCounts = itineraryRows.reduce<Record<ItineraryRecord["category"], number>>(
+    (counts, item) => {
+      counts[item.category] = (counts[item.category] ?? 0) + 1
+      return counts
+    },
+    {
+      destination: 0,
+      kilimanjaro: 0,
+      northern: 0,
+      safari: 0,
+      zanzibar: 0,
+    },
+  )
 
   return {
     settings: settings.data ?? [],
-    itinerariesCount: itineraries.count ?? 0,
-    testimonialsCount: testimonials.count ?? 0,
-    partnersCount: partners.count ?? 0,
-    inquiriesCount: inquiries.count ?? 0,
+    itinerariesCount: itineraryRows.length,
+    publishedCount: itineraryRows.filter((item) => item.is_published).length,
+    categoryCounts,
   }
 }
 

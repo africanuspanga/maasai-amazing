@@ -13,7 +13,7 @@ function SectionShell({
   children: React.ReactNode
 }) {
   return (
-    <div className="rounded-[1.75rem] border border-[#eadcc8] bg-[#fcfaf7] p-5">
+    <div className="rounded-[1.75rem] border border-[#eadcc8] bg-[#fcfaf7] p-4 sm:p-5">
       <h3 className="text-lg font-semibold text-[#210c00]">{title}</h3>
       <p className="mt-1 text-sm text-gray-600">{description}</p>
       <div className="mt-4 space-y-4">{children}</div>
@@ -26,7 +26,7 @@ function AddButton({ onClick, label }: { onClick: () => void; label: string }) {
     <button
       type="button"
       onClick={onClick}
-      className="rounded-full border border-[#d9c3a8] px-4 py-2 text-sm font-medium text-[#210c00] transition hover:border-[#f88518] hover:text-[#c24503]"
+      className="inline-flex w-full items-center justify-center rounded-full border border-[#d9c3a8] px-4 py-2.5 text-sm font-medium text-[#210c00] touch-manipulation transition hover:border-[#f88518] hover:text-[#c24503] sm:w-auto"
     >
       {label}
     </button>
@@ -38,7 +38,7 @@ function RemoveButton({ onClick }: { onClick: () => void }) {
     <button
       type="button"
       onClick={onClick}
-      className="rounded-full border border-red-200 px-3 py-2 text-xs font-semibold text-red-700 transition hover:bg-red-50"
+      className="inline-flex w-full items-center justify-center rounded-full border border-red-200 px-3 py-2.5 text-xs font-semibold text-red-700 touch-manipulation transition hover:bg-red-50 sm:w-auto"
     >
       Remove
     </button>
@@ -67,7 +67,7 @@ function TextListEditor({
       </div>
       <div className="grid gap-3">
         {items.map((item, index) => (
-          <div key={`${title}-${index}`} className="flex gap-3">
+          <div key={`${title}-${index}`} className="flex flex-col gap-3 sm:flex-row">
             <input
               value={item}
               onChange={(event) => onChange(items.map((entry, itemIndex) => (itemIndex === index ? event.target.value : entry)))}
@@ -189,6 +189,77 @@ function DayPlanEditor({
   )
 }
 
+function PricingItemsEditor({
+  items,
+  onChange,
+}: {
+  items: ItineraryPageDetails["pricingItems"]
+  onChange: (items: ItineraryPageDetails["pricingItems"]) => void
+}) {
+  return (
+    <SectionShell
+      title="Detailed Pricing Rows"
+      description="Add as many price lines as you need for seasons, group sizes, hotel tiers, or route options."
+    >
+      <div className="flex justify-end">
+        <AddButton
+          onClick={() => onChange([...items, { label: "", price: "", note: null }])}
+          label="Add Price Row"
+        />
+      </div>
+      <div className="grid gap-4">
+        {items.map((item, index) => (
+          <div key={`pricing-item-${index}`} className="rounded-[1.5rem] border border-[#eadcc8] bg-white p-4">
+            <div className="grid gap-3 md:grid-cols-2">
+              <label className="block">
+                <span className="mb-2 block text-sm font-medium text-[#210c00]">Label</span>
+                <input
+                  value={item.label}
+                  onChange={(event) =>
+                    onChange(items.map((entry, itemIndex) => (itemIndex === index ? { ...entry, label: event.target.value } : entry)))
+                  }
+                  placeholder="Low season - 2 people"
+                  className="w-full rounded-2xl border border-[#d9c3a8] px-4 py-3"
+                />
+              </label>
+              <label className="block">
+                <span className="mb-2 block text-sm font-medium text-[#210c00]">Price</span>
+                <input
+                  value={item.price}
+                  onChange={(event) =>
+                    onChange(items.map((entry, itemIndex) => (itemIndex === index ? { ...entry, price: event.target.value } : entry)))
+                  }
+                  placeholder="$2,450"
+                  className="w-full rounded-2xl border border-[#d9c3a8] px-4 py-3"
+                />
+              </label>
+              <label className="block md:col-span-2">
+                <span className="mb-2 block text-sm font-medium text-[#210c00]">Note</span>
+                <textarea
+                  value={item.note ?? ""}
+                  onChange={(event) =>
+                    onChange(
+                      items.map((entry, itemIndex) =>
+                        itemIndex === index ? { ...entry, note: event.target.value || null } : entry,
+                      ),
+                    )
+                  }
+                  rows={3}
+                  placeholder="Optional note such as hotel tier, season, or what's included"
+                  className="w-full rounded-2xl border border-[#d9c3a8] px-4 py-3"
+                />
+              </label>
+            </div>
+            <div className="mt-3 flex justify-end">
+              <RemoveButton onClick={() => onChange(items.filter((_, itemIndex) => itemIndex !== index))} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </SectionShell>
+  )
+}
+
 export function ItineraryDetailsEditor({
   initialDetails,
   imageSuggestions,
@@ -199,7 +270,7 @@ export function ItineraryDetailsEditor({
   const [details, setDetails] = useState<ItineraryPageDetails>(initialDetails)
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 [&_button]:touch-manipulation [&_input]:text-base [&_select]:text-base [&_textarea]:text-base">
       <input type="hidden" name="details" value={JSON.stringify(details)} />
 
       <datalist id="cms-itinerary-image-suggestions">
@@ -271,7 +342,7 @@ export function ItineraryDetailsEditor({
         </div>
         {details.heroImage ? (
           <div className="overflow-hidden rounded-[1.75rem] border border-[#eadcc8] bg-white">
-            <img src={details.heroImage} alt={details.heroAlt || details.heroTitle} className="h-56 w-full object-cover" />
+            <img src={details.heroImage} alt={details.heroAlt || details.heroTitle} className="h-44 w-full object-cover sm:h-56" />
           </div>
         ) : null}
       </SectionShell>
@@ -304,7 +375,7 @@ export function ItineraryDetailsEditor({
             />
           </div>
           {details.overviewParagraphs.map((paragraph, index) => (
-            <div key={`overview-${index}`} className="flex gap-3">
+            <div key={`overview-${index}`} className="flex flex-col gap-3 sm:flex-row">
               <textarea
                 value={paragraph}
                 onChange={(event) =>
@@ -458,6 +529,11 @@ export function ItineraryDetailsEditor({
           </label>
         </div>
       </SectionShell>
+
+      <PricingItemsEditor
+        items={details.pricingItems}
+        onChange={(pricingItems) => setDetails((current) => ({ ...current, pricingItems }))}
+      />
 
       <KeyValueEditor
         title="Quick Facts"

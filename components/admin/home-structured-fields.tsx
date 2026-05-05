@@ -20,7 +20,7 @@ function SectionShell({
   children: React.ReactNode
 }) {
   return (
-    <div className="rounded-[1.75rem] border border-[#eadcc8] bg-[#fcfaf7] p-5">
+    <div className="rounded-[1.75rem] border border-[#eadcc8] bg-[#fcfaf7] p-4 sm:p-5">
       <h3 className="text-lg font-semibold text-[#210c00]">{title}</h3>
       <p className="mt-1 text-sm text-gray-600">{description}</p>
       <div className="mt-4 space-y-4">{children}</div>
@@ -36,7 +36,7 @@ function SectionHeading({
   action?: React.ReactNode
 }) {
   return (
-    <div className="flex items-center justify-between gap-3">
+    <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#c24503]">{title}</p>
       {action}
     </div>
@@ -48,7 +48,7 @@ function AddButton({ onClick, label }: { onClick: () => void; label: string }) {
     <button
       type="button"
       onClick={onClick}
-      className="rounded-full border border-[#d9c3a8] px-4 py-2 text-sm font-medium text-[#210c00] transition hover:border-[#f88518] hover:text-[#c24503]"
+      className="w-full rounded-full border border-[#d9c3a8] px-4 py-2.5 text-sm font-medium text-[#210c00] transition hover:border-[#f88518] hover:text-[#c24503] sm:w-auto"
     >
       {label}
     </button>
@@ -60,7 +60,7 @@ function RemoveButton({ onClick }: { onClick: () => void }) {
     <button
       type="button"
       onClick={onClick}
-      className="rounded-full border border-red-200 px-3 py-2 text-xs font-semibold text-red-700 transition hover:bg-red-50"
+      className="w-full rounded-full border border-red-200 px-3 py-2.5 text-xs font-semibold text-red-700 transition hover:bg-red-50 sm:w-auto"
     >
       Remove
     </button>
@@ -74,7 +74,7 @@ function ImagePreview({ src, alt }: { src: string; alt: string }) {
 
   return (
     <div className="overflow-hidden rounded-2xl border border-[#eadcc8] bg-white">
-      <img src={src} alt={alt} className="h-40 w-full object-cover" />
+      <img src={src} alt={alt} className="h-32 w-full object-cover sm:h-40" />
     </div>
   )
 }
@@ -140,15 +140,23 @@ export function HomeStructuredFields({
 
   const filteredItineraries = (sectionKey: FeaturedSection["key"]) =>
     availableItineraries.filter((item) => {
+      if (item.featuredSection === sectionKey) {
+        return true
+      }
+
       if (sectionKey === "southern") {
         return item.category === "safari"
+      }
+
+      if (sectionKey === "northern") {
+        return item.category === "northern" || item.category === "kilimanjaro" || item.category === "destination"
       }
 
       return item.category === sectionKey
     })
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 [&_input]:text-base [&_textarea]:text-base [&_select]:text-base [&_button]:touch-manipulation">
       <input type="hidden" name="stats" value={JSON.stringify(stats)} />
       <input type="hidden" name="whyItems" value={JSON.stringify(whyItems)} />
       <input type="hidden" name="destinationCards" value={JSON.stringify(destinationCards)} />
@@ -328,7 +336,7 @@ export function HomeStructuredFields({
                       }}
                       className="h-4 w-4"
                     />
-                    <span className="text-sm font-medium text-[#210c00]">Use as the large lead card</span>
+                    <span className="text-sm font-medium leading-6 text-[#210c00]">Use as the large lead card</span>
                   </label>
                 </div>
                 <div className="space-y-3">
@@ -416,7 +424,7 @@ export function HomeStructuredFields({
                         type="checkbox"
                         checked={section.slugs.includes(itinerary.slug)}
                         onChange={() => toggleSectionSlug(index, itinerary.slug)}
-                        className="mt-1 h-4 w-4"
+                        className="mt-1 h-4 w-4 shrink-0"
                       />
                       <span>
                         <span className="block text-sm font-medium text-[#210c00]">{itinerary.title}</span>

@@ -1,7 +1,7 @@
 import { z } from "zod"
 import cmsSeed from "@/content/cms-seed.json"
 
-const itineraryCategorySchema = z.enum(["northern", "zanzibar", "safari"])
+const itineraryCategorySchema = z.enum(["destination", "kilimanjaro", "northern", "zanzibar", "safari"])
 const featuredSectionKeySchema = z.enum(["northern", "zanzibar", "southern"])
 const itineraryPageThemeSchema = z.enum(["northern", "zanzibar", "southern", "mountain"])
 
@@ -56,6 +56,12 @@ const locationCardSchema = z.object({
 const keyValueItemSchema = z.object({
   label: z.string(),
   value: z.string(),
+})
+
+const pricingItemSchema = z.object({
+  label: z.string(),
+  price: z.string(),
+  note: z.string().nullable().default(null),
 })
 
 const itineraryDaySchema = z.object({
@@ -158,6 +164,14 @@ export const itinerariesIndexContentSchema = z.object({
   heroTitle: z.string(),
   heroSubtitle: z.string(),
   heroImage: z.string(),
+  destinationTitle: z.string().default("Featured Destinations"),
+  destinationSubtitle: z
+    .string()
+    .default("Build awareness around the places, landscapes, and regions you want travelers to discover first."),
+  kilimanjaroTitle: z.string().default("Kilimanjaro Routes"),
+  kilimanjaroSubtitle: z
+    .string()
+    .default("Compare summit routes, climbing styles, and support levels for Africa's most iconic mountain."),
   northernTitle: z.string(),
   northernSubtitle: z.string(),
   zanzibarTitle: z.string(),
@@ -211,6 +225,7 @@ export const itineraryPageDetailsSchema = z.object({
   startingPriceLabel: z.string().default("Starting from"),
   startingPrice: z.string().default(""),
   pricingNote: z.string().nullable().default(null),
+  pricingItems: z.array(pricingItemSchema).default([]),
   primaryCtaLabel: z.string().default("Book This Tour"),
   secondaryCtaLabel: z.string().default("WhatsApp Inquiry"),
   quickFacts: z.array(keyValueItemSchema).default([]),
@@ -279,6 +294,10 @@ function dedupeItems(items: Array<{ label: string; value: string }>) {
 
 function getDefaultTheme(record: Pick<ItineraryRecord, "category" | "featuredSection" | "slug">) {
   if (record.slug.includes("kilimanjaro") || record.slug.includes("meru")) {
+    return "mountain" as const
+  }
+
+  if (record.category === "kilimanjaro") {
     return "mountain" as const
   }
 
@@ -379,8 +398,29 @@ export function createDefaultItineraryPageDetails(record: Pick<
     included: getDefaultIncluded(pageTheme),
     excluded: getDefaultExcluded(pageTheme),
     startingPrice: record.priceFrom,
+    pricingItems: record.priceFrom
+      ? [
+          {
+            label: "Lead price",
+            price: record.priceFrom,
+            note: "Update this with your full pricing breakdown in admin.",
+          },
+        ]
+      : [],
     quickFacts: dedupeItems([
-      { label: "Category", value: record.category === "safari" ? "Southern Safari" : record.category === "zanzibar" ? "Zanzibar Tour" : "Northern & Mountain" },
+      {
+        label: "Category",
+        value:
+          record.category === "safari"
+            ? "Southern Safari"
+            : record.category === "zanzibar"
+              ? "Zanzibar Tour"
+              : record.category === "kilimanjaro"
+                ? "Kilimanjaro Route"
+                : record.category === "destination"
+                  ? "Destination"
+                  : "Northern Safari",
+      },
       { label: "Best For", value: pageTheme === "mountain" ? "Climbers and adventure travelers" : pageTheme === "zanzibar" ? "Beach, culture, and relaxation" : "Wildlife and tailor-made safaris" },
       { label: "Destinations", value: record.destinations },
     ]),

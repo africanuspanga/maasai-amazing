@@ -10,6 +10,47 @@ import { ItineraryCard } from "@/components/itinerary-card"
 import { useSiteSettings } from "@/components/site-settings-provider"
 import type { ItinerariesIndexContent, ItineraryRecord } from "@/lib/cms/schema"
 
+function ListingSection({
+  title,
+  subtitle,
+  className,
+  titleClassName,
+  subtitleClassName,
+  itineraries,
+  theme,
+  maxWidthClassName = "",
+}: {
+  title: string
+  subtitle: string
+  className: string
+  titleClassName: string
+  subtitleClassName: string
+  itineraries: ItineraryRecord[]
+  theme: "amber" | "teal" | "brown"
+  maxWidthClassName?: string
+}) {
+  if (!itineraries.length) {
+    return null
+  }
+
+  return (
+    <section className={className}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className={`text-3xl md:text-4xl font-serif font-bold mb-4 ${titleClassName}`}>{title}</h2>
+          <p className={`text-lg max-w-3xl mx-auto ${subtitleClassName}`}>{subtitle}</p>
+        </div>
+
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 ${maxWidthClassName}`}>
+          {itineraries.map((itinerary) => (
+            <ItineraryCard key={itinerary.slug} itinerary={itinerary} theme={theme} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export function ItinerariesPageContent({
   itineraries,
   content,
@@ -18,6 +59,11 @@ export function ItinerariesPageContent({
   content: ItinerariesIndexContent
 }) {
   const settings = useSiteSettings()
+  const destinationItems = itineraries.filter((itinerary) => itinerary.category === "destination")
+  const kilimanjaroItems = itineraries.filter((itinerary) => itinerary.category === "kilimanjaro")
+  const northernItems = itineraries.filter((itinerary) => itinerary.category === "northern")
+  const zanzibarItems = itineraries.filter((itinerary) => itinerary.category === "zanzibar")
+  const safariItems = itineraries.filter((itinerary) => itinerary.category === "safari")
 
   return (
     <div className="min-h-screen">
@@ -48,65 +94,56 @@ export function ItinerariesPageContent({
         </div>
       </section>
 
-      {/* Northern Circuit Safaris & Kilimanjaro */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-4">
-              {content.northernTitle}
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              {content.northernSubtitle}
-            </p>
-          </div>
+      <ListingSection
+        title={content.destinationTitle}
+        subtitle={content.destinationSubtitle}
+        className="py-16 md:py-20 bg-[#fff9f2]"
+        titleClassName="text-[#210c00]"
+        subtitleClassName="text-gray-700"
+        itineraries={destinationItems}
+        theme="amber"
+      />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {itineraries.filter((itinerary) => itinerary.category === "northern").map((itinerary) => (
-              <ItineraryCard key={itinerary.slug} itinerary={itinerary} theme="amber" />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ListingSection
+        title={content.kilimanjaroTitle}
+        subtitle={content.kilimanjaroSubtitle}
+        className="py-16 md:py-20 bg-gradient-to-br from-slate-50 via-stone-50 to-orange-50"
+        titleClassName="text-[#210c00]"
+        subtitleClassName="text-gray-700"
+        itineraries={kilimanjaroItems}
+        theme="brown"
+      />
 
-      {/* Zanzibar Beach Packages */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-cyan-50 via-blue-50 to-teal-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#c24503] mb-4">
-              {content.zanzibarTitle}
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              {content.zanzibarSubtitle}
-            </p>
-          </div>
+      <ListingSection
+        title={content.northernTitle}
+        subtitle={content.northernSubtitle}
+        className="py-16 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50"
+        titleClassName="text-[#c24503]"
+        subtitleClassName="text-gray-700"
+        itineraries={northernItems}
+        theme="amber"
+      />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-            {itineraries.filter((itinerary) => itinerary.category === "zanzibar").map((itinerary) => (
-              <ItineraryCard key={itinerary.slug} itinerary={itinerary} theme="teal" />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ListingSection
+        title={content.zanzibarTitle}
+        subtitle={content.zanzibarSubtitle}
+        className="py-16 md:py-20 bg-gradient-to-br from-cyan-50 via-blue-50 to-teal-50"
+        titleClassName="text-[#c24503]"
+        subtitleClassName="text-gray-700"
+        itineraries={zanzibarItems}
+        theme="teal"
+        maxWidthClassName="max-w-6xl mx-auto"
+      />
 
-      {/* Southern Circuit Safaris */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#210c00] mb-4">
-              {content.southernTitle}
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {content.southernSubtitle}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {itineraries.filter((itinerary) => itinerary.category === "safari").map((itinerary) => (
-              <ItineraryCard key={itinerary.slug} itinerary={itinerary} theme="brown" />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ListingSection
+        title={content.southernTitle}
+        subtitle={content.southernSubtitle}
+        className="py-16 md:py-20 bg-white"
+        titleClassName="text-[#210c00]"
+        subtitleClassName="text-gray-600"
+        itineraries={safariItems}
+        theme="brown"
+      />
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-[#210c00] text-white">

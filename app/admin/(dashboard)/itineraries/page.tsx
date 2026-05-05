@@ -7,6 +7,9 @@ import { getAdminItineraries } from "@/lib/cms/service"
 
 type EditableItinerary = Awaited<ReturnType<typeof getAdminItineraries>>[number]
 
+const itineraryFormClassName =
+  "space-y-6 [&_button]:touch-manipulation [&_input]:text-base [&_select]:text-base [&_textarea]:text-base"
+
 function ItineraryForm({
   title,
   defaults,
@@ -23,13 +26,13 @@ function ItineraryForm({
       open={initiallyOpen}
       className="overflow-hidden rounded-[2rem] border border-[#eadcc8] bg-white shadow-sm"
     >
-      <summary className="cursor-pointer list-none px-5 py-5">
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+      <summary className="cursor-pointer list-none px-4 py-4 sm:px-5 sm:py-5">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#c24503]">
               {defaults.slug ? defaults.category : "new itinerary"}
             </p>
-            <h2 className="mt-2 text-2xl font-serif font-bold text-[#210c00]">{title}</h2>
+            <h2 className="mt-2 text-xl font-serif font-bold text-[#210c00] sm:text-2xl">{title}</h2>
             <p className="mt-2 text-sm text-gray-600">
               {defaults.slug ? (
                 <>
@@ -41,18 +44,18 @@ function ItineraryForm({
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             {defaults.slug ? (
               <Link
                 href={`/itineraries/${defaults.slug}`}
                 target="_blank"
-                className="rounded-full border border-[#d9c3a8] px-4 py-2 text-sm font-medium text-[#210c00] transition hover:border-[#f88518] hover:text-[#c24503]"
+                className="inline-flex w-full items-center justify-center rounded-full border border-[#d9c3a8] px-4 py-2.5 text-sm font-medium text-[#210c00] transition hover:border-[#f88518] hover:text-[#c24503] sm:w-auto"
               >
                 Preview Public Page
               </Link>
             ) : null}
             <span
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${
+              className={`inline-flex items-center justify-center self-start rounded-full px-3 py-1 text-xs font-semibold ${
                 defaults.isPublished ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700"
               }`}
             >
@@ -62,18 +65,19 @@ function ItineraryForm({
         </div>
       </summary>
 
-      <div className="border-t border-[#eadcc8] px-5 py-5">
-        <form action={saveItineraryAction} className="space-y-6">
+      <div className="border-t border-[#eadcc8] px-4 py-5 sm:px-5">
+        <form action={saveItineraryAction} className={itineraryFormClassName}>
           <datalist id="cms-admin-itinerary-images">
             {imageSuggestions.map((image) => (
               <option key={image} value={image} />
             ))}
           </datalist>
 
-          <section className="rounded-[1.75rem] border border-[#eadcc8] bg-[#fcfaf7] p-5">
+          <section className="rounded-[1.75rem] border border-[#eadcc8] bg-[#fcfaf7] p-4 sm:p-5">
             <h3 className="text-lg font-semibold text-[#210c00]">Catalog Card & Listing</h3>
             <p className="mt-1 text-sm text-gray-600">
-              These fields feed the homepage promotions, the itinerary listing page, and the booking tour labels.
+              These fields feed the homepage promotions, the itinerary listing page, the booking tour labels, and the
+              public category sections for destinations, Kilimanjaro routes, Zanzibar tours, and safaris.
             </p>
 
             <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -149,6 +153,8 @@ function ItineraryForm({
               <label className="block">
                 <span className="mb-2 block text-sm font-medium text-[#210c00]">Category</span>
                 <select name="category" defaultValue={defaults.category} className="w-full rounded-2xl border border-[#d9c3a8] px-4 py-3">
+                  <option value="destination">Destination</option>
+                  <option value="kilimanjaro">Kilimanjaro Route</option>
                   <option value="northern">Northern / Mountain</option>
                   <option value="zanzibar">Zanzibar</option>
                   <option value="safari">Southern Safari</option>
@@ -177,7 +183,7 @@ function ItineraryForm({
                 />
               </label>
               <label className="flex items-center gap-3 rounded-2xl border border-[#d9c3a8] px-4 py-3">
-                <input name="isPublished" type="checkbox" defaultChecked={defaults.isPublished} className="h-4 w-4" />
+                <input name="isPublished" type="checkbox" defaultChecked={defaults.isPublished} className="h-4 w-4 shrink-0" />
                 <span className="text-sm font-medium text-[#210c00]">Published</span>
               </label>
             </div>
@@ -206,10 +212,10 @@ function ItineraryForm({
 
           <ItineraryDetailsEditor initialDetails={defaults.details} imageSuggestions={imageSuggestions} />
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <button
               type="submit"
-              className="rounded-full bg-[#f88518] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#c24503]"
+              className="w-full rounded-full bg-[#f88518] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#c24503] sm:w-auto"
             >
               Save Itinerary
             </button>
@@ -221,7 +227,7 @@ function ItineraryForm({
             <input type="hidden" name="slug" value={defaults.slug} />
             <button
               type="submit"
-              className="rounded-full border border-red-200 px-5 py-3 text-sm font-semibold text-red-700 transition hover:bg-red-50"
+              className="w-full rounded-full border border-red-200 px-5 py-3 text-sm font-semibold text-red-700 transition hover:bg-red-50 sm:w-auto"
             >
               Delete Itinerary
             </button>
@@ -283,13 +289,12 @@ export default async function AdminItinerariesPage({
   }
 
   return (
-    <div className="space-y-8">
-      <section className="rounded-[2rem] border border-[#eadcc8] bg-white p-6 shadow-sm">
-        <h1 className="text-3xl font-serif font-bold text-[#210c00]">Itineraries</h1>
+    <div className="space-y-6 sm:space-y-8">
+      <section className="rounded-[2rem] border border-[#eadcc8] bg-white p-5 shadow-sm sm:p-6">
+        <h1 className="text-2xl font-serif font-bold text-[#210c00] sm:text-3xl">Tours, Routes & Destinations</h1>
         <p className="mt-2 max-w-3xl text-gray-600">
-          Manage the catalog cards, the homepage promoted tours, and the actual public itinerary pages from one place.
-          You can now add new Zanzibar packages, mountain climbs, or safari itineraries here without creating a new
-          route file.
+          Manage destinations, Kilimanjaro routes, Zanzibar tours, safaris, their public pages, and their pricing
+          from one place. You can add new items here without creating a new route file.
         </p>
 
         {params.saved ? (
@@ -320,8 +325,8 @@ export default async function AdminItinerariesPage({
 
       {itineraries.length ? (
         <section className="space-y-4">
-          <div className="rounded-[2rem] border border-[#eadcc8] bg-white p-5 shadow-sm">
-            <h2 className="text-2xl font-serif font-bold text-[#210c00]">Existing Itineraries</h2>
+          <div className="rounded-[2rem] border border-[#eadcc8] bg-white p-4 shadow-sm sm:p-5">
+            <h2 className="text-xl font-serif font-bold text-[#210c00] sm:text-2xl">Existing Itineraries</h2>
             <p className="mt-2 text-sm text-gray-600">
               Expand a tour to update its card data, public page content, pricing note, and day-by-day plan.
             </p>
