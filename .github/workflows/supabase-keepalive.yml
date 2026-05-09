@@ -8,10 +8,10 @@ on:
 jobs:
   ping:
     runs-on: ubuntu-latest
+    env:
+      KEEPALIVE_URL: https://www.maasaiamazingsafaris.com/api/keepalive
     steps:
-      - name: Ping public CMS endpoint
+      - name: Ping production keepalive endpoint
         run: |
-          curl --fail --silent --show-error \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
-            "${{ secrets.SUPABASE_URL }}/rest/v1/cms_settings?select=key&limit=1"
+          curl --fail --silent --show-error --location --max-time 30 \
+            "$KEEPALIVE_URL"

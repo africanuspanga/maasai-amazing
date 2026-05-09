@@ -29,10 +29,9 @@ Required environment variables are shown in [.env.example](/Users/admin/maasai-a
 
 A GitHub Actions workflow was added at [.github/workflows/supabase-keepalive.yml](/Users/admin/maasai-amazing-safaris/.github/workflows/supabase-keepalive.yml).
 
-Set these repository secrets so it can ping the public CMS endpoint daily:
+The workflow now pings the deployed keepalive route at `/api/keepalive`, which performs the Supabase check from the app itself.
 
-- `SUPABASE_URL`
-- `SUPABASE_ANON_KEY`
+No GitHub repository secrets are required for the keepalive workflow anymore.
 
 ## Verification
 
