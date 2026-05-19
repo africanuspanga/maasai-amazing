@@ -4,7 +4,9 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import { BookNowButton } from "@/components/book-now-button"
+import { ItineraryCard } from "@/components/itinerary-card"
 import Link from "next/link"
+import { getPublishedItineraries } from "@/lib/cms/service"
 
 export const metadata = {
   title: "Zanzibar Beach Holidays & Tours | Spice Island Packages",
@@ -15,7 +17,9 @@ export const metadata = {
   },
 }
 
-export default function ZanzibarPage() {
+export default async function ZanzibarPage() {
+  const zanzibarPackages = (await getPublishedItineraries()).filter((itinerary) => itinerary.category === "zanzibar")
+
   const tours = [
     {
       name: "Stone Town Tour",
@@ -94,15 +98,36 @@ export default function ZanzibarPage() {
         </div>
       </section>
 
+      {zanzibarPackages.length ? (
+        <section className="py-16 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">
+                Zanzibar Holiday Packages
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Browse our admin-managed Zanzibar getaways, from short beach escapes to longer island stays.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {zanzibarPackages.map((itinerary) => (
+                <ItineraryCard key={itinerary.slug} itinerary={itinerary} theme="teal" />
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* Featured Tours */}
       <section className="py-16 px-4 bg-[#faf6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#210c00] mb-4 font-serif">
-              Featured Zanzibar Experiences
+              Signature Zanzibar Experiences
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Immerse yourself in the diverse experiences that make Zanzibar truly magical.
+              Add these day experiences around your beach stay for a fuller Zanzibar escape.
             </p>
           </div>
 

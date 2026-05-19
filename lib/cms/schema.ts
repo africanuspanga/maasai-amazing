@@ -204,6 +204,7 @@ export const itineraryRecordSchema = z.object({
 })
 
 export const itineraryPageDetailsSchema = z.object({
+  catalogCategory: itineraryCategorySchema.nullable().default(null),
   pageTheme: itineraryPageThemeSchema.default("southern"),
   heroImage: z.string().default(""),
   heroAlt: z.string().default(""),
@@ -379,6 +380,7 @@ export function createDefaultItineraryPageDetails(record: Pick<
   const pageTheme = getDefaultTheme(record)
 
   return itineraryPageDetailsSchema.parse({
+    catalogCategory: record.category,
     pageTheme,
     heroImage: record.image,
     heroAlt: record.title,

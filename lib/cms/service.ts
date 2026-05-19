@@ -96,12 +96,52 @@ function coerceItineraryCategory(value: unknown): ItineraryRecord["category"] {
   return "safari"
 }
 
+function coerceNullableItineraryCategory(value: unknown): ItineraryRecord["category"] | null {
+  if (value === "destination" || value === "kilimanjaro" || value === "northern" || value === "zanzibar" || value === "safari") {
+    return value
+  }
+
+  return null
+}
+
 function coerceFeaturedSection(value: unknown): ItineraryRecord["featuredSection"] {
   if (value === "northern" || value === "zanzibar" || value === "southern") {
     return value
   }
 
   return null
+}
+
+function getDetailsObject(value: unknown) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return null
+  }
+
+  return value as Record<string, unknown>
+}
+
+function isMountainListing(row: Record<string, unknown>, details: Record<string, unknown> | null) {
+  const slug = coerceString(row.slug).toLowerCase()
+  const title = coerceString(row.title).toLowerCase()
+  const pageTheme = coerceString(details?.pageTheme).toLowerCase()
+
+  return slug.includes("kilimanjaro") || slug.includes("meru") || title.includes("kilimanjaro") || pageTheme === "mountain"
+}
+
+function resolveItineraryCategory(row: Record<string, unknown>): ItineraryRecord["category"] {
+  const rawCategory = coerceItineraryCategory(row.category)
+  const details = getDetailsObject(row.details)
+  const catalogCategory = coerceNullableItineraryCategory(details?.catalogCategory)
+
+  if (catalogCategory) {
+    return catalogCategory
+  }
+
+  if (rawCategory === "northern" && isMountainListing(row, details)) {
+    return "kilimanjaro"
+  }
+
+  return rawCategory
 }
 
 async function getSetting<T>(key: SettingKey, fallback: T, parse: (value: unknown) => T): Promise<T> {
@@ -125,6 +165,8 @@ async function getSetting<T>(key: SettingKey, fallback: T, parse: (value: unknow
 }
 
 function mapItineraryRecord(row: Record<string, unknown>): ItineraryRecord {
+  const category = resolveItineraryCategory(row)
+
   const record = {
     slug: coerceString(row.slug),
     title: coerceString(row.title),
@@ -137,7 +179,7 @@ function mapItineraryRecord(row: Record<string, unknown>): ItineraryRecord {
     description: coerceString(row.description),
     highlights: coerceStringArray(row.highlights),
     priceFrom: coerceString(row.price_from),
-    category: coerceItineraryCategory(row.category),
+    category,
     featuredSection: coerceFeaturedSection(row.featured_section),
     sortOrder: coerceNumber(row.sort_order),
     bookTourName: coerceNullableString(row.book_tour_name),
@@ -414,31 +456,53 @@ export async function upsertCmsSetting(key: SettingKey, label: string, payload: 
 
 export async function upsertItinerary(record: AdminItineraryRecord) {
   const client = getAdminClientSafe()
-  const { error } = await client.from("cms_itineraries").upsert([
-    {
-      slug: record.slug,
-      title: record.title,
-      short_title: record.shortTitle,
-      featured_subtitle: record.featuredSubtitle,
-      duration: record.duration,
-      image: record.image,
-      destinations: record.destinations,
-      group_size: record.groupSize,
-      description: record.description,
-      highlights: record.highlights,
-      price_from: record.priceFrom,
-      category: record.category,
-      book_tour_name: record.bookTourName,
-      featured_section: record.featuredSection,
-      sort_order: record.sortOrder,
-      is_published: record.isPublished,
-      details: record.details,
+  const createRow = (storageCategory: string) => ({
+    slug: record.slug,
+    title: record.title,
+    short_title: record.shortTitle,
+    featured_subtitle: record.featuredSubtitle,
+    duration: record.duration,
+    image: record.image,
+    destinations: record.destinations,
+    group_size: record.groupSize,
+    description: record.description,
+    highlights: record.highlights,
+    price_from: record.priceFrom,
+    category: storageCategory,
+    book_tour_name: record.bookTourName,
+    featured_section: record.featuredSection,
+    sort_order: record.sortOrder,
+    is_published: record.isPublished,
+    details: {
+      ...record.details,
+      catalogCategory: record.category,
     },
-  ], { onConflict: "slug" })
+  })
 
-  if (error) {
-    throw error
+  const { error: initialError } = await client.from("cms_itineraries").upsert([createRow(record.category)], { onConflict: "slug" })
+
+  if (
+    !initialError
+  ) {
+    return
   }
+
+  const canUseLegacyCategoryFallback =
+    initialError.code === "23514" &&
+    initialError.message.includes("cms_itineraries_category_check") &&
+    (record.category === "destination" || record.category === "kilimanjaro")
+
+  if (canUseLegacyCategoryFallback) {
+    const { error: fallbackError } = await client.from("cms_itineraries").upsert([createRow("northern")], { onConflict: "slug" })
+
+    if (!fallbackError) {
+      return
+    }
+
+    throw fallbackError
+  }
+
+  throw initialError
 }
 
 export const getPublishedItineraryBySlug = cache(async (slug: string): Promise<(ItineraryRecord & { details: ItineraryPageDetails }) | null> => {

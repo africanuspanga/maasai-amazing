@@ -20,11 +20,11 @@ const themeColors: Record<ColorTheme, { primary: string; hover: string; text: st
     badge: "bg-[#c24503]",
   },
   teal: {
-    primary: "bg-[#c24503] hover:bg-[#a33d02]",
-    hover: "hover:bg-[#c24503] hover:text-white",
-    text: "text-[#c24503]",
-    border: "border-[#c24503]",
-    badge: "bg-[#c24503]",
+    primary: "bg-[#0f766e] hover:bg-[#115e59]",
+    hover: "hover:bg-[#0f766e] hover:text-white",
+    text: "text-[#0f766e]",
+    border: "border-[#0f766e]",
+    badge: "bg-[#0f766e]",
   },
   brown: {
     primary: "bg-[#f88518] hover:bg-[#c24503]",

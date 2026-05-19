@@ -68,6 +68,7 @@ function revalidateCmsPaths() {
   revalidatePath("/about")
   revalidatePath("/contact")
   revalidatePath("/itineraries")
+  revalidatePath("/zanzibar")
   revalidatePath("/admin")
   revalidatePath("/admin/settings")
   revalidatePath("/admin/itineraries")
@@ -274,6 +275,7 @@ export async function saveItineraryAction(formData: FormData) {
   await upsertItinerary({ ...record, details, isPublished: getBoolean(formData, "isPublished") })
   revalidateCmsPaths()
   revalidatePath(`/admin/itineraries/${slug}`)
+  revalidatePath(`/itineraries/${slug}`)
 
   if (redirectMode === "editor") {
     redirect(`/admin/itineraries/${slug}?saved=1`)
@@ -290,6 +292,7 @@ export async function deleteItineraryAction(formData: FormData) {
   await deleteItinerary(slug)
   revalidateCmsPaths()
   revalidatePath(`/admin/itineraries/${slug}`)
+  revalidatePath(`/itineraries/${slug}`)
   redirect(redirectTo || "/admin/itineraries?deleted=1")
 }
 
