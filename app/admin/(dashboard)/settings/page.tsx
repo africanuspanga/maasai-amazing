@@ -4,8 +4,10 @@ import {
   saveGlobalSettingsAction,
   saveHomeSettingsAction,
   saveItinerariesIndexSettingsAction,
+  saveZanzibarPageSettingsAction,
 } from "@/app/admin/actions"
 import { HomeStructuredFields } from "@/components/admin/home-structured-fields"
+import { ZanzibarStructuredFields } from "@/components/admin/zanzibar-structured-fields"
 import { getPublicImageSuggestions } from "@/lib/cms/media"
 import {
   getAboutContent,
@@ -14,6 +16,7 @@ import {
   getHomeContent,
   getItinerariesIndexContent,
   getPublishedItineraries,
+  getZanzibarPageContent,
 } from "@/lib/cms/service"
 
 const adminFormClassName =
@@ -115,11 +118,12 @@ export default async function AdminSettingsPage({
   searchParams: Promise<{ saved?: string }>
 }) {
   const params = await searchParams
-  const [globalSettings, homeContent, aboutContent, contactContent, itinerariesIndexContent, availableItineraries, imageSuggestions] = await Promise.all([
+  const [globalSettings, homeContent, aboutContent, contactContent, zanzibarPageContent, itinerariesIndexContent, availableItineraries, imageSuggestions] = await Promise.all([
     getGlobalSettings(),
     getHomeContent(),
     getAboutContent(),
     getContactContent(),
+    getZanzibarPageContent(),
     getItinerariesIndexContent(),
     getPublishedItineraries(),
     getPublicImageSuggestions(),
@@ -340,6 +344,45 @@ export default async function AdminSettingsPage({
             rows={12}
             mono
           />
+          <SaveButton />
+        </form>
+      </CardSection>
+
+      <CardSection
+        title="Zanzibar Page"
+        description="Controls the `/zanzibar` hero, intro, holiday package section text, signature experiences, beach block, and CTA."
+      >
+        <form action={saveZanzibarPageSettingsAction} className={adminFormClassName}>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Field label="Hero Title" name="heroTitle" defaultValue={zanzibarPageContent.heroTitle} />
+            <Field label="Hero Kicker" name="heroKicker" defaultValue={zanzibarPageContent.heroKicker} />
+            <Field label="Intro Title" name="introTitle" defaultValue={zanzibarPageContent.introTitle} />
+            <Field label="Packages Title" name="packagesTitle" defaultValue={zanzibarPageContent.packagesTitle} />
+            <Field label="Experiences Title" name="experiencesTitle" defaultValue={zanzibarPageContent.experiencesTitle} />
+            <Field label="Beach Title" name="beachTitle" defaultValue={zanzibarPageContent.beachTitle} />
+            <Field label="Beach Button Label" name="beachCtaLabel" defaultValue={zanzibarPageContent.beachCtaLabel} />
+            <Field label="Beach Button Link" name="beachCtaHref" defaultValue={zanzibarPageContent.beachCtaHref} />
+            <Field label="Beach Image" name="beachImage" defaultValue={zanzibarPageContent.beachImage} />
+            <Field label="Beach Image Alt" name="beachImageAlt" defaultValue={zanzibarPageContent.beachImageAlt} />
+            <Field label="CTA Title" name="ctaTitle" defaultValue={zanzibarPageContent.ctaTitle} />
+            <Field label="CTA Primary Label" name="ctaPrimaryLabel" defaultValue={zanzibarPageContent.ctaPrimaryLabel} />
+            <Field label="CTA Primary Href" name="ctaPrimaryHref" defaultValue={zanzibarPageContent.ctaPrimaryHref} />
+            <Field label="CTA Secondary Label" name="ctaSecondaryLabel" defaultValue={zanzibarPageContent.ctaSecondaryLabel} />
+            <Field label="CTA Secondary Href" name="ctaSecondaryHref" defaultValue={zanzibarPageContent.ctaSecondaryHref} />
+          </div>
+          <TextareaField label="Hero Subtitle" name="heroSubtitle" defaultValue={zanzibarPageContent.heroSubtitle} rows={4} />
+          <TextareaField label="Intro Body" name="introBody" defaultValue={zanzibarPageContent.introBody} rows={5} />
+          <TextareaField label="Packages Subtitle" name="packagesSubtitle" defaultValue={zanzibarPageContent.packagesSubtitle} rows={3} />
+          <TextareaField label="Experiences Subtitle" name="experiencesSubtitle" defaultValue={zanzibarPageContent.experiencesSubtitle} rows={3} />
+          <TextareaField label="Beach Body" name="beachBody" defaultValue={zanzibarPageContent.beachBody} rows={5} />
+          <TextareaField
+            label="Beach Highlights (one bullet per line)"
+            name="beachHighlights"
+            defaultValue={zanzibarPageContent.beachHighlights.join("\n")}
+            rows={5}
+          />
+          <TextareaField label="CTA Subtitle" name="ctaSubtitle" defaultValue={zanzibarPageContent.ctaSubtitle} rows={3} />
+          <ZanzibarStructuredFields initialContent={zanzibarPageContent} imageSuggestions={imageSuggestions} />
           <SaveButton />
         </form>
       </CardSection>

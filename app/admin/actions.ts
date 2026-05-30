@@ -13,6 +13,7 @@ import {
   itineraryRecordSchema,
   partnerRecordSchema,
   testimonialRecordSchema,
+  zanzibarPageContentSchema,
 } from "@/lib/cms/schema"
 import {
   deleteItinerary,
@@ -212,6 +213,40 @@ export async function saveContactSettingsAction(formData: FormData) {
   await upsertCmsSetting("contact", "Contact Page", payload)
   revalidateCmsPaths()
   redirect("/admin/settings?saved=contact")
+}
+
+export async function saveZanzibarPageSettingsAction(formData: FormData) {
+  await requireAdminSession()
+
+  const payload = zanzibarPageContentSchema.parse({
+    heroTitle: getString(formData, "heroTitle"),
+    heroKicker: getString(formData, "heroKicker"),
+    heroSubtitle: getString(formData, "heroSubtitle"),
+    introTitle: getString(formData, "introTitle"),
+    introBody: getString(formData, "introBody"),
+    packagesTitle: getString(formData, "packagesTitle"),
+    packagesSubtitle: getString(formData, "packagesSubtitle"),
+    experiencesTitle: getString(formData, "experiencesTitle"),
+    experiencesSubtitle: getString(formData, "experiencesSubtitle"),
+    experiences: parseJsonField(formData, "experiences"),
+    beachTitle: getString(formData, "beachTitle"),
+    beachBody: getString(formData, "beachBody"),
+    beachHighlights: parseLinesField(formData, "beachHighlights"),
+    beachCtaLabel: getString(formData, "beachCtaLabel"),
+    beachCtaHref: getString(formData, "beachCtaHref"),
+    beachImage: getString(formData, "beachImage"),
+    beachImageAlt: getString(formData, "beachImageAlt"),
+    ctaTitle: getString(formData, "ctaTitle"),
+    ctaSubtitle: getString(formData, "ctaSubtitle"),
+    ctaPrimaryLabel: getString(formData, "ctaPrimaryLabel"),
+    ctaPrimaryHref: getString(formData, "ctaPrimaryHref"),
+    ctaSecondaryLabel: getString(formData, "ctaSecondaryLabel"),
+    ctaSecondaryHref: getString(formData, "ctaSecondaryHref"),
+  })
+
+  await upsertCmsSetting("zanzibarPage", "Zanzibar Page", payload)
+  revalidateCmsPaths()
+  redirect("/admin/settings?saved=zanzibar")
 }
 
 export async function saveItinerariesIndexSettingsAction(formData: FormData) {

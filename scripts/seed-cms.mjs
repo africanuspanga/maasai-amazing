@@ -56,6 +56,7 @@ const settingsRows = [
   { key: "home", label: "Home Page", payload: cmsSeed.home },
   { key: "about", label: "About Page", payload: cmsSeed.about },
   { key: "contact", label: "Contact Page", payload: cmsSeed.contact },
+  { key: "zanzibarPage", label: "Zanzibar Page", payload: cmsSeed.zanzibarPage },
   { key: "itinerariesIndex", label: "Itineraries Index Page", payload: cmsSeed.itinerariesIndex },
 ]
 

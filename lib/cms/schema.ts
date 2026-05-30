@@ -69,6 +69,16 @@ const itineraryDaySchema = z.object({
   description: z.string(),
 })
 
+const zanzibarExperienceSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+  duration: z.string(),
+  image: z.string(),
+  alt: z.string(),
+  highlights: z.array(z.string()),
+  bookTourName: z.string(),
+})
+
 export const globalSettingsSchema = z.object({
   companyName: z.string(),
   companyTagline: z.string(),
@@ -158,6 +168,32 @@ export const contactContentSchema = z.object({
   findUsTitle: z.string(),
   findUsSubtitle: z.string(),
   locationCards: z.array(locationCardSchema),
+})
+
+export const zanzibarPageContentSchema = z.object({
+  heroTitle: z.string(),
+  heroKicker: z.string(),
+  heroSubtitle: z.string(),
+  introTitle: z.string(),
+  introBody: z.string(),
+  packagesTitle: z.string(),
+  packagesSubtitle: z.string(),
+  experiencesTitle: z.string(),
+  experiencesSubtitle: z.string(),
+  experiences: z.array(zanzibarExperienceSchema),
+  beachTitle: z.string(),
+  beachBody: z.string(),
+  beachHighlights: z.array(z.string()),
+  beachCtaLabel: z.string(),
+  beachCtaHref: z.string(),
+  beachImage: z.string(),
+  beachImageAlt: z.string(),
+  ctaTitle: z.string(),
+  ctaSubtitle: z.string(),
+  ctaPrimaryLabel: z.string(),
+  ctaPrimaryHref: z.string(),
+  ctaSecondaryLabel: z.string(),
+  ctaSecondaryHref: z.string(),
 })
 
 export const itinerariesIndexContentSchema = z.object({
@@ -281,6 +317,7 @@ export const cmsSeedSchema = z.object({
   home: homeContentSchema,
   about: aboutContentSchema,
   contact: contactContentSchema,
+  zanzibarPage: zanzibarPageContentSchema,
   itinerariesIndex: itinerariesIndexContentSchema,
   itineraries: z.array(itineraryRecordSchema),
   testimonials: z.array(testimonialRecordSchema),
@@ -454,6 +491,7 @@ export type GlobalSettings = z.infer<typeof globalSettingsSchema>
 export type HomeContent = z.infer<typeof homeContentSchema>
 export type AboutContent = z.infer<typeof aboutContentSchema>
 export type ContactContent = z.infer<typeof contactContentSchema>
+export type ZanzibarPageContent = z.infer<typeof zanzibarPageContentSchema>
 export type ItinerariesIndexContent = z.infer<typeof itinerariesIndexContentSchema>
 export type ItineraryRecord = z.infer<typeof itineraryRecordSchema>
 export type ItineraryPageTheme = z.infer<typeof itineraryPageThemeSchema>

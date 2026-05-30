@@ -1,5 +1,8 @@
 import { CmsItineraryPage, generateItineraryMetadata } from "@/components/cms-itinerary-page"
 
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 export async function generateMetadata({
   params,
 }: {

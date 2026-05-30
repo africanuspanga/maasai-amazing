@@ -13,6 +13,7 @@ import {
   normalizeItineraryPageDetails,
   partnerRecordSchema,
   testimonialRecordSchema,
+  zanzibarPageContentSchema,
   type AboutContent,
   type ContactContent,
   type GlobalSettings,
@@ -23,9 +24,10 @@ import {
   type ItineraryRecord,
   type PartnerRecord,
   type TestimonialRecord,
+  type ZanzibarPageContent,
 } from "@/lib/cms/schema"
 
-type SettingKey = "global" | "home" | "about" | "contact" | "itinerariesIndex"
+type SettingKey = "global" | "home" | "about" | "contact" | "zanzibarPage" | "itinerariesIndex"
 export type AdminItineraryRecord = ItineraryRecord & { isPublished: boolean; details: ItineraryPageDetails }
 
 function getPublicClientSafe() {
@@ -238,6 +240,10 @@ export const getAboutContent = cache(async (): Promise<AboutContent> => {
 
 export const getContactContent = cache(async (): Promise<ContactContent> => {
   return getSetting("contact", defaultCmsContent.contact, (value) => contactContentSchema.parse(value))
+})
+
+export const getZanzibarPageContent = cache(async (): Promise<ZanzibarPageContent> => {
+  return getSetting("zanzibarPage", defaultCmsContent.zanzibarPage, (value) => zanzibarPageContentSchema.parse(value))
 })
 
 export const getItinerariesIndexContent = cache(async (): Promise<ItinerariesIndexContent> => {

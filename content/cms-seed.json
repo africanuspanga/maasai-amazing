@@ -318,6 +318,128 @@
     "ctaPrimaryHref": "/contact",
     "ctaSecondaryLabel": "Chat on WhatsApp"
   },
+  "zanzibarPage": {
+    "heroTitle": "Zanzibar",
+    "heroKicker": "The Spice Island Paradise",
+    "heroSubtitle": "Discover the magic of Zanzibar, where pristine beaches meet rich cultural heritage. This tropical paradise offers the perfect blend of relaxation and adventure, from historic Stone Town to crystal-clear waters and spice-scented breezes.",
+    "introTitle": "Where History Meets Paradise",
+    "introBody": "Zanzibar is more than just a destination - it's a sensory journey through centuries of culture, trade, and natural beauty. From the labyrinthine streets of Stone Town to the powder-soft beaches of the north coast, every corner tells a story of sultans, spices, and seafaring adventures.",
+    "packagesTitle": "Zanzibar Holiday Packages",
+    "packagesSubtitle": "Browse our admin-managed Zanzibar getaways, from short beach escapes to longer island stays.",
+    "experiencesTitle": "Signature Zanzibar Experiences",
+    "experiencesSubtitle": "Add these day experiences around your beach stay for a fuller Zanzibar escape.",
+    "experiences": [
+      {
+        "name": "Stone Town Tour",
+        "description": "Historic UNESCO site exploration",
+        "duration": "Half Day",
+        "image": "/images/stone-town-fort.jpeg",
+        "alt": "Historic Stone Town fort with Islamic architecture",
+        "highlights": [
+          "UNESCO World Heritage Site",
+          "Spice markets and bazaars",
+          "Historical architecture"
+        ],
+        "bookTourName": "Zanzibar - Stone Town Tour"
+      },
+      {
+        "name": "Prison Island Tour",
+        "description": "Giant tortoises and history",
+        "duration": "Half Day",
+        "image": "/images/prison-island-aerial.jpeg",
+        "alt": "Aerial view of Prison Island with pristine beaches",
+        "highlights": [
+          "Giant Aldabra tortoises",
+          "Historical prison ruins",
+          "Snorkeling opportunities"
+        ],
+        "bookTourName": "Zanzibar - Prison Island Tour"
+      },
+      {
+        "name": "Spice Tour",
+        "description": "Aromatic spice plantation experience",
+        "duration": "Half Day",
+        "image": "/images/spice-tour-seeds.jpeg",
+        "alt": "Hands holding spice pod with red seeds",
+        "highlights": [
+          "Tropical spice plantations",
+          "Fresh fruit tasting",
+          "Traditional cooking demonstrations"
+        ],
+        "bookTourName": "Zanzibar - Spice Tour"
+      },
+      {
+        "name": "Nungwi Turtle Sanctuary",
+        "description": "Marine conservation experience",
+        "duration": "Half Day",
+        "image": "/images/sea-turtle.png",
+        "alt": "Sea turtle swimming in clear waters",
+        "highlights": [
+          "Sea turtle conservation",
+          "Marine education",
+          "Beautiful Nungwi beach"
+        ],
+        "bookTourName": "Zanzibar - Nungwi Turtle Sanctuary"
+      },
+      {
+        "name": "The Rock Restaurant",
+        "description": "Iconic dining experience",
+        "duration": "Evening",
+        "image": "/images/rock-restaurant.png",
+        "alt": "Traditional thatched restaurant on stilts over water",
+        "highlights": [
+          "Unique rock location",
+          "Fresh seafood",
+          "Stunning ocean views"
+        ],
+        "bookTourName": "Zanzibar - The Rock Restaurant"
+      },
+      {
+        "name": "Nakupenda Beach",
+        "description": "Sandbank paradise",
+        "duration": "Full Day",
+        "image": "/images/prison-island-sandbank.png",
+        "alt": "Pristine white sandbank surrounded by turquoise water",
+        "highlights": [
+          "Pristine sandbank",
+          "Crystal clear waters",
+          "Seafood barbecue"
+        ],
+        "bookTourName": "Zanzibar - Nakupenda Beach"
+      },
+      {
+        "name": "Sunset Yachting",
+        "description": "Romantic dhow cruise",
+        "duration": "Evening",
+        "image": "/images/dhow-sunset.png",
+        "alt": "Traditional dhow sailboat silhouetted against sunset",
+        "highlights": [
+          "Traditional dhow sailing",
+          "Spectacular sunsets",
+          "Romantic atmosphere"
+        ],
+        "bookTourName": "Zanzibar - Sunset Yachting"
+      }
+    ],
+    "beachTitle": "Pristine Beaches & Crystal Waters",
+    "beachBody": "Zanzibar's coastline is a masterpiece of nature, featuring some of the world's most beautiful beaches. From the bustling shores of Stone Town to the tranquil northern beaches of Nungwi and Kendwa, each stretch of sand offers its own unique charm.",
+    "beachHighlights": [
+      "Powder-soft white sand beaches",
+      "Crystal-clear turquoise waters",
+      "World-class snorkeling and diving",
+      "Romantic sunset sailing"
+    ],
+    "beachCtaLabel": "Explore Beach Experiences",
+    "beachCtaHref": "/contact",
+    "beachImage": "/images/tropical-beach.jpg",
+    "beachImageAlt": "Pristine tropical beach with crystal clear waters",
+    "ctaTitle": "Ready to Experience Zanzibar Magic?",
+    "ctaSubtitle": "Let us create your perfect Zanzibar getaway, combining culture, adventure, and relaxation.",
+    "ctaPrimaryLabel": "Plan Your Trip",
+    "ctaPrimaryHref": "/contact",
+    "ctaSecondaryLabel": "Get Quote",
+    "ctaSecondaryHref": "/contact"
+  },
   "itineraries": [
     {
       "slug": "luxury-southern-circuit",

@@ -1,6 +1,9 @@
 import { ItinerariesPageContent } from "@/components/itineraries-page-content"
 import { getItinerariesIndexContent, getPublishedItineraries } from "@/lib/cms/service"
 
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 export const metadata = {
   title: "Tanzania Safari Itineraries | Maasai Amazing Safaris",
   description:
