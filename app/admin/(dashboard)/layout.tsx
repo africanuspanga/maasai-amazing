@@ -28,7 +28,7 @@ export default async function AdminDashboardLayout({
             </div>
             <div>
               <h1 className="text-2xl font-semibold text-[#210c00]">Admin Dashboard</h1>
-              <p className="text-sm text-gray-600">Manage safari packages</p>
+              <p className="text-sm text-gray-600">Manage CMS content and safari packages</p>
               <p className="break-all text-xs text-gray-500">{session.email}</p>
             </div>
           </div>

@@ -333,20 +333,58 @@ export const getPublishedPartners = cache(async (): Promise<PartnerRecord[]> => 
 export async function getAdminDashboardData() {
   const client = getAdminClientSafe()
 
-  const [settings, itineraries] = await Promise.all([
-    client.from("cms_settings").select("key, updated_at"),
-    client.from("cms_itineraries").select("slug, category, is_published"),
+  const [settings, itineraries, testimonials, partners, inquiryCount, newInquiryCount, recentInquiries] = await Promise.all([
+    client.from("cms_settings").select("key, updated_at").order("key", { ascending: true }),
+    client
+      .from("cms_itineraries")
+      .select("slug, title, category, is_published, details")
+      .order("category", { ascending: true })
+      .order("sort_order", { ascending: true }),
+    client.from("cms_testimonials").select("id, is_published"),
+    client.from("cms_partners").select("id, is_published"),
+    client.from("cms_inquiries").select("*", { count: "exact", head: true }),
+    client.from("cms_inquiries").select("*", { count: "exact", head: true }).eq("status", "new"),
+    client
+      .from("cms_inquiries")
+      .select("id, inquiry_type, status, full_name, email, tour_name, created_at")
+      .order("created_at", { ascending: false })
+      .limit(5),
   ])
+
+  const errors = [
+    settings.error,
+    itineraries.error,
+    testimonials.error,
+    partners.error,
+    inquiryCount.error,
+    newInquiryCount.error,
+    recentInquiries.error,
+  ].filter(Boolean)
+
+  if (errors.length) {
+    throw new Error(errors.map((error) => error?.message).join("; "))
+  }
 
   const itineraryRows = (itineraries.data ?? []) as Array<{
     slug: string
+    title: string
     category: ItineraryRecord["category"]
+    is_published: boolean
+    details: unknown
+  }>
+  const testimonialRows = (testimonials.data ?? []) as Array<{
+    id: string
+    is_published: boolean
+  }>
+  const partnerRows = (partners.data ?? []) as Array<{
+    id: string
     is_published: boolean
   }>
 
   const categoryCounts = itineraryRows.reduce<Record<ItineraryRecord["category"], number>>(
     (counts, item) => {
-      counts[item.category] = (counts[item.category] ?? 0) + 1
+      const category = resolveItineraryCategory(item as Record<string, unknown>)
+      counts[category] = (counts[category] ?? 0) + 1
       return counts
     },
     {
@@ -362,7 +400,15 @@ export async function getAdminDashboardData() {
     settings: settings.data ?? [],
     itinerariesCount: itineraryRows.length,
     publishedCount: itineraryRows.filter((item) => item.is_published).length,
+    inactiveCount: itineraryRows.filter((item) => !item.is_published).length,
     categoryCounts,
+    testimonialsCount: testimonialRows.length,
+    publishedTestimonialsCount: testimonialRows.filter((item) => item.is_published).length,
+    partnersCount: partnerRows.length,
+    publishedPartnersCount: partnerRows.filter((item) => item.is_published).length,
+    inquiriesCount: inquiryCount.count ?? 0,
+    newInquiriesCount: newInquiryCount.count ?? 0,
+    recentInquiries: recentInquiries.data ?? [],
   }
 }
 

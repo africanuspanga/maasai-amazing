@@ -4,11 +4,16 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 const navItems = [
+  { href: "/admin", label: "Dashboard" },
   { href: "/admin/itineraries", label: "Packages" },
   { href: "/admin/settings", label: "Settings" },
 ]
 
 function isActive(pathname: string, href: string) {
+  if (href === "/admin") {
+    return pathname === href
+  }
+
   return pathname === href || pathname.startsWith(`${href}/`)
 }
 
