@@ -351,7 +351,7 @@ export async function getAdminDashboardData() {
       .limit(5),
   ])
 
-  const errors = [
+  const errorMessages = [
     settings.error,
     itineraries.error,
     testimonials.error,
@@ -359,10 +359,20 @@ export async function getAdminDashboardData() {
     inquiryCount.error,
     newInquiryCount.error,
     recentInquiries.error,
-  ].filter(Boolean)
+  ]
+    .map((error) => error?.message?.trim())
+    .filter((message): message is string => Boolean(message))
 
-  if (errors.length) {
-    throw new Error(errors.map((error) => error?.message).join("; "))
+  if (errorMessages.length) {
+    const uniqueMessages = Array.from(new Set(errorMessages))
+
+    if (uniqueMessages.every((message) => message.toLowerCase().includes("invalid api key"))) {
+      throw new Error(
+        "Supabase rejected the configured API key. Check Vercel environment variables: NEXT_PUBLIC_SUPABASE_URL must match the same Supabase project as SUPABASE_SERVICE_ROLE_KEY.",
+      )
+    }
+
+    throw new Error(uniqueMessages.join("; "))
   }
 
   const itineraryRows = (itineraries.data ?? []) as Array<{

@@ -1,15 +1,15 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js"
 
 function getSupabaseUrl() {
-  return process.env.NEXT_PUBLIC_SUPABASE_URL
+  return process.env.NEXT_PUBLIC_SUPABASE_URL?.trim()
 }
 
 function getPublicKey() {
-  return process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  return process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim()
 }
 
 function getServiceRoleKey() {
-  return process.env.SUPABASE_SERVICE_ROLE_KEY
+  return process.env.SUPABASE_SERVICE_ROLE_KEY?.trim()
 }
 
 export function hasSupabasePublicEnv() {
